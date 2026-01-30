@@ -1,0 +1,236 @@
+ .faq-items {
+    margin-top: 30px;
+    text-align: center;
+
+    .accordion {
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 25px;
+            background: $white;
+            padding: 0;
+            border-radius: 8px !important;
+
+            h2 {
+                button {
+                    font-size: 24px;
+                    line-height: 1;
+                    font-weight: 600;
+                    box-shadow: none;
+                    border-top-left-radius: 8px !important;
+                    border-top-right-radius: 8px !important;
+                    padding: 24px 20px;
+                    font-family: $heading-font;
+                    color: $header-color;
+
+                    @include breakpoint (max-xxl){
+                        font-size: 20px;
+                        padding: 24px 16px;
+                    }
+
+                    @include breakpoint (max-sm){
+                        font-size: 16px;
+                        padding: 24px 16px;
+                    }
+                }
+            }
+            .accordion-body {
+                p {
+                    color: $text-color;
+                    line-height: 32px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: left;
+
+                    @include breakpoint(max-sm) {
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+        .accordion-button {
+            background-color: $theme-color;
+            color: $white !important;
+
+            &::after {
+                display: none;
+            }
+            &::before {
+                position: absolute;
+                content: "\2b";
+                font-family: $fa;
+                font-weight: 700;
+                top: 13px;
+                right: 22px;
+                font-size: 14px;
+                text-align: center;
+                @include transition;
+                color: $theme-color;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 100px;
+                text-align: center;
+                background-color: $white;
+
+                @include breakpoint (max-xxl) {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .accordion-button.collapsed {
+            background-color: transparent;
+            color: $header-color !important;
+            
+            &::before {
+                content: "\f068";
+                font-family: $fa;
+                color: $white;
+                background-color: $theme-color;
+            }
+        }
+    }
+}
+
+.faq-wrapper-3 {
+
+    .faq-content {
+
+        .section-title {
+            h2 {
+                font-size: 122px;
+                font-weight: 600;
+
+                 @include breakpoint (max-xxl) {
+                    font-size: 90px;
+                }
+
+                @include breakpoint (max-lg) {
+                    font-size: 60px;
+                }
+
+                @include breakpoint (max-sm) {
+                    font-size: 40px;
+                }
+            }
+        }
+
+        .text {
+            max-width: 420px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .link-btn {
+            text-decoration: underline;
+            color: $header-color;
+
+            i {
+                color: $header-color;
+            }
+
+            &:hover {
+                color: $theme-color;
+
+                i {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+     .faq-items-3 {
+       
+        .accordion {
+
+            .accordion-item {
+                border: none;
+                margin-bottom: 25px;
+                background: $white;
+                padding: 0;
+                border-radius: 8px !important;
+
+                h2 {
+                    button {
+                        font-size: 24px;
+                        line-height: 1;
+                        font-weight: 600;
+                        box-shadow: none;
+                        border-top-left-radius: 8px !important;
+                        border-top-right-radius: 8px !important;
+                        padding: 24px 20px;
+                        font-family: $heading-font;
+                        color: $header-color;
+
+                        @include breakpoint (max-xxl){
+                            font-size: 16px;
+                            padding: 24px 16px;
+                        }
+                    }
+                }
+                .accordion-body {
+                    p {
+                        color: $text-color;
+                        line-height: 32px;
+                        font-weight: 400;
+                        font-size: 16px;
+                        text-align: left;
+
+                        @include breakpoint(max-sm) {
+                            width: 100%;
+                            font-size: 14px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+            .accordion-button {
+                background-color: $theme-color;
+                color: $white !important;
+
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    content: "\2b";
+                    font-family: $fa;
+                    font-weight: 700;
+                    top: 13px;
+                    right: 22px;
+                    font-size: 14px;
+                    text-align: center;
+                    @include transition;
+                    color: $theme-color;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    border-radius: 100px;
+                    text-align: center;
+                    background-color: $white;
+
+                    @include breakpoint (max-xxl) {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+            .accordion-button.collapsed {
+                background-color: transparent;
+                color: $header-color !important;
+                
+                &::before {
+                    content: "\f068";
+                    font-family: $fa;
+                    color: $white;
+                    background-color: $theme-color;
+                }
+            }
+        }
+    }
+}

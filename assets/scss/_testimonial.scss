@@ -1,0 +1,382 @@
+.testimonial-box-item {
+    background-color: $white;
+    padding: 60px;
+    border-radius: 12px;
+    margin-top: 30px;
+
+    @include breakpoint (max-xxl) {
+        padding: 30px;
+    }
+
+    .star {
+        color: $theme-color;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 22px;
+        font-family: $heading-font;
+        border-bottom: 1px solid rgba(2, 6, 10, 0.08);
+        padding-bottom: 30px;
+        line-height: 136%;
+        margin-bottom: 35px;
+
+        @include breakpoint (max-xxl) {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .client-info-item {
+        @include flex;
+        justify-content: space-between;
+
+        @include breakpoint (max-xxl) {
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .info-item {
+            @include flex;
+            gap: 15px;
+
+            img {
+                border-radius: 5px;
+            }
+        }
+
+        .logo-image {
+            text-align: right;
+
+            img {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+.testimonial-section {
+    position: relative;
+
+    .array-button {
+
+        .array-prev {
+            position: absolute;
+            top: 55%;
+            left: 280px;
+            border: 1px solid $header-color;
+            color: $header-color;
+            @include transition;
+            background-color: $white;
+            z-index: 999;
+
+            @include breakpoint (max-xl4) {
+                top: 55%;
+                left: 45px;
+            }
+
+            &:hover {
+                background-color: $theme-color;
+                border: 1px solid $theme-color;
+            }
+        }
+
+        .array-next {
+            position: absolute;
+            top: 55%;
+            right: 280px;
+            background-color: $theme-color;
+            color: $white;
+            z-index: 999;
+
+            @include breakpoint (max-xl4) {
+                top: 55%;
+                right: 45px;
+            }
+
+            &:hover {
+                background-color: $header-color;
+            }
+        }
+
+        @include breakpoint (max-xxl) {
+           display: none;
+        }
+    }
+}
+
+.testimonial-content {
+    margin-top: 30px;
+    text-align: center;
+
+    .star {
+        color: $theme-color;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 600;
+        font-family: $heading-font;
+        max-width: 885px;
+        margin-bottom: 40px;
+        margin: 0 auto;
+        color: #02060A;
+        opacity: 0.7;
+        line-height: 158%;
+
+        @include breakpoint (max-xxl) {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        @include breakpoint (max-md) {
+            font-size: 16px;
+        }
+    }
+
+    .client-image {
+        margin-top: 40px;
+
+        @include breakpoint (max-xxl) {
+            margin-top: 30px;
+        }
+
+        img {
+            border-radius: 6px;
+        }
+    }
+
+    h4 {
+        margin-top: 30px;
+        margin-bottom: 5px;
+    }
+}
+
+
+.testimonial-section-2 {
+    position: relative;
+
+    .array-button {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        z-index: 999;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        left: 410px;
+        right: 410px;
+        transform: translateY(-50%);
+        z-index: 99;
+
+        @include breakpoint (max-xl4) {
+           left: 200px;
+           right: 200px;
+        }
+
+        @include breakpoint (max-xxl) {
+           display: none;
+        }
+
+        .array-prev {
+            color: $header-color;
+            @include transition;
+            background-color: $white;
+            z-index: 999;
+
+            &:hover {
+                background-color: $theme-color;
+            }
+        }
+
+        .array-next {
+            background-color: $theme-color;
+            color: $white;
+            z-index: 999;
+
+            &:hover {
+                background-color: $header-color;
+            }
+        }
+    }
+}
+
+.testimonial-wrapper-3 {
+    margin-top: 48px;
+
+    @include breakpoint (max-xxl) {
+        margin-top: 30px;
+    }
+
+    .testimonial-thumb {
+        overflow: hidden;
+        border-radius: 8px;
+
+        img {
+            @include imgw;
+            border-radius: 8px;
+        }
+    }
+
+    .testimonial-box-3 {
+        background-color: $white;
+        border-radius: 8px;
+        padding: 60px 32px;
+        position: relative;
+
+        @include breakpoint (max-xxl) {
+            padding: 30px;
+        }
+
+        .swiper-dot {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+
+            @include breakpoint (max-xxl) {
+               display: none;
+            }
+        }
+
+        .testimonial-content-3 {
+
+            .star {
+                color: $theme-color;
+                margin-bottom: 35px;
+
+                 @include breakpoint (max-xxl) {
+                   margin-bottom: 25px;
+                }
+            }
+
+            p {
+                font-size: 22px;
+                font-weight: 500;
+                font-family: $heading-font;
+                color: rgba(2, 6, 10, 0.7);
+                max-width: 575px;
+                border-bottom: 1px solid rgba(2, 6, 10, 0.1);
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+
+                 @include breakpoint (max-xxl) {
+                    padding-bottom: 30px;
+                    margin-bottom: 30px;
+                    font-size: 16px;
+                }
+            }
+
+            .info-item {
+                @include flex;
+                gap: 15px;
+
+                img {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+.testimonial-box-item-4 {
+    background-color: $white;
+    padding: 50px;
+    border-radius: 12px;
+    margin-top: 30px;
+
+    @include breakpoint (max-xxl) {
+        padding: 30px;
+    }
+
+    .info-item {
+        @include flex;
+        gap: 15px;
+        border-bottom: 1px solid rgba(2, 6, 10, 0.08);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+
+        img {
+            border-radius: 5px;
+        }
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 22px;
+        font-family: $heading-font;
+        line-height: 136%;
+
+        @include breakpoint (max-xxl) {
+            font-size: 16px;
+        }
+    }
+
+    .star {
+        color: $theme-color;
+        margin-top: 20px;
+    }
+}
+
+.testimonial-section-4 {
+    position: relative;
+
+    .array-button {
+
+        .array-prev {
+            position: absolute;
+            top: 64%;
+            left: 280px;
+            border: 1px solid $header-color;
+            color: $header-color;
+            @include transition;
+            background-color: $white;
+            z-index: 999;
+
+            @include breakpoint (max-xl4) {
+                top: 64%;
+                left: 154px;
+            }
+
+            &:hover {
+                background-color: $theme-color;
+                border: 1px solid $theme-color;
+            }
+        }
+
+        .array-next {
+            position: absolute;
+            top: 64%;
+            right: 280px;
+            background-color: $theme-color;
+            color: $white;
+            z-index: 999;
+
+            @include breakpoint (max-xl4) {
+                top: 64%;
+                right: 154px;
+            }
+
+            &:hover {
+                background-color: $header-color;
+            }
+        }
+
+        @include breakpoint (max-xxl) {
+           display: none;
+        }
+    }
+
+    .testimonial-slider-4 {
+        margin-left: -360px;
+        margin-right: -360px;
+
+        @include breakpoint(max-xxl){
+           margin-left: 10px;
+           margin-right: 10px;
+        }
+    }
+}

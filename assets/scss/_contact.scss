@@ -1,0 +1,443 @@
+.contact-section-3 {
+    margin: 0 30px;
+    border-radius: 20px;
+
+    @include breakpoint (max-sm) {
+        margin: 0 15px;
+    }
+}
+
+.contact-us-wrapper {
+
+    .contact-content {
+
+        .contact-left-item {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            @include flex;
+            gap: 20px;
+
+            @include breakpoint (max-xxl) {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .content {
+                h4 {
+                    color: $white;
+                    margin-bottom: 30px;
+                }
+
+                h6 {
+                    font-weight: 500;
+                    color: $white;
+                    opacity: 0.7;
+                    line-height: 162%;
+                    margin-bottom: 5px;
+
+                    &.color-1 {
+                         opacity: initial;
+                        a {
+                            color: $white;
+                            opacity: initial;
+                        }
+                    }
+
+                    a {
+                      color: $white;
+                    }
+
+                    &.tm-color {
+                        font-weight: 700;
+                        font-size: 17px;
+
+                       a {
+                          color: $theme-color;
+                       }
+                    }
+                }
+
+                &.style-2 {
+                    border-left: 1px solid rgba(255, 255, 255, 0.1);
+                    padding-left: 24px;
+
+                    @include breakpoint (max-xxl) {
+                       border-left: none;
+                       padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        p {
+            max-width: 420px;
+            margin-bottom: 30px;
+            color: $white;
+            opacity: 0.8;
+        }
+
+        .link-btn {
+            color: $white;
+            text-decoration: underline;
+
+            i {
+                color: $white;
+            }
+
+            &:hover {
+                color: $theme-color;
+
+                i {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    .contact-box {
+        margin-left: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border-top: 3px solid #F94D00;
+        backdrop-filter: blur(16px);
+        border-radius: 12px;
+        padding: 60px 30px;
+
+        @include breakpoint (max-xxl) {
+            margin-left: 0;
+            padding: 30px;
+        }
+
+         .contact-form-box {
+            
+            .form-clt {
+                input,textarea {
+                    outline: none;
+                    border: none;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    line-height: 1;
+                    padding: 20px 25px;
+                    width: 100%;
+                    text-transform: capitalize;
+                    color: rgba(255, 255, 255, 0.7);
+                    @include transition;
+
+                    &:hover {
+                        color: $white;
+                        border: 1px solid $white;
+
+                        &::textarea {
+                            color: $white;
+                        }
+                    }
+                }
+
+                textarea {
+                    padding-bottom: 110px;
+                    color: rgba(255, 255, 255, 0.7);
+                    resize: none;
+                }
+            }
+
+            .theme-btn {
+                border-radius: 8px;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.contact-info-box {
+    background-color: $white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    @include flex;
+    gap: 15px;
+    position: relative;
+    z-index: 9;
+
+    .icon {
+        max-width: 80px;
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: $theme-color;
+        color: $white;
+        font-size: 25px;
+        @include transition;
+    }
+
+    .content {
+        h4 {
+            font-size: 20px;
+            color: $header-color;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+        }
+
+        p {
+            line-height: 162.5%;
+
+            a {
+                color: $text-color;
+            }
+        }
+    }
+
+     &::before {
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        opacity: 0;
+        -webkit-transform: scale(1, 0.3);
+        transform: scale(1, 0.3);
+        background-color: $theme-color;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        z-index: -1;
+        border-radius: 8px;
+    }
+
+    &.active {
+         &::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        .icon {
+            background-color: $header-color;
+
+            i {
+                -webkit-animation: gelatine 0.6s;
+                animation: gelatine 0.6s;
+            }
+        }
+
+        .content {
+            h4,p {
+                color: $white;
+            }
+
+            p {
+                a {
+                     color: $white;
+                }
+            }
+        }
+    }
+
+}
+
+
+.contact-wrapper-inner {
+    .contact-map {
+        iframe {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+        }
+    }
+    .contact-box-items {
+        padding: 50px 50px;
+        border-radius: 12px;
+        background-color: $bg-color;
+
+        @include breakpoint (max-md){
+            padding: 30px;
+        }
+
+        &.style-2 {
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(7.5px);
+
+            .contact-form-box {
+                .form-clt {
+                    input,textarea {
+                        color: $white;
+                        border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+                        &::placeholder {
+                           color: $white;
+                        }
+                    }
+
+                    textarea {
+                        padding-bottom: 120px;
+                    }
+
+                    .form {
+                    .single-select {
+                        border: none;
+                        color: $header-color;
+                         border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+                        .current {
+                            color: $white;
+                        }
+
+                        &::after {
+                            border-bottom: 2px solid $white;
+                            border-right: 2px solid $white;
+                        }
+
+                    }
+                }
+                }
+            }
+        }
+
+        .contact-form-box {
+            margin-top: 30px;
+
+            .form-clt {
+                input,textarea {
+                    outline: none;
+                    width: 100%;
+                    color: $header-color;
+                    padding-bottom: 20px;
+                    border: none;
+                    background: transparent;
+                    border-bottom: 1px solid rgba(15, 23, 42, .2);
+                    text-transform: capitalize;
+
+                    &::placeholder {
+                        color: $header-color;
+                    }
+                }
+
+                textarea {
+                    padding-bottom: 120px;
+                }
+
+                .form {
+                .single-select {
+                    border: none;
+                   border-bottom: 1px solid rgba(15, 23, 42, .2);
+                    background-color: transparent;
+                    width: 100%;
+                    height: initial;
+                    line-height: initial;
+                    text-transform: capitalize;
+                    color: $header-color;
+                    padding-bottom: 20px;
+                    border-radius: 0;
+
+                    .current {
+                        color: $header-color;
+                    }
+
+                    &::after {
+                        border-bottom: 2px solid $header-color;
+                        border-right: 2px solid $header-color;
+                        width: 8px;
+                        height: 8px;
+                        right: 12px;
+                    }
+
+                    .list {
+                        width: 100%;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+
+.newsletter-box-4 {
+    padding: 50px 50px 50px 42px;
+    backdrop-filter: blur(16px);
+    border-radius: 10px;
+    background-color: $theme-color;
+    @include flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+    position: relative;
+    z-index: 999;
+
+    @include breakpoint (max-xxl) {
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 30px;
+        margin-bottom: 100px;
+    }
+
+    @include breakpoint (max-lg) {
+        margin-bottom: 80px;
+    }
+
+
+    h2 {
+        color: $white;
+        position: relative;
+
+        br {
+            @include breakpoint (max-xxl) {
+                display: none;
+            }
+        }
+    }
+
+    .newsletter-content {
+        @include flex;
+        gap: 10px;
+
+        @include breakpoint (max-xxl) {
+            flex-wrap: wrap;
+        }
+
+        form {
+            position: relative;
+
+            input {
+                width: 100%;
+                border: none;
+                background: $white;
+                padding: 20px 30px;
+                border-radius: 8px;
+                line-height: 1;
+                color: rgba(2, 6, 10, 0.5);
+                width: 376px;
+
+                @include breakpoint (max-md) {
+                    width: 250px;
+                }
+
+                &::placeholder {
+                    color: rgba(2, 6, 10, 0.5);
+                }
+            }
+        }
+
+        .theme-btn {
+            border-radius: 8px;
+            background-color: $header-color;
+
+            &::before {
+                background-color: $white;
+            }
+
+            &:after {
+                 background-color: rgba(255, 255, 255, 0.3);
+            }
+
+            &:hover {
+                color: $header-color;
+            }
+        }
+    }
+}

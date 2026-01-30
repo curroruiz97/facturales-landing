@@ -1,0 +1,568 @@
+.counter-wrapper {
+
+    .counter-box-item {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        border-radius: 10px;
+        padding: 25px;
+
+        .counter-top-item {
+            @include flex;
+            align-items: start;
+            justify-content: space-between;
+            margin-bottom: 175px;
+
+            @include breakpoint (max-xxl) {
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                color: $white;
+                font-size: 64px;
+                line-height: 80%;
+
+                @include breakpoint (max-xxl) {
+                    font-size: 55px;
+                }
+            }
+
+            .top-right {
+                @include flex;
+                gap: 6px;
+
+                span {
+                    width: 8px;
+                    height: 8px;
+                    line-height: 8px;
+                    border-radius: 8px;
+                    border: 1px solid $theme-color;
+                    @include transition;
+                }
+            }
+        }
+
+        h4 {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        &:hover {
+            .counter-top-item {
+
+                .top-right {
+                    span {
+                        background-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .counter-content {
+        margin-left: 150px;
+
+        @include breakpoint (max-xxl) {
+            margin-left: 0;
+        }
+
+        .text {
+            color: rgba(255, 255, 255, 1);
+            margin-top: 20px;
+            max-width: 299px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .video-circle {
+            width: 160px;
+            height: 160px;
+            line-height: 160px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            text-align: center;
+            z-index: 2;
+           
+             img {
+                width: initial;
+                height: initial;
+            }
+
+            .text-circle{
+                animation: cir36 10s linear infinite;
+            }
+
+            .ripple {
+                 &::before,&::after {
+                    width: 72px;
+                    height: 72px;
+                    box-shadow: 0 0 0 0 rgba(249, 77, 0, 0.5);
+                }
+            }
+
+            .video-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: $theme-color;
+                color: $white;
+                text-align: center;
+                width: 72px;
+                height: 72px;
+                line-height: 72px;
+                text-align: center;
+                display: inline-block;
+                border-radius: 50%;
+                z-index: 9;
+
+                &:hover {
+                    background-color: $white;
+                    color: $header-color;
+                }
+            }
+
+            img {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.counter-section {
+    margin: 0 30px;
+    border-radius: 20px;
+
+    @include breakpoint (max-lg) {
+        margin: 0 15px;
+    }
+}
+
+.feature-top-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 120px;
+    margin-top: 120px;
+
+    @include breakpoint (max-xxl) {
+        margin-top: 100px;
+        padding-top: 100px;
+    }
+
+    @include breakpoint (max-lg) {
+        margin-top: 80px;
+        padding-top: 80px;
+    }
+
+    .section-title-area {
+        align-items: start;
+
+        @include breakpoint (max-xxl) {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+        .section-title {
+            p {
+                max-width: 299px;
+                color: rgba(255, 255, 255, 1);
+                opacity: 0.8;
+            }
+        }
+
+        .section-right {
+            @include flex;
+            gap: 205px;
+
+            @include breakpoint (max-xxl) {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+    }
+
+    .box-slider {
+        margin-top: 48px;
+    }
+}
+
+.feature-icon-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.13258px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18.1212px);
+    border-radius: 9.78671px;
+    padding: 34px;
+    text-align: center;
+    position: relative;
+    width: 122px;
+    height: 122px;
+
+     &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: solid 1px $theme-color;
+        border-left: solid 1px $theme-color;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        border-radius: 4px;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: solid 1px $theme-color;
+        border-right: solid 1px $theme-color;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        border-radius: 4px;
+    }
+
+    &:hover {
+         &::before {
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &::after {
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        img {
+            animation: jello 1s;
+          }
+    }
+}
+
+.feature-icon-item-2 {
+    @include flex;
+    gap: 18px;
+
+    @include breakpoint (max-xxl) {
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background-color: $white;
+        border-radius: 4px;
+    }
+
+    .content {
+        p {
+            max-width: 290px;
+            margin-top: 10px;
+        }
+    }
+
+    &:hover {
+        .icon {
+            img {
+                animation: jello 1s;
+            }
+        }
+    }
+}
+
+.feature-section-2 {
+     border-bottom: 1px solid rgba(2, 6, 10, 0.08);
+     margin-bottom: 120px;
+
+     @include breakpoint (max-xxl) {
+        margin-bottom: 100px;
+     }
+
+     @include breakpoint (max-lg) {
+        margin-bottom: 80px;
+     }
+}
+
+.video-bg-section {
+    position: relative;
+    margin: 0 30px;
+    border-radius: 16px;
+    height: 872px;
+
+    @include breakpoint (max-xxl) {
+        height: 600px;
+    }
+
+    @include breakpoint (max-lg) {
+        height: 500px;
+    }
+
+    @include breakpoint (max-sm) {
+        margin: 0 15px;
+        height: 400px;
+    }
+
+    &::before {
+        @include before;
+        background: linear-gradient(180deg, rgba(2, 6, 10, 0) 0%, #02060A 90.52%);
+        opacity: 0.9;
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .marquee {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        background-color: transparent;
+        margin-bottom: 0;
+        line-height: 95px;
+
+         @include breakpoint (max-lg) {
+            line-height: 75px;
+        }
+
+        @include breakpoint (max-sm) {
+            line-height: 60px;
+        }
+
+        .text {
+            font-size: 125px;
+            font-weight: 600;
+            color: $theme-color;
+            text-transform: uppercase;
+
+            @include breakpoint (max-lg) {
+                font-size: 100px;
+            }
+
+            @include breakpoint (max-sm) {
+                font-size: 80px;
+            }
+        }
+    }
+}
+
+.marque-section-3 {
+
+    .marquee {
+        background-color: transparent;
+        margin-bottom: 0;
+        line-height: 0px;
+        margin-top: -10px;
+
+         @include breakpoint (max-lg) {
+            line-height: 75px;
+        }
+
+        @include breakpoint (max-sm) {
+            line-height: 60px;
+        }
+
+        .text {
+            font-size: 125px;
+            font-weight: 600;
+            color: $theme-color;
+            text-transform: uppercase;
+
+            @include breakpoint (max-lg) {
+                font-size: 100px;
+            }
+
+            @include breakpoint (max-sm) {
+                font-size: 80px;
+            }
+        }
+    }
+}
+
+.feature-card-items-3 {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    background-color: $white;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    position: relative;
+
+    @include breakpoint (max-xxl) {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $theme-color;
+        border-radius: 10px;
+        transform: scale(0.5);
+        opacity: 0;
+        z-index: 0;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        background-color: #EFEDE5;
+        border-radius: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .content {
+
+        h3 {
+             @include breakpoint (max-lg) {
+                font-size: 20px;
+            }
+        }
+        p {
+            margin-top: 10px;
+            max-width: 485px;
+        }
+    }
+
+    &:hover {
+
+        &::before {
+            transform: scale(1);
+	        opacity: 1;
+        }
+
+        .icon {
+            position: relative;
+            z-index: 999;
+
+            img {
+                position: relative;
+                z-index: 999;
+                animation: jello 1s;
+            }
+        }
+
+        .content {
+            h3 {
+                color: $white;
+                position: relative;
+                z-index: 999;
+            }
+
+            p {
+                color: $white;
+                position: relative;
+                z-index: 999;
+            }
+        }
+    }
+}
+
+.feature-section-3 {
+
+    .section-title-area {
+        p {
+            max-width: 533px;
+        }
+    }
+}
+
+.video-play-section {
+    margin: 0 30px;
+    border-radius: 20px;
+    padding: 390px 0 120px;
+    position: relative;
+
+     @include breakpoint (max-xxl) {
+        padding: 100px 0;
+    }
+
+     @include breakpoint (max-lg) {
+        padding: 80px 0;
+    }
+
+    @include breakpoint (max-sm) {
+        margin: 0 15px;
+    }
+}
+
+.video-play-box {
+    background-color: $header-color;
+    padding: 50px 30px;
+    border-radius: 10px;
+    max-width: 415px;
+    width: 100%;
+
+     @include breakpoint (max-sm) {
+        padding: 30px;
+    }
+
+    h3 {
+        font-size: 32px;
+        color: $white;
+
+        @include breakpoint (max-xxl) {
+            font-size: 30px;
+        }
+
+        @include breakpoint (max-lg) {
+            font-size: 25px;
+        }
+
+        @include breakpoint (max-sm) {
+            font-size: 20px;
+        }
+    }
+
+    .play-item {
+        @include flex;
+        gap: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        margin-top: 20px;
+
+         @include breakpoint (max-xxl) {
+            flex-wrap: wrap;
+        }
+
+        .video-btn {
+            width: 124px;
+            height: 76px;
+            line-height: 76px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 100px;
+            background-color: $theme-color;
+            color: $white;
+
+            @include breakpoint (max-xxl) {
+                width: 76px;
+            }
+        }
+
+        h4 {
+            color: $white;
+            opacity: 0.8;
+        }
+    }
+}

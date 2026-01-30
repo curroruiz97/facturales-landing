@@ -1,0 +1,461 @@
+.team-section {
+    margin: 0 30px;
+    border-radius: 20px;
+
+     @include breakpoint (max-md) {
+        margin: 0 15px 0;
+     }
+}
+
+.team-wrapper {
+
+    .team-left-content {
+        .text {
+            max-width: 299px;
+            color: $white;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .team-card-item {
+        position: relative;
+
+        .team-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+
+            img {
+                @include imgw;
+                border-radius: 8px;
+                transform: scale(1.02);
+                transition: all 1.5s ease-out;
+            }
+
+            .social-icon {
+                @include flex;
+                gap: 10px;
+                position: absolute;
+                top: -100px;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                opacity: 0;
+                visibility: hidden;
+                z-index: 99;
+
+                a {
+                    display: inline-block;
+                    width: 26.73px;
+                    height: 26.73px;
+                    border-radius: 100px;
+                    left: 1098.76px;
+                    opacity: 0.6;
+                    color: $header-color;
+                    background-color: rgba(255, 255, 255, 1);
+                    text-align: center;
+
+                    &:hover {
+                        background-color: $theme-color;
+                        color: $white;
+                        opacity: initial;
+                    }
+                }
+            }
+
+             &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 20px;
+                right: 20px;
+                top: 20px;
+                bottom: 20px;
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(16px);
+                transition: -webkit-transform 0.4s ease;
+                transition: transform 0.4s ease;
+                transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+                transform-origin: top right;
+                -webkit-transform: scale(1, 0);
+                transform: scale(1, 0);
+                z-index: 9;
+                border-radius: 8px;
+            }
+        }
+
+        .team-content {
+            margin-top: 20px;
+
+            h3 {
+        
+                a {
+                    background-position: 0 95%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+                    display: inline;
+                    color: $white;
+                    
+                    &:hover {
+                        color: $theme-color;
+                        background-size: 100% 2px;
+                        background-image: linear-gradient(180deg, $theme-color 0%, $theme-color 100%);
+                    }
+                }
+            }
+
+            p {
+                text-transform: uppercase;
+                @include transition;
+            }
+        }
+
+        &:hover {
+           
+            .social-icon {
+                top: 50%;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .team-image {
+
+                img {
+                    -webkit-transform: scale3d(1.1, 1.1, 1);
+                    transform: scale3d(1.1, 1.1, 1);
+                }
+
+                &::before {
+                    -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
+                    transform-origin: bottom center;
+                }
+            }
+
+            .team-content {
+                p {
+                    color: $white;
+                }
+            }
+        }
+
+        &.style-inner {
+            .team-content {
+                h3 {
+                    a {
+                        color: $header-color;
+                    }
+                }
+            }
+
+            &:hover {
+                .team-content {
+                    p {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.team-details-wrapper {
+    .team-details-image {
+        overflow: hidden;
+        border-radius: 12px;
+        
+        img {
+            @include imgw;
+            border-radius: 12px;
+        }
+    }
+
+    .team-details-content {
+        margin-left: 30px;
+        background-color: #F2F5F7;
+        border-radius: 10px;
+        padding: 45px 40px;
+
+        @include breakpoint (max-xl){
+            margin-left: 0;
+        }
+
+        .offer {
+            background-color: $theme-color;
+            color: $white;
+            padding: 8px 10px;
+            border-radius: 6px;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+        
+        .team-infrom {
+            margin-top: 30px;
+
+            li {
+                display: flex;
+                gap: 100px;
+                align-items: center;
+                color: $header-color;
+                font-size: 16px;
+                font-weight: 500;
+
+                @include breakpoint (max-xl){
+                    display: grid;
+                    gap: 20px;
+                }
+
+                span {
+                    color: $header-color;
+                    font-size: 16px;
+                    font-weight: 500;
+                    flex-basis: 28%;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 60px;
+        }
+        
+        .social-icon {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+                
+            a {
+                color: $theme-color;
+                background: $bg-color;
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .team-middle-items {
+        .team-skill-area {
+            margin-top: 60px;
+
+            .skill-content {
+                margin-right: 60px;
+
+                @include breakpoint (max-xl){
+                    margin-right: 0;
+                }
+
+                h3 {
+                    font-size: 32px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                .progress-wrap {
+                    .pro-items {
+                        width: 100%;
+            
+                        &:not(:last-child){
+                            margin-bottom: 30px;
+                        }
+                        .pro-head {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+            
+                            .title {
+                                color: $header-color;
+                            }
+                            
+                            .point {
+                                font-size: 16px;
+                                color: $header-color;
+                            }
+                        }
+                        .progress {
+                            background-color: rgba(249, 77, 0, 0.5);
+                            justify-content: flex-start;
+                            align-items: center;
+                            position: relative;
+                            display: flex;
+                            height: 6px;
+                            width: 100%;
+                        }
+                        
+                        .progress-value {
+                            animation: load 3s normal forwards;
+                            border-radius: 0;
+                            background: $theme-color;
+                            height: 6px;
+                            width: 0;
+                        }
+                        .style-two{
+                            animation: load2 3s normal forwards;
+                        }
+                        .style-three{
+                            animation: load3 3s normal forwards;
+                        }
+                        @keyframes load {
+                            0% { width: 0; }
+                            100% { width: 69%; }
+                        }
+                        @keyframes load2 {
+                            0% { width: 0; }
+                            100% { width: 80%; }
+                        }
+                        @keyframes load3 {
+                            0% { width: 0; }
+                            100% { width: 98%; }
+                        }
+                    }
+                }
+            }
+
+            .career-content {
+                h4 {
+                    font-size: 32px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                ul {
+                    li {
+                        display: flex;
+                        gap: 20px;
+
+                        &:not(:last-child){
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .team-bottom-items {
+        margin-top: 120px;
+        border-radius: 10px;
+        background: $white;
+        padding: 80px 60px;
+
+        @include breakpoint (max-xl){
+            margin-top: 100px;
+            padding: 50px;
+        }
+
+        @include breakpoint (max-lg){
+            margin-top: 80px;
+        }
+
+        @include breakpoint (max-md){
+           padding: 40px 30px;
+        }
+
+        @include breakpoint (max-sm){
+           padding: 30px;
+        }
+        
+
+        .team-left-items {
+            p {
+                margin-top: 20px;
+            }
+
+            .phone-icon {
+                display: flex;
+                gap: 10px;
+                border-radius: 70px;
+                border: 1px solid #3D4857;
+                display: inline-flex;
+                padding: 20px;
+                font-weight: 600;
+                line-height: 1;
+                margin-top: 30px;
+
+                .icon {
+                    color: $header-color;
+                }
+            }
+        }
+
+        .team-right-items {
+            margin-left: 80px;
+
+            @include breakpoint (max-xl){
+                margin-left: 0;
+            }
+
+            .contact-form-box {
+                margin-top: 30px;
+
+                .form-clt {
+                    input,textarea {
+                        outline: none;
+                        width: 100%;
+                        color: $header-color;
+                        padding-bottom: 20px;
+                        border: none;
+                        background: transparent;
+                        border-bottom: 1px solid rgba(15, 23, 42, .2);
+                        text-transform: capitalize;
+
+                        &::placeholder {
+                            color: $header-color;
+                        }
+                    }
+
+                    textarea {
+                        padding-bottom: 120px;
+                    }
+
+                    .form {
+                    .single-select {
+                        border: none;
+                        border-bottom: 1px solid rgba(15, 23, 42, .2);
+                        background-color: transparent;
+                        width: 100%;
+                        height: initial;
+                        line-height: initial;
+                        text-transform: capitalize;
+                        color: $header-color;
+                        padding-bottom: 20px;
+                        border-radius: 0;
+
+                        .current {
+                            color: $header-color;
+                        }
+
+                        &::after {
+                            border-bottom: 2px solid $header-color;
+                            border-right: 2px solid $header-color;
+                            width: 8px;
+                            height: 8px;
+                            right: 12px;
+                        }
+
+                        .list {
+                            width: 100%;
+                        }
+                    }
+                }
+                }
+            }
+        }
+    }
+}

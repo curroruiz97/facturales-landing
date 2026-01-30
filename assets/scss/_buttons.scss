@@ -1,0 +1,133 @@
+.theme-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none !important;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: $white;
+  padding: 16px 40px 14px;
+  transition: 0.5s ease-in-out;
+  text-transform: capitalize;
+  overflow: hidden;
+  gap: 5px;
+  text-align: center;
+  background-color: $theme-color;
+  z-index: 1;
+  border-radius: 100px;
+
+  i {
+     margin-left: 5px;
+  }
+
+  &::before {
+    content: "";
+    background-color: $header-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    clip-path: circle(0% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    clip-path: circle(100% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 4s;
+    transition-delay: 200ms;
+  }
+
+  &::after {
+    content: "";
+    background-color: rgba(11, 13, 23, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    clip-path: circle(0% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    clip-path: circle(100% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 4s;
+  }
+
+  span {
+    font-size: 16px;
+    position: relative;
+    top: -1px;
+    font-weight: 700;
+    transition: all 500ms ease;
+  }
+
+  &:hover {
+    color: $white;
+
+    img {
+        filter: brightness(0);
+    }
+  }
+}
+
+.link-btn {
+   color: $theme-color;
+   font-size: 16px;
+   font-weight: 600;
+   display: inline-block;
+   font-family: $heading-font;
+
+   i {
+     margin-left: 5px;
+     color: $theme-color;
+   }
+}
+
+.tw-hover-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-btn-main {
+    width: 166px;
+    height: 166px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,.12);
+    color: #fff;
+}
+
+.theme-btn-text,
+.theme-btn-icon {
+    position: relative;
+    z-index: 3;
+}
+
+.tw-btn-circle-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $theme-color;
+    transform: translate(-50%, -50%);
+    transition: width .6s ease, height .6s ease;
+    pointer-events: none; 
+    z-index: 1;
+    bottom: -15px;
+}
