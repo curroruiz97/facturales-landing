@@ -167,7 +167,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact Us</a>
+                                                <a href="contact.html">Contacto</a>
                                             </li>
                                         </ul>
                                     </nav>
