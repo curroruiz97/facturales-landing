@@ -18,13 +18,13 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li class="has-dropdown active menu-thumb">
+                                            <li class="has-dropdown menu-thumb">
                                                 <a href="index.html">
                                                     Home 
                                                 </a>
                                                 
                                             </li>
-                                            <li class="has-dropdown active d-xl-none">
+                                            <li class="has-dropdown d-xl-none">
                                                 <a href="index.html" class="border-none">
                                                 Home
                                                 </a>
