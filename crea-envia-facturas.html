@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Avenue Media">
+        <meta name="description" content="Crea Y Envía Facturas - Facturación profesional en segundos">
+        <title>Facturales - Sistema de contabilidad</title>
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            .hero-section-modern{padding:100px 0;background:#FFF7F1}
+            .badge-label{display:inline-block;padding:8px 16px;background:#FFF0E5;border-radius:20px;font-size:14px;font-weight:600;color:#ec8228;margin-bottom:20px}
+            .badge-label i{margin-right:5px}
+            .hero-section-modern h1{font-size:48px;margin-bottom:20px;color:var(--header)}
+            .hero-section-modern .highlight{color:#ec8228}
+            .hero-section-modern p{font-size:18px;margin-bottom:30px}
+            .check-features{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:20px;margin-bottom:30px}
+            .check-feature{display:flex;align-items:center;font-size:15px;color:var(--header)}
+            .check-feature i{color:#ec8228;margin-right:8px;font-size:16px}
+            .cta-button{display:inline-block;padding:15px 35px;background:#ec8228;color:white;border-radius:8px;font-weight:600;text-decoration:none;transition:all .3s ease}
+            .cta-button:hover{background:#D47524;color:white;transform:translateY(-2px)}
+            .mockup-container{background:white;border-radius:16px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+            .mockup-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid #F5F5F5}
+            .mockup-header h3{font-size:18px;margin:0;color:var(--header)}
+            .mockup-label{font-size:13px;color:#ec8228;font-weight:600;background:#FFF0E5;padding:4px 12px;border-radius:12px}
+            .invoice-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #F5F5F5}
+            .invoice-line.total{border-top:2px solid#E0E0E0;margin-top:10px;font-weight:700;font-size:20px;color:#ec8228}
+            .features-section{padding:80px 0}
+            .features-section h2{text-align:center;margin-bottom:20px;font-size:42px}
+            .features-section .highlight{color:#ec8228}
+            .features-section .subtitle{text-align:center;color:var(--text);margin-bottom:50px}
+            .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+            .feature-card{text-align:center;padding:20px}
+            .feature-card-icon{width:70px;height:70px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;border-radius:12px;font-size:28px}
+            .feature-card-icon.blue{background:#FFF0E5;color:#ec8228}
+            .feature-card-icon.green{background:#FFF0E5;color:#ec8228}
+            .feature-card-icon.purple{background:#FFF0E5;color:#ec8228}
+            .feature-card h3{font-size:20px;margin-bottom:15px;color:var(--header)}
+            .feature-card p{font-size:15px;color:var(--text);margin:0;line-height:1.6}
+            .benefits-section{padding:80px 0;background:#FAFAFA}
+            .benefits-section h2{text-align:center;margin-bottom:50px;font-size:42px}
+            .benefits-section .highlight{color:#ec8228}
+            .benefits-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-bottom:40px}
+            .benefit-card{background:white;border-radius:16px;padding:30px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+            .benefit-card-icon{width:60px;height:60px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;border-radius:12px;font-size:28px}
+            .benefit-card-icon.green{background:#FFF0E5;color:#ec8228}
+            .benefit-card-icon.blue{background:#FFF0E5;color:#ec8228}
+            .benefit-card h3{font-size:20px;margin-bottom:15px;color:var(--header)}
+            .benefit-card p{font-size:15px;color:var(--text);margin-bottom:20px}
+            .benefit-list{list-style:none;padding:0;margin:0}
+            .benefit-list li{display:flex;align-items:start;margin-bottom:10px;font-size:14px}
+            .benefit-list li i{color:#ec8228;margin-right:10px;margin-top:2px}
+            @media (max-width:768px){.hero-section-modern h1{font-size:32px}.features-section h2,.benefits-section h2{font-size:32px}}
+        </style>
+    </head>
+    <body>
+
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                    <span data-text-preloader="E" class="letters-loading">E</span>
+                    <span data-text-preloader="O" class="letters-loading">O</span>
+                    <span data-text-preloader="T" class="letters-loading">T</span>
+                    <span data-text-preloader="I" class="letters-loading">I</span>
+                    <span data-text-preloader="X" class="letters-loading">X</span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <div class="header-top-section">
+            <div class="container-fluid">
+                <div class="header-top-wrapper">
+                    <div class="header-left">
+                         <ul class="list">
+                            <li><i class="fa-solid fa-location-dot"></i> Riverside Park EU-1001</li>
+                            <li>।</li>
+                            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:hello@neotix.com">hello@neotix.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-right">
+                        <span><i class="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM</span>
+                        <div class="social-icon">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/logo/black-logo.svg" alt="logo-img"></a></div>
+                            <div class="offcanvas__close"><button><i class="fas fa-times"></i></button></div>
+                        </div>
+                        <p class="text d-none d-xl-block">Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact d-xl-block">
+                            <h4 class="d-xl-block">Contact Info</h4>
+                            <ul class="d-xl-block">
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="#">Main Street, Melbourne, Australia</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div><div class="offcanvas__contact-text"><a href="mailto:info@example.com"><span class="mailto:info@example.com">info@example.com</span></a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="#">Mod-friday, 09am -05pm</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div><div class="offcanvas__contact-text"><a href="tel:+11002345909">+11002345909</a></div></li>
+                            </ul>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+        <script src="assets/js/header-include.js"></script>
+
+        <div class="search_popup">
+            <div class="container"><div class="row"><div class="col-xxl-12"><div class="search_wrapper">
+                <div class="search_top d-flex align-items-center">
+                    <div class="search_logo"><a href="index.html"><img src="assets/img/logo/white-logo.svg" alt="img"></a></div>
+                    <div class="search_close"><button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button></div>
+                </div>
+                <div class="search_form"><form action="#"><div class="search_input">
+                    <input class="search-input-field" type="text" placeholder="Type here to search...">
+                    <span class="search-focus-border"></span>
+                    <button type="submit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button>
+                </div></form></div>
+            </div></div></div></div>
+        </div>
+        <div class="search-popup-overlay"></div>
+
+        
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                    <div class="container">
+                        <div class="page-heading">
+                            <div class="breadcrumb-sub-title">
+                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Crea Y Envía Facturas</h1>
+                            </div>
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                                <li>/</li>
+                                <li>Crea Y Envía Facturas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <section class="hero-section-modern">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="badge-label wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-file-invoice"></i> Facturación Digital</div>
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Crea y envía <span class="highlight">facturas profesionales</span> en segundos</h1>
+                                <p class="wow fadeInUp" data-wow-delay=".4s">Sistema de facturación inteligente que ahorra tiempo y elimina errores. Compatible con Verifactu y 100% legal.</p>
+                                <div class="check-features wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="check-feature"><i class="fa-solid fa-check"></i> Sin tarjeta de crédito</div>
+                                    <div class="check-feature"><i class="fa-solid fa-check"></i> Sin límites</div>
+                                    <div class="check-feature"><i class="fa-solid fa-check"></i> Soporte incluido</div>
+                                </div>
+                                <div class="wow fadeInUp" data-wow-delay=".6s"><a href="contact.html" class="cta-button">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mockup-container wow fadeInUp" data-wow-delay=".7s">
+                                    <div class="mockup-header">
+                                        <h3>Nueva Factura</h3>
+                                        <span class="mockup-label"><i class="fa-solid fa-check-circle"></i> Borrador</span>
+                                    </div>
+                                    <div style="margin-bottom:20px">
+                                        <div style="font-size:13px;color:#757575;margin-bottom:5px">Cliente</div>
+                                        <div style="font-weight:600;color:var(--header)">Empresa Ejemplo S.L.</div>
+                                        <div style="font-size:13px;color:var(--text)">B-12345678</div>
+                                    </div>
+                                    <div style="margin-bottom:20px">
+                                        <div style="font-size:13px;color:#757575;margin-bottom:5px">Concepto</div>
+                                        <div style="font-weight:600;color:var(--header)">Servicios de consultoría</div>
+                                    </div>
+                                    <div class="invoice-line"><span>Base</span><span>1,500.00 €</span></div>
+                                    <div class="invoice-line"><span>IVA 21%</span><span style="color:#4CAF50">+315.00 €</span></div>
+                                    <div class="invoice-line total"><span>Total:</span><span>1,815.00 €</span></div>
+                                    <div style="display:flex;gap:10px;margin-top:20px">
+                                        <button style="flex:1;padding:12px;background:#fff;border:2px solid #E0E0E0;border-radius:8px;font-weight:600;cursor:pointer"><i class="fa-solid fa-save"></i> Guardar y enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="features-section">
+                    <div class="container">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Todo lo que necesitas para <span class="highlight">facturar</span></h2>
+                        <p class="subtitle wow fadeInUp" data-wow-delay=".3s">Funcionalidades diseñadas para hacer tu facturación más eficiente</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
+                                <div class="feature-card-icon blue"><i class="fa-solid fa-bolt"></i></div>
+                                <h3>Creación rápida</h3>
+                                <p>Crea facturas profesionales en menos de 60 segundos</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
+                                <div class="feature-card-icon green"><i class="fa-solid fa-paper-plane"></i></div>
+                                <h3>Envío automático</h3>
+                                <p>Envía facturas por email directamente desde la plataforma</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
+                                <div class="feature-card-icon purple"><i class="fa-solid fa-list-ol"></i></div>
+                                <h3>Numeración automática</h3>
+                                <p>Sistema de numeración secuencial y sin errores</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
+                                <div class="feature-card-icon blue"><i class="fa-solid fa-shield-check"></i></div>
+                                <h3>Cumplimiento legal</h3>
+                                <p>100% compatible con Verifactu y la Ley Antifraude</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
+                                <div class="feature-card-icon green"><i class="fa-solid fa-file-pdf"></i></div>
+                                <h3>Exportación PDF</h3>
+                                <p>Genera PDFs profesionales con tu marca</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".9s">
+                                <div class="feature-card-icon purple"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                <h3>Seguimiento</h3>
+                                <p>Controla el estado de tus facturas en tiempo real</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="benefits-section">
+                    <div class="container">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Ventajas de facturar con <span class="highlight">Factural</span></h2>
+                        
+                        <div class="benefits-cards">
+                            <div class="benefit-card wow fadeInUp" data-wow-delay=".3s">
+                                <div class="benefit-card-icon green"><i class="fa-solid fa-users"></i></div>
+                                <h3>Más de 10.000 empresas confían en nosotros</h3>
+                                <p>Autónomos, pymes y grandes empresas usan Factural para su facturación diaria</p>
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Facturación ilimitadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Plantillas versatiles</li>
+                                    <li><i class="fa-solid fa-check"></i> Recordatorios de pago automáticos</li>
+                                    <li><i class="fa-solid fa-check"></i> Factura recurrentes</li>
+                                </ul>
+                            </div>
+                            <div class="benefit-card wow fadeInUp" data-wow-delay=".4s">
+                                <div class="benefit-card-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+                                <h3>100% seguro y legal</h3>
+                                <p>Cumple con todas las normativas fiscales incluido Verifactu y la Ley Antifraude</p>
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Plantillas personalizables</li>
+                                    <li><i class="fa-solid fa-check"></i> Máxima versatilidad facturación</li>
+                                    <li><i class="fa-solid fa-check"></i> Factura series de facturación</li>
+                                    <li><i class="fa-solid fa-check"></i> Firma digital QR integrada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section Start -->
+                <section class="cta-section-custom" style="background: linear-gradient(135deg, #ec8228 0%, #D47524 100%); padding: 80px 0; text-align: center;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s" style="color: white; font-size: 42px; font-weight: 700; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                                    ¿Listo para empezar a facturar?
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".4s" style="color: white; font-size: 18px; margin-bottom: 30px; font-family: 'Inter', sans-serif;">
+                                    Únete a miles de empresas que ya confían en Factural para su facturación
+                                </p>
+                                <div style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                                    <a href="contact.html" class="theme-btn wow fadeInUp" data-wow-delay=".6s" style="background: white; color: #3498DB; padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                                        Crear cuenta gratis
+                                    </a>
+                                    <a href="about.html" class="theme-btn wow fadeInUp" data-wow-delay=".7s" style="background: transparent; border: 2px solid white; color: white; padding: 16px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                                        Más información
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- CTA Section End -->
+
+                <footer class="footer-section fix">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                        <div class="container">
+                        <div class="footer-widget-wrapper">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><a href="index.html" class="footer-logo"><img src="assets/img/logo/white-logo.svg" alt="img"></a></div>
+                                        <div class="footer-content">
+                                            <p>Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.</p>
+                                            <a href="contact.html" class="theme-btn">Empezar ahora <i class="fa-solid fa-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Empresa</h3></div>
+                                        <ul class="list-area">
+                                            <li><a href="about.html">About us</a></li>
+                                            <li><a href="contact.html">Work process</a></li>
+                                            <li><a href="about.html">About us</a></li>
+                                            <li><a href="team.html">Our team</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact.html">Careers</a></li>
+                                            <li><a href="news.html">Blogs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Funcionalidades</h3></div>
+                                        <ul class="list-area">
+                                            <li><a href="tu-negocio-bajo-control.html">Tu Negocio Bajo Control</a></li>
+                                            <li><a href="crea-envia-facturas.html">Crea Y Envía Facturas</a></li>
+                                            <li><a href="crea-envia-presupuestos.html">Crea Y Envía Presupuestos</a></li>
+                                            <li><a href="gestiona-tu-stock.html">Gestiona Tu Stock</a></li>
+                                            <li><a href="escanea-gastos.html">Escanea Gastos</a></li>
+                                            <li><a href="gestiona-clientes.html">Gestiona Clientes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Suscríbete al Boletín</h3></div>
+                                        <div class="contact-item">
+                                            <form action="#"><input type="text" placeholder="Email address"></form>
+                                            <button type="submit" class="theme-btn w-100">Subscribe now <i class="fa-solid fa-arrow-up-right"></i></button>
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom-wrapper">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright <span>Facturales.</span> Todos los derechos reservados.</p>
+                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
+                                <li><a href="contact.html">Política de privacidad</a></li>
+                                <li>।</li>
+                                <li><a href="contact.html">Términos y condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/gsap.min.js"></script>
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <script src="assets/js/ScrollSmoother.min.js"></script>
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <script src="assets/js/SplitText.min.js"></script>
+        <script src="assets/js/TextPlugin.js"></script>
+        <script src="assets/js/chroma.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/parallaxie.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

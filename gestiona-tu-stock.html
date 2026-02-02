@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Avenue Media">
+        <meta name="description" content="Gestiona Tu Stock - Control de inventario inteligente">
+        <!-- ======== Page title ============ -->
+        <title>Facturales - Sistema de contabilidad</title>
+        <!--<< Favcion >>-->
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            .hero-section-modern {
+                padding: 100px 0;
+                background: #FFFFFF;
+            }
+            .badge-label {
+                display: inline-block;
+                padding: 8px 16px;
+                background: #FFF3E0;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #F57C00;
+                margin-bottom: 20px;
+            }
+            .badge-label i {
+                margin-right: 5px;
+            }
+            .hero-section-modern h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                color: var(--header);
+            }
+            .hero-section-modern .highlight {
+                color: #FF9800;
+            }
+            .hero-section-modern p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            .cta-buttons {
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .cta-button {
+                display: inline-block;
+                padding: 15px 35px;
+                border-radius: 8px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .cta-button.primary {
+                background: #ec8228;
+                color: var(--header);
+            }
+            .cta-button.primary:hover {
+                background: #FFB300;
+                color: var(--header);
+                transform: translateY(-2px);
+            }
+            .cta-button.secondary {
+                background: white;
+                color: var(--header);
+                border: 2px solid #E0E0E0;
+            }
+            .cta-button.secondary:hover {
+                border-color: #ec8228;
+                color: var(--header);
+            }
+            .mockup-container {
+                background: white;
+                border-radius: 16px;
+                padding: 30px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            }
+            .mockup-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .mockup-header h3 {
+                font-size: 18px;
+                margin: 0;
+                color: var(--header);
+            }
+            .mockup-link {
+                font-size: 14px;
+                color: #2196F3;
+                text-decoration: none;
+            }
+            .stock-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                background: #FAFAFA;
+            }
+            .stock-item.danger {
+                background: #FFEBEE;
+                border-left: 4px solid #F44336;
+            }
+            .stock-item.warning {
+                background: #FFF8E1;
+                border-left: 4px solid #ec8228;
+            }
+            .stock-item.info {
+                background: #FFF0E5;
+                border-left: 4px solid #2196F3;
+            }
+            .stock-item-name {
+                font-weight: 600;
+                color: var(--header);
+            }
+            .stock-item-status {
+                font-size: 13px;
+                color: var(--text);
+            }
+            .stock-item-qty {
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .stock-item.danger .stock-item-qty {
+                color: #F44336;
+            }
+            .stock-item.warning .stock-item-qty {
+                color: #FF9800;
+            }
+            .stock-item.info .stock-item-qty {
+                color: #2196F3;
+            }
+            .features-section {
+                padding: 80px 0;
+            }
+            .features-section h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 42px;
+            }
+            .features-section .highlight {
+                color: #FF9800;
+            }
+            .features-section .subtitle {
+                text-align: center;
+                color: var(--text);
+                margin-bottom: 50px;
+                font-size: 16px;
+            }
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+            .feature-card {
+                text-align: center;
+                padding: 20px;
+            }
+            .feature-card-icon {
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 12px;
+                font-size: 28px;
+            }
+            .feature-card-icon.yellow {
+                background: #FFF8E1;
+                color: #FFA000;
+            }
+            .feature-card-icon.red {
+                background: #FFEBEE;
+                color: #E53935;
+            }
+            .feature-card-icon.blue {
+                background: #FFF0E5;
+                color: #1E88E5;
+            }
+            .feature-card h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: var(--header);
+            }
+            .feature-card p {
+                font-size: 15px;
+                color: var(--text);
+                margin: 0;
+                line-height: 1.6;
+            }
+            .alerts-section {
+                padding: 80px 0;
+                background: #FAFAFA;
+            }
+            .alerts-section h2 {
+                text-align: center;
+                margin-bottom: 50px;
+                font-size: 42px;
+            }
+            .alerts-section .highlight {
+                color: #FF9800;
+            }
+            .alerts-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+            .alert-card {
+                background: white;
+                border-radius: 16px;
+                padding: 30px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            }
+            .alert-card-icon {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 16px;
+                font-size: 36px;
+            }
+            .alert-card.yellow {
+                border-top: 4px solid #ec8228;
+            }
+            .alert-card.yellow .alert-card-icon {
+                background: #FFF8E1;
+                color: #FFA000;
+            }
+            .alert-card.pink {
+                border-top: 4px solid #E91E63;
+            }
+            .alert-card.pink .alert-card-icon {
+                background: #FCE4EC;
+                color: #C2185B;
+            }
+            .alert-card.blue {
+                border-top: 4px solid #2196F3;
+            }
+            .alert-card.blue .alert-card-icon {
+                background: #FFF0E5;
+                color: #1565C0;
+            }
+            .alert-card h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: var(--header);
+            }
+            .alert-card p {
+                font-size: 15px;
+                color: var(--text);
+                margin: 0;
+                line-height: 1.6;
+            }
+            @media (max-width: 768px) {
+                .hero-section-modern h1 {
+                    font-size: 32px;
+                }
+                .features-section h2, .alerts-section h2 {
+                    font-size: 32px;
+                }
+                .cta-buttons {
+                    flex-direction: column;
+                }
+                .cta-button {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                    <span data-text-preloader="E" class="letters-loading">E</span>
+                    <span data-text-preloader="O" class="letters-loading">O</span>
+                    <span data-text-preloader="T" class="letters-loading">T</span>
+                    <span data-text-preloader="I" class="letters-loading">I</span>
+                    <span data-text-preloader="X" class="letters-loading">X</span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back To Top Start -->
+        <button id="back-top" class="back-to-top">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!-- GT MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <!-- Header-Top Section Start -->
+        <div class="header-top-section">
+            <div class="container-fluid">
+                <div class="header-top-wrapper">
+                    <div class="header-left">
+                         <ul class="list">
+                            <li><i class="fa-solid fa-location-dot"></i> Riverside Park EU-1001</li>
+                            <li>।</li>
+                            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:hello@neotix.com">hello@neotix.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-right">
+                        <span><i class="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM</span>
+                        <div class="social-icon">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Offcanvas Area Start -->
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html"><img src="assets/img/logo/black-logo.svg" alt="logo-img"></a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <p class="text d-none d-xl-block">
+                            Nullam dignissim, ante scelerisque the  is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.
+                        </p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact d-xl-block">
+                            <h4 class="d-xl-block">Contact Info</h4>
+                            <ul class="d-xl-block">
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                    <div class="offcanvas__contact-text"><a target="_blank" href="#">Main Street, Melbourne, Australia</a></div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                    <div class="offcanvas__contact-text"><a href="mailto:info@example.com"><span class="mailto:info@example.com">info@example.com</span></a></div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
+                                    <div class="offcanvas__contact-text"><a target="_blank" href="#">Mod-friday, 09am -05pm</a></div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
+                                    <div class="offcanvas__contact-text"><a href="tel:+11002345909">+11002345909</a></div>
+                                </li>
+                            </ul>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+        <script src="assets/js/header-include.js"></script>
+
+        <!-- start: Search Popup -->
+        <div class="search_popup">
+            <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                <div class="search_wrapper">
+                    <div class="search_top d-flex align-items-center">
+                    <div class="search_logo">
+                        <a href="index.html"><img src="assets/img/logo/white-logo.svg" alt="img"></a>
+                    </div>
+                    <div class="search_close">
+                        <button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button>
+                    </div>
+                    </div>
+                    <div class="search_form">
+                    <form action="#">
+                        <div class="search_input">
+                        <input class="search-input-field" type="text" placeholder="Type here to search...">
+                        <span class="search-focus-border"></span>
+                        <button type="submit">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="search-popup-overlay"></div>
+
+        
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <!-- Breadcrumb Section Start -->
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                    <div class="container">
+                        <div class="page-heading">
+                            <div class="breadcrumb-sub-title">
+                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Gestiona Tu Stock</h1>
+                            </div>
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                                <li>/</li>
+                                <li>Gestiona Tu Stock</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Section Start -->
+                <section class="hero-section-modern">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="badge-label wow fadeInUp" data-wow-delay=".2s">
+                                    <i class="fa-solid fa-boxes-stacked"></i> Control de Inventario
+                                </div>
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">
+                                    Gestiona y configura <span class="highlight">alarmas de stock</span>
+                                </h1>
+                                <p class="wow fadeInUp" data-wow-delay=".4s">
+                                    Controla tu inventario en tiempo real, recibe alertas automáticas cuando el stock sea bajo y optimiza tus compras para nunca quedarte sin productos.
+                                </p>
+                                <div class="cta-buttons wow fadeInUp" data-wow-delay=".5s">
+                                    <a href="contact.html" class="cta-button primary">
+                                        Empieza gratis <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="about.html" class="cta-button secondary">
+                                        Ver planes
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mockup-container wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="mockup-header">
+                                        <h3>Panel de Stock</h3>
+                                        <a href="#" class="mockup-link"><i class="fa-solid fa-circle-check"></i> Ver todas las alertas</a>
+                                    </div>
+                                    <div class="stock-item danger">
+                                        <div>
+                                            <div class="stock-item-name">Producto A</div>
+                                            <div class="stock-item-status">Disponible</div>
+                                        </div>
+                                        <div>
+                                            <div class="stock-item-qty">5 <span style="font-size:14px;font-weight:400;">units</span></div>
+                                            <div class="stock-item-status" style="color:#F44336;font-weight:600;"><i class="fa-solid fa-circle-exclamation"></i> Crítico</div>
+                                        </div>
+                                    </div>
+                                    <div class="stock-item warning">
+                                        <div>
+                                            <div class="stock-item-name">Producto B</div>
+                                            <div class="stock-item-status">Disponible</div>
+                                        </div>
+                                        <div>
+                                            <div class="stock-item-qty">15 <span style="font-size:14px;font-weight:400;">units</span></div>
+                                            <div class="stock-item-status" style="color:#FF9800;font-weight:600;"><i class="fa-solid fa-triangle-exclamation"></i> Bajo - ¡pedir pronto!</div>
+                                        </div>
+                                    </div>
+                                    <div class="stock-item info">
+                                        <div>
+                                            <div class="stock-item-name">Producto C</div>
+                                            <div class="stock-item-status">Disponible</div>
+                                        </div>
+                                        <div>
+                                            <div class="stock-item-qty">45 <span style="font-size:14px;font-weight:400;">units</span></div>
+                                            <div class="stock-item-status" style="color:#2196F3;font-weight:600;"><i class="fa-solid fa-info-circle"></i> Pedido recibido</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section Start -->
+                <section class="features-section">
+                    <div class="container">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                            Funcionalidades de <span class="highlight">control de stock</span>
+                        </h2>
+                        <p class="subtitle wow fadeInUp" data-wow-delay=".3s">
+                            Todo lo que necesitas para gestionar tu inventario de forma profesional
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
+                                <div class="feature-card-icon yellow">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <h3>Inventario en tiempo real</h3>
+                                <p>Visualiza el stock actualizado de todos tus productos</p>
+                            </div>
+
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
+                                <div class="feature-card-icon red">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <h3>Alarmas personalizadas</h3>
+                                <p>Recibe avisos cuando el stock llegue al mínimo</p>
+                            </div>
+
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
+                                <div class="feature-card-icon blue">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+                                <h3>Stock mínimo y máximo</h3>
+                                <p>Define umbrales para cada producto</p>
+                            </div>
+
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
+                                <div class="feature-card-icon yellow">
+                                    <i class="fa-solid fa-rotate"></i>
+                                </div>
+                                <h3>Actualización automática</h3>
+                                <p>Se actualiza con cada factura y entrada</p>
+                            </div>
+
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
+                                <div class="feature-card-icon red">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h3>Informes de movimientos</h3>
+                                <p>Registra compras, ventas y salidas detalladas</p>
+                            </div>
+
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".9s">
+                                <div class="feature-card-icon blue">
+                                    <i class="fa-solid fa-warehouse"></i>
+                                </div>
+                                <h3>Múltiples almacenes</h3>
+                                <p>Gestiona stock en diferentes ubicaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Alerts Section Start -->
+                <section class="alerts-section">
+                    <div class="container">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                            Tipos de <span class="highlight">alertas automáticas</span>
+                        </h2>
+                        
+                        <div class="alerts-grid">
+                            <div class="alert-card yellow wow fadeInUp" data-wow-delay=".3s">
+                                <div class="alert-card-icon">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                                <h3>Stock Bajo</h3>
+                                <p>Aviso urgente cuando el stock sea bajo debajo del mínimo</p>
+                            </div>
+
+                            <div class="alert-card pink wow fadeInUp" data-wow-delay=".4s">
+                                <div class="alert-card-icon">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <h3>Stock Crítico</h3>
+                                <p>Alerta urgente cuando el stock es casi negativo</p>
+                            </div>
+
+                            <div class="alert-card blue wow fadeInUp" data-wow-delay=".5s">
+                                <div class="alert-card-icon">
+                                    <i class="fa-solid fa-box"></i>
+                                </div>
+                                <h3>Stock Excesivo</h3>
+                                <p>Notificación cuando hay demasiado inventario</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section Start -->
+                <section class="cta-section-custom" style="background: linear-gradient(135deg, #ec8228 0%, #D47524 100%); padding: 80px 0; text-align: center;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s" style="color: white; font-size: 42px; font-weight: 700; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                                    Nunca te quedes sin stock
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".4s" style="color: white; font-size: 18px; margin-bottom: 30px; font-family: 'Inter', sans-serif;">
+                                    Empieza a controlar tu inventario de forma inteligente
+                                </p>
+                                <a href="contact.html" class="theme-btn wow fadeInUp" data-wow-delay=".6s" style="background: white; color: #E67E22; padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                                    Crear cuenta gratis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- CTA Section End -->
+
+                <!-- Footer Section Start -->
+                <footer class="footer-section fix">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                        <div class="container">
+                        <div class="footer-widget-wrapper">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <a href="index.html" class="footer-logo">
+                                                <img src="assets/img/logo/white-logo.svg" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="footer-content">
+                                            <p>
+                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
+                                            </p>
+                                            <a href="contact.html" class="theme-btn">
+                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Empresa</h3>
+                                        </div>
+                                        <ul class="list-area">
+                                            <li><a href="about.html">About us</a></li>
+                                            <li><a href="contact.html">Work process</a></li>
+                                            <li><a href="about.html">About us</a></li>
+                                            <li><a href="team.html">Our team</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact.html">Careers</a></li>
+                                            <li><a href="news.html">Blogs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Recourse</h3>
+                                        </div>
+                                        <ul class="list-area">
+                                            <li><a href="tu-negocio-bajo-control.html">Tu Negocio Bajo Control</a></li>
+                                            <li><a href="crea-envia-facturas.html">Crea Y Envía Facturas</a></li>
+                                            <li><a href="crea-envia-presupuestos.html">Crea Y Envía Presupuestos</a></li>
+                                            <li><a href="gestiona-tu-stock.html">Gestiona Tu Stock</a></li>
+                                            <li><a href="escanea-gastos.html">Escanea Gastos</a></li>
+                                            <li><a href="gestiona-clientes.html">Gestiona Clientes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Suscríbete al Boletín</h3>
+                                        </div>
+                                        <div class="contact-item">
+                                            <form action="#">
+                                                <input type="text" placeholder="Email address">
+                                            </form>
+                                            <button type="submit" class="theme-btn w-100">
+                                                Subscribe now <i class="fa-solid fa-arrow-up-right"></i>
+                                            </button>
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom-wrapper">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">
+                               Copyright <span>Facturales.</span> Todos los derechos reservados.
+                            </p>
+                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
+                                <li><a href="contact.html">Política de privacidad</a></li>
+                                <li>।</li>
+                                <li><a href="contact.html">Términos y condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Gsap Min Js >>-->
+        <script src="assets/js/gsap.min.js"></script>
+        <!--<< ScrollTrigger Min Js >>-->
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <!--<< ScrollSmoother Min Js >>-->
+        <script src="assets/js/ScrollSmoother.min.js"></script>
+        <!--<< ScrollToPlugin Min Js >>-->
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <!--<< SplitText Min Js >>-->
+        <script src="assets/js/SplitText.min.js"></script>
+        <!--<< TextPlugin Min Js >>-->
+        <script src="assets/js/TextPlugin.js"></script>
+         <!--<< Chroma Min Js >>-->
+        <script src="assets/js/chroma.min.js"></script>
+        <!--<< nice-selec Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Parallaxie Js >>-->
+        <script src="assets/js/parallaxie.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

@@ -9,7 +9,7 @@
         <meta name="author" content="Gramentheme">
         <meta name="description" content="Brevon - Multipurpose Business HTML Template">
         <!-- ======== Page title ============ -->
-        <title>Neotix - IT Service & Solution HTML Template</title>
+        <title>Facturales - Sistema de contabilidad</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <!--<< Bootstrap min.css >>-->
@@ -235,175 +235,459 @@
             <div id="smooth-content">
 
                 <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg'); padding: 120px 0 80px;">
                     <div class="container">
                         <div class="page-heading">
                             <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Pricing</h1>
+                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Precios</h1>
                             </div>
                             <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                                 <li>
                                     <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Home
+                                        <i class="fa-solid fa-house"></i> Inicio
                                     </a>
                                 </li>
                                 <li>
                                     /
                                 </li>
                                 <li>
-                                    Pricing
+                                    Precios
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Pricing Section-2 Start -->
-                <section class="pricing-section-2 section-padding fix">
+                <!-- Pricing Section Start -->
+                <section class="pricing-section-2 fix" style="padding: 60px 0 80px;">
                     <div class="container">
-                        <div class="row g-4">
-                            <div class="col-xl-4 col-lg-6 col-md-6 text-anims">
-                                <div class="pricing-box-items style-inner mt-0">
-                                     <div class="nexella-hover-bx hover-bx"></div>
-                                    <div class="nexella-hover-bx hover-bx2"></div>
-                                    <div class="nexella-hover-bx hover-bx3"></div>
-                                    <div class="nexella-hover-bx hover-bx4"></div>
-                                    <div class="pricing-header">
-                                        <span>Starter</span>
-                                        <h3>
-                                            $29
-                                            <sub>/months</sub>
-                                        </h3>
-                                        <p>
-                                            For businesses ready to level up their digital presence with a professional.
-                                        </p>
+                        <!-- Section Title -->
+                        <div class="section-title text-center mb-5">
+                            <span class="sub-title wow fadeInUp" data-wow-delay=".2s">
+                                <i class="fa-solid fa-tags"></i> Precios transparentes
+                            </span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                                Elige el plan perfecto <span style="color: var(--theme);">para tu negocio</span>
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">
+                                Comienza gratis y escala a medida que creces. Sin permanencia,<br>
+                                cancela cuando quieras.
+                            </p>
+                        </div>
+
+                        <!-- Toggle Switch -->
+                        <div class="pricing-toggle text-center mb-5 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="toggle-wrapper" style="display: inline-flex; align-items: center; gap: 15px; background: #f5f5f5; padding: 8px; border-radius: 50px;">
+                                <span id="monthlyLabel" style="font-weight: 600; color: var(--theme); cursor: pointer; padding: 8px 20px;">Mensual</span>
+                                <label class="switch" style="position: relative; display: inline-block; width: 50px; height: 24px;">
+                                    <input type="checkbox" id="pricingToggle" style="opacity: 0; width: 0; height: 0;">
+                                    <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--theme); transition: .4s; border-radius: 24px;"></span>
+                                </label>
+                                <span id="annualLabel" style="font-weight: 400; color: #666; cursor: pointer; padding: 8px 20px; display: flex; align-items: center; gap: 8px;">
+                                    Anual 
+                                    <span style="background: #4CAF50; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Ahorra un 25%</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 justify-content-center align-items-center">
+                            <!-- Plan Básico -->
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="pricing-card" data-plan="basico" style="background: white; border: 2px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column;">
+                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px;">
+                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Básico</h3>
+                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Ideal para los que empiezan.</p>
+                                        <div class="price-display">
+                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
+                                                <span class="price-amount" data-monthly="7.20" data-annual="6">7.20</span><span style="font-size: 24px;">€</span>
+                                            </h2>
+                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
+                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
+                                                Facturado anualmente. <span class="annual-total">72.00€</span> + IVA al año.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <a href="pricing.html" class="theme-btn">
-                                        Get started today <i class="fa-solid fa-arrow-up-right"></i>
-                                    </a>
-                                    <div class="pricing-list">
-                                        <h5>Includes:</h5>
-                                        <ul>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Basic IT support
+                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
+                                        <ul style="list-style: none; padding: 0; margin: 0;">
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">De <strong style="color: var(--theme);">0 a 5 clientes</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Uptime monitoring
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">1 usuario</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Email priority help
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Máximo <strong style="color: var(--theme);">10 productos</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Small fixes included
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Exportación de contactos, 80 documentos/mes</span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Team Q&A session
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Múltiples diseños de facturas</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Gestión de stock</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Panel de análisis de clientes y proveedores</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Seguimiento de documentos enviados</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Gastos recurrentes</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Facturas recurrentes</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Remesas bancarias</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con Shopify <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
+                                            </li>
+                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con API de Facturas Billin <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
                                             </li>
                                         </ul>
                                     </div>
+                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s;">
+                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 text-anims mt-0">
-                                <div class="pricing-box-items style-inner">
-                                     <div class="nexella-hover-bx hover-bx"></div>
-                                    <div class="nexella-hover-bx hover-bx2"></div>
-                                    <div class="nexella-hover-bx hover-bx3"></div>
-                                    <div class="nexella-hover-bx hover-bx4"></div>
-                                    <div class="pricing-header">
-                                        <span>Essential</span>
-                                        <h3>
-                                            $799
-                                            <sub>/months</sub>
-                                        </h3>
-                                        <p>
-                                            For businesses ready to level up their digital presence with a professional.
-                                        </p>
+                            
+                            <!-- Plan Pro (Destacado) -->
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="pricing-card featured" data-plan="pro" style="background: white; border: 3px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column; transform: scale(1.05); box-shadow: 0 10px 40px rgba(249, 77, 0, 0.2); position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--theme); color: white; padding: 8px 25px; border-radius: 20px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 15px rgba(249, 77, 0, 0.4);">
+                                        ⭐ MÁS POPULAR
                                     </div>
-                                    <a href="pricing.html" class="theme-btn">
-                                        Get started today <i class="fa-solid fa-arrow-up-right"></i>
-                                    </a>
-                                    <div class="pricing-list">
-                                        <h5>Includes:</h5>
-                                        <ul>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Advanced tech support
+                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px; margin-top: 10px;">
+                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Pro</h3>
+                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Perfecto para ahorrar mucho tiempo.</p>
+                                        <div class="price-display">
+                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
+                                                <span class="price-amount" data-monthly="13.50" data-annual="11.25">13.50</span><span style="font-size: 24px;">€</span>
+                                            </h2>
+                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
+                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
+                                                Facturado anualmente. <span class="annual-total">135.00€</span> + IVA al año.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
+                                        <ul style="list-style: none; padding: 0; margin: 0;">
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Hasta <strong style="color: var(--theme);">50 clientes</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Full infra audit
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">3 usuarios</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                               24/7 monitoring
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Máximo <strong style="color: var(--theme);">50 productos</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Cloud optimization
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Escaneado inteligente</strong> de <strong style="color: var(--theme);">50 documentos/mes</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Disaster plan setup
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Múltiples diseños</strong> de facturas</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email y chat</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gestión de stock</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Panel de análisis</strong> de clientes y proveedores</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Seguimiento</strong> de documentos enviados</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gastos recurrentes</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas recurrentes</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Remesas bancarias</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con Shopify <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
+                                            </li>
+                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con API de Facturas Billin <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
                                             </li>
                                         </ul>
                                     </div>
+                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(249, 77, 0, 0.3);">
+                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 text-anims mt-0">
-                                <div class="pricing-box-items style-inner">
-                                    <div class="nexella-hover-bx hover-bx"></div>
-                                    <div class="nexella-hover-bx hover-bx2"></div>
-                                    <div class="nexella-hover-bx hover-bx3"></div>
-                                    <div class="nexella-hover-bx hover-bx4"></div>
-                                    <div class="pricing-header">
-                                        <span>Basic</span>
-                                        <h3>
-                                            $2,800
-                                            <sub>/months</sub>
-                                        </h3>
-                                        <p>
-                                            For businesses ready to level up their digital presence with a professional.
-                                        </p>
+                            
+                            <!-- Plan Ilimitado -->
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="pricing-card" data-plan="ilimitado" style="background: white; border: 2px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column;">
+                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px;">
+                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Ilimitado</h3>
+                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">El plan para ir a por todas.</p>
+                                        <div class="price-display">
+                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
+                                                <span class="price-amount" data-monthly="21.60" data-annual="18">21.60</span><span style="font-size: 24px;">€</span>
+                                            </h2>
+                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
+                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
+                                                Facturado anualmente. <span class="annual-total">216.00€</span> + IVA al año.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <a href="pricing.html" class="theme-btn">
-                                        Get started today <i class="fa-solid fa-arrow-up-right"></i>
-                                    </a>
-                                    <div class="pricing-list">
-                                        <h5>Includes:</h5>
-                                        <ul>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Basic IT support
+                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
+                                        <ul style="list-style: none; padding: 0; margin: 0;">
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Sin límite de clientes</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Uptime monitoring
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Sin límite de usuarios</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Email priority help
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Máximo límite de</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Small fixes included
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Escaneado inteligente</strong> de <strong style="color: var(--theme);">250 documentos/mes</strong></span>
                                             </li>
-                                            <li>
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                                Team Q&A session
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Múltiples diseños</strong> de facturas</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email, chat y teléfono</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gestión de stock</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Panel de análisis</strong> de clientes y proveedores</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Seguimiento</strong> de documentos enviados</span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gastos recurrentes</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas recurrentes</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Remesas bancarias</strong></span>
+                                            </li>
+                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Integración con Shopify</strong> <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
+                                            </li>
+                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
+                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
+                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Integración con API de Facturas Billin</strong> <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
                                             </li>
                                         </ul>
                                     </div>
+                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s;">
+                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- All Plans Include Section Start -->
+                <section class="all-plans-section" style="padding: 60px 0; background: #f8f9fa;">
+                    <div class="container">
+                        <div class="section-title text-center mb-5">
+                            <h2 style="font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 50px;">Todos los planes incluyen</h2>
+                        </div>
+                        <div class="row justify-content-center g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fa-solid fa-file-invoice" style="font-size: 48px; color: var(--theme);"></i>
+                                    </div>
+                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">Facturas ilimitadas</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">Crea y envía todas las facturas que necesites</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fa-solid fa-badge-check" style="font-size: 48px; color: var(--theme);"></i>
+                                    </div>
+                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">Cumplimiento Verifactu</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">100% conforme con la normativa vigente</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fa-solid fa-headset" style="font-size: 48px; color: var(--theme);"></i>
+                                    </div>
+                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">App móvil incluida</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">Descárgate tu negocio desde cualquier lugar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- All Plans Include Section End -->
+
+                <!-- FAQ Section Start -->
+                <section class="faq-pricing-section" style="padding: 80px 0; background: white;">
+                    <div class="container">
+                        <div class="section-title text-center mb-5">
+                            <h2 style="font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 50px;">Preguntas frecuentes</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Puedo cambiar de plan en cualquier momento?</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">Sí, puedes cambiar de plan cuando quieras. Los cambios se aplican inmediatamente y ajustamos la facturación de forma proporcional.</p>
+                                </div>
+                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Qué métodos de pago aceptáis?</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express) y transferencia bancaria para pagos anuales.</p>
+                                </div>
+                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Hay algún coste adicional?</h4>
+                                    <p style="color: #666; font-size: 15px; margin: 0;">No, los precios mostrados incluyen todas las funcionalidades del plan. Solo se aplica el IVA correspondiente según tu ubicación.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FAQ Section End -->
+
+                <!-- Final CTA Section Start -->
+                <section class="final-cta-section" style="padding: 80px 0; background: linear-gradient(135deg, #ec8228 0%, #D47524 100%); text-align: center;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 style="color: white; font-size: 48px; font-weight: 700; margin-bottom: 20px;">¿Listo para empezar?</h2>
+                                <p style="color: white; font-size: 20px; margin-bottom: 40px;">Prueba Factural gratis durante 14 días. Sin tarjeta de crédito.</p>
+                                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                                    <a href="contact.html" class="theme-btn" style="background: white; color: var(--theme); padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                                        Comenzar prueba gratuita
+                                    </a>
+                                    <a href="contact.html" class="theme-btn" style="background: transparent; border: 2px solid white; color: white; padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                                        Hablar con ventas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Final CTA Section End -->
 
                 <!-- Footer Section Start -->
                 <footer class="footer-section fix">
@@ -420,10 +704,10 @@
                                         </div>
                                         <div class="footer-content">
                                             <p>
-                                                Businesses to thrive in changing digital world. With over a decade systems that drive growth an efficiency. From IT consulting.
+                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
                                             </p>
                                             <a href="contact.html" class="theme-btn">
-                                                Get started now <i class="fa-solid fa-arrow-up-right"></i>
+                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -431,42 +715,37 @@
                                 <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Company</h3>
+                                            <h3>Empresa</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
                                                 <a href="about.html">
-                                                    About us
+                                                    Sobre nosotros
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="contact.html">
-                                                    Work process
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="about.html">
-                                                    About us
+                                                    Proceso de trabajo
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="team.html">
-                                                    Our team
+                                                    Nuestro equipo
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="contact.html">
-                                                    Contact
+                                                    Contacto
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="contact.html">
-                                                    Careers
+                                                    Carreras
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="news.html">
-                                                    Blogs
+                                                    Blog
                                                 </a>
                                             </li>
                                         </ul>
@@ -475,37 +754,47 @@
                                 <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Recourse</h3>
+                                            <h3>Funcionalidades</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
-                                                <a href="service-details.html">
-                                                    Future innovations
+                                                <a href="tu-negocio-bajo-control.html">
+                                                    Tu Negocio Bajo Control
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="service-details.html">
-                                                    Smart solutions
+                                                <a href="crea-envia-facturas.html">
+                                                    Crea Y Envía Facturas
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="service-details.html">
-                                                        IT consulting
+                                                <a href="crea-envia-presupuestos.html">
+                                                    Crea Y Envía Presupuestos
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="service-details.html">
-                                                    NextGen  IT 
+                                                <a href="gestiona-tu-stock.html">
+                                                    Gestiona Tu Stock
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="service-details.html">
-                                                    Cyber security
+                                                <a href="escanea-gastos.html">
+                                                    Escanea Gastos
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="service-details.html">
-                                                    Software solution
+                                                <a href="gestiona-clientes.html">
+                                                    Gestiona Clientes
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="factura-personalizada.html">
+                                                    Factura Personalizada
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="conectado-a-gestor.html">
+                                                    Conectado A Gestor
                                                 </a>
                                             </li>
                                         </ul>
@@ -514,14 +803,14 @@
                                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Subscribe Newsletter</h3>
+                                            <h3>Suscríbete al Boletín</h3>
                                         </div>
                                         <div class="contact-item">
                                             <form action="#">
-                                                <input type="text" placeholder="Email address">
+                                                <input type="text" placeholder="Correo electrónico">
                                             </form>
                                             <button type="submit" class="theme-btn w-100">
-                                                    Subscribe now <i class="fa-solid fa-arrow-up-right"></i>
+                                                    Suscribirse ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </button>
                                             <div class="social-icon">
                                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -536,15 +825,15 @@
                         </div>
                         <div class="footer-bottom-wrapper">
                             <p class="wow fadeInUp" data-wow-delay=".3s">
-                               Copyright <span>Neotix.</span> All rights reserved.
+                               Copyright <span>Facturales.</span> Todos los derechos reservados.
                             </p>
                             <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
                                 <li>
-                                    <a href="contact.html">Privacy policy</a>
+                                    <a href="contact.html">Política de privacidad</a>
                                 </li>
                                 <li>।</li>
                                 <li>
-                                    <a href="contact.html">Terms & conditions</a>
+                                    <a href="contact.html">Términos y condiciones</a>
                                 </li>
                             </ul>
                         </div>
@@ -596,5 +885,151 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+        
+        <!-- Pricing Toggle Script -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('pricingToggle');
+            const monthlyLabel = document.getElementById('monthlyLabel');
+            const annualLabel = document.getElementById('annualLabel');
+            const priceAmounts = document.querySelectorAll('.price-amount');
+            const periods = document.querySelectorAll('.period');
+            const annualNotes = document.querySelectorAll('.annual-note');
+            
+            // Función para actualizar precios
+            function updatePrices(isAnnual) {
+                priceAmounts.forEach(price => {
+                    const monthly = parseFloat(price.getAttribute('data-monthly'));
+                    const annual = parseFloat(price.getAttribute('data-annual'));
+                    price.textContent = isAnnual ? annual.toFixed(2) : monthly.toFixed(2);
+                });
+                
+                // Actualizar texto del período
+                periods.forEach(period => {
+                    period.textContent = isAnnual ? '/mes' : '/mes';
+                });
+                
+                // Mostrar/ocultar nota anual
+                annualNotes.forEach(note => {
+                    note.style.display = isAnnual ? 'block' : 'none';
+                });
+                
+                // Actualizar totales anuales
+                const plans = document.querySelectorAll('[data-plan]');
+                plans.forEach(plan => {
+                    const priceAmount = plan.querySelector('.price-amount');
+                    const annualTotal = plan.querySelector('.annual-total');
+                    if (annualTotal && isAnnual) {
+                        const monthlyPrice = parseFloat(priceAmount.getAttribute('data-annual'));
+                        annualTotal.textContent = (monthlyPrice * 12).toFixed(2) + '€';
+                    }
+                });
+                
+                // Actualizar estilos de las etiquetas
+                if (isAnnual) {
+                    monthlyLabel.style.fontWeight = '400';
+                    monthlyLabel.style.color = '#666';
+                    annualLabel.style.fontWeight = '600';
+                    annualLabel.style.color = 'var(--theme)';
+                } else {
+                    monthlyLabel.style.fontWeight = '600';
+                    monthlyLabel.style.color = 'var(--theme)';
+                    annualLabel.style.fontWeight = '400';
+                    annualLabel.style.color = '#666';
+                }
+            }
+            
+            // Event listeners
+            toggle.addEventListener('change', function() {
+                updatePrices(this.checked);
+            });
+            
+            monthlyLabel.addEventListener('click', function() {
+                toggle.checked = false;
+                updatePrices(false);
+            });
+            
+            annualLabel.addEventListener('click', function() {
+                toggle.checked = true;
+                updatePrices(true);
+            });
+            
+            // Inicializar con precios mensuales
+            updatePrices(false);
+        });
+        </script>
+        
+        <!-- CSS para el toggle slider y pricing cards -->
+        <style>
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .slider {
+            border-radius: 24px;
+        }
+        
+        /* Pricing Cards Styling */
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.featured:hover {
+            box-shadow: 0 20px 50px rgba(249, 77, 0, 0.3);
+        }
+        
+        .theme-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(249, 77, 0, 0.4);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .pricing-card.featured {
+                transform: scale(1) !important;
+                margin-top: 0 !important;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .pricing-card {
+                margin-bottom: 20px;
+            }
+            
+            .price-display h2 {
+                font-size: 36px !important;
+            }
+        }
+        
+        /* Fix spacing issues */
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        #smooth-wrapper {
+            padding-top: 0 !important;
+        }
+        
+        .breadcrumb-wrapper {
+            margin-top: 0 !important;
+        }
+        </style>
     </body>
 </html>

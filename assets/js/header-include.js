@@ -20,140 +20,140 @@
                                         <ul>
                                             <li class="has-dropdown menu-thumb">
                                                 <a href="index.html">
-                                                    Home 
+                                                    Inicio 
                                                 </a>
                                                 
                                             </li>
                                             <li class="has-dropdown d-xl-none">
                                                 <a href="index.html" class="border-none">
-                                                Home
+                                                Inicio
                                                 </a>
                                                 <ul class="submenu">
-                                                    <li><a href="index.html">Home 01</a></li>
-                                                    <li><a href="index-2.html">Home 02</a></li>
-                                                    <li><a href="index-3.html">Home 03</a></li>
-                                                    <li><a href="index-4.html">Home 04</a></li>
+                                                    <li><a href="index.html">Inicio 01</a></li>
+                                                    <li><a href="index-2.html">Inicio 02</a></li>
+                                                    <li><a href="index-3.html">Inicio 03</a></li>
+                                                    <li><a href="index-4.html">Inicio 04</a></li>
                                                 </ul>
                                             </li>
-                                             <li>
-                                                <a href="about.html">About Us</a>
-                                                </li>
                                                 <li class="has-dropdown">
-                                                    <a href="service-details.html">Service</a>
+                                                    <a href="service-details.html">Servicios</a>
                                                   
                                                     <ul class="submenu has-homemenu">
                                                       <li>
                                                         <div class="homemenu-items">
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-1.jpg" alt="img">
+                                                          <a href="tu-negocio-bajo-control.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-chart-line"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Tu negocio bajo control</h4>
+                                                              <h4 class="homemenu-title">Tu Negocio Bajo Control</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-1.jpg" alt="img">
+                                                          <a href="crea-envia-facturas.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-file-invoice"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Crea y envía facturas</h4>
+                                                              <h4 class="homemenu-title">Crea Y Envía Facturas</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-1.jpg" alt="img">
+                                                          <a href="crea-envia-presupuestos.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-file-invoice-dollar"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Crea y envía presupuestos</h4>
+                                                              <h4 class="homemenu-title">Crea Y Envía Presupuestos</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-1.jpg" alt="img">
+                                                          <a href="gestiona-tu-stock.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-boxes-stacked"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Gestiona tu stock</h4>
+                                                              <h4 class="homemenu-title">Gestiona Tu Stock</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-1.jpg" alt="img">
+                                                          <a href="escanea-gastos.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-receipt"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Escanea gastos</h4>
+                                                              <h4 class="homemenu-title">Escanea Gastos</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-2.jpg" alt="img">
+                                                          <a href="gestiona-clientes.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-users"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Gestiona clientes</h4>
+                                                              <h4 class="homemenu-title">Gestiona Clientes</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-3.jpg" alt="img">
+                                                          <a href="factura-personalizada.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-palette"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Factura personalizada</h4>
+                                                              <h4 class="homemenu-title">Factura Personalizada</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
-                                                          <div class="homemenu">
-                                                            <div class="homemenu-thumb">
-                                                              <img src="assets/img/header/home-4.jpg" alt="img">
+                                                          <a href="conectado-a-gestor.html" class="homemenu">
+                                                            <div class="homemenu-icon">
+                                                              <i class="fa-solid fa-link"></i>
                                                             </div>
                                                             <div class="homemenu-content text-center">
-                                                              <h4 class="homemenu-title">Conectado a gestor</h4>
+                                                              <h4 class="homemenu-title">Conectado A Gestor</h4>
                                                             </div>
-                                                          </div>
+                                                          </a>
                                                   
                                                         </div>
                                                       </li>
                                                     </ul>
                                                   </li>
+                                             <li>
+                                                <a href="about.html">Sobre Nosotros</a>
+                                                </li>
                                                      
                                                   
                                              <li class="has-dropdown">
                                                 <a href="news-details.html">
-                                                    Pages
+                                                    Páginas
                                                 </a>
                                                 <ul class="submenu">
                                                     
 <li>
                                                         <a href="project-details.html">
-                                                            Portfolio
+                                                            Portafolio
                                                             <i class="fas fa-angle-right"></i>
                                                         </a>
                                                         <ul class="submenu">
-                                                            <li><a href="project.html">Our Portfolio</a></li>
+                                                            <li><a href="project.html">Nuestro Portafolio</a></li>
                                                             <li>
-                                                                <a href="project-details.html">Portfolio Details</a>
+                                                                <a href="project-details.html">Detalles del Portafolio</a>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li class="has-dropdown">
                                                         <a href="team-details.html">
-                                                            Team
+                                                            Equipo
                                                             <i class="fas fa-angle-right"></i>
                                                         </a>
                                                         <ul class="submenu">
-                                                            <li><a href="team.html">Our Team</a></li>
-                                                            <li><a href="team-details.html">Team Details</a></li>
+                                                            <li><a href="team.html">Nuestro Equipo</a></li>
+                                                            <li><a href="team-details.html">Detalles del Equipo</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="pricing.html">Our Pricing</a></li>
-                                                    <li><a href="faq.html">Our Faq</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
+                                                    <li><a href="pricing.html">Nuestros Precios</a></li>
+                                                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                                                    <li><a href="404.html">Página 404</a></li>
                                                 </ul>
                                             </li>
                                            <li>
@@ -161,9 +161,9 @@
                                                     Blog
                                                 </a>
                                                 <ul class="submenu">
-                                                    <li><a href="news-grid.html">Blog Grid</a></li>
-                                                    <li><a href="news.html">Blog Standard</a></li>
-                                                    <li><a href="news-details.html">Blog Details</a></li>
+                                                    <li><a href="news-grid.html">Blog Cuadrícula</a></li>
+                                                    <li><a href="news.html">Blog Estándar</a></li>
+                                                    <li><a href="news-details.html">Detalles del Blog</a></li>
                                                 </ul>
                                             </li>
                                             <li>
