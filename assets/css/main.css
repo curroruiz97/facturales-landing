@@ -8594,4 +8594,30 @@ span {
   visibility: visible !important;
 }
 
+/* Custom Styles - Highlighted Menu Item */
+.header-main .main-menu ul li.menu-item-highlighted > a {
+  color: var(--theme) !important;
+  position: relative;
+}
+
+.header-main .main-menu ul li.menu-item-highlighted > a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--theme);
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+}
+
+.header-1.sticky .header-main .main-menu ul li.menu-item-highlighted > a {
+  color: var(--theme) !important;
+}
+
+.header-1.sticky .header-main .main-menu ul li.menu-item-highlighted > a::before {
+  background-color: var(--theme) !important;
+}
+
 /*# sourceMappingURL=main.css.map */

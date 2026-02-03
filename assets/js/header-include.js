@@ -7,10 +7,10 @@
                         <div class="header-left">
                             <div class="logo">
                             <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/logo-white.svg" alt="logo-img">
                             </a>
                             <a href="index.html" class="header-logo-2">
-                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/logo-color.svg" alt="logo-img">
                             </a>
                         </div>
                         </div>
@@ -119,52 +119,19 @@
                                                     </ul>
                                                   </li>
                                              <li>
-                                                <a href="about.html">Sobre Nosotros</a>
+                                                <a href="news-grid.html">Blog</a>
                                                 </li>
                                                      
                                                   
-                                             <li class="has-dropdown">
-                                                <a href="news-details.html">
-                                                    Páginas
+                                             <li>
+                                                <a href="faq.html">
+                                                    Preguntas Frecuentes
                                                 </a>
-                                                <ul class="submenu">
-                                                    
-<li>
-                                                        <a href="project-details.html">
-                                                            Portafolio
-                                                            <i class="fas fa-angle-right"></i>
-                                                        </a>
-                                                        <ul class="submenu">
-                                                            <li><a href="project.html">Nuestro Portafolio</a></li>
-                                                            <li>
-                                                                <a href="project-details.html">Detalles del Portafolio</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="has-dropdown">
-                                                        <a href="team-details.html">
-                                                            Equipo
-                                                            <i class="fas fa-angle-right"></i>
-                                                        </a>
-                                                        <ul class="submenu">
-                                                            <li><a href="team.html">Nuestro Equipo</a></li>
-                                                            <li><a href="team-details.html">Detalles del Equipo</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="pricing.html">Nuestros Precios</a></li>
-                                                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
-                                                    <li><a href="404.html">Página 404</a></li>
-                                                </ul>
                                             </li>
-                                           <li>
-                                                <a href="news-details.html">
-                                                    Blog
+                                           <li class="menu-item-highlighted">
+                                                <a href="pricing.html">
+                                                    Precios
                                                 </a>
-                                                <ul class="submenu">
-                                                    <li><a href="news-grid.html">Blog Cuadrícula</a></li>
-                                                    <li><a href="news.html">Blog Estándar</a></li>
-                                                    <li><a href="news-details.html">Detalles del Blog</a></li>
-                                                </ul>
                                             </li>
                                             <li>
                                                 <a href="contact.html">Contacto</a>
@@ -179,12 +146,11 @@
                             </div>
                             <div class="header-btn">
                                 <h6>
-                                    <i class="fa-regular fa-phone-volume"></i>
                                     <a href="url:avenuemedia.io">Acceder</a>
                                 </h6>
                                 <div class="header-button">
                                 <a href="contact.html" class="theme-btn">
-                                   Regístrate Gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                   Registro <i class="fa-solid fa-arrow-up-right"></i>
                                 </a>
                             </div>
                             <div class="header__hamburger d-xl-none my-auto">
