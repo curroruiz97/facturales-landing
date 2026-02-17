@@ -1766,11 +1766,6 @@ span {
   color: var(--theme);
   margin-right: 10px;
 }
-@media (max-width: 1600px) {
-  .header-main .header-right .header-btn h6 {
-    display: none;
-  }
-}
 .header-main .header-right .header-btn h6 a {
   color: rgba(255, 255, 255, 0.7);
 }

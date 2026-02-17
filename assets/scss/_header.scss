@@ -422,10 +422,6 @@
                     margin-right: 10px;
                 }
 
-                @include breakpoint (max-xxxl){
-                    display: none;
-                }
-
 				a {
 					color: rgba(255, 255, 255, 0.7);
 				}
