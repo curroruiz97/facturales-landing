@@ -65,7 +65,7 @@ h1 {
 	font-size: 80px;
 	font-weight: 600;
 	line-height: 95%;
-	text-transform: capitalize;
+	text-transform: none;
 
 	@include breakpoint(max-xxl){
 		font-size: 60px;
@@ -128,7 +128,7 @@ h3 {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 133%;
-	text-transform: capitalize;
+	text-transform: none;
 
 	@include breakpoint(max-sm){
 		font-size: 20px;
@@ -139,19 +139,19 @@ h4 {
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 150%;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 h5 {
 	font-size: 18px;
 	font-weight: 600;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 h6 {
 	font-size: 16px;
 	font-weight: 600;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 a {

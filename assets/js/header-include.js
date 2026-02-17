@@ -146,10 +146,10 @@
                             </div>
                             <div class="header-btn">
                                 <h6>
-                                    <a href="url:avenuemedia.io">Acceder</a>
+                                    <a href="https://app.facturales.es/signin.html">Acceder</a>
                                 </h6>
                                 <div class="header-button">
-                                <a href="contact.html" class="theme-btn">
+                                <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                    Registro <i class="fa-solid fa-arrow-up-right"></i>
                                 </a>
                             </div>

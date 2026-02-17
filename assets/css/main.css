@@ -8620,4 +8620,10 @@ span {
   background-color: var(--theme) !important;
 }
 
+/* FIX DEFINITIVO: quitar Title Case */
+h1, h2, h3, h4, h5, h6,
+p, span, a {
+  text-transform: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */
