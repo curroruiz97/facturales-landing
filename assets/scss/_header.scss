@@ -408,14 +408,16 @@
 
 		.header-btn {
 			@include flex;
-			gap: 40px;
+			gap: 15px;
 
 			@include breakpoint (max-xxl) {
-				gap: 16px;
+				gap: 12px;
 			}
 
             h6 {
                 color: rgba(255, 255, 255, 0.8);
+				font-size: 14px;
+				margin: 0;
 
                 i {
                     color: $theme-color;
@@ -424,13 +426,15 @@
 
 				a {
 					color: rgba(255, 255, 255, 0.7);
+					font-size: 14px;
 				}
             }
 
 			.header-button {
 
-				@include breakpoint (max-xxl){
-					display: none;
+				.theme-btn {
+					padding: 10px 20px;
+					font-size: 14px;
 				}
 			}
 

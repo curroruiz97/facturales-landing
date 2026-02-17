@@ -1752,15 +1752,17 @@ span {
 .header-main .header-right .header-btn {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 15px;
 }
 @media (max-width: 1399px) {
   .header-main .header-right .header-btn {
-    gap: 16px;
+    gap: 12px;
   }
 }
 .header-main .header-right .header-btn h6 {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin: 0;
 }
 .header-main .header-right .header-btn h6 i {
   color: var(--theme);
@@ -1768,11 +1770,11 @@ span {
 }
 .header-main .header-right .header-btn h6 a {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
 }
-@media (max-width: 1399px) {
-  .header-main .header-right .header-btn .header-button {
-    display: none;
-  }
+.header-main .header-right .header-btn .header-button .theme-btn {
+  padding: 10px 20px;
+  font-size: 14px;
 }
 .header-main .header-right .header-btn .sidebar__toggle {
   cursor: pointer;
