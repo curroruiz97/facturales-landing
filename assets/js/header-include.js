@@ -149,15 +149,15 @@
                                     <a href="https://app.facturales.es/signin.html">Acceder</a>
                                 </h6>
                                 <div class="header-button">
-                                <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                   Registro <i class="fa-solid fa-arrow-up-right"></i>
-                                </a>
+                                    <a href="https://app.facturales.es/signup.html" class="theme-btn">
+                                       Registro <i class="fa-solid fa-arrow-up-right"></i>
+                                    </a>
+                                </div>
                             </div>
                             <div class="header__hamburger d-xl-none my-auto">
                                 <div class="sidebar__toggle">
                                     <i class="fas fa-bars"></i>
                                 </div>
-                              </div>
                             </div>
                         </div>
                     </div>
