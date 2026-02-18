@@ -34,7 +34,9 @@ $cube-shadow-color: #1A0C04;
   overflow: visible;
   animation: none;
   @media (max-width: 1199px) { height: 400px; }
-  @media (max-width: 767px) { height: 320px; }
+  @media (max-width: 991px) { height: 350px; }
+  @media (max-width: 767px) { height: 280px; }
+  @media (max-width: 575px) { height: 220px; }
 }
 
 .cubes {

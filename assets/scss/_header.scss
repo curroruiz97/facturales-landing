@@ -377,6 +377,10 @@
         }
 
         .menu_search {
+            @include breakpoint (max-xl) {
+                display: none;
+            }
+
             .search_btn {
                 color: rgba(255, 255, 255, 0.7);
             }
@@ -392,6 +396,10 @@
 
             h6 {
 				margin: 0;
+
+				@include breakpoint (max-xl) {
+					display: none;
+				}
 
 				a {
 					display: inline-flex;
@@ -426,6 +434,11 @@
 					min-width: auto;
 					box-sizing: border-box;
 					border: 1.5px solid $theme-color;
+
+					@include breakpoint (max-sm) {
+						padding: 10px 16px;
+						font-size: 12px;
+					}
 				}
 			}
 

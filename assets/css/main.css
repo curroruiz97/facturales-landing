@@ -1743,6 +1743,11 @@ span {
     gap: 20px;
   }
 }
+@media (max-width: 1199px) {
+  .header-main .header-right .menu_search {
+    display: none;
+  }
+}
 .header-main .header-right .menu_search .search_btn {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1758,6 +1763,11 @@ span {
 }
 .header-main .header-right .header-btn h6 {
   margin: 0;
+}
+@media (max-width: 1199px) {
+  .header-main .header-right .header-btn h6 {
+    display: none;
+  }
 }
 .header-main .header-right .header-btn h6 a {
   display: inline-flex;
@@ -1787,6 +1797,12 @@ span {
   min-width: auto;
   box-sizing: border-box;
   border: 1.5px solid var(--theme);
+}
+@media (max-width: 575px) {
+  .header-main .header-right .header-btn .header-button .theme-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
 }
 .header-main .header-right .header-btn .sidebar__toggle {
   cursor: pointer;
@@ -4269,8 +4285,17 @@ span {
 }
 @media (max-width: 991px) {
   .hero-1 {
-    padding-top: 130px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-1 {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
 .hero-1 .hero-content {
@@ -4280,6 +4305,11 @@ span {
   .hero-1 .hero-content {
     margin-top: 0;
     margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-1 .hero-content {
+    margin-bottom: 10px;
   }
 }
 .hero-1 .hero-content h6 {
@@ -4293,6 +4323,12 @@ span {
   display: inline-block;
   border-radius: 100px;
 }
+@media (max-width: 575px) {
+  .hero-1 .hero-content h6 {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
 .hero-1 .hero-content h6 img {
   margin-right: 5px;
   margin-top: -5px;
@@ -4302,10 +4338,35 @@ span {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+@media (max-width: 767px) {
+  .hero-1 .hero-content h1 {
+    font-size: 32px;
+    margin-bottom: 14px;
+    margin-top: 14px;
+  }
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-content h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
 .hero-1 .hero-content p {
   line-height: 155.556%;
   color: var(--white);
   max-width: 464px;
+}
+@media (max-width: 767px) {
+  .hero-1 .hero-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-content p {
+    font-size: 13px;
+  }
 }
 .hero-1 .hero-content .hero-btn {
   display: flex;
@@ -4315,8 +4376,15 @@ span {
 }
 @media (max-width: 767px) {
   .hero-1 .hero-content .hero-btn {
-    margin-top: 25px;
+    margin-top: 20px;
     flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-content .hero-btn .theme-btn {
+    padding: 14px 24px;
+    font-size: 14px;
   }
 }
 .hero-1 .hero-content .hero-btn .theme-btn.style-2 {
@@ -4343,6 +4411,16 @@ span {
 }
 .hero-1 .hero-image .cubes-wrapper {
   width: 100%;
+}
+@media (max-width: 767px) {
+  .hero-1 .hero-image .cubes-wrapper {
+    height: 280px !important;
+  }
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-image .cubes-wrapper {
+    height: 220px !important;
+  }
 }
 .hero-1 .hero-image img {
   border-radius: 16px;
@@ -8582,9 +8660,19 @@ span {
     height: 400px;
   }
 }
+@media (max-width: 991px) {
+  .cubes-wrapper {
+    height: 350px;
+  }
+}
 @media (max-width: 767px) {
   .cubes-wrapper {
-    height: 320px;
+    height: 280px;
+  }
+}
+@media (max-width: 575px) {
+  .cubes-wrapper {
+    height: 220px;
   }
 }
 
@@ -8944,111 +9032,111 @@ span {
 }
 
 .cube[data-cube="111"] > .cube-wrap {
-  animation-delay: 138ms;
+  animation-delay: 4959ms;
 }
 
 .cube[data-cube="112"] > .cube-wrap {
-  animation-delay: 1380ms;
+  animation-delay: 486ms;
 }
 
 .cube[data-cube="113"] > .cube-wrap {
-  animation-delay: 4817ms;
+  animation-delay: 2156ms;
 }
 
 .cube[data-cube="121"] > .cube-wrap {
-  animation-delay: 2919ms;
+  animation-delay: 3996ms;
 }
 
 .cube[data-cube="122"] > .cube-wrap {
-  animation-delay: 2099ms;
+  animation-delay: 1760ms;
 }
 
 .cube[data-cube="123"] > .cube-wrap {
-  animation-delay: 4215ms;
+  animation-delay: 2373ms;
 }
 
 .cube[data-cube="131"] > .cube-wrap {
-  animation-delay: 3265ms;
+  animation-delay: 1787ms;
 }
 
 .cube[data-cube="132"] > .cube-wrap {
-  animation-delay: 2536ms;
+  animation-delay: 3504ms;
 }
 
 .cube[data-cube="133"] > .cube-wrap {
-  animation-delay: 4765ms;
+  animation-delay: 795ms;
 }
 
 .cube[data-cube="211"] > .cube-wrap {
-  animation-delay: 3081ms;
+  animation-delay: 2001ms;
 }
 
 .cube[data-cube="212"] > .cube-wrap {
-  animation-delay: 335ms;
+  animation-delay: 1348ms;
 }
 
 .cube[data-cube="213"] > .cube-wrap {
-  animation-delay: 1848ms;
+  animation-delay: 3226ms;
 }
 
 .cube[data-cube="221"] > .cube-wrap {
-  animation-delay: 4594ms;
+  animation-delay: 743ms;
 }
 
 .cube[data-cube="222"] > .cube-wrap {
-  animation-delay: 1753ms;
+  animation-delay: 4990ms;
 }
 
 .cube[data-cube="223"] > .cube-wrap {
-  animation-delay: 2556ms;
+  animation-delay: 4391ms;
 }
 
 .cube[data-cube="231"] > .cube-wrap {
-  animation-delay: 671ms;
+  animation-delay: 1114ms;
 }
 
 .cube[data-cube="232"] > .cube-wrap {
-  animation-delay: 3626ms;
+  animation-delay: 3823ms;
 }
 
 .cube[data-cube="233"] > .cube-wrap {
-  animation-delay: 1023ms;
+  animation-delay: 4099ms;
 }
 
 .cube[data-cube="311"] > .cube-wrap {
-  animation-delay: 2546ms;
+  animation-delay: 927ms;
 }
 
 .cube[data-cube="312"] > .cube-wrap {
-  animation-delay: 1069ms;
+  animation-delay: 1685ms;
 }
 
 .cube[data-cube="313"] > .cube-wrap {
-  animation-delay: 2715ms;
+  animation-delay: 2148ms;
 }
 
 .cube[data-cube="321"] > .cube-wrap {
-  animation-delay: 3918ms;
+  animation-delay: 4241ms;
 }
 
 .cube[data-cube="322"] > .cube-wrap {
-  animation-delay: 408ms;
+  animation-delay: 672ms;
 }
 
 .cube[data-cube="323"] > .cube-wrap {
-  animation-delay: 2354ms;
+  animation-delay: 4668ms;
 }
 
 .cube[data-cube="331"] > .cube-wrap {
-  animation-delay: 4695ms;
+  animation-delay: 73ms;
 }
 
 .cube[data-cube="332"] > .cube-wrap {
-  animation-delay: 2994ms;
+  animation-delay: 1054ms;
 }
 
 .cube[data-cube="333"] > .cube-wrap {
-  animation-delay: 3953ms;
+  animation-delay: 4893ms;
 }
 
 [class^=shadow] {
