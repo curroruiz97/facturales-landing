@@ -770,38 +770,59 @@ if (document.querySelectorAll(".marquee-group").length) {
     }
 
     if($('.tz-itm-title').length) {
-		var txtheading = $(".tz-itm-title");
+        var txtheading = $(".tz-itm-title");
 
-    if(txtheading.length == 0) return; gsap.registerPlugin(SplitText); txtheading.each(function(index, el) {
+        if(txtheading.length > 0) {
+            txtheading.each(function(index, el) {
+                el.split = new SplitText(el, {
+                    type: "lines,words,chars",
+                    linesClass: "split-line"
+                });
 
-        el.split = new SplitText(el, {
-          type: "lines,words,chars",
-          linesClass: "split-line"
-        });
+                if($(el).hasClass('tz-itm-anim')) {
+                    gsap.set(el.split.chars, {
+                        opacity: 0,
+                        x: "-7",
+                    });
+                }
 
-        if( $(el).hasClass('tz-itm-anim') ){
-          gsap.set(el.split.chars, {
-            opacity: .3,
-            x: "-7",
-          });
+                var isTouch = ScrollTrigger.isTouch === 1;
+
+                if(isTouch) {
+                    // En móvil/tablet: animación simple con onEnter, sin scrub
+                    ScrollTrigger.create({
+                        trigger: el,
+                        start: "top 90%",
+                        onEnter: function() {
+                            gsap.to(el.split.chars, {
+                                x: "0",
+                                y: "0",
+                                opacity: 1,
+                                duration: 0.8,
+                                stagger: 0.025,
+                                ease: "power2.out",
+                            });
+                        },
+                    });
+                } else {
+                    // En desktop: animación scrub original
+                    el.anim = gsap.to(el.split.chars, {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 92%",
+                            end: "top 60%",
+                            markers: false,
+                            scrub: 1,
+                        },
+                        x: "0",
+                        y: "0",
+                        opacity: 1,
+                        duration: .7,
+                        stagger: 0.2,
+                    });
+                }
+            });
         }
-        el.anim = gsap.to(el.split.chars, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            end: "top 60%",
-            markers: false,
-            scrub: 1,
-          },
-
-          x: "0",
-          y: "0",
-          opacity: 1,
-          duration: .7,
-          stagger: 0.2,
-        });
-
-      });
     }
 
     // image animation

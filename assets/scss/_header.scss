@@ -441,6 +441,10 @@
 					}
 				}
 			}
+		}
+
+		.header__hamburger {
+			margin-left: 6px;
 
 			.sidebar__toggle {
 				cursor: pointer;
@@ -453,10 +457,9 @@
 				height: 40px;
 				border-radius: 8px;
 				@include transition;
-				margin-left: 4px;
 
 				&:hover {
-					background-color: rgba(255, 255, 255, 0.1);
+					background-color: rgba(255, 255, 255, 0.12);
 				}
 
 				&:active {
@@ -465,10 +468,10 @@
 
 				.hamburger-line {
 					display: block;
-					width: 22px;
+					width: 24px;
 					height: 2.5px;
 					background-color: $white;
-					border-radius: 2px;
+					border-radius: 3px;
 					@include transition;
 				}
 			}
@@ -565,9 +568,12 @@
 					}
 				}
 
-				.header-btn {
-			
+				.header__hamburger {
 					.sidebar__toggle {
+						&:hover {
+							background-color: rgba(0, 0, 0, 0.06);
+						}
+
 						.hamburger-line {
 							background-color: $header-color;
 						}
@@ -633,19 +639,25 @@
 
                 .header-btn {
                     h6 {
-						a {
-							color: $header-color;
-							border-color: rgba(0, 0, 0, 0.15);
+					a {
+						color: $header-color;
+						border-color: rgba(0, 0, 0, 0.15);
 
-							&:hover {
-								color: $theme-color;
-								border-color: $theme-color;
-								background-color: rgba(249, 77, 0, 0.04);
-							}
+						&:hover {
+							color: $theme-color;
+							border-color: $theme-color;
+							background-color: rgba(249, 77, 0, 0.04);
 						}
+					}
                     }
+                }
 
+                .header__hamburger {
                     .sidebar__toggle {
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.06);
+                        }
+
                         .hamburger-line {
                             background-color: $header-color;
                         }
