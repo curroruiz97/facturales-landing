@@ -63,22 +63,10 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li class="has-dropdown menu-thumb">
+                                            <li>
                                                 <a href="index.html">
-                                                    Inicio 
+                                                    Inicio
                                                 </a>
-                                                
-                                            </li>
-                                            <li class="has-dropdown d-xl-none">
-                                                <a href="index.html" class="border-none">
-                                                Inicio
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="index.html">Inicio 01</a></li>
-                                                    <li><a href="index-2.html">Inicio 02</a></li>
-                                                    <li><a href="index-3.html">Inicio 03</a></li>
-                                                    <li><a href="index-4.html">Inicio 04</a></li>
-                                                </ul>
                                             </li>
                                                 <li class="has-dropdown">
                                                     <a href="service-details.html">Servicios</a>
