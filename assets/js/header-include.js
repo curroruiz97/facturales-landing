@@ -1,5 +1,58 @@
 (function() {
-  document.write(`        <!-- Header Section Start -->
+  document.write(`
+        <!-- Offcanvas Area Start -->
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/logo-color.svg" alt="logo-img">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button>
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mobile-menu fix"></div>
+                        <div class="offcanvas__buttons">
+                            <a href="https://app.facturales.es/signin.html" class="offcanvas__btn offcanvas__btn--outline">
+                                <i class="fa-solid fa-right-to-bracket"></i> Acceder
+                            </a>
+                            <a href="https://app.facturales.es/signup.html" class="offcanvas__btn offcanvas__btn--primary">
+                                Registro <i class="fa-solid fa-arrow-up-right"></i>
+                            </a>
+                        </div>
+                        <div class="offcanvas__contact">
+                            <ul>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="mailto:info@facturales.es">info@facturales.es</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon">
+                                        <i class="far fa-phone"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="tel:+34900000000">+34 900 000 000</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <!-- Header Section Start -->
         <header id="header-sticky" class="header-1">
             <div class="container-fluid">
                 <div class="mega-menu-wrapper">
@@ -41,13 +94,14 @@
                                                     <ul class="submenu has-homemenu">
                                                       <li>
                                                         <div class="homemenu-items">
-                                                  
+
                                                           <a href="tu-negocio-bajo-control.html" class="homemenu">
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-chart-line"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Tu Negocio Bajo Control</h4>
+                                                              <p class="homemenu-desc">Panel completo de gestión empresarial</p>
                                                             </div>
                                                           </a>
                                                   
@@ -55,8 +109,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-file-invoice"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Crea Y Envía Facturas</h4>
+                                                              <p class="homemenu-desc">Facturación rápida y profesional</p>
                                                             </div>
                                                           </a>
                                                   
@@ -64,8 +119,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-file-invoice-dollar"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Crea Y Envía Presupuestos</h4>
+                                                              <p class="homemenu-desc">Presupuestos personalizados al instante</p>
                                                             </div>
                                                           </a>
                                                   
@@ -73,8 +129,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-boxes-stacked"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Gestiona Tu Stock</h4>
+                                                              <p class="homemenu-desc">Control de inventario en tiempo real</p>
                                                             </div>
                                                           </a>
                                                   
@@ -82,8 +139,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-receipt"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Escanea Gastos</h4>
+                                                              <p class="homemenu-desc">Digitaliza tickets y facturas recibidas</p>
                                                             </div>
                                                           </a>
                                                   
@@ -91,8 +149,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-users"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Gestiona Clientes</h4>
+                                                              <p class="homemenu-desc">CRM simple para tu cartera de clientes</p>
                                                             </div>
                                                           </a>
                                                   
@@ -100,8 +159,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-palette"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Factura Personalizada</h4>
+                                                              <p class="homemenu-desc">Diseña facturas con tu marca</p>
                                                             </div>
                                                           </a>
                                                   
@@ -109,8 +169,9 @@
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-link"></i>
                                                             </div>
-                                                            <div class="homemenu-content text-center">
+                                                            <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Conectado A Gestor</h4>
+                                                              <p class="homemenu-desc">Sincroniza con tu asesor fiscal</p>
                                                             </div>
                                                           </a>
                                                   
