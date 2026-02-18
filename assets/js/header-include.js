@@ -36,14 +36,6 @@
                                         <a href="mailto:info@facturales.es">info@facturales.es</a>
                                     </div>
                                 </li>
-                                <li class="d-flex align-items-center">
-                                    <div class="offcanvas__contact-icon">
-                                        <i class="far fa-phone"></i>
-                                    </div>
-                                    <div class="offcanvas__contact-text">
-                                        <a href="tel:+34900000000">+34 900 000 000</a>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -217,7 +209,9 @@
                             </div>
                             <div class="header__hamburger d-xl-none my-auto">
                                 <div class="sidebar__toggle">
-                                    <i class="fas fa-bars"></i>
+                                    <span class="hamburger-line"></span>
+                                    <span class="hamburger-line"></span>
+                                    <span class="hamburger-line"></span>
                                 </div>
                             </div>
                         </div>

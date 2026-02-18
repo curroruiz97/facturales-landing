@@ -714,23 +714,23 @@ if (document.querySelectorAll(".marquee-group").length) {
     /* ================================
        Smooth Scroller And Title Animation Js Start
     ================================ */
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+    gsap.config({ nullTargetWarn: false });
+
     if ($('#smooth-wrapper').length && $('#smooth-content').length) {
-        gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
-        gsap.config({
-            nullTargetWarn: false,
-        });
-
-        let smoother = ScrollSmoother.create({
-            wrapper: "#smooth-wrapper",
-            content: "#smooth-content",
-            smooth: 2,
-            effects: true,
-            smoothTouch: 0.1,
-            normalizeScroll: false,
-            ignoreMobileResize: true,
-        });
+        if (ScrollTrigger.isTouch !== 1) {
+            ScrollSmoother.create({
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                smooth: 2,
+                effects: true,
+                normalizeScroll: false,
+                ignoreMobileResize: true,
+            });
+        }
     }
+
+    ScrollTrigger.refresh();
 
      /* ================================
        Sticky Js Start

@@ -444,8 +444,33 @@
 
 			.sidebar__toggle {
 				cursor: pointer;
-				font-size: 20px;
-				color: $white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 5px;
+				width: 40px;
+				height: 40px;
+				border-radius: 8px;
+				@include transition;
+				margin-left: 4px;
+
+				&:hover {
+					background-color: rgba(255, 255, 255, 0.1);
+				}
+
+				&:active {
+					transform: scale(0.9);
+				}
+
+				.hamburger-line {
+					display: block;
+					width: 22px;
+					height: 2.5px;
+					background-color: $white;
+					border-radius: 2px;
+					@include transition;
+				}
 			}
 		}
 	}
@@ -543,7 +568,9 @@
 				.header-btn {
 			
 					.sidebar__toggle {
-						color: $header-color;
+						.hamburger-line {
+							background-color: $header-color;
+						}
 					}
 				}
 			}
@@ -619,7 +646,9 @@
                     }
 
                     .sidebar__toggle {
-                        color: $header-color;
+                        .hamburger-line {
+                            background-color: $header-color;
+                        }
                     }
                 }
             }
