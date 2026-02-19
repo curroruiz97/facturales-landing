@@ -655,6 +655,11 @@ span {
   -webkit-transition: all 0.4s ease-out 0s;
   transition: all 0.4s ease-out 0s;
 }
+@media (max-width: 1199px) {
+  .cursor-outer {
+    display: none !important;
+  }
+}
 
 .cursor-outer.cursor-hover {
   opacity: 0.14;
@@ -697,6 +702,11 @@ span {
   opacity: 1;
   -webkit-transition: all 0.24s ease-out 0s;
   transition: all 0.24s ease-out 0s;
+}
+@media (max-width: 1199px) {
+  .cursor-inner {
+    display: none !important;
+  }
 }
 .cursor-inner span {
   color: var(--text);
@@ -9113,111 +9123,111 @@ span {
 }
 
 .cube[data-cube="111"] > .cube-wrap {
-  animation-delay: 4308ms;
+  animation-delay: 3259ms;
 }
 
 .cube[data-cube="112"] > .cube-wrap {
-  animation-delay: 3233ms;
+  animation-delay: 4012ms;
 }
 
 .cube[data-cube="113"] > .cube-wrap {
-  animation-delay: 1068ms;
+  animation-delay: 1479ms;
 }
 
 .cube[data-cube="121"] > .cube-wrap {
-  animation-delay: 4394ms;
+  animation-delay: 3641ms;
 }
 
 .cube[data-cube="122"] > .cube-wrap {
-  animation-delay: 2908ms;
+  animation-delay: 2880ms;
 }
 
 .cube[data-cube="123"] > .cube-wrap {
-  animation-delay: 2350ms;
+  animation-delay: 1137ms;
 }
 
 .cube[data-cube="131"] > .cube-wrap {
-  animation-delay: 2544ms;
+  animation-delay: 1559ms;
 }
 
 .cube[data-cube="132"] > .cube-wrap {
-  animation-delay: 641ms;
+  animation-delay: 4385ms;
 }
 
 .cube[data-cube="133"] > .cube-wrap {
-  animation-delay: 877ms;
+  animation-delay: 4703ms;
 }
 
 .cube[data-cube="211"] > .cube-wrap {
-  animation-delay: 975ms;
+  animation-delay: 2621ms;
 }
 
 .cube[data-cube="212"] > .cube-wrap {
-  animation-delay: 3315ms;
+  animation-delay: 4376ms;
 }
 
 .cube[data-cube="213"] > .cube-wrap {
-  animation-delay: 4929ms;
+  animation-delay: 2270ms;
 }
 
 .cube[data-cube="221"] > .cube-wrap {
-  animation-delay: 4971ms;
+  animation-delay: 4748ms;
 }
 
 .cube[data-cube="222"] > .cube-wrap {
-  animation-delay: 3602ms;
+  animation-delay: 2085ms;
 }
 
 .cube[data-cube="223"] > .cube-wrap {
-  animation-delay: 4899ms;
+  animation-delay: 2405ms;
 }
 
 .cube[data-cube="231"] > .cube-wrap {
-  animation-delay: 4479ms;
+  animation-delay: 1261ms;
 }
 
 .cube[data-cube="232"] > .cube-wrap {
-  animation-delay: 3523ms;
+  animation-delay: 2904ms;
 }
 
 .cube[data-cube="233"] > .cube-wrap {
-  animation-delay: 3806ms;
+  animation-delay: 2365ms;
 }
 
 .cube[data-cube="311"] > .cube-wrap {
-  animation-delay: 2664ms;
+  animation-delay: 1476ms;
 }
 
 .cube[data-cube="312"] > .cube-wrap {
-  animation-delay: 1658ms;
+  animation-delay: 2363ms;
 }
 
 .cube[data-cube="313"] > .cube-wrap {
-  animation-delay: 2017ms;
+  animation-delay: 2362ms;
 }
 
 .cube[data-cube="321"] > .cube-wrap {
-  animation-delay: 4584ms;
+  animation-delay: 1929ms;
 }
 
 .cube[data-cube="322"] > .cube-wrap {
-  animation-delay: 968ms;
+  animation-delay: 3367ms;
 }
 
 .cube[data-cube="323"] > .cube-wrap {
-  animation-delay: 4145ms;
+  animation-delay: 295ms;
 }
 
 .cube[data-cube="331"] > .cube-wrap {
-  animation-delay: 48ms;
+  animation-delay: 100ms;
 }
 
 .cube[data-cube="332"] > .cube-wrap {
-  animation-delay: 2778ms;
+  animation-delay: 2896ms;
 }
 
 .cube[data-cube="333"] > .cube-wrap {
-  animation-delay: 4934ms;
+  animation-delay: 2359ms;
 }
 
 [class^=shadow] {
@@ -9235,4 +9245,16 @@ span {
   filter: blur(3vmin);
   opacity: 0.4;
   animation: none !important;
+}
+
+@media (max-width: 767px) {
+  .cubes {
+    animation-duration: 32s;
+  }
+  .cube > .cube-wrap {
+    animation: none !important;
+  }
+  .large-shadows {
+    display: none !important;
+  }
 }

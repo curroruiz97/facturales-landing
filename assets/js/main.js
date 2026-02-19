@@ -80,11 +80,18 @@
        Sticky Header Js Start
     ================================ */
 
+       var stickyTicking = false;
        $windowOn.on("scroll", function () {
-        if ($(this).scrollTop() > 250) {
-          $("#header-sticky").addClass("sticky");
-        } else {
-          $("#header-sticky").removeClass("sticky");
+        if (!stickyTicking) {
+          window.requestAnimationFrame(function() {
+            if ($(window).scrollTop() > 250) {
+              $("#header-sticky").addClass("sticky");
+            } else {
+              $("#header-sticky").removeClass("sticky");
+            }
+            stickyTicking = false;
+          });
+          stickyTicking = true;
         }
       });      
 
@@ -645,7 +652,7 @@ if (document.querySelectorAll(".marquee-group").length) {
         Mouse Cursor Animation Js Start
     ================================ */
 
-    if ($(".mouseCursor").length > 0) {
+    if ($(".mouseCursor").length > 0 && window.innerWidth > 1199) {
         function itCursor() {
             var myCursor = jQuery(".mouseCursor");
             if (myCursor.length) {
@@ -682,15 +689,22 @@ if (document.querySelectorAll(".marquee-group").length) {
     /* ================================
         Back To Top Button Js Start
     ================================ */
+    var backTopTicking = false;
     $windowOn.on('scroll', function() {
-        var windowScrollTop = $(this).scrollTop();
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
+        if (!backTopTicking) {
+          window.requestAnimationFrame(function() {
+            var windowScrollTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
 
-        if (windowScrollTop + windowHeight >= documentHeight - 10) {
-            $("#back-top").addClass("show");
-        } else {
-            $("#back-top").removeClass("show");
+            if (windowScrollTop + windowHeight >= documentHeight - 10) {
+                $("#back-top").addClass("show");
+            } else {
+                $("#back-top").removeClass("show");
+            }
+            backTopTicking = false;
+          });
+          backTopTicking = true;
         }
     });
 

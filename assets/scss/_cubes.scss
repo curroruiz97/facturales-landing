@@ -463,3 +463,17 @@ $cube-shadow-color: #1A0C04;
   opacity: 0.4;
   animation: none !important;
 }
+
+@media (max-width: 767px) {
+  .cubes {
+    animation-duration: 32s;
+  }
+
+  .cube > .cube-wrap {
+    animation: none !important;
+  }
+
+  .large-shadows {
+    display: none !important;
+  }
+}
