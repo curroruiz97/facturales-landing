@@ -2851,6 +2851,53 @@ span {
   height: 100%;
   border-radius: 12px;
 }
+.about-wrapper .about-image-feature {
+  background: linear-gradient(165deg, #1d1a17 0%, #28231f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  padding: 34px 28px;
+  min-height: 426px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-wrapper .about-image-feature .about-feature-badge {
+  display: inline-block;
+  background-color: rgba(249, 77, 0, 0.18);
+  color: var(--theme);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 30px;
+  padding: 8px 14px;
+  width: fit-content;
+}
+.about-wrapper .about-image-feature h4 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 18px 0 14px;
+  color: var(--white);
+}
+.about-wrapper .about-image-feature ul {
+  margin-bottom: 20px;
+}
+.about-wrapper .about-image-feature ul li {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.88);
+}
+.about-wrapper .about-image-feature ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.about-wrapper .about-image-feature ul li i {
+  color: var(--theme);
+  margin-right: 8px;
+}
+.about-wrapper .about-image-feature .theme-btn {
+  width: fit-content;
+  padding: 12px 20px;
+  font-size: 14px;
+}
 .about-wrapper .about-content .text {
   margin-top: 20px;
   max-width: 533px;
@@ -6241,6 +6288,24 @@ span {
   color: var(--theme);
   background-size: 100% 2px;
   background-image: linear-gradient(180deg, var(--theme) 0%, var(--theme) 100%);
+}
+.project-box-wrapper .project-card-items .project-content h3.project-title-compact {
+  font-size: 46px;
+}
+@media (max-width: 1399px) {
+  .project-box-wrapper .project-card-items .project-content h3.project-title-compact {
+    font-size: 38px;
+  }
+}
+@media (max-width: 991px) {
+  .project-box-wrapper .project-card-items .project-content h3.project-title-compact {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .project-box-wrapper .project-card-items .project-content h3.project-title-compact {
+    font-size: 24px;
+  }
 }
 .project-box-wrapper .project-card-items .project-content p {
   max-width: 601px;

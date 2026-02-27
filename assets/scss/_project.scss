@@ -128,6 +128,22 @@
                 }
             }
 
+            h3.project-title-compact {
+              font-size: 46px;
+
+              @include breakpoint (max-xxl) {
+                 font-size: 38px;
+              }
+
+              @include breakpoint (max-lg) {
+                 font-size: 32px;
+              }
+
+               @include breakpoint (max-md) {
+                 font-size: 24px;
+              }
+            }
+
             p {
               max-width: 601px;
               margin-bottom: 25px;

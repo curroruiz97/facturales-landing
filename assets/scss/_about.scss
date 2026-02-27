@@ -104,6 +104,61 @@
         }
     }
 
+    .about-image-feature {
+        background: linear-gradient(165deg, #1d1a17 0%, #28231f 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: $white;
+        padding: 34px 28px;
+        min-height: 426px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .about-feature-badge {
+            display: inline-block;
+            background-color: rgba(249, 77, 0, 0.18);
+            color: $theme-color;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 30px;
+            padding: 8px 14px;
+            width: fit-content;
+        }
+
+        h4 {
+            font-size: 34px;
+            line-height: 1.2;
+            margin: 18px 0 14px;
+            color: $white;
+        }
+
+        ul {
+            margin-bottom: 20px;
+
+            li {
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.88);
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                i {
+                    color: $theme-color;
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .theme-btn {
+            width: fit-content;
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+    }
+
     .about-content {
         .text {
             margin-top: 20px;
