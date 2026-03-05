@@ -145,15 +145,6 @@
                                                             </div>
                                                           </a>
                                                   
-                                                          <a href="conectado-a-gestor.html" class="homemenu">
-                                                            <div class="homemenu-icon">
-                                                              <i class="fa-solid fa-link"></i>
-                                                            </div>
-                                                            <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Conectado A Gestor</h4>
-                                                              <p class="homemenu-desc">Sincroniza con tu asesor fiscal</p>
-                                                            </div>
-                                                          </a>
                                                   
                                                         </div>
                                                       </li>
@@ -173,9 +164,6 @@
                                                 <a href="pricing.html">
                                                     Precios
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contacto</a>
                                             </li>
                                         </ul>
                                     </nav>

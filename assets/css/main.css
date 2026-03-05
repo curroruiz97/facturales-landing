@@ -2309,16 +2309,16 @@ span {
 }
 
 .footer-widget-wrapper {
-  padding: 90px 0 120px;
+  padding: 50px 0 40px;
 }
 @media (max-width: 1399px) {
   .footer-widget-wrapper {
-    padding: 70px 0 100px;
+    padding: 40px 0 30px;
   }
 }
 @media (max-width: 991px) {
   .footer-widget-wrapper {
-    padding: 50px 0 80px;
+    padding: 30px 0 20px;
   }
 }
 .footer-widget-wrapper.style-4 {
@@ -2335,10 +2335,10 @@ span {
   }
 }
 .footer-widget-wrapper .footer-widget-items {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .footer-widget-wrapper .footer-widget-items .widget-head {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .footer-widget-wrapper .footer-widget-items .widget-head h3 {
   color: var(--white);
@@ -2556,24 +2556,24 @@ span {
 }
 
 .footer-section {
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 .footer-section.style-2 {
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 @media (max-width: 1399px) {
   .footer-section {
-    padding-bottom: 30px;
+    padding-bottom: 0;
   }
 }
 
 .footer-area {
-  margin: 0 30px 0px;
-  border-radius: 20px;
+  margin: 0;
+  border-radius: 0;
 }
 @media (max-width: 767px) {
   .footer-area {
-    margin: 0 15px 0px;
+    margin: 0;
   }
 }
 
@@ -3943,12 +3943,12 @@ span {
 }
 
 .counter-section {
-  margin: 0 30px;
-  border-radius: 20px;
+  margin: 0;
+  border-radius: 0;
 }
 @media (max-width: 991px) {
   .counter-section {
-    margin: 0 15px;
+    margin: 0;
   }
 }
 

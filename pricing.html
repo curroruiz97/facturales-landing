@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <!--<< Header Area >>-->
     <head>
         <!-- ========== Meta Tags ========== -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Gramentheme">
-        <meta name="description" content="Brevon - Multipurpose Business HTML Template">
+        <meta name="author" content="Avenue Media">
+        <meta name="description" content="Precios de Facturales. Planes desde 4,99 EUR/mes. Facturacion, presupuestos, OCR, Verifactu y mas. Sin permanencia, cancela cuando quieras.">
         <!-- ======== Page title ============ -->
-        <title>Facturales - Sistema de contabilidad</title>
+        <title>Facturales - Precios | Planes para Autonomos y Pymes</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <!--<< Bootstrap min.css >>-->
@@ -28,14 +28,459 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+
+        <style>
+            /* ===== Pricing Page Custom Styles ===== */
+            :root {
+                --pr-green: #22c55e;
+                --pr-gold: #d4a017;
+            }
+
+            /* --- Toggle --- */
+            .pricing-toggle-wrapper {
+                display: inline-flex;
+                align-items: center;
+                gap: 16px;
+                background: #fff;
+                padding: 6px 8px;
+                border-radius: 60px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                border: 1px solid rgba(0,0,0,0.06);
+            }
+            .toggle-option {
+                padding: 10px 24px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: var(--text);
+                user-select: none;
+            }
+            .toggle-option.active {
+                background: var(--theme);
+                color: #fff;
+                box-shadow: 0 4px 12px rgba(249,77,0,0.3);
+            }
+            .toggle-save-badge {
+                background: linear-gradient(135deg, var(--pr-green), #16a34a);
+                color: #fff;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.3px;
+            }
+
+            /* --- Pricing Cards --- */
+            .pricing-card {
+                background: #fff;
+                border-radius: 20px;
+                padding: 40px 32px 36px;
+                position: relative;
+                border: 2px solid rgba(0,0,0,0.06);
+                transition: all 0.4s ease;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .pricing-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            }
+            .pricing-card.featured {
+                border-color: var(--theme);
+                box-shadow: 0 12px 40px rgba(249,77,0,0.15);
+            }
+            .pricing-card.featured::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--theme), var(--accent, #ec8228));
+                border-radius: 20px 20px 0 0;
+            }
+            .pricing-card .plan-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 16px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+                width: fit-content;
+            }
+            .pricing-card.starter .plan-badge {
+                background: rgba(249,77,0,0.08);
+                color: var(--theme);
+                border: 1px solid rgba(249,77,0,0.15);
+            }
+            .pricing-card.pro .plan-badge {
+                background: rgba(249,77,0,0.08);
+                color: var(--theme);
+                border: 1px solid rgba(249,77,0,0.15);
+            }
+            .pricing-card.unlimited .plan-badge {
+                background: linear-gradient(135deg, var(--pr-gold), #f59e0b);
+                color: #fff;
+                border: none;
+            }
+            .popular-tag {
+                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
+                color: #fff;
+                padding: 3px 10px;
+                border-radius: 6px;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .pricing-card .price-row {
+                display: flex;
+                align-items: baseline;
+                gap: 4px;
+                margin-bottom: 4px;
+            }
+            .pricing-card .price-amount {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 52px;
+                font-weight: 800;
+                color: var(--header);
+                line-height: 1;
+            }
+            .pricing-card .price-currency {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 28px;
+                font-weight: 800;
+                color: var(--header);
+            }
+            .pricing-card .price-period {
+                font-size: 16px;
+                color: var(--text);
+                font-weight: 500;
+            }
+            .pricing-card .price-annual-note {
+                font-size: 13px;
+                color: var(--text);
+                margin-bottom: 8px;
+                min-height: 20px;
+            }
+            .pricing-card .plan-desc {
+                font-size: 15px;
+                color: var(--text);
+                margin-bottom: 24px;
+                line-height: 1.5;
+                font-weight: 500;
+            }
+            .pricing-card .btn-plan {
+                display: block;
+                text-align: center;
+                padding: 14px 24px;
+                border-radius: 10px;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                margin-bottom: 28px;
+                border: 2px solid;
+            }
+            .pricing-card.starter .btn-plan {
+                background: var(--theme);
+                border-color: var(--theme);
+                color: #fff;
+            }
+            .pricing-card.starter .btn-plan:hover {
+                background: #D94000;
+                border-color: #D94000;
+                color: #fff;
+                box-shadow: 0 8px 25px rgba(249,77,0,0.3);
+                transform: translateY(-2px);
+            }
+            .pricing-card.pro .btn-plan {
+                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
+                border-color: transparent;
+                color: #fff;
+                box-shadow: 0 4px 15px rgba(249,77,0,0.3);
+                font-size: 17px;
+                padding: 16px 24px;
+            }
+            .pricing-card.pro .btn-plan:hover {
+                box-shadow: 0 8px 30px rgba(249,77,0,0.4);
+                transform: translateY(-2px);
+            }
+            .pricing-card.unlimited .btn-plan {
+                background: transparent;
+                border-color: var(--pr-gold);
+                color: var(--pr-gold);
+            }
+            .pricing-card.unlimited .btn-plan:hover {
+                background: linear-gradient(135deg, var(--pr-gold), #f59e0b);
+                color: #fff;
+                box-shadow: 0 8px 25px rgba(212,160,23,0.3);
+                transform: translateY(-2px);
+            }
+            .pricing-card .features-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                flex-grow: 1;
+            }
+            .pricing-card .features-list li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 9px 0;
+                font-size: 14px;
+                color: var(--text);
+                line-height: 1.5;
+            }
+            .pricing-card .features-list li i {
+                color: var(--pr-green);
+                font-size: 14px;
+                margin-top: 3px;
+                flex-shrink: 0;
+            }
+            .pricing-card .features-list li strong {
+                color: var(--header);
+                font-weight: 600;
+            }
+
+            /* --- Included Section --- */
+            .included-section {
+                padding: 100px 0;
+                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
+                position: relative;
+            }
+            .included-section::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -10%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(249,77,0,0.06) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+            .included-card {
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 16px;
+                padding: 32px 24px;
+                height: 100%;
+                transition: all 0.3s ease;
+            }
+            .included-card:hover {
+                background: rgba(255,255,255,0.07);
+                border-color: rgba(249,77,0,0.2);
+                transform: translateY(-4px);
+            }
+            .included-card .card-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: #fff;
+                margin-bottom: 18px;
+                box-shadow: 0 4px 15px rgba(249,77,0,0.25);
+            }
+            .included-card h5 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 17px;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .included-card p {
+                font-size: 14px;
+                color: rgba(255,255,255,0.6);
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            /* --- Comparison Table --- */
+            .comparison-section {
+                padding: 100px 0;
+                background: #fff;
+            }
+            .comparison-table-wrapper {
+                background: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                border: 1px solid rgba(0,0,0,0.08);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            }
+            .comp-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .comp-table thead th {
+                padding: 20px 24px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--header);
+                background: var(--bg);
+                border-bottom: 2px solid rgba(0,0,0,0.08);
+                text-align: center;
+            }
+            .comp-table thead th:first-child {
+                text-align: left;
+                font-size: 15px;
+                color: var(--text);
+                font-weight: 600;
+            }
+            .comp-table thead th.starter-col { color: var(--theme); }
+            .comp-table thead th.pro-col { color: var(--theme); }
+            .comp-table thead th.unlimited-col { color: var(--pr-gold); }
+            .comp-table .category-row td {
+                padding: 16px 24px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--header);
+                background: rgba(249,77,0,0.03);
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+            }
+            .comp-table tbody td {
+                padding: 14px 24px;
+                font-size: 14px;
+                color: var(--text);
+                border-bottom: 1px solid rgba(0,0,0,0.04);
+                text-align: center;
+                vertical-align: middle;
+            }
+            .comp-table tbody td:first-child {
+                text-align: left;
+                font-weight: 500;
+            }
+            .comp-table tbody tr:hover {
+                background: rgba(249,77,0,0.02);
+            }
+            .comp-table .check-icon {
+                color: var(--pr-green);
+                font-size: 18px;
+            }
+            .comp-table .dash-icon {
+                color: #d1d5db;
+                font-size: 16px;
+            }
+            .comp-table .value-text {
+                font-weight: 600;
+                color: var(--header);
+            }
+            .table-toggle-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 14px 32px;
+                border: 2px solid rgba(0,0,0,0.1);
+                border-radius: 10px;
+                background: #fff;
+                font-weight: 600;
+                font-size: 15px;
+                color: var(--header);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .table-toggle-btn:hover {
+                border-color: var(--theme);
+                color: var(--theme);
+                box-shadow: 0 4px 12px rgba(249,77,0,0.1);
+            }
+            .table-toggle-btn i {
+                transition: transform 0.3s ease;
+            }
+            .table-toggle-btn.expanded i {
+                transform: rotate(180deg);
+            }
+
+            /* --- FAQ Mini --- */
+            .pricing-faq {
+                padding: 80px 0;
+                background: var(--bg);
+            }
+
+            /* --- CTA Section --- */
+            .pricing-cta {
+                padding: 80px 0;
+                background: linear-gradient(135deg, #F94D00 0%, #D94000 100%);
+                position: relative;
+                overflow: hidden;
+            }
+            .pricing-cta::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -10%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+            .pricing-cta h2 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 40px;
+                font-weight: 800;
+                color: #fff;
+                margin-bottom: 16px;
+            }
+            .pricing-cta p {
+                font-size: 18px;
+                color: rgba(255,255,255,0.9);
+                margin-bottom: 32px;
+                max-width: 550px;
+            }
+            .pricing-cta .btn-cta-white {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff;
+                color: var(--header);
+                padding: 16px 36px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+            .pricing-cta .btn-cta-white:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+                color: var(--theme);
+            }
+
+            /* --- Responsive --- */
+            @media (max-width: 991px) {
+                .pricing-card .price-amount { font-size: 42px; }
+                .pricing-cta h2 { font-size: 30px; }
+                .comp-table thead th, .comp-table tbody td { padding: 10px 12px; font-size: 13px; }
+            }
+            @media (max-width: 767px) {
+                .pricing-card { padding: 28px 20px; }
+                .pricing-card .price-amount { font-size: 36px; }
+                .pricing-cta h2 { font-size: 26px; }
+                .comparison-table-wrapper { overflow-x: auto; }
+                .comp-table { min-width: 600px; }
+            }
+        </style>
     </head>
     <body>
 
-        
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
-                <div class="spinner">                
+                <div class="spinner">
                 </div>
                 <div class="txt-loading">
                     <span data-text-preloader="F" class="letters-loading">F</span>
@@ -77,37 +522,26 @@
         <!-- GT MouseCursor Start -->
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
-       
 
         <!-- Header-Top Section Start -->
         <div class="header-top-section">
             <div class="container-fluid">
-                <div class="header-top-wrapper">
-                    <div class="header-left">
-                         <ul class="list">
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Riverside Park EU-1001
-                            </li>
-                            <li>।</li>
-                            <li>
-                                <i class="fa-regular fa-envelope"></i>
-                                <a href="mailto:hello@neotix.com">hello@neotix.com</a>
-                            </li>
-                        </ul>
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
                     </div>
-                    <div class="header-right">
-                        <span><i class="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM</span>
-                            <div class="social-icon">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
                     </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
                 </div>
             </div>
-        </div>
 <script src="assets/js/header-include.js"></script>
 
         <!-- start: Search Popup -->
@@ -152,12 +586,12 @@
         </div>
         <div class="search-popup-overlay"></div>
 
-        
+
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
                 <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg'); padding: 120px 0 80px;">
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
                     <div class="container">
                         <div class="page-heading">
                             <div class="breadcrumb-sub-title">
@@ -179,437 +613,397 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Pricing Section Start -->
-                <section class="pricing-section-2 fix" style="padding: 60px 0 80px;">
+                <section style="padding: 80px 0 100px; background: var(--bg);">
                     <div class="container">
-                        <!-- Section Title -->
-                        <div class="section-title text-center mb-5">
+                        <!-- Section Header -->
+                        <div class="section-title text-center mb-4">
                             <span class="sub-title wow fadeInUp" data-wow-delay=".2s">
                                 <i class="fa-solid fa-tags"></i> Precios transparentes
                             </span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
-                                Elige el plan perfecto <span style="color: var(--theme);">para tu negocio</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                Elige el plan perfecto <span>para tu negocio</span>
                             </h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">
-                                Comienza gratis y escala a medida que creces. sin permanencia,<br>
-                                cancela cuando quieras.
+                            <p class="wow fadeInUp" data-wow-delay=".4s" style="font-size:17px; color:var(--text); max-width:550px; margin:12px auto 0;">
+                                Comienza gratis y escala a medida que creces. Sin permanencia, cancela cuando quieras.
                             </p>
-                        </div>
-
-                        <!-- Toggle Switch -->
-                        <div class="pricing-toggle text-center mb-5 wow fadeInUp" data-wow-delay=".8s">
-                            <div class="toggle-wrapper" style="display: inline-flex; align-items: center; gap: 15px; background: #f5f5f5; padding: 8px; border-radius: 50px;">
-                                <span id="monthlyLabel" style="font-weight: 600; color: var(--theme); cursor: pointer; padding: 8px 20px;">Mensual</span>
-                                <label class="switch" style="position: relative; display: inline-block; width: 50px; height: 24px;">
-                                    <input type="checkbox" id="pricingToggle" style="opacity: 0; width: 0; height: 0;">
-                                    <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--theme); transition: .4s; border-radius: 24px;"></span>
-                                </label>
-                                <span id="annualLabel" style="font-weight: 400; color: #666; cursor: pointer; padding: 8px 20px; display: flex; align-items: center; gap: 8px;">
-                                    Anual 
-                                    <span style="background: #4CAF50; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Ahorra un 25%</span>
+                            <div class="wow fadeInUp" data-wow-delay=".45s" style="margin-top:16px;">
+                                <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#16a34a; padding:8px 20px; border-radius:50px; font-size:14px; font-weight:700;">
+                                    <i class="fa-solid fa-gift"></i> 14 d&iacute;as de prueba gratis en todos los planes
                                 </span>
                             </div>
                         </div>
 
-                        <div class="row g-4 justify-content-center align-items-center">
-                            <!-- Plan Básico -->
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="pricing-card" data-plan="basico" style="background: white; border: 2px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column;">
-                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px;">
-                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Básico</h3>
-                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Ideal para los que empiezan.</p>
-                                        <div class="price-display">
-                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
-                                                <span class="price-amount" data-monthly="7.20" data-annual="6">7.20</span><span style="font-size: 24px;">€</span>
-                                            </h2>
-                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
-                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
-                                                Facturado anualmente. <span class="annual-total">72.00€</span> + IVA al año.
-                                            </p>
-                                        </div>
+                        <!-- Toggle Switch -->
+                        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="pricing-toggle-wrapper">
+                                <span class="toggle-option active" id="monthlyToggle" onclick="setPricing('monthly')">Mensual</span>
+                                <span class="toggle-option" id="annualToggle" onclick="setPricing('annual')">
+                                    Anual <span class="toggle-save-badge">-30%</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Cards -->
+                        <div class="row g-4 justify-content-center align-items-stretch">
+                            <!-- STARTER -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="pricing-card starter">
+                                    <span class="plan-badge">Starter</span>
+                                    <div class="price-row">
+                                        <span class="price-amount" data-monthly="6,45" data-annual="4,95">6,45</span>
+                                        <span class="price-currency">&euro;</span>
+                                        <span class="price-period">/mes + IVA</span>
                                     </div>
-                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
-                                        <ul style="list-style: none; padding: 0; margin: 0;">
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">De <strong style="color: var(--theme);">0 a 5 clientes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">1 usuario</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Máximo <strong style="color: var(--theme);">10 productos</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Exportación de contactos, 80 documentos/mes</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Múltiples diseños de facturas</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Gestión de stock</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Panel de análisis de clientes y proveedores</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Seguimiento de documentos enviados</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Gastos recurrentes</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Facturas recurrentes</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Remesas bancarias</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con Shopify <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
-                                            </li>
-                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con API de Facturas Billin <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s;">
-                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    <div class="price-annual-note annual-note" style="display:none;">59,40 &euro; facturados anualmente</div>
+                                    <div class="price-annual-note monthly-note">&nbsp;</div>
+                                    <p class="plan-desc">Para aut&oacute;nomos que empiezan.</p>
+                                    <a href="https://app.facturales.es/signup.html" class="btn-plan">
+                                        Empezar gratis <i class="fa-solid fa-arrow-right"></i>
                                     </a>
+                                    <ul class="features-list">
+                                        <li><i class="fa-solid fa-check"></i> Hasta <strong>10 clientes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>1 usuario</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Hasta <strong>30 productos/servicios</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>10 facturas / mes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Escaneado: <strong>10 docs/mes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Soporte: <strong>Email</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Plan Pro (Destacado) -->
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="pricing-card featured" data-plan="pro" style="background: white; border: 3px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column; transform: scale(1.05); box-shadow: 0 10px 40px rgba(249, 77, 0, 0.2); position: relative;">
-                                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--theme); color: white; padding: 8px 25px; border-radius: 20px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 15px rgba(249, 77, 0, 0.4);">
-                                        ⭐ MÁS POPULAR
+
+                            <!-- PRO -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="pricing-card pro featured">
+                                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
+                                        <span class="plan-badge" style="margin-bottom:0;">Pro</span>
+                                        <span class="popular-tag">M&aacute;s popular</span>
                                     </div>
-                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px; margin-top: 10px;">
-                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Pro</h3>
-                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Perfecto para ahorrar mucho tiempo.</p>
-                                        <div class="price-display">
-                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
-                                                <span class="price-amount" data-monthly="13.50" data-annual="11.25">13.50</span><span style="font-size: 24px;">€</span>
-                                            </h2>
-                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
-                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
-                                                Facturado anualmente. <span class="annual-total">135.00€</span> + IVA al año.
-                                            </p>
-                                        </div>
+                                    <div class="price-row">
+                                        <span class="price-amount" data-monthly="11,95" data-annual="8,95">11,95</span>
+                                        <span class="price-currency">&euro;</span>
+                                        <span class="price-period">/mes + IVA</span>
                                     </div>
-                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
-                                        <ul style="list-style: none; padding: 0; margin: 0;">
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Hasta <strong style="color: var(--theme);">50 clientes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">3 usuarios</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Máximo <strong style="color: var(--theme);">50 productos</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Escaneado inteligente</strong> de <strong style="color: var(--theme);">50 documentos/mes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Múltiples diseños</strong> de facturas</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email y chat</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gestión de stock</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Panel de análisis</strong> de clientes y proveedores</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Seguimiento</strong> de documentos enviados</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gastos recurrentes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas recurrentes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Remesas bancarias</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con Shopify <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
-                                            </li>
-                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-times" style="color: #dc3545; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #999; font-size: 14px; text-decoration: line-through;">Integración con API de Facturas Billin <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(249, 77, 0, 0.3);">
-                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    <div class="price-annual-note annual-note" style="display:none;">107,40 &euro; facturados anualmente</div>
+                                    <div class="price-annual-note monthly-note">&nbsp;</div>
+                                    <p class="plan-desc">Para negocios en crecimiento.</p>
+                                    <a href="https://app.facturales.es/signup.html" class="btn-plan">
+                                        Empezar gratis <i class="fa-solid fa-arrow-right"></i>
                                     </a>
+                                    <ul class="features-list">
+                                        <li><i class="fa-solid fa-check"></i> Hasta <strong>100 clientes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Hasta <strong>3 usuarios</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Hasta <strong>150 productos/servicios</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>Facturas ilimitadas</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Escaneado: <strong>75 docs/mes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Soporte: <strong>Chat + email</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Plan Ilimitado -->
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="pricing-card" data-plan="ilimitado" style="background: white; border: 2px solid var(--theme); border-radius: 15px; padding: 30px; height: 100%; display: flex; flex-direction: column;">
-                                    <div class="pricing-header" style="text-align: center; margin-bottom: 25px;">
-                                        <h3 style="color: var(--theme); font-size: 28px; font-weight: 700; margin-bottom: 10px;">Plan Ilimitado</h3>
-                                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">El plan para ir a por todas.</p>
-                                        <div class="price-display">
-                                            <h2 style="color: var(--theme); font-size: 48px; font-weight: 700; margin: 0;">
-                                                <span class="price-amount" data-monthly="21.60" data-annual="18">21.60</span><span style="font-size: 24px;">€</span>
-                                            </h2>
-                                            <p style="color: #333; font-size: 14px; margin: 5px 0;"><span class="period">/mes</span> <span style="color: #999;">+IVA</span></p>
-                                            <p class="annual-note" style="font-size: 12px; color: #666; display: none; min-height: 18px;">
-                                                Facturado anualmente. <span class="annual-total">216.00€</span> + IVA al año.
-                                            </p>
-                                        </div>
+
+                            <!-- ILIMITADO -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="pricing-card unlimited">
+                                    <span class="plan-badge">Ilimitado</span>
+                                    <div class="price-row">
+                                        <span class="price-amount" data-monthly="23,95" data-annual="17,95">23,95</span>
+                                        <span class="price-currency">&euro;</span>
+                                        <span class="price-period">/mes + IVA</span>
                                     </div>
-                                    <div class="pricing-features" style="flex-grow: 1; margin-bottom: 25px;">
-                                        <ul style="list-style: none; padding: 0; margin: 0;">
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Sin límite de clientes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Sin límite de usuarios</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Máximo límite de</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Escaneado inteligente</strong> de <strong style="color: var(--theme);">250 documentos/mes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Presupuestos, facturas, tickets</strong> y proformas <strong style="color: var(--theme);">ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas electrónicas Verifactu, Facturae</strong> y <strong style="color: var(--theme);">TicketBAI ilimitadas</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Múltiples diseños</strong> de facturas</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Personalización <strong style="color: var(--theme);">emails</strong> y comunicaciones</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Facturas conectadas con <strong style="color: var(--theme);">gestor</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;">Soporte <strong style="color: var(--theme);">Email, chat y teléfono</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">App móvil</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gestión de stock</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Panel de análisis</strong> de clientes y proveedores</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Seguimiento</strong> de documentos enviados</span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Gastos recurrentes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Facturas recurrentes</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Remesas bancarias</strong></span>
-                                            </li>
-                                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Integración con Shopify</strong> <span style="background: #e8f5e9; color: #4CAF50; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">Nuevo</span></span>
-                                            </li>
-                                            <li style="padding: 10px 0; display: flex; align-items: flex-start; gap: 10px;">
-                                                <i class="fa-solid fa-check" style="color: #4CAF50; margin-top: 3px; flex-shrink: 0;"></i>
-                                                <span style="color: #333; font-size: 14px;"><strong style="color: var(--theme);">Integración con API de Facturas Billin</strong> <span style="background: #e3f2fd; color: #2196F3; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;">BETA</span></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a href="contact.html" class="theme-btn" style="background: var(--theme); color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600; display: block; transition: all 0.3s;">
-                                        Pruébalo gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                    <div class="price-annual-note annual-note" style="display:none;">215,40 &euro; facturados anualmente</div>
+                                    <div class="price-annual-note monthly-note">&nbsp;</div>
+                                    <p class="plan-desc">Para equipos y alta facturaci&oacute;n.</p>
+                                    <a href="https://app.facturales.es/signup.html" class="btn-plan">
+                                        Empezar gratis <i class="fa-solid fa-arrow-right"></i>
                                     </a>
+                                    <ul class="features-list">
+                                        <li><i class="fa-solid fa-check"></i> <strong>Clientes ilimitados</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>Usuarios ilimitados</strong>*</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>Productos/servicios ilimitados</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>Facturas ilimitadas</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Escaneado: <strong>300 docs/mes</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> Soporte prioritario: <strong>chat, email y tel&eacute;fono</strong></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- All Plans Include Section Start -->
-                <section class="all-plans-section" style="padding: 60px 0; background: #f8f9fa;">
+                <!-- Incluido en todos los planes -->
+                <section class="included-section">
                     <div class="container">
-                        <div class="section-title text-center mb-5">
-                            <h2 style="font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 50px;">Todos los planes incluyen</h2>
+                        <div class="text-center mb-5">
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s" style="font-family:'Plus Jakarta Sans',sans-serif; font-size:38px; font-weight:800; color:#fff;">
+                                Incluido en todos los planes
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s" style="font-size:17px; color:rgba(255,255,255,0.6); max-width:550px; margin:12px auto 0;">
+                                Da igual qu&eacute; plan elijas, todas estas funcionalidades vienen de serie.
+                            </p>
                         </div>
-                        <div class="row justify-content-center g-4">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
-                                    <div class="feature-icon mb-3">
-                                        <i class="fa-solid fa-file-invoice" style="font-size: 48px; color: var(--theme);"></i>
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-file-invoice"></i>
                                     </div>
-                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">Facturas ilimitadas</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">Crea y envía todas las facturas que necesites</p>
+                                    <h5>Facturaci&oacute;n profesional desde el inicio</h5>
+                                    <p>Crea y env&iacute;a facturas con tu logo, en segundos. Olv&iacute;date del Excel o de herramientas inadecuadas.</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
-                                    <div class="feature-icon mb-3">
-                                        <i class="fa-solid fa-badge-check" style="font-size: 48px; color: var(--theme);"></i>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-camera"></i>
                                     </div>
-                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">Cumplimiento Verifactu</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">100% conforme con la normativa vigente</p>
+                                    <h5>Tickets y facturas digitalizados</h5>
+                                    <p>Sube tus documentos y deja que el OCR se encargue. Adi&oacute;s a introducir datos a mano.</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="plan-feature-box text-center" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 100%;">
-                                    <div class="feature-icon mb-3">
-                                        <i class="fa-solid fa-headset" style="font-size: 48px; color: var(--theme);"></i>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-certificate"></i>
                                     </div>
-                                    <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">App móvil incluida</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">Descárgate tu negocio desde cualquier lugar</p>
+                                    <h5>Facturas adaptadas a Verifactu, sin coste extra</h5>
+                                    <p>Cumple con la normativa sin complicarte. Todo viene configurado de serie.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <h5>Control de ingresos y gastos</h5>
+                                    <p>Conecta tu banco y lleva el control de tus cuentas. F&aacute;cil de entender, incluso si no te van los n&uacute;meros.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                    </div>
+                                    <h5>Panel para saber c&oacute;mo va tu negocio</h5>
+                                    <p>Ten claras tus ventas, impuestos y m&aacute;s, de un solo vistazo. Ideal para tomar mejores decisiones.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                <div class="included-card">
+                                    <div class="card-icon">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <h5>Formaci&oacute;n desde el primer d&iacute;a</h5>
+                                    <p>Llamada de configuraci&oacute;n, tutoriales de la plataforma y acceso libre a la Academia.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- All Plans Include Section End -->
 
-                <!-- FAQ Section Start -->
-                <section class="faq-pricing-section" style="padding: 80px 0; background: white;">
+                <!-- Comparison Table -->
+                <section class="comparison-section">
                     <div class="container">
                         <div class="section-title text-center mb-5">
-                            <h2 style="font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 50px;">Preguntas frecuentes</h2>
+                            <span class="sub-title wow fadeInUp" data-wow-delay=".2s">
+                                <i class="fa-solid fa-table-cells"></i> Comparativa detallada
+                            </span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                Compara los planes <span>al detalle</span>
+                            </h2>
+                        </div>
+
+                        <div class="comparison-table-wrapper wow fadeInUp" data-wow-delay=".3s">
+                            <table class="comp-table">
+                                <thead>
+                                    <tr>
+                                        <th>Funcionalidades</th>
+                                        <th class="starter-col">Starter</th>
+                                        <th class="pro-col">Pro</th>
+                                        <th class="unlimited-col">Ilimitado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="compTableBody">
+                                    <!-- Facturacion -->
+                                    <tr class="category-row"><td colspan="4"><i class="fa-solid fa-file-invoice-dollar" style="margin-right:8px; color:var(--theme);"></i> Facturaci&oacute;n</td></tr>
+                                    <tr>
+                                        <td>Facturas emitidas y tickets de venta</td>
+                                        <td><span class="value-text">10/mes</span></td>
+                                        <td><span class="value-text">ILIMITADAS</span></td>
+                                        <td><span class="value-text">ILIMITADAS</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Factura electr&oacute;nica</td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Verifactu</td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Presupuestos</td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                    </tr>
+
+                                    <!-- Hidden rows -->
+                                    <tr class="extra-rows" style="display:none;"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-users" style="margin-right:8px; color:var(--theme);"></i> Clientes y productos</td></tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Clientes</td>
+                                        <td><span class="value-text">10</span></td>
+                                        <td><span class="value-text">100</span></td>
+                                        <td><span class="value-text">Ilimitados</span></td>
+                                    </tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Productos / Servicios</td>
+                                        <td><span class="value-text">30</span></td>
+                                        <td><span class="value-text">150</span></td>
+                                        <td><span class="value-text">Ilimitados</span></td>
+                                    </tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Usuarios</td>
+                                        <td><span class="value-text">1</span></td>
+                                        <td><span class="value-text">3</span></td>
+                                        <td><span class="value-text">Ilimitados*</span></td>
+                                    </tr>
+
+                                    <tr class="extra-rows" style="display:none;"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-camera" style="margin-right:8px; color:var(--theme);"></i> Digitalizaci&oacute;n</td></tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Escaneado OCR (docs/mes)</td>
+                                        <td><span class="value-text">10</span></td>
+                                        <td><span class="value-text">75</span></td>
+                                        <td><span class="value-text">300</span></td>
+                                    </tr>
+
+                                    <tr class="extra-rows" style="display:none;"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-headset" style="margin-right:8px; color:var(--theme);"></i> Soporte</td></tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Canales de soporte</td>
+                                        <td><span class="value-text">Email</span></td>
+                                        <td><span class="value-text">Chat + email</span></td>
+                                        <td><span class="value-text">Chat, email, tel&eacute;fono</span></td>
+                                    </tr>
+                                    <tr class="extra-rows" style="display:none;">
+                                        <td>Soporte prioritario</td>
+                                        <td><i class="fa-solid fa-minus dash-icon"></i></td>
+                                        <td><i class="fa-solid fa-minus dash-icon"></i></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="text-center mt-4 wow fadeInUp" data-wow-delay=".4s">
+                            <button class="table-toggle-btn" id="tableToggleBtn" onclick="toggleTable()">
+                                Mostrar todas las funcionalidades <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Mini -->
+                <section class="pricing-faq">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s" style="font-family:'Plus Jakarta Sans',sans-serif; font-size:36px; font-weight:800; color:var(--header);">
+                                Preguntas frecuentes
+                            </h2>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-bottom: 20px;">
-                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Puedo cambiar de plan en cualquier momento?</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">Sí, puedes cambiar de plan cuando quieras. los cambios se aplican inmediatamente y ajustamos la facturación de forma proporcional.</p>
-                                </div>
-                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-bottom: 20px;">
-                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Qué métodos de pago aceptáis?</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express) y transferencia bancaria para pagos anuales.</p>
-                                </div>
-                                <div class="faq-item" style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
-                                    <h4 style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 15px;">¿Hay algún coste adicional?</h4>
-                                    <p style="color: #666; font-size: 15px; margin: 0;">No, los precios mostrados incluyen todas las funcionalidades del plan. Solo se aplica el IVA correspondiente según tu ubicación.</p>
+                                <div class="accordion" id="pricingFAQ">
+                                    <div class="accordion-item wow fadeInUp" data-wow-delay=".2s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-weight:600; font-size:16px; color:var(--header);">
+                                                &iquest;Puedo cambiar de plan en cualquier momento?
+                                            </button>
+                                        </h2>
+                                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                                            <div class="accordion-body" style="color:var(--text); font-size:15px; line-height:1.7;">
+                                                S&iacute;, puedes subir o bajar de plan cuando quieras desde tu panel de control. El cambio se aplica de forma inmediata y se ajusta el cobro proporcionalmente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item wow fadeInUp" data-wow-delay=".3s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-weight:600; font-size:16px; color:var(--header);">
+                                                &iquest;Hay permanencia o compromiso m&iacute;nimo?
+                                            </button>
+                                        </h2>
+                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                            <div class="accordion-body" style="color:var(--text); font-size:15px; line-height:1.7;">
+                                                No. Puedes cancelar tu suscripci&oacute;n en cualquier momento sin penalizaci&oacute;n. Si cancelas, mantendr&aacute;s acceso hasta el final de tu periodo facturado.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item wow fadeInUp" data-wow-delay=".4s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-weight:600; font-size:16px; color:var(--header);">
+                                                &iquest;Los precios incluyen IVA?
+                                            </button>
+                                        </h2>
+                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                            <div class="accordion-body" style="color:var(--text); font-size:15px; line-height:1.7;">
+                                                Los precios mostrados son sin IVA. El IVA (21%) se a&ntilde;ade en el momento del pago y aparece desglosado en tu factura.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item wow fadeInUp" data-wow-delay=".5s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="font-weight:600; font-size:16px; color:var(--header);">
+                                                &iquest;Qu&eacute; m&eacute;todos de pago aceptan?
+                                            </button>
+                                        </h2>
+                                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                            <div class="accordion-body" style="color:var(--text); font-size:15px; line-height:1.7;">
+                                                Aceptamos tarjeta de cr&eacute;dito/d&eacute;bito (Visa, Mastercard) y domiciliaci&oacute;n bancaria SEPA. Todos los pagos se procesan de forma segura.
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- FAQ Section End -->
 
-                <!-- Final CTA Section Start -->
-                <section class="final-cta-section" style="padding: 80px 0; background: linear-gradient(135deg, #ec8228 0%, #D47524 100%); text-align: center;">
+                <!-- CTA Section -->
+                <section class="pricing-cta">
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row align-items-center">
                             <div class="col-lg-8">
-                                <h2 style="color: white; font-size: 48px; font-weight: 700; margin-bottom: 20px;">¿Listo para empezar?</h2>
-                                <p style="color: white; font-size: 20px; margin-bottom: 40px;">Prueba Factural gratis durante 14 días. sin tarjeta de crédito.</p>
-                                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                                    <a href="contact.html" class="theme-btn" style="background: white; color: var(--theme); padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
-                                        Comenzar prueba gratuita
-                                    </a>
-                                    <a href="contact.html" class="theme-btn" style="background: transparent; border: 2px solid white; color: white; padding: 18px 40px; border-radius: 50px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
-                                        Hablar con ventas
-                                    </a>
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                                    Empieza hoy y factura como un profesional
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".3s">
+                                    &Uacute;nete a miles de aut&oacute;nomos y pymes que ya usan Facturales. Prueba gratis, sin tarjeta de cr&eacute;dito.
+                                </p>
+                                <a href="https://app.facturales.es/signup.html" class="btn-cta-white wow fadeInUp" data-wow-delay=".4s">
+                                    Crear cuenta gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 wow fadeInUp" data-wow-delay=".5s">
+                                <div style="display:flex; flex-direction:column; gap:14px;">
+                                    <div style="display:flex; align-items:center; gap:10px; color:#fff; font-size:15px; font-weight:500;">
+                                        <i class="fa-solid fa-circle-check" style="font-size:18px;"></i> Sin tarjeta de cr&eacute;dito
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:10px; color:#fff; font-size:15px; font-weight:500;">
+                                        <i class="fa-solid fa-circle-check" style="font-size:18px;"></i> Cancela cuando quieras
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:10px; color:#fff; font-size:15px; font-weight:500;">
+                                        <i class="fa-solid fa-circle-check" style="font-size:18px;"></i> Soporte en espa&ntilde;ol
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:10px; color:#fff; font-size:15px; font-weight:500;">
+                                        <i class="fa-solid fa-circle-check" style="font-size:18px;"></i> Verifactu incluido
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- Final CTA Section End -->
 
                 <!-- Footer Section Start -->
                 <footer class="footer-section fix">
@@ -626,9 +1020,9 @@
                                         </div>
                                         <div class="footer-content">
                                             <p>
-                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
+                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y m&aacute;s.
                                             </p>
-                                            <a href="contact.html" class="theme-btn">
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                                 Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </a>
                                         </div>
@@ -637,37 +1031,22 @@
                                 <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Empresa</h3>
+                                            <h3>Acceso r&aacute;pido</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
-                                                <a href="about.html">
-                                                    Sobre nosotros
+                                                <a href="https://app.facturales.es/signup.html">
+                                                    Crea una cuenta gratuita
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">
-                                                    Proceso de trabajo
+                                                <a href="https://app.facturales.es/signin.html">
+                                                    Iniciar sesi&oacute;n
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="team.html">
-                                                    Nuestro equipo
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Contacto
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Carreras
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="news.html">
-                                                    Blog
+                                                <a href="pricing.html">
+                                                    Precios
                                                 </a>
                                             </li>
                                         </ul>
@@ -679,57 +1058,24 @@
                                             <h3>Funcionalidades</h3>
                                         </div>
                                         <ul class="list-area">
-                                            <li>
-                                                <a href="tu-negocio-bajo-control.html">
-                                                    tu negocio bajo control
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-facturas.html">
-                                                    Crea y Envía Facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-presupuestos.html">
-                                                    Crea y Envía Presupuestos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="gestiona-tu-stock.html">
-                                                    Gestiona tu stock
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="escanea-gastos.html">
-                                                    Escanea gastos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="gestiona-clientes.html">
-                                                    Gestiona clientes
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Factura personalizada
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="conectado-a-gestor.html">
-                                                    Conectado a gestor
-                                                </a>
-                                            </li>
+                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                            <li><a href="crea-envia-facturas.html">Crea y Env&iacute;a Facturas</a></li>
+                                            <li><a href="crea-envia-presupuestos.html">Crea y Env&iacute;a Presupuestos</a></li>
+                                            <li><a href="gestiona-tu-stock.html">Gestiona tu stock</a></li>
+                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                            <li><a href="factura-personalizada.html">Factura personalizada</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Suscríbete al Boletín</h3>
+                                            <h3>Suscr&iacute;bete al Bolet&iacute;n</h3>
                                         </div>
                                         <div class="contact-item">
                                             <form action="#">
-                                                <input type="text" placeholder="Correo electrónico">
+                                                <input type="text" placeholder="Correo electr&oacute;nico">
                                             </form>
                                             <button type="submit" class="theme-btn w-100">
                                                     Suscribirse ahora <i class="fa-solid fa-arrow-up-right"></i>
@@ -751,11 +1097,11 @@
                             </p>
                             <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
                                 <li>
-                                    <a href="contact.html">Política de privacidad</a>
+                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Pol&iacute;tica de privacidad</a>
                                 </li>
                                 <li>।</li>
                                 <li>
-                                    <a href="contact.html">Términos y condiciones</a>
+                                    <a href="https://app.facturales.es/condiciones-legales.html">T&eacute;rminos y condiciones</a>
                                 </li>
                             </ul>
                         </div>
@@ -766,9 +1112,6 @@
             </div>
         </div>
 
-       
-
-        
         <!--<< All JS Plugins >>-->
         <script src="assets/js/jquery-3.7.1.min.js"></script>
         <!--<< Viewport Js >>-->
@@ -807,151 +1150,41 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
-        
-        <!-- Pricing Toggle Script -->
+        <script src="assets/js/countdown.js"></script>
+
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.getElementById('pricingToggle');
-            const monthlyLabel = document.getElementById('monthlyLabel');
-            const annualLabel = document.getElementById('annualLabel');
-            const priceAmounts = document.querySelectorAll('.price-amount');
-            const periods = document.querySelectorAll('.period');
-            const annualNotes = document.querySelectorAll('.annual-note');
-            
-            // Función para actualizar precios
-            function updatePrices(isAnnual) {
-                priceAmounts.forEach(price => {
-                    const monthly = parseFloat(price.getAttribute('data-monthly'));
-                    const annual = parseFloat(price.getAttribute('data-annual'));
-                    price.textContent = isAnnual ? annual.toFixed(2) : monthly.toFixed(2);
+            // Pricing toggle
+            function setPricing(mode) {
+                var monthly = mode === 'monthly';
+                document.getElementById('monthlyToggle').classList.toggle('active', monthly);
+                document.getElementById('annualToggle').classList.toggle('active', !monthly);
+
+                document.querySelectorAll('.price-amount').forEach(function(el) {
+                    el.textContent = monthly ? el.dataset.monthly : el.dataset.annual;
                 });
-                
-                // Actualizar texto del período
-                periods.forEach(period => {
-                    period.textContent = isAnnual ? '/mes' : '/mes';
+                document.querySelectorAll('.annual-note').forEach(function(el) {
+                    el.style.display = monthly ? 'none' : 'block';
                 });
-                
-                // Mostrar/ocultar nota anual
-                annualNotes.forEach(note => {
-                    note.style.display = isAnnual ? 'block' : 'none';
+                document.querySelectorAll('.monthly-note').forEach(function(el) {
+                    el.style.display = monthly ? 'block' : 'none';
                 });
-                
-                // Actualizar totales anuales
-                const plans = document.querySelectorAll('[data-plan]');
-                plans.forEach(plan => {
-                    const priceAmount = plan.querySelector('.price-amount');
-                    const annualTotal = plan.querySelector('.annual-total');
-                    if (annualTotal && isAnnual) {
-                        const monthlyPrice = parseFloat(priceAmount.getAttribute('data-annual'));
-                        annualTotal.textContent = (monthlyPrice * 12).toFixed(2) + '€';
-                    }
-                });
-                
-                // Actualizar estilos de las etiquetas
-                if (isAnnual) {
-                    monthlyLabel.style.fontWeight = '400';
-                    monthlyLabel.style.color = '#666';
-                    annualLabel.style.fontWeight = '600';
-                    annualLabel.style.color = 'var(--theme)';
-                } else {
-                    monthlyLabel.style.fontWeight = '600';
-                    monthlyLabel.style.color = 'var(--theme)';
-                    annualLabel.style.fontWeight = '400';
-                    annualLabel.style.color = '#666';
-                }
             }
-            
-            // Event listeners
-            toggle.addEventListener('change', function() {
-                updatePrices(this.checked);
-            });
-            
-            monthlyLabel.addEventListener('click', function() {
-                toggle.checked = false;
-                updatePrices(false);
-            });
-            
-            annualLabel.addEventListener('click', function() {
-                toggle.checked = true;
-                updatePrices(true);
-            });
-            
-            // Inicializar con precios mensuales
-            updatePrices(false);
-        });
+
+            // Comparison table toggle
+            function toggleTable() {
+                var rows = document.querySelectorAll('.extra-rows');
+                var btn = document.getElementById('tableToggleBtn');
+                var visible = rows[0].style.display !== 'none';
+
+                rows.forEach(function(row) {
+                    row.style.display = visible ? 'none' : 'table-row';
+                });
+
+                btn.classList.toggle('expanded', !visible);
+                btn.innerHTML = visible
+                    ? 'Mostrar todas las funcionalidades <i class="fa-solid fa-chevron-down"></i>'
+                    : 'Ocultar funcionalidades <i class="fa-solid fa-chevron-up"></i>';
+            }
         </script>
-        
-        <!-- CSS para el toggle slider y pricing cards -->
-        <style>
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-        
-        .slider {
-            border-radius: 24px;
-        }
-        
-        /* Pricing Cards Styling */
-        .pricing-card {
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-        
-        .pricing-card.featured:hover {
-            box-shadow: 0 20px 50px rgba(249, 77, 0, 0.3);
-        }
-        
-        .theme-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(249, 77, 0, 0.4);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1199px) {
-            .pricing-card.featured {
-                transform: scale(1) !important;
-                margin-top: 0 !important;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .pricing-card {
-                margin-bottom: 20px;
-            }
-            
-            .price-display h2 {
-                font-size: 36px !important;
-            }
-        }
-        
-        /* Fix spacing issues */
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        #smooth-wrapper {
-            padding-top: 0 !important;
-        }
-        
-        .breadcrumb-wrapper {
-            margin-top: 0 !important;
-        }
-        </style>
     </body>
 </html>

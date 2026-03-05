@@ -81,29 +81,20 @@
          <!-- Header-Top Section Start -->
         <div class="header-top-section">
             <div class="container-fluid">
-                <div class="header-top-wrapper">
-                    <div class="header-left">
-                         <ul class="list">
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Riverside Park EU-1001
-                            </li>
-                            <li>।</li>
-                            <li>
-                                <i class="fa-regular fa-envelope"></i>
-                                <a href="mailto:hello@neotix.com">hello@neotix.com</a>
-                            </li>
-                        </ul>
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
                     </div>
-                    <div class="header-right">
-                        <span><i class="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM</span>
-                            <div class="social-icon">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
                     </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
                 </div>
             </div>
         </div>
@@ -404,7 +395,7 @@
                                             <p>
                                                 Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
                                             </p>
-                                            <a href="contact.html" class="theme-btn">
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                                 Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </a>
                                         </div>
@@ -413,37 +404,22 @@
                                 <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Empresa</h3>
+                                            <h3>Acceso r&aacute;pido</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
-                                                <a href="about.html">
-                                                    Sobre nosotros</a></li><li><a href="contact.html">Proceso de trabajo
+                                                <a href="https://app.facturales.es/signup.html">
+                                                    Crea una cuenta gratuita
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="about.html">
-                                                    Sobre nosotros
+                                                <a href="https://app.facturales.es/signin.html">
+                                                    Iniciar sesi&oacute;n
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="team.html">
-                                                    Nuestro equipo
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Contact
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Carreras
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="news.html">
-                                                    Blog
+                                                <a href="pricing.html">
+                                                    Precios
                                                 </a>
                                             </li>
                                         </ul>
@@ -457,7 +433,7 @@
                                         <ul class="list-area">
                                             <li>
                                                 <a href="service-details.html">
-                                                    tu negocio bajo control
+                                                    Tu negocio bajo control
                                                 </a>
                                             </li>
                                             <li>
@@ -517,11 +493,11 @@
                             </p>
                             <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
                                 <li>
-                                    <a href="contact.html">Política de privacidad</a>
+                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
                                 </li>
                                 <li>।</li>
                                 <li>
-                                    <a href="contact.html">Términos y condiciones</a>
+                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
                                 </li>
                             </ul>
                         </div>
@@ -573,5 +549,6 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/countdown.js"></script>
     </body>
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <!--<< Header Area >>-->
     <head>
         <!-- ========== Meta Tags ========== -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Gramentheme">
-        <meta name="description" content="Brevon - Multipurpose Business HTML Template">
+        <meta name="author" content="Facturales">
+        <meta name="description" content="Facturales - Software de facturación y contabilidad para autónomos y pymes en España. Gestiona facturas, presupuestos, gastos, stock y clientes en un solo lugar.">
         <!-- ======== Page title ============ -->
-        <title>Facturales - Sistema de contabilidad</title>
+        <title>Facturales - Servicios | Software de facturación para autónomos y pymes</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <!--<< Bootstrap min.css >>-->
@@ -28,13 +28,732 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+
+        <style>
+            /* ===== HERO SECTION ===== */
+            .services-hero {
+                position: relative;
+                padding: 140px 0 100px;
+                background: linear-gradient(165deg, #0B0D17 0%, #1a1d2e 50%, #0B0D17 100%);
+                overflow: hidden;
+            }
+            .services-hero::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 700px;
+                height: 700px;
+                background: radial-gradient(circle, rgba(236,130,40,0.12) 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            .services-hero::after {
+                content: '';
+                position: absolute;
+                bottom: -30%;
+                left: -10%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(236,130,40,0.08) 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(236,130,40,0.12);
+                border: 1px solid rgba(236,130,40,0.25);
+                color: #ec8228;
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                margin-bottom: 24px;
+            }
+            .hero-badge i {
+                font-size: 12px;
+            }
+            .services-hero h1 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 56px;
+                font-weight: 800;
+                line-height: 1.12;
+                color: #fff;
+                margin-bottom: 24px;
+                letter-spacing: -1px;
+            }
+            .services-hero h1 span {
+                background: linear-gradient(135deg, #ec8228 0%, #f5a623 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .hero-subtitle {
+                font-size: 19px;
+                line-height: 1.7;
+                color: rgba(255,255,255,0.7);
+                max-width: 540px;
+                margin-bottom: 36px;
+            }
+            .hero-cta-group {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-wrap: wrap;
+                margin-bottom: 48px;
+            }
+            .btn-hero-primary {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: linear-gradient(135deg, #ec8228 0%, #d4711e 100%);
+                color: #fff;
+                padding: 16px 36px;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 700;
+                border: none;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                box-shadow: 0 8px 32px rgba(236,130,40,0.35);
+            }
+            .btn-hero-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 12px 40px rgba(236,130,40,0.5);
+                color: #fff;
+            }
+            .btn-hero-secondary {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: transparent;
+                color: rgba(255,255,255,0.85);
+                padding: 16px 32px;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                border: 1px solid rgba(255,255,255,0.2);
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .btn-hero-secondary:hover {
+                border-color: rgba(236,130,40,0.5);
+                color: #ec8228;
+            }
+            .trust-indicators {
+                display: flex;
+                gap: 32px;
+                flex-wrap: wrap;
+            }
+            .trust-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: rgba(255,255,255,0.55);
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .trust-item i {
+                color: #ec8228;
+                font-size: 16px;
+            }
+
+            /* Dashboard Mockup */
+            .dashboard-mockup {
+                background: #1a1d2e;
+                border-radius: 16px;
+                border: 1px solid rgba(255,255,255,0.08);
+                overflow: hidden;
+                box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+                position: relative;
+            }
+            .mockup-topbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 14px 20px;
+                background: rgba(255,255,255,0.03);
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+            }
+            .mockup-dots {
+                display: flex;
+                gap: 7px;
+            }
+            .mockup-dots span {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+            .mockup-dots span:nth-child(1) { background: #ff5f57; }
+            .mockup-dots span:nth-child(2) { background: #ffbd2e; }
+            .mockup-dots span:nth-child(3) { background: #27ca40; }
+            .mockup-url {
+                background: rgba(255,255,255,0.06);
+                padding: 5px 16px;
+                border-radius: 6px;
+                color: rgba(255,255,255,0.35);
+                font-size: 12px;
+                font-family: monospace;
+            }
+            .mockup-body {
+                padding: 24px;
+            }
+            .mockup-greeting {
+                color: rgba(255,255,255,0.9);
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 4px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .mockup-greeting-sub {
+                color: rgba(255,255,255,0.4);
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            .mockup-stats-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+                margin-bottom: 20px;
+            }
+            .mockup-stat-card {
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(255,255,255,0.06);
+                border-radius: 12px;
+                padding: 18px 16px;
+            }
+            .mockup-stat-label {
+                color: rgba(255,255,255,0.4);
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 8px;
+            }
+            .mockup-stat-value {
+                color: #fff;
+                font-size: 24px;
+                font-weight: 800;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                line-height: 1;
+            }
+            .mockup-stat-change {
+                font-size: 11px;
+                margin-top: 6px;
+                font-weight: 600;
+            }
+            .mockup-stat-change.positive { color: #27ca40; }
+            .mockup-stat-change.negative { color: #ff5f57; }
+            .mockup-chart-area {
+                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255,255,255,0.06);
+                border-radius: 12px;
+                padding: 18px;
+            }
+            .mockup-chart-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+            }
+            .mockup-chart-title {
+                color: rgba(255,255,255,0.7);
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .mockup-chart-tabs {
+                display: flex;
+                gap: 6px;
+            }
+            .mockup-chart-tabs span {
+                padding: 4px 10px;
+                border-radius: 6px;
+                font-size: 11px;
+                color: rgba(255,255,255,0.35);
+                cursor: pointer;
+            }
+            .mockup-chart-tabs span.active {
+                background: rgba(236,130,40,0.2);
+                color: #ec8228;
+            }
+            .mockup-bars {
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
+                height: 100px;
+                padding-top: 10px;
+            }
+            .mockup-bar {
+                flex: 1;
+                border-radius: 4px 4px 0 0;
+                min-height: 12px;
+                transition: all 0.3s ease;
+            }
+            .mockup-bar.accent { background: linear-gradient(180deg, #ec8228, #d4711e); }
+            .mockup-bar.muted { background: rgba(255,255,255,0.08); }
+            .mockup-months {
+                display: flex;
+                gap: 8px;
+                margin-top: 8px;
+            }
+            .mockup-months span {
+                flex: 1;
+                text-align: center;
+                font-size: 10px;
+                color: rgba(255,255,255,0.25);
+            }
+
+            /* ===== SOCIAL PROOF BAR ===== */
+            .social-proof-bar {
+                background: #fff;
+                padding: 40px 0;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+            }
+            .proof-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                text-align: center;
+            }
+            .proof-item {
+                position: relative;
+            }
+            .proof-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 50px;
+                background: rgba(0,0,0,0.08);
+            }
+            .proof-number {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 36px;
+                font-weight: 800;
+                color: #0B0D17;
+                line-height: 1;
+                margin-bottom: 6px;
+            }
+            .proof-number span {
+                color: #ec8228;
+            }
+            .proof-label {
+                color: #534F5A;
+                font-size: 15px;
+                font-weight: 500;
+            }
+
+            /* ===== FEATURES GRID ===== */
+            .features-section {
+                padding: 100px 0;
+                background: #EFEDE5;
+            }
+            .section-label {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: #ec8228;
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                margin-bottom: 16px;
+            }
+            .section-label::before {
+                content: '';
+                display: inline-block;
+                width: 32px;
+                height: 2px;
+                background: #ec8228;
+            }
+            .section-heading {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 42px;
+                font-weight: 800;
+                color: #0B0D17;
+                line-height: 1.2;
+                margin-bottom: 16px;
+            }
+            .section-desc {
+                font-size: 17px;
+                color: #534F5A;
+                max-width: 600px;
+                line-height: 1.7;
+            }
+            .feature-card {
+                background: #fff;
+                border-radius: 16px;
+                padding: 36px 30px;
+                height: 100%;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border: 1px solid rgba(0,0,0,0.04);
+                position: relative;
+                overflow: hidden;
+            }
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #ec8228, #f5a623);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease;
+            }
+            .feature-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            }
+            .feature-card:hover::before {
+                transform: scaleX(1);
+            }
+            .feature-icon {
+                width: 56px;
+                height: 56px;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-bottom: 22px;
+                background: rgba(236,130,40,0.1);
+                color: #ec8228;
+            }
+            .feature-card h4 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                color: #0B0D17;
+                margin-bottom: 12px;
+            }
+            .feature-card p {
+                color: #534F5A;
+                font-size: 15px;
+                line-height: 1.65;
+                margin-bottom: 20px;
+            }
+            .feature-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: #ec8228;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: gap 0.3s ease;
+            }
+            .feature-link:hover {
+                gap: 12px;
+                color: #d4711e;
+            }
+
+            /* ===== BENEFITS SECTION ===== */
+            .benefits-section {
+                padding: 100px 0;
+                background: #fff;
+            }
+            .comparison-table {
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 12px 48px rgba(0,0,0,0.06);
+            }
+            .comparison-header {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .comparison-header-item {
+                padding: 28px 36px;
+                text-align: center;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .comparison-header-item.without {
+                background: #f0eded;
+                color: #534F5A;
+            }
+            .comparison-header-item.with {
+                background: linear-gradient(135deg, #ec8228, #d4711e);
+                color: #fff;
+            }
+            .comparison-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .comparison-row:last-child {
+                border-bottom: none;
+            }
+            .comparison-cell {
+                padding: 22px 36px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            .comparison-cell.without {
+                background: #fafafa;
+                color: #7a7580;
+            }
+            .comparison-cell.with {
+                background: #fff;
+                color: #0B0D17;
+                font-weight: 500;
+            }
+            .comparison-cell i.fa-xmark {
+                color: #e04545;
+                font-size: 18px;
+                flex-shrink: 0;
+            }
+            .comparison-cell i.fa-check {
+                color: #27ca40;
+                font-size: 18px;
+                flex-shrink: 0;
+            }
+
+            /* ===== HOW IT WORKS ===== */
+            .how-it-works-section {
+                padding: 100px 0;
+                background: #EFEDE5;
+            }
+            .step-card {
+                text-align: center;
+                padding: 40px 30px;
+                position: relative;
+            }
+            .step-number {
+                width: 72px;
+                height: 72px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 24px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 28px;
+                font-weight: 800;
+                background: linear-gradient(135deg, #ec8228, #d4711e);
+                color: #fff;
+                box-shadow: 0 8px 24px rgba(236,130,40,0.3);
+            }
+            .step-card h4 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                color: #0B0D17;
+                margin-bottom: 12px;
+            }
+            .step-card p {
+                color: #534F5A;
+                font-size: 15px;
+                line-height: 1.7;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .step-connector {
+                position: absolute;
+                top: 76px;
+                right: -40px;
+                width: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(236,130,40,0.3);
+                font-size: 24px;
+                z-index: 2;
+            }
+
+            /* ===== TRUST SIGNALS ===== */
+            .trust-section {
+                padding: 100px 0;
+                background: #fff;
+            }
+            .trust-card {
+                text-align: center;
+                padding: 40px 28px;
+                background: #fafafa;
+                border-radius: 16px;
+                border: 1px solid rgba(0,0,0,0.04);
+                height: 100%;
+                transition: all 0.3s ease;
+            }
+            .trust-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+            }
+            .trust-card-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: rgba(236,130,40,0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 26px;
+                color: #ec8228;
+            }
+            .trust-card h5 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: #0B0D17;
+                margin-bottom: 10px;
+            }
+            .trust-card p {
+                color: #534F5A;
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            /* ===== FINAL CTA ===== */
+            .final-cta-section {
+                padding: 100px 0;
+                background: linear-gradient(165deg, #0B0D17 0%, #1a1d2e 100%);
+                position: relative;
+                overflow: hidden;
+            }
+            .final-cta-section::before {
+                content: '';
+                position: absolute;
+                top: -40%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 800px;
+                height: 800px;
+                background: radial-gradient(circle, rgba(236,130,40,0.1) 0%, transparent 65%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            .final-cta-content {
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+            .final-cta-content h2 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 44px;
+                font-weight: 800;
+                color: #fff;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+            .final-cta-content h2 span {
+                background: linear-gradient(135deg, #ec8228, #f5a623);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .final-cta-content p {
+                font-size: 18px;
+                color: rgba(255,255,255,0.6);
+                max-width: 560px;
+                margin: 0 auto 40px;
+                line-height: 1.7;
+            }
+            .final-cta-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+                margin-bottom: 32px;
+            }
+            .final-cta-note {
+                color: rgba(255,255,255,0.35);
+                font-size: 14px;
+            }
+            .final-cta-note i {
+                color: #ec8228;
+                margin-right: 6px;
+            }
+
+            /* ===== RESPONSIVE ===== */
+            @media (max-width: 991px) {
+                .services-hero h1 {
+                    font-size: 40px;
+                }
+                .section-heading {
+                    font-size: 34px;
+                }
+                .final-cta-content h2 {
+                    font-size: 34px;
+                }
+                .proof-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+                .proof-item:not(:last-child)::after {
+                    display: none;
+                }
+                .comparison-cell {
+                    padding: 16px 20px;
+                    font-size: 14px;
+                }
+                .comparison-header-item {
+                    padding: 20px;
+                    font-size: 17px;
+                }
+                .step-connector {
+                    display: none;
+                }
+            }
+            @media (max-width: 767px) {
+                .services-hero {
+                    padding: 100px 0 60px;
+                }
+                .services-hero h1 {
+                    font-size: 32px;
+                }
+                .hero-subtitle {
+                    font-size: 16px;
+                }
+                .proof-grid {
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                }
+                .proof-number {
+                    font-size: 28px;
+                }
+                .comparison-header,
+                .comparison-row {
+                    grid-template-columns: 1fr;
+                }
+                .mockup-stats-row {
+                    grid-template-columns: 1fr;
+                }
+                .trust-indicators {
+                    gap: 16px;
+                }
+                .section-heading {
+                    font-size: 28px;
+                }
+                .final-cta-content h2 {
+                    font-size: 28px;
+                }
+                .features-section,
+                .benefits-section,
+                .how-it-works-section,
+                .trust-section,
+                .final-cta-section {
+                    padding: 70px 0;
+                }
+            }
+        </style>
     </head>
     <body>
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
-                <div class="spinner">                
+                <div class="spinner">
                 </div>
                 <div class="txt-loading">
                     <span data-text-preloader="F" class="letters-loading">F</span>
@@ -77,34 +796,25 @@
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
-       
+
 
          <!-- Header-Top Section Start -->
         <div class="header-top-section">
             <div class="container-fluid">
-                <div class="header-top-wrapper">
-                    <div class="header-left">
-                         <ul class="list">
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Riverside Park EU-1001
-                            </li>
-                            <li>।</li>
-                            <li>
-                                <i class="fa-regular fa-envelope"></i>
-                                <a href="mailto:hello@neotix.com">hello@neotix.com</a>
-                            </li>
-                        </ul>
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
                     </div>
-                    <div class="header-right">
-                        <span><i class="fa-regular fa-clock"></i> Mon–Fri 09:00 AM – 06:00 PM</span>
-                            <div class="social-icon">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
                     </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
                 </div>
             </div>
         </div>
@@ -152,308 +862,488 @@
         </div>
         <div class="search-popup-overlay"></div>
 
-        
+
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                <!-- ============================== -->
+                <!-- HERO SECTION -->
+                <!-- ============================== -->
+                <section class="services-hero">
                     <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Detalles del producto</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="hero-badge wow fadeInUp" data-wow-delay=".1s">
+                                    <i class="fa-solid fa-bolt"></i> Software de facturación n.1 para autónomos
+                                </div>
+                                <h1 class="wow fadeInUp" data-wow-delay=".2s">
+                                    Toda tu contabilidad en <span>un solo lugar</span>
+                                </h1>
+                                <p class="hero-subtitle wow fadeInUp" data-wow-delay=".3s">
+                                    Facturales simplifica la gestión de tu negocio: facturas, presupuestos, gastos, stock y clientes. Todo conectado, todo bajo control.
+                                </p>
+                                <div class="hero-cta-group wow fadeInUp" data-wow-delay=".4s">
+                                    <a href="https://app.facturales.es/signup.html" class="btn-hero-primary">
+                                        Empieza gratis ahora <i class="fa-solid fa-arrow-right"></i>
                                     </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                    Detalles del producto
-                                </li>
-                            </ul>
+                                    <a href="https://app.facturales.es/signin.html" class="btn-hero-secondary">
+                                        <i class="fa-regular fa-circle-play"></i> Ya tengo cuenta
+                                    </a>
+                                </div>
+                                <div class="trust-indicators wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="trust-item">
+                                        <i class="fa-solid fa-shield-check"></i> Sin tarjeta de crédito
+                                    </div>
+                                    <div class="trust-item">
+                                        <i class="fa-solid fa-clock"></i> Prueba 14 días gratis
+                                    </div>
+                                    <div class="trust-item">
+                                        <i class="fa-solid fa-xmark-circle"></i> Cancelar cuando quieras
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="dashboard-mockup wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="mockup-topbar">
+                                        <div class="mockup-dots">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                        <div class="mockup-url">app.facturales.es/dashboard</div>
+                                        <div></div>
+                                    </div>
+                                    <div class="mockup-body">
+                                        <div class="mockup-greeting">Buenos días, María</div>
+                                        <div class="mockup-greeting-sub">Aquí tienes el resumen de tu negocio</div>
+                                        <div class="mockup-stats-row">
+                                            <div class="mockup-stat-card">
+                                                <div class="mockup-stat-label">Ingresos mes</div>
+                                                <div class="mockup-stat-value">12.450€</div>
+                                                <div class="mockup-stat-change positive">
+                                                    <i class="fa-solid fa-arrow-up"></i> +18% vs mes anterior
+                                                </div>
+                                            </div>
+                                            <div class="mockup-stat-card">
+                                                <div class="mockup-stat-label">Facturas pendientes</div>
+                                                <div class="mockup-stat-value">3</div>
+                                                <div class="mockup-stat-change negative">
+                                                    <i class="fa-solid fa-clock"></i> 2.180€ por cobrar
+                                                </div>
+                                            </div>
+                                            <div class="mockup-stat-card">
+                                                <div class="mockup-stat-label">Gastos mes</div>
+                                                <div class="mockup-stat-value">4.320€</div>
+                                                <div class="mockup-stat-change positive">
+                                                    <i class="fa-solid fa-arrow-down"></i> -5% vs mes anterior
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-chart-area">
+                                            <div class="mockup-chart-header">
+                                                <div class="mockup-chart-title">Ingresos vs Gastos</div>
+                                                <div class="mockup-chart-tabs">
+                                                    <span>7D</span>
+                                                    <span class="active">1M</span>
+                                                    <span>3M</span>
+                                                    <span>1A</span>
+                                                </div>
+                                            </div>
+                                            <div class="mockup-bars">
+                                                <div class="mockup-bar accent" style="height:45%"></div>
+                                                <div class="mockup-bar muted" style="height:30%"></div>
+                                                <div class="mockup-bar accent" style="height:55%"></div>
+                                                <div class="mockup-bar muted" style="height:25%"></div>
+                                                <div class="mockup-bar accent" style="height:70%"></div>
+                                                <div class="mockup-bar muted" style="height:35%"></div>
+                                                <div class="mockup-bar accent" style="height:60%"></div>
+                                                <div class="mockup-bar muted" style="height:28%"></div>
+                                                <div class="mockup-bar accent" style="height:85%"></div>
+                                                <div class="mockup-bar muted" style="height:32%"></div>
+                                                <div class="mockup-bar accent" style="height:90%"></div>
+                                                <div class="mockup-bar muted" style="height:40%"></div>
+                                            </div>
+                                            <div class="mockup-months">
+                                                <span>Ene</span><span></span><span>Feb</span><span></span><span>Mar</span><span></span><span>Abr</span><span></span><span>May</span><span></span><span>Jun</span><span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-              
-                <!-- Service Details Section Start -->
-                <section class="service-details-section fix section-padding">
+                </section>
+
+                <!-- ============================== -->
+                <!-- SOCIAL PROOF BAR -->
+                <!-- ============================== -->
+                <section class="social-proof-bar">
                     <div class="container">
-                        <div class="service-details-wrapper">
-                            <div class="service-top-img fix">
-                                <img data-speed=".8" src="assets/img/inner-page/service-details-01.jpg" alt="img">
+                        <div class="proof-grid">
+                            <div class="proof-item wow fadeInUp" data-wow-delay=".1s">
+                                <div class="proof-number">+10.000<span>+</span></div>
+                                <div class="proof-label">Negocios confían en nosotros</div>
                             </div>
-                            <div class="row g-4">
-                                <div class="col-lg-8">
-                                    <div class="service-details-content">
-                                        <h2>Facturales: software de contabilidad para tu negocio.</h2>
-                                        <p class="mt-3">
-                                            Facturales ayuda a autónomos y pymes a gestionar su contabilidad sin complicaciones. Centraliza facturas, gastos, stock y clientes en un mismo lugar, con una experiencia clara y rápida.
-                                        </p>
-                                        <p class="mt-4">
-                                            Automatiza tareas repetitivas, mantén la información al día y toma decisiones con datos reales. Todo pensado para que ahorres tiempo y tengas más control del negocio.
-                                        </p>
-                                        <div class="service-list-items">
-                                            <ul>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Facturación rápida y profesional
-                                                </li>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Control de gastos y recibos
-                                                </li>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Stock y clientes siempre actualizados
-                                                </li>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Información clara para decidir
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                   Integración con tu gestoría
-                                                </li>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Cumplimiento fiscal simplificado
-                                                </li>
-                                                <li>
-                                                    <i class="fa-solid fa-circle-check"></i>
-                                                    Acceso desde cualquier dispositivo
-                                                </li>
-                                            </ul>
+                            <div class="proof-item wow fadeInUp" data-wow-delay=".2s">
+                                <div class="proof-number">4.8<span>/5</span></div>
+                                <div class="proof-label">Valoración media de usuarios</div>
+                            </div>
+                            <div class="proof-item wow fadeInUp" data-wow-delay=".3s">
+                                <div class="proof-number"><span>&lt;</span>2h</div>
+                                <div class="proof-label">Tiempo medio de respuesta del soporte</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================== -->
+                <!-- FEATURES GRID -->
+                <!-- ============================== -->
+                <section class="features-section">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-label wow fadeInUp" data-wow-delay=".1s">Funcionalidades</div>
+                                <h2 class="section-heading wow fadeInUp" data-wow-delay=".2s">
+                                    Todo lo que necesitas para gestionar tu negocio
+                                </h2>
+                                <p class="section-desc mx-auto wow fadeInUp" data-wow-delay=".3s">
+                                    Ocho módulos diseñados para cubrir cada aspecto de la gestión diaria de autónomos y pymes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- Card 1: Tu negocio bajo control -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-chart-mixed"></i>
+                                    </div>
+                                    <h4>Tu negocio bajo control</h4>
+                                    <p>Panel con métricas clave: ingresos, gastos, beneficio y evolución mensual de tu actividad.</p>
+                                    <a href="tu-negocio-bajo-control.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 2: Facturas -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-file-invoice"></i>
+                                    </div>
+                                    <h4>Crea y envía facturas</h4>
+                                    <p>Emite facturas profesionales en minutos, con numeración automática y seguimiento de cobros.</p>
+                                    <a href="crea-envia-facturas.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 3: Presupuestos -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-file-lines"></i>
+                                    </div>
+                                    <h4>Crea y envía presupuestos</h4>
+                                    <p>Presupuestos claros que conviertes en factura con un clic. Envío instantáneo al cliente.</p>
+                                    <a href="crea-envia-presupuestos.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 4: Stock -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-boxes-stacked"></i>
+                                    </div>
+                                    <h4>Gestiona tu stock</h4>
+                                    <p>Control de inventario en tiempo real con alertas de stock mínimo y movimientos automáticos.</p>
+                                    <a href="gestiona-tu-stock.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 5: Gastos -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </div>
+                                    <h4>Escanea y gestiona gastos</h4>
+                                    <p>Digitaliza recibos con OCR, clasifica gastos por categoría y ten siempre la documentación fiscal lista.</p>
+                                    <a href="escanea-gastos.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 6: Clientes -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <h4>Gestiona clientes</h4>
+                                    <p>Fichas completas con historial de facturas, presupuestos y comunicaciones en un solo lugar.</p>
+                                    <a href="gestiona-clientes.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card 7: Factura personalizada -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fa-solid fa-palette"></i>
+                                    </div>
+                                    <h4>Factura personalizada</h4>
+                                    <p>Añade tu logo, colores y datos fiscales. Cada documento refleja la identidad de tu marca.</p>
+                                    <a href="factura-personalizada.html" class="feature-link">
+                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================== -->
+                <!-- BENEFITS SECTION (Before/After) -->
+                <!-- ============================== -->
+                <section class="benefits-section">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-label wow fadeInUp" data-wow-delay=".1s">Ventajas</div>
+                                <h2 class="section-heading wow fadeInUp" data-wow-delay=".2s">
+                                    Antes y después de usar Facturales
+                                </h2>
+                                <p class="section-desc mx-auto wow fadeInUp" data-wow-delay=".3s">
+                                    Descubre cómo cambia la gestión de tu negocio cuando dejas de improvisar y empiezas a controlar.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="comparison-table">
+                                    <div class="comparison-header">
+                                        <div class="comparison-header-item without">
+                                            <i class="fa-regular fa-face-frown"></i> Sin Facturales
                                         </div>
-                                        <h3>Lo que puedes hacer con Facturales</h3>
-                                        <p class="mt-3">
-                                            Unifica tus procesos contables diarios en un solo panel. Cada módulo está diseñado para simplificar la gestión y darte una visión completa del rendimiento.
-                                        </p>
-                                        <div class="service-box-area">
-                                            <div class="row g-4">
-                                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                                    <div class="service-box-items">
-                                                        <span class="number">01.</span>
-                                                        <h5>Facturas y presupuestos</h5>
-                                                        <p>
-                                                            Crea, envía y personaliza documentos profesionales con seguimiento del cobro.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                                    <div class="service-box-items">
-                                                        <span class="number">02.</span>
-                                                        <h5>Gastos y stock</h5>
-                                                        <p>
-                                                            Registra gastos, digitaliza recibos y controla tu inventario en tiempo real.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                                    <div class="service-box-items">
-                                                        <span class="number">03.</span>
-                                                        <h5>Clientes y gestoría</h5>
-                                                        <p>
-                                                            Mantén fichas de clientes completas y comparte la información con tu gestoría.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="comparison-header-item with">
+                                            <i class="fa-regular fa-face-smile"></i> Con Facturales
                                         </div>
-                                        <div class="mt-5">
-                                            <h3>Nuestros servicios</h3>
-                                            <p class="mt-3">
-                                                Revisa cada funcionalidad y accede a los detalles de uso en su página específica.
-                                            </p>
-                                            <div class="row g-4 mt-4">
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/01.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a>
-                                                            </h3>
-                                                            <p>
-                                                                Panel general con métricas clave para controlar ingresos, gastos y el rendimiento del negocio.
-                                                            </p>
-                                                            <a href="tu-negocio-bajo-control.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/02.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="crea-envia-facturas.html">Crea y envía facturas</a>
-                                                            </h3>
-                                                            <p>
-                                                                Emite facturas profesionales en minutos, con plantillas personalizadas y seguimiento de cobros.
-                                                            </p>
-                                                            <a href="crea-envia-facturas.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/03.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a>
-                                                            </h3>
-                                                            <p>
-                                                                Presupuestos claros que puedes convertir en factura con un clic y enviar al instante.
-                                                            </p>
-                                                            <a href="crea-envia-presupuestos.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/04.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="escanea-gastos.html">Escanea y gestiona gastos</a>
-                                                            </h3>
-                                                            <p>
-                                                                Digitaliza recibos, clasifica gastos y ten siempre a mano la documentación fiscal.
-                                                            </p>
-                                                            <a href="escanea-gastos.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/05.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="gestiona-clientes.html">Gestiona clientes</a>
-                                                            </h3>
-                                                            <p>
-                                                                Centraliza datos de clientes, historial de operaciones y comunicaciones en un solo lugar.
-                                                            </p>
-                                                            <a href="gestiona-clientes.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                                    <div class="service-box-item mt-0">
-                                                        <div class="icon">
-                                                            <img src="assets/img/home-1/icon/01.svg" alt="img">
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>
-                                                                <a href="gestiona-tu-stock.html">Gestiona tu stock</a>
-                                                            </h3>
-                                                            <p>
-                                                                Controla el inventario en tiempo real, define alertas y evita quedarte sin productos.
-                                                            </p>
-                                                            <a href="gestiona-tu-stock.html" class="theme-btn">
-                                                                Ver más <i class="fa-solid fa-arrow-up-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> Facturas en Excel con errores de numeración
                                         </div>
-                                        <div class="mt-5">
-                                            <h3>¿Tienes dudas?</h3>
-                                            <p class="mt-3">
-                                                Visita nuestra sección de preguntas frecuentes para resolver dudas comunes sobre el uso de Facturales.
-                                            </p>
-                                            <a href="faq.html" class="theme-btn mt-3">Ir a preguntas frecuentes</a>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Facturas profesionales con numeración automática
+                                        </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> Recibos acumulados en una caja de zapatos
+                                        </div>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Gastos escaneados y clasificados con OCR
+                                        </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> No sabes cuánto has ganado este mes
+                                        </div>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Dashboard en tiempo real con ingresos y gastos
+                                        </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> Stock descontrolado y roturas frecuentes
+                                        </div>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Inventario actualizado con alertas automáticas
+                                        </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> Enviar datos al gestor es un caos trimestral
+                                        </div>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Exportación directa y acceso compartido con gestoría
+                                        </div>
+                                    </div>
+                                    <div class="comparison-row">
+                                        <div class="comparison-cell without">
+                                            <i class="fa-solid fa-xmark"></i> Datos de clientes dispersos en contactos y notas
+                                        </div>
+                                        <div class="comparison-cell with">
+                                            <i class="fa-solid fa-check"></i> Fichas de clientes con historial completo integrado
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="service-details-sidebar">
-                                        <div class="sidebar-widget">
-                                            <div class="sideber-title">
-                                                <h4 class="wow fadeInUp" data-wow-delay=".2s">
-                                                <i class="fa-solid fa-star"></i>
-                                               Todas las funcionalidades</h4>
-                                            </div>
-                                            <ul class="service-list-item wow fadeInUp" data-wow-delay=".4s">
-                                                <li>
-                                                    <a href="tu-negocio-bajo-control.html">
-                                                        <span>Tu negocio bajo control</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="crea-envia-facturas.html">
-                                                        <span>Crea y Envía Facturas</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="crea-envia-presupuestos.html">
-                                                        <span>Crea y Envía Presupuestos</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="gestiona-tu-stock.html">
-                                                        <span>Gestiona tu stock</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="escanea-gastos.html">
-                                                        <span>Escanea gastos</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="gestiona-clientes.html">
-                                                        <span>Gestiona clientes</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="factura-personalizada.html">
-                                                        <span>Factura personalizada</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="conectado-a-gestor.html">
-                                                        <span>Conectado a gestor</span>
-                                                        <span><i class="fa-solid fa-chevron-right"></i></span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================== -->
+                <!-- HOW IT WORKS -->
+                <!-- ============================== -->
+                <section class="how-it-works-section">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-label wow fadeInUp" data-wow-delay=".1s">Cómo funciona</div>
+                                <h2 class="section-heading wow fadeInUp" data-wow-delay=".2s">
+                                    Empieza a facturar en 3 pasos
+                                </h2>
+                                <p class="section-desc mx-auto wow fadeInUp" data-wow-delay=".3s">
+                                    Sin instalaciones, sin complicaciones. En menos de 5 minutos tendrás todo listo para trabajar.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-lg-4 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="step-card">
+                                    <div class="step-number">1</div>
+                                    <h4>Regístrate gratis</h4>
+                                    <p>Crea tu cuenta en menos de 1 minuto. Sin tarjeta de crédito, sin compromisos. Solo tu email y una contraseña.</p>
+                                    <div class="step-connector d-none d-lg-flex">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="step-card">
+                                    <div class="step-number">2</div>
+                                    <h4>Configura tu negocio</h4>
+                                    <p>Añade tus datos fiscales, logo y personaliza tus documentos. Importa clientes y productos si ya los tienes.</p>
+                                    <div class="step-connector d-none d-lg-flex">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="step-card">
+                                    <div class="step-number">3</div>
+                                    <h4>Empieza a facturar</h4>
+                                    <p>Crea tu primera factura, registra gastos y controla tu negocio desde el primer día. Así de fácil.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-5 wow fadeInUp" data-wow-delay=".4s">
+                            <a href="https://app.facturales.es/signup.html" class="btn-hero-primary">
+                                Crear mi cuenta gratis <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================== -->
+                <!-- TRUST SIGNALS -->
+                <!-- ============================== -->
+                <section class="trust-section">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-label wow fadeInUp" data-wow-delay=".1s">Seguridad y cumplimiento</div>
+                                <h2 class="section-heading wow fadeInUp" data-wow-delay=".2s">
+                                    Tu tranquilidad es nuestra prioridad
+                                </h2>
+                                <p class="section-desc mx-auto wow fadeInUp" data-wow-delay=".3s">
+                                    Facturales cumple con toda la normativa vigente y protege tus datos con los más altos estándares de seguridad.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-stamp"></i>
+                                    </div>
+                                    <h5>Compatible Verifactu</h5>
+                                    <p>Sistema preparado para el reglamento Verifactu de facturación electrónica obligatoria.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-scale-balanced"></i>
+                                    </div>
+                                    <h5>Ley Antifraude</h5>
+                                    <p>Cumplimos con la Ley 11/2021 Antifraude y los requisitos de software de facturación homologado.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <h5>Cifrado SSL 256-bit</h5>
+                                    <p>Toda la comunicación está cifrada con SSL de grado bancario. Tus datos viajan siempre protegidos.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-earth-europe"></i>
+                                    </div>
+                                    <h5>Datos en Europa</h5>
+                                    <p>Servidores ubicados en la UE, cumpliendo con el RGPD y la normativa europea de protección de datos.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-headset"></i>
+                                    </div>
+                                    <h5>Soporte humano real</h5>
+                                    <p>Atención personalizada en español por chat y email. Tiempo medio de respuesta inferior a 2 horas.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    </div>
+                                    <h5>Copias de seguridad diarias</h5>
+                                    <p>Backups automáticos cada 24 horas con retención de 30 días. Tu información siempre a salvo.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="trust-card">
+                                    <div class="trust-card-icon">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                    </div>
+                                    <h5>Actualizaciones continuas</h5>
+                                    <p>Mejoras constantes sin coste adicional. Siempre al día con los cambios normativos y fiscales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================== -->
+                <!-- FINAL CTA -->
+                <!-- ============================== -->
+                <section class="final-cta-section">
+                    <div class="container">
+                        <div class="final-cta-content wow fadeInUp" data-wow-delay=".2s">
+                            <h2>Deja de perder tiempo con la contabilidad.<br><span>Empieza hoy con Facturales.</span></h2>
+                            <p>
+                                Únete a más de 10.000 autónomos y pymes que ya gestionan su negocio de forma profesional. 14 días gratis, sin compromiso.
+                            </p>
+                            <div class="final-cta-buttons">
+                                <a href="https://app.facturales.es/signup.html" class="btn-hero-primary">
+                                    Crear cuenta gratis <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="https://app.facturales.es/signin.html" class="btn-hero-secondary">
+                                    Iniciar sesión
+                                </a>
+                            </div>
+                            <div class="final-cta-note">
+                                <i class="fa-solid fa-shield-check"></i> Sin tarjeta de crédito &nbsp;&bull;&nbsp; Configuración en 2 minutos &nbsp;&bull;&nbsp; Cancela cuando quieras
                             </div>
                         </div>
                     </div>
@@ -476,7 +1366,7 @@
                                             <p>
                                                 Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
                                             </p>
-                                            <a href="contact.html" class="theme-btn">
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                                 Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </a>
                                         </div>
@@ -485,37 +1375,22 @@
                                 <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Empresa</h3>
+                                            <h3>Acceso r&aacute;pido</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
-                                                <a href="about.html">
-                                                    Sobre nosotros
+                                                <a href="https://app.facturales.es/signup.html">
+                                                    Crea una cuenta gratuita
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">
-                                                    Proceso de trabajo
+                                                <a href="https://app.facturales.es/signin.html">
+                                                    Iniciar sesi&oacute;n
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="team.html">
-                                                    Nuestro equipo
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Contacto
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Carreras
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="news.html">
-                                                    Blog
+                                                <a href="pricing.html">
+                                                    Precios
                                                 </a>
                                             </li>
                                         </ul>
@@ -524,12 +1399,12 @@
                                 <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Recourse</h3>
+                                            <h3>Funcionalidades</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
                                                 <a href="tu-negocio-bajo-control.html">
-                                                    tu negocio bajo control
+                                                    Tu negocio bajo control
                                                 </a>
                                             </li>
                                             <li>
@@ -560,11 +1435,6 @@
                                             <li>
                                                 <a href="factura-personalizada.html">
                                                     Factura personalizada
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="conectado-a-gestor.html">
-                                                    Conectado a gestor
                                                 </a>
                                             </li>
                                         </ul>
@@ -599,11 +1469,11 @@
                             </p>
                             <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
                                 <li>
-                                    <a href="contact.html">Política de privacidad</a>
+                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
                                 </li>
                                 <li>।</li>
                                 <li>
-                                    <a href="contact.html">Términos y condiciones</a>
+                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
                                 </li>
                             </ul>
                         </div>
@@ -614,9 +1484,9 @@
             </div>
         </div>
 
-       
 
-        
+
+
         <!--<< All JS Plugins >>-->
         <script src="assets/js/jquery-3.7.1.min.js"></script>
         <!--<< Viewport Js >>-->
@@ -655,5 +1525,6 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/countdown.js"></script>
     </body>
 </html>

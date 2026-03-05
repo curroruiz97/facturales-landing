@@ -82,24 +82,20 @@
          <!-- Header-Top Section Start -->
         <div class="header-top-section">
             <div class="container-fluid">
-                <div class="header-top-wrapper">
-                    <div class="header-left">
-                         <ul class="list">
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Tienes hasta el 1 de enero de 2026 para adaptar tu empresa a <span>Verifactu</span>
-                            </li>
-                        </ul>
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
                     </div>
-                    <div class="header-right">
-                        <span><i class="fa-regular fa-clock"></i> Lun–Sáb 09:00 AM – 06:00 PM</span>
-                            <div class="social-icon">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
                     </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
                 </div>
             </div>
         </div>
@@ -163,10 +159,10 @@
                                         Suite de facturación electrónica
                                     </h6>
                                     <h1 class="text-anims">
-                                        Factura en segundos y ten tu negocio bajo control
+                                        Factura en segundos Automatiza tus cuentas
                                     </h1>
                                     <p class="wow fadeInUp" data-wow-delay=".3s">
-                                        Gestiona tu facturación y objetivos de negocio en un mismo lugar.<br>Escanea tus gastos con nuestro sistema OCR, gestiona tu stock y optimiza tu tiempo al máximo.
+                                        Gestiona tu facturación y objetivos de negocio en un mismo lugar.<br>Optimiza tu tiempo al máximo.
                                     </p>
                                     <div class="hero-btn text-anims">
                                          <a href="https://app.facturales.es/signup.html" class="theme-btn">
@@ -233,73 +229,6 @@
                     </div>
                 </section>
     
-                <!-- Brand Section Start -->
-                <div class="brand-section">
-                    <div class="swiper brand-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-1.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-1.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                             <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-2.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-2.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                             <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-3.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-3.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                             <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-4.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-4.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                             <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-5.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-5.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                             <div class="swiper-slide">
-                                <div class="brand-box-1">
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-6.png" alt="img">
-                                </span>
-                                <span class="brand-img-1">
-                                    <img src="assets/img/home-1/brand/brand-6.png" alt="img">
-                                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- About Section Start -->
                 <section class="about-section section-padding fix">
@@ -324,7 +253,7 @@
                                             <li><i class="fa-solid fa-check"></i> Personaliza presupuestos con tu marca</li>
                                             <li><i class="fa-solid fa-check"></i> Visualiza ingresos y gastos al instante</li>
                                         </ul>
-                                        <a href="contact.html" class="theme-btn">Solicitar demo <i class="fa-solid fa-arrow-up-right"></i></a>
+                                        <a href="https://app.facturales.es/signup.html" class="theme-btn">Solicitar demo <i class="fa-solid fa-arrow-up-right"></i></a>
                                     </div>
                             </div>
                             <div class="col-lg-8">
@@ -503,24 +432,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-link"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="conectado-a-gestor.html">Conectado a gestor</a>
-                                        </h3>
-                                        <p>
-                                            Integración con herramientas de gestión.
-                                        </p>
-                                        <a href="conectado-a-gestor.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="swiper-dot">
                             <div class="dot"></div>
@@ -553,17 +464,25 @@
                                     <a href="project-details.html" class="theme-btn">
                                         Saber más <i class="fa-solid fa-arrow-up-right"></i>
                                     </a>
-                                    <ul class="list">
-                                        <li>
-                                            <a href="project-details">Móvil</a>
-                                            <a href="project-details">Escritorio</a>
-                                            <a href="project-details">Web</a>
-                                            <a href="project-details">API</a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <img src="assets/img/home-1/project/01.png" alt="img">
+                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
+                                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #F5F5F5;">
+                                            <span style="font-size:16px;font-weight:700;color:#0B0D17;">Nueva Factura</span>
+                                            <span style="font-size:12px;color:#ec8228;font-weight:600;background:#FFF0E5;padding:4px 12px;border-radius:12px;"><i class="fa-solid fa-check-circle"></i> Borrador</span>
+                                        </div>
+                                        <div style="margin-bottom:14px;">
+                                            <div style="font-size:12px;color:#999;margin-bottom:3px;">Cliente</div>
+                                            <div style="font-weight:600;color:#0B0D17;font-size:14px;">Empresa Ejemplo S.L.</div>
+                                            <div style="font-size:12px;color:#534F5A;">B-12345678</div>
+                                        </div>
+                                        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F0;font-size:14px;color:#534F5A;"><span>Base imponible</span><span style="font-weight:600;color:#0B0D17;">1.500,00 €</span></div>
+                                        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F0;font-size:14px;color:#534F5A;"><span>IVA 21%</span><span style="font-weight:600;color:#4CAF50;">+315,00 €</span></div>
+                                        <div style="display:flex;justify-content:space-between;padding:14px 0 0;font-size:20px;font-weight:700;color:#ec8228;border-top:2px solid #E0E0E0;margin-top:8px;"><span>Total</span><span>1.815,00 €</span></div>
+                                        <div style="margin-top:16px;">
+                                            <div style="width:100%;padding:11px;background:#ec8228;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:14px;text-align:center;"><i class="fa-solid fa-paper-plane"></i> Guardar y enviar</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project-card-items project-panel">
@@ -578,17 +497,30 @@
                                     <a href="project-details.html" class="theme-btn">
                                         Personaliza facturas <i class="fa-solid fa-arrow-up-right"></i>
                                     </a>
-                                    <ul class="list">
-                                        <li>
-                                            <a href="project-details">Móvil</a>
-                                            <a href="project-details">Escritorio</a>
-                                            <a href="project-details">Web</a>
-                                            <a href="project-details">API</a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <img src="assets/img/home-1/project/02.png" alt="img">
+                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
+                                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+                                            <div style="width:44px;height:44px;background:#FFF0E5;border-radius:10px;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-palette" style="color:#ec8228;font-size:20px;"></i></div>
+                                            <div>
+                                                <div style="font-size:16px;font-weight:700;color:#0B0D17;">TU EMPRESA S.A.</div>
+                                                <div style="font-size:12px;color:#534F5A;">Factura Nº F-2025-042</div>
+                                            </div>
+                                        </div>
+                                        <div style="background:#FFF8F2;border-left:3px solid #ec8228;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;">
+                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#534F5A;margin-bottom:6px;font-weight:600;"><span>Concepto</span><span>Importe</span></div>
+                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#0B0D17;margin-bottom:4px;"><span>Consultoría estratégica</span><span>1.200,00 €</span></div>
+                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#0B0D17;"><span>Diseño de marca</span><span>850,00 €</span></div>
+                                        </div>
+                                        <div style="display:flex;gap:8px;margin-bottom:14px;">
+                                            <div style="flex:1;height:6px;background:#ec8228;border-radius:3px;"></div>
+                                            <div style="flex:1;height:6px;background:#FDD835;border-radius:3px;"></div>
+                                            <div style="flex:1;height:6px;background:#0B0D17;border-radius:3px;"></div>
+                                        </div>
+                                        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#534F5A;">
+                                            <i class="fa-solid fa-swatchbook" style="color:#ec8228;"></i> Personaliza colores, logo y tipografía
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project-card-items mb-0 project-panel">
@@ -603,17 +535,35 @@
                                     <a href="project-details.html" class="theme-btn">
                                         Controla tus ingresos y gastos <i class="fa-solid fa-arrow-up-right"></i>
                                     </a>
-                                    <ul class="list">
-                                        <li>
-                                            <a href="project-details">Móvil</a>
-                                            <a href="project-details">Escritorio</a>
-                                            <a href="project-details">Web</a>
-                                            <a href="project-details">API</a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <img src="assets/img/home-1/project/03.png" alt="img">
+                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
+                                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                                            <div style="width:40px;height:40px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-chart-line" style="color:#4CAF50;font-size:18px;"></i></div>
+                                            <span style="font-size:15px;font-weight:700;color:#0B0D17;">Ingresos Totales</span>
+                                        </div>
+                                        <div style="font-size:36px;font-weight:800;color:#0B0D17;margin-bottom:6px;">5.240 €</div>
+                                        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#4CAF50;margin-bottom:20px;"><i class="fa-solid fa-arrow-trend-up"></i> <span style="font-weight:600;">+3,5%</span> <span style="color:#534F5A;">que la semana pasada</span></div>
+                                        <div style="display:flex;gap:12px;margin-bottom:14px;">
+                                            <div style="flex:1;background:#FFEBEE;border-radius:10px;padding:14px;text-align:center;">
+                                                <div style="font-size:11px;color:#999;margin-bottom:4px;">Gastos</div>
+                                                <div style="font-size:18px;font-weight:700;color:#F44336;">3.840 €</div>
+                                            </div>
+                                            <div style="flex:1;background:#FFF0E5;border-radius:10px;padding:14px;text-align:center;">
+                                                <div style="font-size:11px;color:#999;margin-bottom:4px;">Deducible</div>
+                                                <div style="font-size:18px;font-weight:700;color:#ec8228;">2.850 €</div>
+                                            </div>
+                                        </div>
+                                        <div style="display:flex;align-items:end;gap:4px;height:50px;padding-top:6px;">
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:30%;"></div>
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:50%;"></div>
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:35%;"></div>
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:70%;"></div>
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:55%;"></div>
+                                            <div style="flex:1;background:#4CAF50;border-radius:3px 3px 0 0;height:90%;"></div>
+                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:100%;"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -628,7 +578,7 @@
                                 <div class="col-xl-6 col-lg-7">
                                     <div class="row g-4">
                                         <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="contact.html" style="text-decoration: none; color: inherit;">
+                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
                                                 <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                                                     <div class="counter-top-item">
                                                         <h2><i class="fa-solid fa-comments" style="font-size: 48px; color: #ec8228;"></i></h2>
@@ -643,7 +593,7 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="contact.html" style="text-decoration: none; color: inherit;">
+                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
                                                 <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                                                     <div class="counter-top-item">
                                                         <h2><i class="fa-solid fa-envelope" style="font-size: 48px; color: #ec8228;"></i></h2>
@@ -658,7 +608,7 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="contact.html" style="text-decoration: none; color: inherit;">
+                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
                                                 <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                                                     <div class="counter-top-item">
                                                         <h2><i class="fa-solid fa-phone" style="font-size: 48px; color: #ec8228;"></i></h2>
@@ -673,7 +623,7 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="contact.html" style="text-decoration: none; color: inherit;">
+                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
                                                 <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                                                     <div class="counter-top-item">
                                                         <h2><i class="fa-solid fa-paper-plane" style="font-size: 48px; color: #ec8228;"></i></h2>
@@ -734,7 +684,7 @@
                                             Businesses to thrive in changing digital  world. With over a decade.
                                         </p>
                                     </div>
-                                     <a href="contact.html" class="theme-btn">
+                                     <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                       More integration <i class="fa-solid fa-arrow-up-right"></i>
                                     </a>
                                 </div>
@@ -1411,7 +1361,7 @@
                                             <p>
                                                 Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
                                             </p>
-                                            <a href="contact.html" class="theme-btn">
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
                                                 Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
                                             </a>
                                         </div>
@@ -1420,37 +1370,22 @@
                                 <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                     <div class="footer-widget-items">
                                         <div class="widget-head">
-                                            <h3>Empresa</h3>
+                                            <h3>Acceso r&aacute;pido</h3>
                                         </div>
                                         <ul class="list-area">
                                             <li>
-                                                <a href="about.html">
-                                                    Sobre nosotros
+                                                <a href="https://app.facturales.es/signup.html">
+                                                    Crea una cuenta gratuita
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">
-                                                    Proceso de trabajo
+                                                <a href="https://app.facturales.es/signin.html">
+                                                    Iniciar sesi&oacute;n
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="team.html">
-                                                    Nuestro equipo
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Contacto
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">
-                                                    Carreras
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="news.html">
-                                                    Blog
+                                                <a href="pricing.html">
+                                                    Precios
                                                 </a>
                                             </li>
                                         </ul>
@@ -1497,11 +1432,6 @@
                                                     Factura personalizada
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="conectado-a-gestor.html">
-                                                    Conectado a gestor
-                                                </a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1534,11 +1464,11 @@
                             </p>
                             <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
                                 <li>
-                                    <a href="contact.html">Política de privacidad</a>
+                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
                                 </li>
                                 <li>।</li>
                                 <li>
-                                    <a href="contact.html">Términos y condiciones</a>
+                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
                                 </li>
                             </ul>
                         </div>
@@ -1590,5 +1520,6 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/countdown.js"></script>
     </body>
 </html>
