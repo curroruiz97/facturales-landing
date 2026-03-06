@@ -105,16 +105,6 @@
                                                             </div>
                                                           </a>
                                                   
-                                                          <a href="gestiona-tu-stock.html" class="homemenu">
-                                                            <div class="homemenu-icon">
-                                                              <i class="fa-solid fa-boxes-stacked"></i>
-                                                            </div>
-                                                            <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Gestiona Tu Stock</h4>
-                                                              <p class="homemenu-desc">Control de inventario en tiempo real</p>
-                                                            </div>
-                                                          </a>
-                                                  
                                                           <a href="escanea-gastos.html" class="homemenu">
                                                             <div class="homemenu-icon">
                                                               <i class="fa-solid fa-receipt"></i>

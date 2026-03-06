@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/orbit-cta.css">
 
         <style>
             /* ===== Custom Page Styles ===== */
@@ -45,7 +46,7 @@
             /* Hero Feature Section */
             .hero-feature-section {
                 padding: 100px 0 80px;
-                background: linear-gradient(180deg, #f8f7f3 0%, #ffffff 100%);
+                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
                 overflow: hidden;
             }
             .hero-feature-section .hero-badge {
@@ -65,7 +66,7 @@
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 38px;
                 font-weight: 800;
-                color: var(--header);
+                color: #E8ECF4;
                 line-height: 1.25;
                 margin-bottom: 20px;
             }
@@ -74,7 +75,7 @@
             }
             .hero-feature-section .hero-desc {
                 font-size: 18px;
-                color: var(--text);
+                color: rgba(255,255,255,0.55);
                 line-height: 1.7;
                 margin-bottom: 32px;
                 max-width: 540px;
@@ -90,9 +91,9 @@
                 align-items: center;
                 gap: 8px;
                 padding: 14px 32px;
-                border: 2px solid var(--header);
+                border: 2px solid rgba(255,255,255,0.2);
                 border-radius: 8px;
-                color: var(--header);
+                color: rgba(255,255,255,0.85);
                 font-weight: 600;
                 font-size: 16px;
                 background: transparent;
@@ -100,7 +101,7 @@
                 text-decoration: none;
             }
             .hero-cta-group .btn-demo:hover {
-                background: var(--header);
+                background: rgba(255,255,255,0.1);
                 color: #fff;
             }
             .trust-badges {
@@ -113,7 +114,7 @@
                 align-items: center;
                 gap: 8px;
                 font-size: 14px;
-                color: var(--text);
+                color: rgba(255,255,255,0.55);
                 font-weight: 500;
             }
             .trust-badges .badge-item i {
@@ -123,11 +124,11 @@
 
             /* Dashboard Mockup */
             .dashboard-mockup {
-                background: #ffffff;
+                background: #1a1d2e;
                 border-radius: 20px;
                 padding: 28px;
-                box-shadow: 0 25px 80px rgba(11, 13, 23, 0.10), 0 4px 20px rgba(11, 13, 23, 0.05);
-                border: 1px solid rgba(11, 13, 23, 0.06);
+                box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+                border: 1px solid rgba(255,255,255,0.08);
                 position: relative;
             }
             .dashboard-mockup::before {
@@ -135,7 +136,7 @@
                 position: absolute;
                 top: -2px; left: -2px; right: -2px; bottom: -2px;
                 border-radius: 22px;
-                background: linear-gradient(135deg, rgba(249, 77, 0, 0.15), rgba(236, 130, 40, 0.08), transparent);
+                background: linear-gradient(135deg, rgba(249, 77, 0, 0.1), transparent);
                 z-index: -1;
             }
             .mockup-header {
@@ -144,18 +145,18 @@
                 justify-content: space-between;
                 margin-bottom: 24px;
                 padding-bottom: 16px;
-                border-bottom: 1px solid #f0eeea;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
             }
             .mockup-header h5 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 16px;
-                color: var(--header);
+                color: rgba(255,255,255,0.9);
                 margin: 0;
             }
             .mockup-header .mockup-date {
                 font-size: 13px;
-                color: #9ca3af;
+                color: rgba(255,255,255,0.4);
                 font-weight: 500;
             }
             .metric-cards {
@@ -165,10 +166,10 @@
                 margin-bottom: 20px;
             }
             .metric-card {
-                background: #fafaf8;
+                background: rgba(255,255,255,0.04);
                 border-radius: 14px;
                 padding: 20px;
-                border: 1px solid #f0eeea;
+                border: 1px solid rgba(255,255,255,0.06);
                 transition: transform 0.2s ease;
             }
             .metric-card:hover {
@@ -178,7 +179,7 @@
                 font-size: 12px;
                 text-transform: uppercase;
                 letter-spacing: 0.8px;
-                color: #9ca3af;
+                color: rgba(255,255,255,0.4);
                 font-weight: 600;
                 margin-bottom: 8px;
             }
@@ -186,7 +187,7 @@
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 28px;
                 font-weight: 800;
-                color: var(--header);
+                color: #E8ECF4;
                 line-height: 1;
                 margin-bottom: 6px;
             }
@@ -237,19 +238,19 @@
             .quick-stat {
                 text-align: center;
                 padding: 14px 8px;
-                background: #fafaf8;
+                background: rgba(255,255,255,0.04);
                 border-radius: 10px;
-                border: 1px solid #f0eeea;
+                border: 1px solid rgba(255,255,255,0.06);
             }
             .quick-stat .stat-num {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 20px;
                 font-weight: 800;
-                color: var(--header);
+                color: #E8ECF4;
             }
             .quick-stat .stat-label {
                 font-size: 11px;
-                color: #9ca3af;
+                color: rgba(255,255,255,0.4);
                 font-weight: 500;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
@@ -258,7 +259,18 @@
             /* Pain Points Section */
             .pain-points-section {
                 padding: 100px 0;
-                background: #ffffff;
+                background: #0F1219;
+                position: relative;
+            }
+            .pain-points-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
             }
             .section-label {
                 display: inline-flex;
@@ -276,22 +288,22 @@
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 36px;
                 font-weight: 800;
-                color: var(--header);
+                color: #E8ECF4;
                 line-height: 1.25;
                 margin-bottom: 20px;
             }
             .section-desc {
                 font-size: 17px;
-                color: var(--text);
+                color: rgba(255,255,255,0.55);
                 line-height: 1.7;
                 margin-bottom: 48px;
                 max-width: 640px;
             }
             .pain-card {
-                background: #fff;
+                background: rgba(255,255,255,0.03);
                 border-radius: 16px;
                 padding: 32px 28px;
-                border: 1px solid #fee2e2;
+                border: 1px solid rgba(239,68,68,0.15);
                 position: relative;
                 overflow: hidden;
                 height: 100%;
@@ -307,8 +319,8 @@
                 transition: background 0.4s ease;
             }
             .pain-card:hover {
-                border-color: #d1fae5;
-                box-shadow: 0 12px 40px rgba(34, 197, 94, 0.08);
+                border-color: rgba(34,197,94,0.2);
+                box-shadow: 0 12px 40px rgba(34,197,94,0.1);
             }
             .pain-card:hover::before {
                 background: var(--success);
@@ -317,7 +329,7 @@
                 width: 52px;
                 height: 52px;
                 border-radius: 12px;
-                background: #fef2f2;
+                background: rgba(239,68,68,0.12);
                 color: var(--danger);
                 display: flex;
                 align-items: center;
@@ -327,19 +339,19 @@
                 transition: all 0.4s ease;
             }
             .pain-card:hover .pain-icon {
-                background: #f0fdf4;
+                background: rgba(34,197,94,0.12);
                 color: var(--success);
             }
             .pain-card h5 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 18px;
-                color: var(--header);
+                color: #E8ECF4;
                 margin-bottom: 12px;
             }
             .pain-card p {
                 font-size: 15px;
-                color: var(--text);
+                color: rgba(255,255,255,0.55);
                 line-height: 1.65;
                 margin: 0;
             }
@@ -363,21 +375,32 @@
             /* Feature Deep Dive */
             .feature-deepdive-section {
                 padding: 100px 0;
-                background: var(--bg);
+                background: #111827;
+                position: relative;
+            }
+            .feature-deepdive-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
             }
             .feature-deep-card {
-                background: #ffffff;
+                background: rgba(255,255,255,0.03);
                 border-radius: 16px;
                 padding: 36px 28px;
                 height: 100%;
-                border: 1px solid rgba(11, 13, 23, 0.06);
+                border: 1px solid rgba(255,255,255,0.06);
                 transition: all 0.3s ease;
                 position: relative;
                 overflow: hidden;
             }
             .feature-deep-card:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 20px 60px rgba(11, 13, 23, 0.08);
+                box-shadow: 0 20px 60px rgba(249,77,0,0.08);
             }
             .feature-deep-card .fdc-icon {
                 width: 60px;
@@ -400,12 +423,12 @@
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 19px;
-                color: var(--header);
+                color: #E8ECF4;
                 margin-bottom: 12px;
             }
             .feature-deep-card p {
                 font-size: 15px;
-                color: var(--text);
+                color: rgba(255,255,255,0.55);
                 line-height: 1.65;
                 margin: 0;
             }
@@ -416,14 +439,25 @@
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 48px;
                 font-weight: 800;
-                color: rgba(11, 13, 23, 0.03);
+                color: rgba(255,255,255,0.03);
                 line-height: 1;
             }
 
             /* Before/After Section */
             .before-after-section {
                 padding: 100px 0;
-                background: #ffffff;
+                background: #0F1219;
+                position: relative;
+            }
+            .before-after-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
             }
             .comparison-card {
                 border-radius: 20px;
@@ -431,12 +465,12 @@
                 height: 100%;
             }
             .comparison-card.before {
-                background: linear-gradient(180deg, #fef2f2 0%, #fff5f5 100%);
-                border: 1px solid #fecaca;
+                background: linear-gradient(180deg, rgba(239,68,68,0.08) 0%, rgba(239,68,68,0.03) 100%);
+                border: 1px solid rgba(239,68,68,0.15);
             }
             .comparison-card.after {
-                background: linear-gradient(180deg, #f0fdf4 0%, #f7fef9 100%);
-                border: 1px solid #bbf7d0;
+                background: linear-gradient(180deg, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.03) 100%);
+                border: 1px solid rgba(34,197,94,0.15);
             }
             .comparison-card .comp-header {
                 display: flex;
@@ -483,9 +517,9 @@
                 align-items: flex-start;
                 gap: 12px;
                 padding: 14px 0;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
+                border-bottom: 1px solid rgba(255,255,255,0.06);
                 font-size: 15px;
-                color: var(--text);
+                color: rgba(255,255,255,0.6);
                 line-height: 1.5;
             }
             .comparison-card ul li:last-child {
@@ -1144,8 +1178,8 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="gestiona-tu-stock.html">
-                                                    <span>Gestiona tu stock</span>
+                                                <a href="factura-personalizada.html">
+                                                    <span>Personaliza facturas</span>
                                                     <span><i class="fa-solid fa-chevron-right"></i></span>
                                                 </a>
                                             </li>
@@ -1293,19 +1327,23 @@
                     </div>
                 </section>
 
-                <!-- ===== CTA SECTION ===== -->
-                <section class="cta-feature-section">
-                    <div class="container">
-                        <div class="cta-feature-content wow fadeInUp" data-wow-delay=".3s">
-                            <h2>Deja de gestionar a ciegas.<br>Empieza a controlar tu negocio.</h2>
-                            <p>
-                                Crea tu cuenta en menos de 2 minutos y accede a tu panel de control personalizado. Sin tarjeta de crédito, sin permanencia.
-                            </p>
-                            <a href="https://app.facturales.es/signup.html" class="btn-white">
-                                Empieza gratis ahora <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <span class="cta-sub">Más de 500 autónomos ya gestionan su negocio con Facturales</span>
-                        </div>
+                <!-- Orbit CTA Section -->
+                <section class="orbit-section">
+                    <div class="container" id="facturales-orbit">
+                        <svg class="orbit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <path class="oval" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
+                            <path class="path-line" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
+                        </svg>
+                        <div class="circle customers"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5"></circle><path d="M4.5 18c.7-2.5 2.8-4 4.5-4s3.8 1.5 4.5 4"></path><rect x="14.5" y="6" width="5" height="8" rx="1.2"></rect><path d="M16 8.5h2"></path><path d="M16 11h2"></path></svg></div>
+                        <div class="circle quotes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"></path><path d="M14.5 3.5V8h4"></path><path d="M9 11h6"></path><path d="M9 14h3.5"></path><path d="M13.5 15.5 17.5 11.5"></path><path d="M16.7 10.7 18.3 12.3"></path><path d="M13.2 15.8 13 18l2.2-.2"></path></svg></div>
+                        <div class="circle invoices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3.5h8v17l-2-1.25-2 1.25-2-1.25-2 1.25z"></path><path d="M10 8h4"></path><path d="M10 11h4"></path><path d="M10 14h2.5"></path><path d="M14.2 14.4l1.1 1.1 2.2-2.2"></path></svg></div>
+                        <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
+                        <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
+                        <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
+                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
+                            <span class="facturales-cta-glow"></span>
+                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
+                        </a>
                     </div>
                 </section>
 
@@ -1378,8 +1416,8 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="gestiona-tu-stock.html">
-                                                    Gestiona tu stock
+                                                <a href="factura-personalizada.html">
+                                                    Personaliza facturas
                                                 </a>
                                             </li>
                                             <li>
@@ -1486,5 +1524,6 @@
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/countdown.js"></script>
+        <script src="assets/js/orbit-cta.js"></script>
     </body>
 </html>
