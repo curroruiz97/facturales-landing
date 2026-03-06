@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Avenue Media">
-        <meta name="description" content="Crea y envía presupuestos profesionales con Facturales. Conviértelos en facturas con un clic, seguimiento en tiempo real y firma digital.">
+        <meta name="description" content="Crea y envía presupuestos profesionales con Facturales. Conviértelos en facturas con un clic.">
         <title>Facturales - Crea y Envía Presupuestos Profesionales</title>
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -110,6 +110,34 @@
                 color: #fff;
                 transform: translateY(-2px);
                 box-shadow: 0 8px 25px rgba(124,58,237,0.35);
+            }
+            .hero-video-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                color: #fff;
+                font-weight: 600;
+                font-size: 15px;
+                text-decoration: none;
+                font-family: 'Inter', sans-serif;
+                transition: all 0.3s ease;
+            }
+            .hero-video-btn:hover { color: rgba(255,255,255,0.8); }
+            .hero-video-btn:hover .play-circle {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 8px rgba(124,58,237,0.15);
+            }
+            .play-circle {
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.15);
+                border: 2px solid rgba(255,255,255,0.4);
+                font-size: 14px;
+                transition: all 0.3s ease;
             }
 
             /* Mockup */
@@ -483,21 +511,9 @@
 
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="F" class="letters-loading">F</span>
-                    <span data-text-preloader="A" class="letters-loading">A</span>
-                    <span data-text-preloader="C" class="letters-loading">C</span>
-                    <span data-text-preloader="T" class="letters-loading">T</span>
-                    <span data-text-preloader="U" class="letters-loading">U</span>
-                    <span data-text-preloader="R" class="letters-loading">R</span>
-                    <span data-text-preloader="A" class="letters-loading">A</span>
-                    <span data-text-preloader="L" class="letters-loading">L</span>
-                    <span data-text-preloader="E" class="letters-loading">E</span>
-                    <span data-text-preloader="S" class="letters-loading">S</span>
-                </div>
-                <p class="text-center">Cargando</p>
-            </div>
+            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
+            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+        </div>
             <div class="loader">
                 <div class="row">
                     <div class="col-3 loader-section section-left"><div class="bg"></div></div>
@@ -579,10 +595,12 @@
                                 <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Impresiona a tus clientes con presupuestos personalizados y conviértelos en facturas con un solo clic.</p>
                                 <div class="check-features wow fadeInUp" data-wow-delay=".5s">
                                     <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Conversión a factura en 1 clic</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Firma digital del cliente</div>
                                     <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Seguimiento en tiempo real</div>
                                 </div>
-                                <a href="https://app.facturales.es/signup.html" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
+                                <div class="d-flex flex-wrap align-items-center gap-3 wow fadeInUp" data-wow-delay=".6s">
+                                    <a href="https://app.facturales.es/signup.html" class="hero-cta">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=pST-HMEVN9Q" class="hero-video-btn mfp-iframe"><span class="play-circle"><i class="fa-solid fa-play"></i></span> Ver demo</a>
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
@@ -646,7 +664,7 @@
                             <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
                                 <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
                                 <h3>Seguimiento en tiempo real</h3>
-                                <p>Sabe cuándo tu cliente ve y acepta el presupuesto</p>
+                                <p>Conoce cuándo tu cliente ve y acepta el presupuesto</p>
                             </div>
                         </div>
                     </div>
@@ -816,5 +834,14 @@
         <script src="assets/js/main.js"></script>
         <script src="assets/js/countdown.js"></script>
         <script src="assets/js/orbit-cta.js"></script>
+        <script>
+            $(function(){
+                $('.hero-video-btn.mfp-iframe').magnificPopup({
+                    type: 'iframe',
+                    mainClass: 'mfp-fade',
+                    preloader: true
+                });
+            });
+        </script>
     </body>
 </html>
