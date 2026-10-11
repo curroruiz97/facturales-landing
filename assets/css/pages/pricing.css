@@ -111,7 +111,7 @@
     color: #fff;
     padding: 3px 10px;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -141,7 +141,7 @@
     font-weight: 500;
 }
 .pricing-card .price-annual-note {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
     margin-bottom: 8px;
     min-height: 20px;
@@ -486,7 +486,7 @@
 @media (max-width: 575px) {
     .pricing-toggle-wrapper { width: 100%; gap: 4px; justify-content: space-between; }
     .toggle-option { flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px; padding: 10px 12px; }
-    .toggle-save-badge { white-space: nowrap; font-size: 11px; padding: 3px 8px; }
+    .toggle-save-badge { white-space: nowrap; font-size: 12px; padding: 3px 8px; }
     .pricing-plans { padding-top: 40px; padding-bottom: 56px; }
     .included-section { padding-top: 56px; padding-bottom: 56px; }
     .comparison-section { padding-top: 56px; padding-bottom: 56px; }

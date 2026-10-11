@@ -1189,7 +1189,7 @@ html.offcanvas-open body {
 
 .offcanvas__wrapper {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -1202,7 +1202,7 @@ html.offcanvas-open body {
 .offcanvas__wrapper .offcanvas__content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1 0 auto;
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__top {
   margin-bottom: 4px;
@@ -1210,7 +1210,8 @@ html.offcanvas-open body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__top .offcanvas__logo img {
-  max-height: 32px;
+  width: auto;
+  height: 32px;
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__close {
   display: inline-flex;
@@ -1234,9 +1235,8 @@ html.offcanvas-open body {
   font-size: 14px;
 }
 .offcanvas__wrapper .offcanvas__content .mobile-menu {
-  flex: 1;
+  flex: 1 0 auto;
   margin-bottom: 0;
-  overflow-y: auto;
 }
 .offcanvas__wrapper .offcanvas__content .offcanvas__buttons {
   display: flex;
@@ -1904,8 +1904,8 @@ html.offcanvas-open body {
 @media (max-width: 575px) {
   .faq-items .accordion .accordion-item .accordion-body p {
     width: 100%;
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 1.7;
   }
 }
 /* Los enlaces de las respuestas se distinguen del texto por algo más que el color (WCAG 1.4.1) */
@@ -2070,8 +2070,7 @@ html.offcanvas-open body {
 }
 @media (max-width: 575px) {
   .hero-1 .hero-content .hero-eyebrow {
-    font-size: 11px;
-    padding: 4px 8px;
+    padding: 5px 10px;
   }
 }
 .hero-1 .hero-content .hero-eyebrow img {
@@ -4102,7 +4101,7 @@ html.offcanvas-open body {
   top: 0;
   left: 16px;
   z-index: 100001;
-  padding: 12px 20px;
+  padding: 13px 20px;
   border-radius: 0 0 10px 10px;
   background: var(--header);
   color: #fff;
@@ -4205,5 +4204,38 @@ main:focus,
   }
   .toggle-option {
     min-height: 44px;
+  }
+  /* Enlaces de texto («Leer más», CTA de los artículos) y puntos del carrusel: objetivo de 44 px */
+  .link-btn,
+  .article .article-cta-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .swiper-dot .swiper-pagination-bullet,
+  .swiper-dot .swiper-pagination-bullet:not(:last-child) {
+    position: relative;
+    margin: 0 17px;
+  }
+  .swiper-dot .swiper-pagination-bullet::after {
+    content: "";
+    position: absolute;
+    inset: -17px;
+  }
+  /* el contenedor del carrusel recorta (overflow) lo que sobresale: sin este margen se perdía el área táctil de debajo */
+  .swiper-dot {
+    padding-bottom: 14px;
+  }
+  .header-1 .header-main .header-left .logo a,
+  .footer-widget-wrapper .footer-widget-items .widget-head .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-widget-wrapper .footer-widget-items .list-area li a {
+    min-width: 44px;
+  }
+  .table-note {
+    font-size: 14px;
   }
 }

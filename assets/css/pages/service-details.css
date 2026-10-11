@@ -776,3 +776,8 @@
     .trust-section { padding-top: 56px; padding-bottom: 56px; }
     .final-cta-section { padding-top: 56px; padding-bottom: 56px; }
 }
+
+/* Móvil: enlaces «Saber más» de las tarjetas con objetivo táctil de 44 px */
+@media (max-width: 575px) {
+    .feature-link { min-height: 44px; }
+}
