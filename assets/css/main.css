@@ -4226,7 +4226,9 @@ main:focus,
   .swiper-dot {
     padding-bottom: 14px;
   }
-  .header-1 .header-main .header-left .logo a,
+  /* :where() deja esta regla con especificidad 0: sin él (0,4,1) ganaba a «.header-logo-2 { display: none }» (0,4,0) y el logo naranja de
+     la cabecera pegajosa se veía duplicado bajo el blanco; con él, esa regla y las de .sticky siguen mandando sobre el logo. */
+  :where(.header-1 .header-main .header-left .logo a),
   .footer-widget-wrapper .footer-widget-items .widget-head .footer-logo {
     display: inline-flex;
     align-items: center;
