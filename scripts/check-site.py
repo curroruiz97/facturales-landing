@@ -695,6 +695,13 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
     check_jsonld(path, p, raw)
     check_a11y(path, p)
 
+    # El botón de subir va al final del documento: tras el pie, el orden de tabulación lo deja después del contenido
+    back = raw.find('id="back-top"')
+    if back < 0:
+        err(path, None, 'falta el botón de subir <button id="back-top">')
+    elif back < raw.find("</footer>"):
+        err(path, None, 'el botón de subir debe ir después del pie (al final del <body>, antes de los scripts)')
+
     # Enlaces muertos y anclas
     for line in p.dead_links:
         err(path, line, 'enlace muerto: href="#" / vacío / javascript:')
@@ -853,6 +860,8 @@ def check_styles_and_scripts() -> None:
                 err(css, None, f"naranja suelto {c}: usa los tokens de main.css (--accent, --theme-strong, --theme-text)")
         if re.search(r"rgba\(\s*236\s*,\s*130\s*,\s*40", text):
             err(css, None, "naranja suelto rgba(236,130,40,…): usa rgba(249,77,0,…) o los tokens")
+        if re.search(r"(?<![\w-])color\s*:\s*#999\b", text, re.I):
+            err(css, None, "gris suelto #999 (2,85:1 sobre blanco): usa var(--text-dim)")
 
     main_css = css_dir / "main.css"
     if main_css.exists():
@@ -861,6 +870,11 @@ def check_styles_and_scripts() -> None:
             err(main_css, None, "falta la regla global :focus-visible")
         if "prefers-reduced-motion" not in text:
             err(main_css, None, "falta el bloque @media (prefers-reduced-motion: reduce)")
+        if 'visibility: hidden"]' not in text:
+            err(main_css, None, 'falta la regla .wow[style*="visibility: hidden"] (sin ella Tab no alcanza los elementos que WOW aún no ha revelado)')
+        note = re.search(r"\.mockup-note\s*\{([^}]*)\}", text)
+        if note and re.search(r"opacity\s*:", note.group(1)):
+            err(main_css, None, "`.mockup-note` no puede atenuarse con opacity: «Datos de ejemplo» debe cumplir 4,5:1")
         root = re.search(r":root\s*\{(.*?)\}", text, re.S)
         tokens = dict(re.findall(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\s*;", root.group(1))) if root else {}
         pairs = [("theme-strong", "white", 4.5, "fondo de botones con texto blanco"),
@@ -870,7 +884,8 @@ def check_styles_and_scripts() -> None:
                  ("success-strong", "white", 4.5, "fondo verde con texto blanco"),
                  ("accent-dark", "white", 4.5, "final de degradados con texto blanco"),
                  ("text", "bg", 4.5, "texto de cuerpo sobre --bg"),
-                 ("theme", "header", 4.5, "naranja de marca sobre fondos oscuros")]
+                 ("theme", "header", 4.5, "naranja de marca sobre fondos oscuros"),
+                 ("accent-soft", "header", 4.5, "naranja claro sobre fondos oscuros")]
         for a, b, minimum, why in pairs:
             ca = "#FFFFFF" if a == "white" else tokens.get(a)
             cb = "#FFFFFF" if b == "white" else tokens.get(b)
