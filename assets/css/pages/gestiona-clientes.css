@@ -175,33 +175,6 @@
 .client-card-mockup .card-body-mock .data-row .value.text-success {
     color: #22c55e;
 }
-.client-card-mockup .card-body-mock .data-row .value.text-warning {
-    color: #f59e0b;
-}
-.client-card-mockup .card-footer-mock {
-    padding: 16px 24px;
-    background: #fafafa;
-    display: flex;
-    gap: 10px;
-}
-.client-card-mockup .card-footer-mock .mock-btn {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: default;
-}
-.client-card-mockup .card-footer-mock .mock-btn.primary {
-    background: var(--theme);
-    color: #fff;
-}
-.client-card-mockup .card-footer-mock .mock-btn.secondary {
-    background: #f0f0f0;
-    color: var(--header);
-}
 
 /* Problem Section */
 .gc-problem {
@@ -395,33 +368,6 @@
 }
 
 /* Value Metrics */
-.gc-metrics {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-}
-.metric-box {
-    text-align: center;
-    padding: 40px 20px;
-}
-.metric-box .metric-number {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 56px;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 8px;
-}
-.metric-box .metric-unit {
-    font-size: 18px;
-    color: var(--accent);
-    font-weight: 600;
-}
-.metric-box .metric-label {
-    font-size: 16px;
-    color: rgba(255,255,255,0.7);
-    margin-top: 8px;
-    line-height: 1.5;
-}
 
 /* How It Works */
 .gc-steps {
@@ -543,84 +489,6 @@
 }
 
 /* CTA Section */
-.gc-cta {
-    padding: 100px 0;
-    background: linear-gradient(135deg, var(--theme) 0%, #d63d00 50%, var(--accent) 100%);
-    position: relative;
-    overflow: hidden;
-}
-.gc-cta::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-}
-.gc-cta::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -80px;
-    width: 300px;
-    height: 300px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-}
-.gc-cta h2 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 44px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 16px;
-    position: relative;
-    z-index: 2;
-}
-.gc-cta p {
-    font-size: 18px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 36px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-    position: relative;
-    z-index: 2;
-}
-.gc-cta .btn-white-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #fff;
-    color: var(--accent-text);
-    font-weight: 700;
-    font-size: 17px;
-    padding: 18px 40px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    position: relative;
-    z-index: 2;
-}
-.gc-cta .btn-white-cta:hover {
-    background: var(--header);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-.gc-cta .cta-note {
-    margin-top: 20px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
-    position: relative;
-    z-index: 2;
-}
-.gc-cta .cta-note i {
-    margin-right: 6px;
-}
 
 /* Responsive */
 @media (max-width: 1399px) {
@@ -630,13 +498,11 @@
     .gc-hero h1 { font-size: 36px; }
     .gc-hero { padding: 110px 0 60px; }
     .client-card-mockup { margin: 40px auto 0; max-width: 100%; }
-    .gc-problem h2, .gc-features h2, .gc-steps h2, .gc-cta h2 { font-size: 32px; }
-    .metric-box .metric-number { font-size: 44px; }
+    .gc-problem h2, .gc-features h2, .gc-steps h2 { font-size: 32px; }
     .step-card .step-connector { display: none; }
 }
 @media (max-width: 576px) {
     .gc-hero h1 { font-size: 28px; }
-    .gc-problem h2, .gc-features h2, .gc-steps h2, .gc-cta h2 { font-size: 26px; }
-    .metric-box .metric-number { font-size: 36px; }
+    .gc-problem h2, .gc-features h2, .gc-steps h2 { font-size: 26px; }
     .gc-hero .trust-badges { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
