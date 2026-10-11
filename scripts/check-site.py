@@ -19,19 +19,35 @@ Qué comprueba, para cada .html:
   * privacidad: ninguna petición a hosts externos (solo se admite app.facturales.es y los
     enlaces <a>), ni en HTML ni en CSS ni en el JS propio;
   * veracidad del contenido: ninguna de las afirmaciones retiradas por política (ver
-    CONTENT_RULES) ni los CTAs a rutas antiguas de la app.
+    CONTENT_RULES) ni los CTAs a rutas antiguas de la app;
+  * SEO: título de 50-60 caracteres y descripción de 120-160, canonical correcto, Open Graph
+    y Twitter Card con imagen 1200x630 existente, JSON-LD válido y coherente con la página
+    (sin aggregateRating), sitemap.xml y robots.txt, y noindex en la 404.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import struct
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
+
+SITE_URL = "https://facturales.es"
+# Páginas que no se indexan (deben llevar noindex y no aparecer en el sitemap).
+NOINDEX_PAGES = {"404.html"}
+# Artículos del blog (llevan JSON-LD Article y fecha de revisión visible).
+ARTICLES = {
+    "verifactu-2027-guia-autonomos-pymes.html",
+    "factura-electronica-vs-verifactu.html",
+    "contabilidad-negocio-7-pasos.html",
+}
+# Naranjas sueltos que la paleta unificada (main.css) reemplazó.
+STRAY_COLORS = ("#ec8228", "#ff7300", "#d4a017")
 
 # Hosts a los que el sitio puede hacer peticiones (recursos). Los <a> externos se admiten siempre.
 ALLOWED_REQUEST_HOSTS = {"app.facturales.es"}
@@ -151,6 +167,26 @@ class PageParser(HTMLParser):
         self.imbalance: list[tuple[int, str]] = []
         self.div_open = 0
         self.div_close = 0
+        # SEO y accesibilidad
+        self.metas: list[dict] = []
+        self.link_tags: list[dict] = []
+        self.jsonld: list[tuple[int, str]] = []
+        self._in_jsonld = False
+        self._jsonld_buf: list[str] = []
+        self._jsonld_line = 0
+        self.headings: list[tuple[int, int, str]] = []
+        self._cur_heading: list | None = None
+        self.mains: list[dict] = []
+        self.body_links: list[dict] = []
+        self.in_body = False
+        self.imgs: list[tuple[int, dict]] = []
+        self.unnamed_controls: list[tuple[int, str]] = []
+        self._ctl: dict | None = None
+        self.icons_without_hidden: list[int] = []
+        self.times: list[str] = []
+        self.crumbs: list[str] = []
+        self._in_crumb_nav = False
+        self._crumb_li: list[str] | None = None
 
     # --- utilidades -------------------------------------------------
     def _attrs(self, attrs):
@@ -209,6 +245,37 @@ class PageParser(HTMLParser):
             self._in_title = True
         if tag == "meta" and a.get("name", "").lower() == "description":
             self.description = a.get("content", "")
+        if tag == "meta":
+            self.metas.append(a)
+        if tag == "link":
+            self.link_tags.append(a)
+        if tag == "script" and a.get("type", "").lower() == "application/ld+json":
+            self._in_jsonld = True
+            self._jsonld_buf = []
+            self._jsonld_line = line
+        if tag == "body":
+            self.in_body = True
+        if re.fullmatch(r"h[1-6]", tag):
+            self._cur_heading = [line, int(tag[1]), ""]
+        if tag == "main":
+            self.mains.append(a)
+        if tag == "a" and self.in_body:
+            self.body_links.append(a)
+        if tag == "img":
+            self.imgs.append((line, a))
+            if self._ctl is not None and a.get("alt", "").strip():
+                self._ctl["named"] = True
+        if tag in ("a", "button"):
+            named = bool(a.get("aria-label") or a.get("aria-labelledby") or a.get("title"))
+            self._ctl = {"tag": tag, "line": line, "attrs": a, "text": "", "named": named}
+        if tag == "i" and re.search(r"\bfa[a-z]?(-[a-z]+)?\b", a.get("class", "")) and a.get("aria-hidden") != "true":
+            self.icons_without_hidden.append(line)
+        if tag == "time" and "datetime" in a:
+            self.times.append(a["datetime"])
+        if tag == "nav" and a.get("aria-label") == "Migas de pan":
+            self._in_crumb_nav = True
+        if self._in_crumb_nav and tag == "li":
+            self._crumb_li = []
         if tag == "style":
             self._in_style = True
             self._style_buf = []
@@ -231,6 +298,23 @@ class PageParser(HTMLParser):
         line = self.getpos()[0]
         if tag == "title":
             self._in_title = False
+        if tag == "script" and self._in_jsonld:
+            self._in_jsonld = False
+            self.jsonld.append((self._jsonld_line, "".join(self._jsonld_buf)))
+        if re.fullmatch(r"h[1-6]", tag) and self._cur_heading is not None:
+            self.headings.append((self._cur_heading[0], self._cur_heading[1], re.sub(r"\s+", " ", self._cur_heading[2]).strip()))
+            self._cur_heading = None
+        if tag in ("a", "button") and self._ctl is not None:
+            c = self._ctl
+            self._ctl = None
+            is_link = c["tag"] == "a" and "href" in c["attrs"]
+            if (is_link or c["tag"] == "button") and not c["named"] and not c["text"].strip():
+                self.unnamed_controls.append((c["line"], c["tag"]))
+        if tag == "nav":
+            self._in_crumb_nav = False
+        if tag == "li" and self._crumb_li is not None:
+            self.crumbs.append(re.sub(r"\s+", " ", "".join(self._crumb_li)).strip())
+            self._crumb_li = None
         if tag == "style":
             self._in_style = False
             self.styles.append((self._style_line, "".join(self._style_buf)))
@@ -251,6 +335,14 @@ class PageParser(HTMLParser):
             self.imbalance.append((line, f"</{tag}> sin etiqueta de apertura"))
 
     def handle_data(self, data):
+        if self._in_jsonld:
+            self._jsonld_buf.append(data)
+        if self._cur_heading is not None:
+            self._cur_heading[2] += data
+        if self._ctl is not None:
+            self._ctl["text"] += data
+        if self._crumb_li is not None:
+            self._crumb_li.append(data)
         if self._in_title:
             self.title += data
         if self._in_style:
@@ -325,6 +417,190 @@ def strip_comments(text: str, js: bool) -> str:
     return text
 
 
+def expected_url(name: str) -> str:
+    return SITE_URL + "/" if name == "index.html" else f"{SITE_URL}/{name}"
+
+
+def image_size(path: Path) -> tuple[int, int] | None:
+    """Dimensiones de un PNG o JPEG (sin dependencias); None si no se puede leer."""
+    try:
+        data = path.read_bytes()
+    except OSError:
+        return None
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", data[16:24])
+    if data[:2] == b"\xff\xd8":
+        i = 2
+        while i + 9 < len(data):
+            if data[i] != 0xFF:
+                i += 1
+                continue
+            marker = data[i + 1]
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                h, w = struct.unpack(">HH", data[i + 5:i + 9])
+                return w, h
+            i += 2 + struct.unpack(">H", data[i + 2:i + 4])[0]
+    return None
+
+
+def local_from_site_url(url: str) -> Path | None:
+    if not url.startswith(SITE_URL + "/"):
+        return None
+    rel = url[len(SITE_URL) + 1:] or "index.html"
+    return ROOT / rel
+
+
+def check_seo(path: Path, p: PageParser, title: str, desc: str) -> None:
+    name = path.name
+    meta = {}
+    for m in p.metas:
+        key = m.get("property") or m.get("name")
+        if key:
+            meta[key] = m.get("content", "")
+    robots = meta.get("robots", "")
+    if name in NOINDEX_PAGES:
+        if "noindex" not in robots.lower():
+            err(path, None, 'la página de error debe llevar <meta name="robots" content="noindex">')
+        return
+    if "noindex" in robots.lower():
+        err(path, None, "una página indexable lleva noindex")
+    if not 50 <= len(title) <= 60:
+        err(path, None, f"el <title> debe medir 50-60 caracteres (mide {len(title)}): {title!r}")
+    if not 120 <= len(desc) <= 160:
+        err(path, None, f"la meta description debe medir 120-160 caracteres (mide {len(desc)})")
+    canon = [l.get("href", "") for l in p.link_tags if l.get("rel") == "canonical"]
+    expected = expected_url(name)
+    if canon != [expected]:
+        err(path, None, f"canonical incorrecto: {canon} (esperado [{expected!r}])")
+    required = ["og:title", "og:description", "og:url", "og:type", "og:locale", "og:site_name", "og:image",
+                "og:image:width", "og:image:height", "og:image:alt", "twitter:card", "twitter:title",
+                "twitter:description", "twitter:image"]
+    for key in required:
+        if not meta.get(key):
+            err(path, None, f"falta <meta> {key}")
+    if meta.get("og:url") and meta["og:url"] != expected:
+        err(path, None, f"og:url ({meta['og:url']}) distinto del canonical")
+    if meta.get("og:locale") and meta["og:locale"] != "es_ES":
+        err(path, None, "og:locale debe ser es_ES")
+    if meta.get("og:title") and meta["og:title"] != title:
+        err(path, None, "og:title distinto del <title>")
+    if meta.get("og:description") and meta["og:description"] != desc:
+        err(path, None, "og:description distinta de la meta description")
+    if meta.get("twitter:card") and meta["twitter:card"] != "summary_large_image":
+        err(path, None, "twitter:card debe ser summary_large_image")
+    img = meta.get("og:image", "")
+    if img:
+        if meta.get("twitter:image") != img:
+            err(path, None, "twitter:image distinta de og:image")
+        local = local_from_site_url(img)
+        if local is None or not local.exists():
+            err(path, None, f"og:image no existe en el sitio: {img}")
+        else:
+            size = image_size(local)
+            if size is not None and size != (1200, 630):
+                err(path, None, f"og:image debe medir 1200x630 (mide {size[0]}x{size[1]}): {img}")
+    if meta.get("og:image:width") not in (None, "1200") or meta.get("og:image:height") not in (None, "630"):
+        err(path, None, "og:image:width/height deben ser 1200 y 630")
+
+
+def jsonld_objects(path: Path, p: PageParser) -> list[dict]:
+    out = []
+    for line, text in p.jsonld:
+        try:
+            data = json.loads(text)
+        except ValueError as exc:
+            err(path, line, f"JSON-LD no válido: {exc}")
+            continue
+        out.extend(data if isinstance(data, list) else [data])
+    return out
+
+
+def walk(obj):
+    if isinstance(obj, dict):
+        yield obj
+        for v in obj.values():
+            yield from walk(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from walk(v)
+
+
+def check_jsonld(path: Path, p: PageParser, raw: str) -> None:
+    name = path.name
+    if name in NOINDEX_PAGES:
+        return
+    objs = jsonld_objects(path, p)
+    by_type: dict[str, list[dict]] = {}
+    for o in objs:
+        if o.get("@context") != "https://schema.org":
+            err(path, None, "JSON-LD sin @context https://schema.org")
+        by_type.setdefault(str(o.get("@type")), []).append(o)
+        for sub in walk(o):
+            for bad in ("aggregateRating", "review", "reviews", "ratingValue"):
+                if bad in sub:
+                    err(path, None, f"JSON-LD con {bad}: no hay valoraciones reales que respalden esos datos")
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", strip_code_blocks(raw)))
+
+    expected: set[str] = set()
+    if name == "index.html":
+        expected |= {"Organization", "SoftwareApplication"}
+    if name == "pricing.html":
+        expected.add("SoftwareApplication")
+    if name == "faq.html":
+        expected.add("FAQPage")
+    if name in ARTICLES:
+        expected.add("Article")
+    if p.crumbs:
+        expected.add("BreadcrumbList")
+    for t in expected:
+        if t not in by_type:
+            err(path, None, f"falta el JSON-LD {t}")
+    for t in by_type:
+        if t not in expected and t not in ("Organization", "SoftwareApplication"):
+            err(path, None, f"JSON-LD {t} que la página no necesita")
+
+    for o in by_type.get("SoftwareApplication", []):
+        if o.get("applicationCategory") != "BusinessApplication":
+            err(path, None, "SoftwareApplication debe ser BusinessApplication")
+        offers = o.get("offers", [])
+        prices = sorted(float(x.get("price", 0)) for x in offers)
+        if prices != [6.45, 11.95, 23.95]:
+            err(path, None, f"las ofertas JSON-LD no coinciden con los planes (6,45 / 11,95 / 23,95): {prices}")
+        if any(x.get("priceCurrency") != "EUR" for x in offers):
+            err(path, None, "las ofertas JSON-LD deben ir en EUR")
+    if name == "pricing.html":
+        for token in ("6,45", "11,95", "23,95", "4,95", "8,95", "17,95"):
+            if token not in raw:
+                err(path, None, f"el precio {token} no aparece en la página, pero sí en el JSON-LD")
+    for o in by_type.get("FAQPage", []):
+        questions = [q.get("name", "") for q in o.get("mainEntity", [])]
+        visible = [t for (_l, lvl, t) in p.headings if lvl >= 2 and t.endswith("?")]
+        if not questions or any(q not in visible for q in questions):
+            err(path, None, "las preguntas del JSON-LD FAQPage no coinciden con las visibles en la página")
+    for o in by_type.get("Article", []):
+        times = p.times
+        if len(times) < 2 or o.get("datePublished") != times[0] or o.get("dateModified") != times[1]:
+            err(path, None, f"fechas del JSON-LD ({o.get('datePublished')}, {o.get('dateModified')}) distintas de las visibles {times[:2]}")
+        h1 = next((t for (_l, lvl, t) in p.headings if lvl == 1), "")
+        if not (o.get("headline") and (o["headline"] == h1 or len(o["headline"]) <= 110)):
+            err(path, None, "headline del Article demasiado largo o ausente")
+        imgs = o.get("image") or []
+        for u in imgs:
+            local = local_from_site_url(u)
+            if local is None or not local.exists():
+                err(path, None, f"imagen del Article inexistente: {u}")
+        if (o.get("mainEntityOfPage") or {}).get("@id") != expected_url(name):
+            err(path, None, "mainEntityOfPage del Article distinto del canonical")
+    for o in by_type.get("BreadcrumbList", []):
+        names = [e.get("name") for e in o.get("itemListElement", [])]
+        if names != p.crumbs:
+            err(path, None, f"BreadcrumbList {names} distinto de las migas visibles {p.crumbs}")
+        for e in o.get("itemListElement", []):
+            local = local_from_site_url(e.get("item", ""))
+            if local is None or not local.exists():
+                err(path, None, f"BreadcrumbList apunta a una URL inexistente: {e.get('item')}")
+
+
 def check_page(path: Path, titles: dict, descriptions: dict) -> None:
     raw = path.read_text(encoding="utf-8")
     p = PageParser()
@@ -357,6 +633,8 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
         descriptions.setdefault(desc, []).append(path.name)
     if p.h1_count != 1:
         err(path, None, f"debe haber exactamente un <h1> (hay {p.h1_count})")
+    check_seo(path, p, title, desc)
+    check_jsonld(path, p, raw)
 
     # Enlaces muertos y anclas
     for line in p.dead_links:
@@ -462,6 +740,35 @@ def check_assets() -> None:
             err(f, line, f"el JS propio menciona un host externo: {host}")
 
 
+def check_sitemap(pages: list[Path]) -> None:
+    """sitemap.xml lista exactamente las páginas indexables y robots.txt lo anuncia."""
+    import xml.etree.ElementTree as ET
+
+    sm = ROOT / "sitemap.xml"
+    if not sm.exists():
+        err("sitemap.xml", None, "falta sitemap.xml")
+    else:
+        try:
+            tree = ET.parse(sm)
+        except ET.ParseError as exc:
+            err(sm, None, f"XML no válido: {exc}")
+        else:
+            ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+            locs = [e.text.strip() for e in tree.getroot().findall("s:url/s:loc", ns) if e.text]
+            want = sorted(expected_url(p.name) for p in pages if p.name not in NOINDEX_PAGES)
+            if sorted(locs) != want:
+                faltan = sorted(set(want) - set(locs))
+                sobran = sorted(set(locs) - set(want))
+                err(sm, None, f"el sitemap no coincide con las páginas indexables (faltan {faltan}, sobran {sobran})")
+            if len(locs) != len(set(locs)):
+                err(sm, None, "el sitemap repite URLs")
+    rb = ROOT / "robots.txt"
+    if not rb.exists():
+        err("robots.txt", None, "falta robots.txt")
+    elif f"Sitemap: {SITE_URL}/sitemap.xml" not in rb.read_text(encoding="utf-8"):
+        err(rb, None, f"robots.txt debe incluir 'Sitemap: {SITE_URL}/sitemap.xml'")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Comprobaciones estáticas del sitio de Facturales")
     ap.add_argument("files", nargs="*", help="páginas a revisar (por defecto, todas las .html)")
@@ -492,6 +799,7 @@ def main() -> int:
     if not args.files:
         check_header_include()
         check_assets()
+        check_sitemap(pages)
 
     if args.json:
         print(json.dumps({"pages": len(pages), "errors": errors}, ensure_ascii=False, indent=2))
