@@ -1,5 +1,11 @@
 (function() {
-  document.write(`
+  // Raíz del sitio, deducida de la URL de este mismo script (assets/js/header-include.js).
+  // Los enlaces y las imágenes de la cabecera se escriben relativos a la raíz, de modo que
+  // el menú funciona también desde rutas anidadas (p. ej. la página 404).
+  var root = '';
+  try { root = new URL('../../', document.currentScript.src).href; } catch (e) { root = ''; }
+
+  var html = `
         <!-- Offcanvas Area Start -->
         <div class="fix-area">
             <div class="offcanvas__info">
@@ -181,5 +187,7 @@
                     </div>
                 </div>
             </div>
-        </header>`);
+        </header>`;
+
+  document.write(html.replace(/(href|src)="(?!https?:|mailto:|tel:|#)([^"]+)"/g, '$1="' + root + '$2"'));
 })();
