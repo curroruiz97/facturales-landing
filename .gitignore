@@ -1,0 +1,16 @@
+# Configuración local de Claude Code (los agentes y su memoria sí se versionan)
+.claude/settings.local.json
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencias y registros (el sitio no tiene build, pero por si se añade alguno)
+node_modules/
+*.log
+
+# Caché de Python de los scripts auxiliares
+__pycache__/
+*.pyc
