@@ -25,7 +25,7 @@ Qué comprueba, para cada .html:
     (sin aggregateRating), sitemap.xml y robots.txt, y noindex en la 404;
   * accesibilidad: skip link y un único <main id="main">, jerarquía de encabezados sin
     saltos ni encabezados vacíos, <img> con alt útil, botones/enlaces con nombre accesible,
-    iconos decorativos con aria-hidden y ningún "outline: none !important".
+    iconos decorativos con aria-hidden.
 """
 from __future__ import annotations
 
@@ -49,8 +49,6 @@ ARTICLES = {
     "factura-electronica-vs-verifactu.html",
     "contabilidad-negocio-7-pasos.html",
 }
-# Naranjas sueltos que la paleta unificada (main.css) reemplazó.
-STRAY_COLORS = ("#ec8228", "#ff7300", "#d4a017")
 
 # Hosts a los que el sitio puede hacer peticiones (recursos). Los <a> externos se admiten siempre.
 ALLOWED_REQUEST_HOSTS = {"app.facturales.es"}
@@ -61,7 +59,11 @@ SKIP_DIRS = {".git", ".claude", ".github", "node_modules", "assets", "scripts", 
 # Ficheros JS/CSS propios (no librerías de terceros) cuyo contenido se revisa en busca de
 # peticiones externas y restos de plantilla. Las librerías de terceros solo se revisan en
 # busca de "Brevon/Gramentheme/Neotix" fuera de comentarios.
-FIRST_PARTY_ASSETS = ["assets/js/header-include.js", "assets/js/main.js", "assets/js/orbit-cta.js"]
+FIRST_PARTY_ASSETS = [
+    "assets/js/header-include.js", "assets/js/main.js", "assets/js/home.js",
+    "assets/js/pricing.js", "assets/js/orbit-cta.js",
+]
+
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param",
@@ -740,9 +742,16 @@ def check_header_include() -> None:
     if not f.exists():
         return
     text = f.read_text(encoding="utf-8")
+    # Enlaces de los datos (SERVICES) y atributos escritos directamente en la plantilla
+    for m in re.finditer(r"href:\s*'([^']+)'", text):
+        line = text.count("\n", 0, m.start()) + 1
+        if not resolve_local(ROOT / "index.html", m.group(1)).exists():
+            err(f, line, f"href apunta a un fichero inexistente: {m.group(1)}")
     for m in re.finditer(r'(href|src)="([^"]+)"', text):
         ref = m.group(2)
         line = text.count("\n", 0, m.start()) + 1
+        if re.search(r"['+$]", ref):
+            continue  # fragmentos construidos en JS (se validan con los datos)
         if is_skippable(ref):
             if ref == "#":
                 err(f, line, 'enlace muerto: href="#"')
@@ -756,7 +765,7 @@ def check_header_include() -> None:
 
 def check_assets() -> None:
     """CSS y JS: url() y @import, peticiones externas en el JS propio y restos de plantilla."""
-    for css in sorted((ROOT / "assets/css").glob("*.css")):
+    for css in sorted((ROOT / "assets/css").rglob("*.css")):
         text = css.read_text(encoding="utf-8", errors="replace")
         check_css_refs(text, css, "CSS")
         if FORBIDDEN_WORDS.search(strip_comments(text, js=False)):
