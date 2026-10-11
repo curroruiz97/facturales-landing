@@ -9739,3 +9739,12 @@ html:not(.reveal-ready) .tz-itm-anim div {
   font-weight: 400;
   line-height: 1.4;
 }
+
+/* Nota bajo las maquetas de las fichas */
+.mockup-note {
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: 0.75;
+  text-align: right;
+}
