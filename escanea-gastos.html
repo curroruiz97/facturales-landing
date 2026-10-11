@@ -7,6 +7,9 @@
         <meta name="description" content="Escanea y gestiona gastos con Facturales. Digitaliza recibos, clasifica automáticamente y ten el control total de tus finanzas.">
         <title>Facturales - Escanea y Gestiona Gastos</title>
         <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/all.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
@@ -27,7 +30,7 @@
 
             /* Hero */
             .page-hero {
-                padding: 100px 0 80px;
+                padding: 170px 0 80px;
                 background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
                 position: relative;
                 overflow: hidden;
@@ -358,8 +361,11 @@
                 .cta-section h2 { font-size: 32px; }
                 .features-grid { grid-template-columns: repeat(2, 1fr); }
             }
+            @media (max-width: 1399px) {
+                .page-hero { padding-top: 130px; }
+            }
             @media (max-width: 767px) {
-                .page-hero { padding: 70px 0 60px; }
+                .page-hero { padding: 110px 0 60px; }
                 .page-hero h1 { font-size: 30px; }
                 .features-grid { grid-template-columns: 1fr; }
                 .mockup-card { margin-top: 40px; }
@@ -402,24 +408,17 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Escanea Gastos</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                                <li>/</li>
-                                <li>Escanea Gastos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Hero Section -->
                 <section class="page-hero">
                     <div class="container">
+                        <nav class="page-breadcrumb" aria-label="Migas de pan">
+                            <ol>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="service-details.html">Servicios</a></li>
+                                <li aria-current="page">Escanea gastos</li>
+                            </ol>
+                        </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-receipt"></i> Control de Gastos</div>

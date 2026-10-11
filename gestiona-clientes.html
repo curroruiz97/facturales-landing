@@ -11,6 +11,9 @@
         <title>Facturales - Gestiona Clientes | CRM para Autonomos y Pymes</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
@@ -41,7 +44,7 @@
 
             /* Hero Section */
             .gc-hero {
-                padding: 100px 0 80px;
+                padding: 170px 0 80px;
                 background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
                 position: relative;
                 overflow: hidden;
@@ -657,9 +660,12 @@
             }
 
             /* Responsive */
+            @media (max-width: 1399px) {
+                .gc-hero { padding-top: 130px; }
+            }
             @media (max-width: 991px) {
                 .gc-hero h1 { font-size: 36px; }
-                .gc-hero { padding: 70px 0 60px; }
+                .gc-hero { padding: 110px 0 60px; }
                 .client-card-mockup { margin: 40px auto 0; max-width: 100%; }
                 .gc-problem h2, .gc-features h2, .gc-steps h2, .gc-cta h2 { font-size: 32px; }
                 .metric-box .metric-number { font-size: 44px; }
@@ -724,33 +730,17 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Gestiona clientes</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                    Gestiona clientes
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- ===== HERO SECTION ===== -->
                 <section class="gc-hero">
                     <div class="container">
+                        <nav class="page-breadcrumb" aria-label="Migas de pan">
+                            <ol>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="service-details.html">Servicios</a></li>
+                                <li aria-current="page">Gestiona clientes</li>
+                            </ol>
+                        </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <span class="hero-tag wow fadeInUp" data-wow-delay=".2s">

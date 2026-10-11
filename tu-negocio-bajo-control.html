@@ -11,6 +11,9 @@
         <title>Panel de control para autónomos y pymes | Facturales</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
@@ -44,7 +47,7 @@
 
             /* Hero Feature Section */
             .hero-feature-section {
-                padding: 100px 0 80px;
+                padding: 170px 0 80px;
                 background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
                 overflow: hidden;
             }
@@ -61,12 +64,20 @@
                 margin-bottom: 24px;
                 font-family: 'Inter', sans-serif;
             }
+            .hero-feature-section .hero-title {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 52px;
+                font-weight: 800;
+                color: #fff;
+                line-height: 1.12;
+                margin-bottom: 16px;
+            }
             .hero-feature-section .hero-hook {
                 font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 38px;
-                font-weight: 800;
+                font-size: 26px;
+                font-weight: 700;
                 color: #E8ECF4;
-                line-height: 1.25;
+                line-height: 1.3;
                 margin-bottom: 20px;
             }
             .hero-feature-section .hero-hook span {
@@ -711,8 +722,11 @@
 
             /* Responsive */
             @media (max-width: 991px) {
+                .hero-feature-section .hero-title {
+                    font-size: 42px;
+                }
                 .hero-feature-section .hero-hook {
-                    font-size: 30px;
+                    font-size: 22px;
                 }
                 .section-heading {
                     font-size: 28px;
@@ -727,17 +741,23 @@
                     grid-template-columns: 1fr 1fr;
                 }
             }
+            @media (max-width: 1399px) {
+                .hero-feature-section { padding-top: 130px; }
+            }
             @media (max-width: 767px) {
                 .hero-feature-section {
-                    padding: 60px 0 50px;
+                    padding: 110px 0 50px;
                 }
                 .pain-points-section,
                 .feature-deepdive-section,
                 .before-after-section {
                     padding: 60px 0;
                 }
+                .hero-feature-section .hero-title {
+                    font-size: 34px;
+                }
                 .hero-feature-section .hero-hook {
-                    font-size: 26px;
+                    font-size: 19px;
                 }
                 .metric-cards {
                     grid-template-columns: 1fr;
@@ -805,42 +825,27 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Tu negocio bajo control</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                    Tu negocio bajo control
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- ===== HERO FEATURE SECTION ===== -->
                 <section class="hero-feature-section">
                     <div class="container">
+                        <nav class="page-breadcrumb" aria-label="Migas de pan">
+                            <ol>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="service-details.html">Servicios</a></li>
+                                <li aria-current="page">Tu negocio bajo control</li>
+                            </ol>
+                        </nav>
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="hero-feature-text">
                                     <span class="hero-badge wow fadeInUp" data-wow-delay=".2s">
                                         <i class="fa-solid fa-chart-line"></i> Panel de control
                                     </span>
-                                    <h2 class="hero-hook wow fadeInUp" data-wow-delay=".3s">
+                                    <h1 class="hero-title wow fadeInUp" data-wow-delay=".25s">Tu negocio bajo control</h1>
+                                    <p class="hero-hook wow fadeInUp" data-wow-delay=".3s">
                                         ¿Pierdes horas buscando datos de tu negocio en <span>diferentes sitios</span>?
-                                    </h2>
+                                    </p>
                                     <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">
                                         Con Facturales tienes la información de tu negocio en un solo panel: ingresos, gastos, beneficio y facturas pendientes de cobro. Consulta tu situación en segundos.
                                     </p>
