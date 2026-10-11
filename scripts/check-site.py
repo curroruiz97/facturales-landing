@@ -391,8 +391,19 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
         line = raw.count("\n", 0, m.start()) + 1
         err(path, line, "texto de relleno 'lorem ipsum'")
 
-    # Veracidad del contenido
-    check_content(path, raw)
+    # Veracidad del contenido (se ignoran los bloques <style> y <script> que no son JSON-LD)
+    check_content(path, strip_code_blocks(raw))
+
+
+def strip_code_blocks(raw: str) -> str:
+    """Sustituye por espacios CSS y JS (conservando saltos de línea) para que las reglas de contenido
+    solo vean el texto y el JSON-LD."""
+    def blank(m: re.Match) -> str:
+        return re.sub(r"[^\n]", " ", m.group(0))
+    raw = re.sub(r"<style\b.*?</style>", blank, raw, flags=re.S | re.I)
+    raw = re.sub(r"<script\b(?![^>]*application/ld\+json).*?</script>", blank, raw, flags=re.S | re.I)
+    raw = re.sub(r'\sstyle="[^"]*"', blank, raw)
+    return raw
 
 
 def check_content(path: Path, raw: str) -> None:
