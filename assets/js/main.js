@@ -867,10 +867,12 @@ if (document.querySelectorAll(".marquee-group").length) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // 992px এর উপরে স্ক্রল পিন চালু হবে
+    // El pin de los paneles de proyecto solo se crea en pantallas de 1200 px o más.
+    // ScrollTrigger.matchMedia revierte por sí solo lo creado en cada handler cuando
+    // la consulta deja de cumplirse.
     ScrollTrigger.matchMedia({
-    
-    "(min-width: 1199px)": function () {
+
+    "(min-width: 1200px)": function () {
         let projectPanels = document.querySelectorAll('.project-panel');
 
         projectPanels.forEach((section) => {
@@ -889,9 +891,16 @@ if (document.querySelectorAll(".marquee-group").length) {
         });
     },
 
-    // 991px এবং নিচে - সব ScrollTrigger বন্ধ
-    "(max-width: 1199px)": function () {
-        ScrollTrigger.getAll().forEach(st => st.kill());
+    // Por debajo de 1200 px solo se descartan los pins de .project-panel. Antes se
+    // llamaba a getAll().kill(), lo que también destruía el trigger que revela el
+    // titular de "Sobre Facturales" y lo dejaba a opacidad 0.
+    "(max-width: 1199.98px)": function () {
+        ScrollTrigger.getAll().forEach(function (st) {
+            var pin = st.pin;
+            if (pin && pin.classList && pin.classList.contains('project-panel')) {
+                st.kill();
+            }
+        });
     }
 
     });
@@ -1121,7 +1130,11 @@ if (document.querySelectorAll(".marquee-group").length) {
                 }
             });
         });
-    
+
+        // Todas las animaciones de revelado se han preparado: desactiva el respaldo CSS
+        // (ver "reveal-fallback" en main.css).
+        document.documentElement.classList.add('reveal-ready');
+
     }); // End Document Ready Function
 
 

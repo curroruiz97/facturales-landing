@@ -1391,6 +1391,23 @@ span {
   transform: scale(1);
 }
 
+/* Respaldo de revelado: main.js añade la clase reveal-ready a <html> cuando termina de
+   preparar las animaciones. Si el JS falla antes (o un trigger se destruye), el
+   contenido animado deja de estar oculto pasados unos segundos. Las animaciones CSS
+   prevalecen sobre los estilos en línea que pone GSAP, por eso funciona. */
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+html:not(.reveal-ready) .text-anims,
+html:not(.reveal-ready) .tp_fade_anim,
+html:not(.reveal-ready) .tz-itm-anim div {
+  animation: reveal-fallback 0.01s linear 2.5s forwards;
+}
+
 /*---------------------------------------
 04. Layouts
 ---------------------------------------*/
