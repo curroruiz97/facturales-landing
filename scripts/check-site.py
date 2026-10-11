@@ -60,15 +60,16 @@ STRAY_COLORS = ("#ec8228", "#ff7300", "#d4a017")
 # Hosts a los que el sitio puede hacer peticiones (recursos). Los <a> externos se admiten siempre.
 ALLOWED_REQUEST_HOSTS = {"app.facturales.es"}
 
-# Directorios que no se revisan.
-SKIP_DIRS = {".git", ".claude", ".github", "node_modules", "assets", "scripts", "__pycache__"}
+# Directorios que no se revisan. v1/ es la copia congelada de la landing anterior del conmutador v1/v2 (CLAUDE.md): conserva
+# a propósito lo que este script prohíbe (plantilla, claims retirados, fuentes de Google…) y no se sirve en facturales.es.
+SKIP_DIRS = {".git", ".claude", ".github", "node_modules", "assets", "scripts", "__pycache__", "v1"}
 
 # Ficheros JS/CSS propios (no librerías de terceros) cuyo contenido se revisa en busca de
 # peticiones externas y restos de plantilla. Las librerías de terceros solo se revisan en
 # busca de "Brevon/Gramentheme/Neotix" fuera de comentarios.
 FIRST_PARTY_ASSETS = [
     "assets/js/header-include.js", "assets/js/main.js", "assets/js/home.js",
-    "assets/js/pricing.js", "assets/js/orbit-cta.js",
+    "assets/js/pricing.js", "assets/js/orbit-cta.js", "assets/js/version-switcher.js",
 ]
 # CSS de terceros (no se revisan sus reglas de foco ni sus colores)
 VENDOR_CSS = {"bootstrap.min.css", "animate.css", "swiper-bundle.min.css", "all.min.css"}
@@ -962,6 +963,25 @@ def check_sitemap(pages: list[Path]) -> None:
         err(rb, None, f"robots.txt debe incluir 'Sitemap: {SITE_URL}/sitemap.xml'")
 
 
+def check_switcher(pages: list[Path]) -> None:
+    """Conmutador v1/v2 (temporal): o está completo (script en todas las páginas, copia v1/ y robots) o no está, para que quitarlo no deje restos."""
+    js = ROOT / "assets/js/version-switcher.js"
+    loading = [p for p in pages if "version-switcher.js" in p.read_text(encoding="utf-8")]
+    v1_index = ROOT / "v1" / "index.html"
+    if not loading and not js.exists() and not v1_index.exists():
+        return  # sin conmutador
+    if not js.exists():
+        err("assets/js/version-switcher.js", None, "falta el script del conmutador v1/v2")
+    if not v1_index.exists():
+        err("v1/", None, "falta la copia v1/ que enseña el conmutador (python3 scripts/freeze-v1.py)")
+    for page in pages:
+        if page not in loading:
+            err(page, None, "no carga assets/js/version-switcher.js (el conmutador v1/v2 va en todas las páginas o en ninguna)")
+    robots = ROOT / "robots.txt"
+    if robots.exists() and "Disallow: /v1/" not in robots.read_text(encoding="utf-8"):
+        err(robots, None, "robots.txt debe incluir 'Disallow: /v1/' (la copia v1/ no se indexa)")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Comprobaciones estáticas del sitio de Facturales")
     ap.add_argument("files", nargs="*", help="páginas a revisar (por defecto, todas las .html)")
@@ -995,6 +1015,7 @@ def main() -> int:
         check_styles_and_scripts()
         check_icons(pages)
         check_sitemap(pages)
+        check_switcher(pages)
 
     if args.json:
         print(json.dumps({"pages": len(pages), "errors": errors}, ensure_ascii=False, indent=2))

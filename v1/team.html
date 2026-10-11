@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+<!-- Copia congelada de la landing anterior (conmutador v1/v2, ver CLAUDE.md): no se indexa y no se sirve en facturales.es. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="facturales-version" content="v1">
+<script>if(/^(www\.)?facturales\.es$/i.test(location.hostname))location.replace(location.pathname.replace(/\/v1\/(?=[^\/]*$)/,"/")+location.search+location.hash)</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Gramentheme">
+        <meta name="description" content="Brevon - Multipurpose Business HTML Template">
+        <!-- ======== Page title ============ -->
+        <title>Facturales - Sistema de contabilidad</title>
+        <!--<< Favcion >>-->
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+
+       <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
+            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+        </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back To Top Start -->
+        <button id="back-top" class="back-to-top">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!-- GT MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+       
+
+         <!-- Header-Top Section Start -->
+        <div class="header-top-section">
+            <div class="container-fluid">
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
+                    </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+<script src="assets/js/header-include.js"></script>
+
+        <!-- start: Search Popup -->
+        <div class="search_popup">
+            <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                <div class="search_wrapper">
+                    <div class="search_top d-flex align-items-center">
+                    <div class="search_logo">
+                        <a href="index.html">
+                        <img src="assets/img/logo/logo-white.svg" alt="img">
+                        </a>
+                    </div>
+                    <div class="search_close">
+                        <button type="button" class="search_close_btn">
+                        <i class="fa-thin fa-times"></i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="search_form">
+                    <form action="#">
+                        <div class="search_input">
+                        <input class="search-input-field" type="text" placeholder="Type here to search...">
+                        <span class="search-focus-border"></span>
+                        <button type="submit">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="search-popup-overlay"></div>
+
+        
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <!-- Breadcrumb Section Start -->
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                    <div class="container">
+                        <div class="page-heading">
+                            <div class="breadcrumb-sub-title">
+                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Nuestro equipo</h1>
+                            </div>
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                                <li>
+                                    <a href="index.html">
+                                        <i class="fa-solid fa-house"></i> Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    /
+                                </li>
+                                <li>
+                                    Nuestro equipo
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- Team Section Start -->
+                <section class="team-section section-padding fix">
+                    <div class="container">
+                        <div class="team-wrapper">
+                            <div class="row g-4">
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/01.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Ronald Richards</a>
+                                            </h3>
+                                            <p>Brand Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/02.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Ronald Richards</a>
+                                            </h3>
+                                            <p>Brand Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".5" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/03.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Esther Howard</a>
+                                            </h3>
+                                            <p>Co. founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/04.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Henderson & Co.</a>
+                                            </h3>
+                                            <p>Co Founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".5" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/05.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Cloud Sphere</a>
+                                            </h3>
+                                            <p>ui-ux designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 tp_fade_anim" data-delay=".7" data-fade-from="left">
+                                    <div class="team-card-item style-inner">
+                                        <div class="team-image">
+                                            <img src="assets/img/home-1/team/06.jpg" alt="img">
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3>
+                                                <a href="team-details.html">Nova Tech</a>
+                                            </h3>
+                                            <p>Brand Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-nav-wrap text-center">
+                                <ul>
+                                    <li><a class="page-numbers" href="#"><i class="fa-solid fa-arrow-up-left"></i></a></li>
+                                    <li class="active"><a class="page-numbers" href="#">01</a></li>
+                                    <li><a class="page-numbers" href="#">02</a></li>
+                                    <li><a class="page-numbers" href="#">03</a></li>
+                                    <li><a class="page-numbers" href="#"><i class="fa-solid fa-arrow-up-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Footer Section Start -->
+                <footer class="footer-section fix">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                        <div class="container">
+                        <div class="footer-widget-wrapper">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <a href="index.html" class="footer-logo">
+                                                <img src="assets/img/logo/logo-white.svg" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="footer-content">
+                                            <p>
+                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
+                                            </p>
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
+                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Acceso r&aacute;pido</h3>
+                                        </div>
+                                        <ul class="list-area">
+                                            <li>
+                                                <a href="https://app.facturales.es/signup.html">
+                                                    Crea una cuenta gratuita
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://app.facturales.es/signin.html">
+                                                    Iniciar sesi&oacute;n
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="pricing.html">
+                                                    Precios
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Funcionalidades</h3>
+                                        </div>
+                                        <ul class="list-area">
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Tu negocio bajo control
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Crea y Envía Facturas
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                        Crea y Envía Presupuestos
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Gestiona tu stock 
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Escanea gastos
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Gestiona clientes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head">
+                                            <h3>Suscríbete al Boletín</h3>
+                                        </div>
+                                        <div class="contact-item">
+                                            <form action="#">
+                                                <input type="text" placeholder="Correo electrónico">
+                                            </form>
+                                            <button type="submit" class="theme-btn w-100">
+                                                    Suscribirse ahora <i class="fa-solid fa-arrow-up-right"></i>
+                                            </button>
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom-wrapper">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">
+                               Copyright <span>Facturales.</span> Todos los derechos reservados.
+                            </p>
+                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
+                                <li>
+                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
+                                </li>
+                                <li>।</li>
+                                <li>
+                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+       
+
+        
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Gsap Min Js >>-->
+        <script src="assets/js/gsap.min.js"></script>
+        <!--<< ScrollTrigger Min Js >>-->
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <!--<< ScrollSmoother Min Js >>-->
+        <script src="assets/js/ScrollSmoother.min.js"></script>
+        <!--<< ScrollToPlugin Min Js >>-->
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <!--<< SplitText Min Js >>-->
+        <script src="assets/js/SplitText.min.js"></script>
+        <!--<< TextPlugin Min Js >>-->
+        <script src="assets/js/TextPlugin.js"></script>
+         <!--<< Chroma Min Js >>-->
+        <script src="assets/js/chroma.min.js"></script>
+        <!--<< nice-selec Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Parallaxie Js >>-->
+        <script src="assets/js/parallaxie.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/countdown.js"></script>
+    <script src="../assets/js/version-switcher.js" defer></script>
+</body>
+</html>

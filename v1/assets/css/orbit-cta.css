@@ -1,0 +1,325 @@
+/* ===== Orbit CTA Section ===== */
+.orbit-section {
+    padding: 80px 0;
+    background:
+        radial-gradient(circle at 50% 34%, rgba(236,130,40,0.09), transparent 24%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.018), transparent 58%),
+        #060708;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#facturales-orbit {
+    --animation-duration: 5s;
+    --ellipse-perimeter: 314;
+    --line-length: 5;
+    --line-dash: calc(var(--ellipse-perimeter) - var(--line-length));
+    --ui-scale: 1;
+    --cta-scale: 1;
+    --circle-size: calc(100px * var(--ui-scale));
+    --icon-size: calc(44px * var(--ui-scale));
+    --cta-width: calc(250px * var(--cta-scale));
+    --cta-height: calc(126px * var(--cta-scale));
+    --cta-logo-width: calc(170px * var(--cta-scale));
+    width: min(92vw, 760px);
+    aspect-ratio: 3 / 2;
+    position: relative;
+}
+
+#facturales-orbit .orbit-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    position: relative;
+    z-index: 0;
+}
+
+#facturales-orbit .oval {
+    fill: none;
+    stroke: rgba(236,130,40,0.22);
+    stroke-width: 0.55;
+}
+
+#facturales-orbit .path-line {
+    fill: none;
+    stroke: #ec8228;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-dasharray: var(--line-length) var(--line-dash);
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 8px rgba(236,130,40,0.35));
+    animation: orbitMoveLine var(--animation-duration) linear infinite;
+}
+
+@keyframes orbitMoveLine {
+    0%, 8%   { stroke-dashoffset: -12; }
+    15%, 23% { stroke-dashoffset: -52; }
+    33%, 41% { stroke-dashoffset: -110; }
+    51%, 59% { stroke-dashoffset: -170; }
+    67%, 75% { stroke-dashoffset: -210; }
+    85%, 93% { stroke-dashoffset: -270; }
+    100%     { stroke-dashoffset: -324; }
+}
+
+#facturales-orbit .circle {
+    position: absolute;
+    top: var(--circle-y);
+    left: var(--circle-x);
+    width: var(--circle-size);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.04), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
+        rgba(14,16,20,0.92);
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow:
+        0 16px 32px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+    backdrop-filter: blur(8px);
+    animation: orbitPulseSync var(--animation-duration) linear infinite;
+    animation-delay: var(--pulse-delay);
+}
+
+#facturales-orbit .circle::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: inherit;
+    border: 1px solid rgba(255,255,255,0.02);
+    pointer-events: none;
+}
+
+#facturales-orbit .circle svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    opacity: 0.9;
+    transform: scale(0.62);
+    transition: transform 160ms ease, opacity 160ms ease, filter 160ms ease;
+    animation: orbitIconPulseSync var(--animation-duration) linear infinite;
+    animation-delay: var(--pulse-delay);
+}
+
+/* Positions */
+#facturales-orbit .customers {
+    --circle-x: 30%; --circle-y: 15%; --pulse-delay: 0s;
+    color: #b98dff;
+}
+#facturales-orbit .quotes {
+    --circle-x: 70%; --circle-y: 15%; --pulse-delay: calc(var(--animation-duration) * -0.85);
+    color: #ffbc6b;
+}
+#facturales-orbit .invoices {
+    --circle-x: 100%; --circle-y: 50%; --pulse-delay: calc(var(--animation-duration) * -0.67);
+    color: #7fe6ff;
+}
+#facturales-orbit .payments {
+    --circle-x: 70%; --circle-y: 85%; --pulse-delay: calc(var(--animation-duration) * -0.49);
+    color: #69e79b;
+}
+#facturales-orbit .taxes {
+    --circle-x: 30%; --circle-y: 85%; --pulse-delay: calc(var(--animation-duration) * -0.33);
+    color: #ff7d89;
+}
+#facturales-orbit .reports {
+    --circle-x: 0%; --circle-y: 50%; --pulse-delay: calc(var(--animation-duration) * -0.15);
+    color: #ffb76b;
+}
+
+@keyframes orbitPulseSync {
+    0%, 8% {
+        transform: translate(-50%, -50%) scale(1.16);
+        border-color: rgba(236,130,40,0.58);
+        background:
+            radial-gradient(circle at 50% 30%, rgba(255,255,255,0.06), transparent 55%),
+            linear-gradient(180deg, rgba(61,34,10,0.94), rgba(35,20,7,0.96));
+        box-shadow:
+            0 0 0 1px rgba(236,130,40,0.08),
+            0 0 28px rgba(236,130,40,0.22),
+            0 18px 32px rgba(0,0,0,0.42),
+            inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    8.01%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-color: rgba(255,255,255,0.07);
+        background:
+            radial-gradient(circle at 50% 30%, rgba(255,255,255,0.04), transparent 55%),
+            linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
+            rgba(14,16,20,0.92);
+        box-shadow:
+            0 16px 32px rgba(0,0,0,0.35),
+            inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+}
+
+@keyframes orbitIconPulseSync {
+    0%, 8% {
+        opacity: 1;
+        transform: scale(0.9);
+        filter:
+            drop-shadow(0 0 10px currentColor)
+            drop-shadow(0 0 10px rgba(236,130,40,0.18));
+    }
+    8.01%, 100% {
+        opacity: 0.9;
+        transform: scale(0.62);
+        filter: none;
+    }
+}
+
+/* CTA Central */
+.facturales-cta.pro {
+    --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: var(--cta-width);
+    height: var(--cta-height);
+    transform: translate(-50%, -50%) perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+    transform-style: preserve-3d;
+    border-radius: calc(24px * var(--cta-scale));
+    text-decoration: none;
+    z-index: 4;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at var(--mx) var(--my), rgba(236,130,40,0.14), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        rgba(11,14,18,0.8);
+    border: 1px solid rgba(255,255,255,0.11);
+    backdrop-filter: blur(14px) saturate(130%);
+    box-shadow:
+        0 22px 54px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255,255,255,0.02) inset,
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    animation: orbitCtaFloat 5s ease-in-out infinite;
+}
+
+.facturales-cta.pro::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: conic-gradient(
+        from 180deg,
+        transparent 0deg, transparent 120deg,
+        rgba(236,130,40,0.24) 155deg,
+        rgba(236,130,40,0.62) 180deg,
+        rgba(236,130,40,0.2) 205deg,
+        transparent 240deg, transparent 360deg
+    );
+    filter: blur(14px);
+    opacity: 0.7;
+    animation: orbitCtaAuraSpin 7s linear infinite;
+    z-index: -2;
+}
+
+.facturales-cta.pro::after {
+    content: "";
+    position: absolute;
+    top: -150%; left: -45%;
+    width: 50%; height: 340%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    transform: rotate(18deg);
+    animation: orbitCtaShine 4.5s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.facturales-cta-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow:
+        0 0 0 1px rgba(236,130,40,0.14),
+        0 0 24px rgba(236,130,40,0.14),
+        0 0 48px rgba(236,130,40,0.08);
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+.facturales-cta-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: calc(18px * var(--cta-scale));
+    display: grid;
+    place-items: center;
+}
+
+.facturales-cta.pro img {
+    width: var(--cta-logo-width);
+    height: auto;
+    display: block;
+    transform: translateZ(30px);
+    filter:
+        drop-shadow(0 0 12px rgba(255,255,255,0.06))
+        drop-shadow(0 0 18px rgba(236,130,40,0.08));
+}
+
+.facturales-cta.pro:hover {
+    border-color: rgba(236,130,40,0.22);
+    box-shadow:
+        0 26px 60px rgba(0,0,0,0.58),
+        0 0 36px rgba(236,130,40,0.16),
+        0 0 0 1px rgba(255,255,255,0.02) inset,
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.facturales-cta.pro:focus-visible {
+    outline: none;
+    border-color: rgba(236,130,40,0.32);
+    box-shadow:
+        0 0 0 2px rgba(236,130,40,0.2),
+        0 24px 60px rgba(0,0,0,0.58),
+        0 0 36px rgba(236,130,40,0.16);
+}
+
+@keyframes orbitCtaFloat {
+    0%, 100% { transform: translate(-50%, -50%) perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(0px); }
+    50% { transform: translate(-50%, -50%) perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px); }
+}
+
+@keyframes orbitCtaAuraSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes orbitCtaShine {
+    0%, 100% { transform: translateX(-220%) rotate(18deg); opacity: 0; }
+    12% { opacity: 0; }
+    28% { transform: translateX(340%) rotate(18deg); opacity: 1; }
+    29% { opacity: 0; }
+}
+
+@media (max-width: 560px) {
+    #facturales-orbit { width: 96vw; }
+}
+
+@media (max-width: 420px) {
+    #facturales-orbit { width: 98vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #facturales-orbit .path-line,
+    #facturales-orbit .circle,
+    #facturales-orbit .circle svg,
+    .facturales-cta.pro,
+    .facturales-cta.pro::before,
+    .facturales-cta.pro::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

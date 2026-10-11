@@ -1,0 +1,5 @@
+Congelado por scripts/freeze-v1.py: no se edita a mano.
+ref:     origin/add-template
+commit:  1140c9db07381243b4d0177ec39c4d674acc531c
+fecha:   2026-03-06T14:12:57+01:00
+asunto:  Landing TOP

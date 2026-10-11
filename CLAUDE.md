@@ -33,7 +33,17 @@ Landing de **Facturales** (facturales.es), una aplicación de facturación para 
 | `verifactu-2027-guia-autonomos-pymes.html`, `factura-electronica-vs-verifactu.html`, `contabilidad-negocio-7-pasos.html` | Artículos |
 | `404.html` | Página de error (rutas absolutas, `noindex`) |
 
-No existe `contact.html` ni ninguna página de contacto con formulario: el contacto es `info@facturales.es`. Las 13 páginas de plantilla originales y la ficha de stock se eliminaron; no las recuperes.
+No existe `contact.html` ni ninguna página de contacto con formulario: el contacto es `info@facturales.es`. Las 13 páginas de plantilla originales y la ficha de stock se eliminaron; no las recuperes (solo viven dentro de la copia congelada `v1/`, ver «Conmutador v1/v2»).
+
+## Conmutador v1/v2 (temporal)
+
+Para comparar a ojo lo que cambiaron las olas de la auditoría, el sitio lleva una píldora «v1 | v2» (abajo a la izquierda; se arrastra por el asa y recuerda dónde la dejas) que alterna entre la landing anterior y la actual **en la misma página**.
+
+- **`v1/`** es una copia congelada de la landing de `add-template` antes de los cambios (ver `v1/SOURCE.txt`), generada con `python3 scripts/freeze-v1.py [ref]`. **No se edita ni se «arregla»**: conserva a propósito plantilla, claims retirados (gratis, cifras sin respaldo…) y fuentes de Google. Sus páginas llevan `noindex`, un script que en `facturales.es` redirige a la misma página del sitio actual (la copia no se sirve en producción) y el conmutador. `robots.txt` la excluye (`Disallow: /v1/`) y `check-site.py` no la revisa (`SKIP_DIRS`).
+- **`assets/js/version-switcher.js`** (con `defer`, al final de las 15 páginas) pinta la píldora. Deduce la raíz del sitio de su propia URL, conserva página, búsqueda y hash, y si la otra versión no tiene esa página (el v1 tenía 13 de plantilla) lleva a su portada. En `facturales.es` no se muestra.
+- `check-site.py` exige que el conmutador esté completo (script en todas las páginas, `v1/index.html` y `Disallow: /v1/`) o que no esté: así quitarlo no deja restos.
+
+**Quitarlo** (un solo commit lo añadió, así que `git revert` lo deshace): borrar `v1/`, `assets/js/version-switcher.js` y `scripts/freeze-v1.py`; en cada `.html`, el comentario y el `<script>` del conmutador; `Disallow: /v1/` de `robots.txt`; y en `check-site.py`, `"v1"` de `SKIP_DIRS`, el conmutador de `FIRST_PARTY_ASSETS` y `check_switcher`.
 
 ## Verificación obligatoria antes de cada commit
 

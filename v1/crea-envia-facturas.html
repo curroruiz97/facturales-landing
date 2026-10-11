@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+<!-- Copia congelada de la landing anterior (conmutador v1/v2, ver CLAUDE.md): no se indexa y no se sirve en facturales.es. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="facturales-version" content="v1">
+<script>if(/^(www\.)?facturales\.es$/i.test(location.hostname))location.replace(location.pathname.replace(/\/v1\/(?=[^\/]*$)/,"/")+location.search+location.hash)</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Avenue Media">
+        <meta name="description" content="Crea y envía facturas profesionales en segundos con Facturales. Compatible con Verifactu, numeración automática y envío por email.">
+        <title>Facturales - Crea y Envía Facturas Profesionales</title>
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/orbit-cta.css">
+        <style>
+            :root {
+                --accent: #ec8228;
+                --accent-light: #FFF0E5;
+                --accent-dark: #D47524;
+                --header: #0B0D17;
+                --text: #534F5A;
+            }
+
+            /* Hero */
+            .page-hero {
+                padding: 100px 0 80px;
+                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
+                position: relative;
+                overflow: hidden;
+            }
+            .page-hero::before {
+                content: '';
+                position: absolute;
+                top: -40%;
+                right: -15%;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba(236,130,40,0.12) 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            .hero-tag {
+                display: inline-block;
+                background: rgba(236,130,40,0.15);
+                color: var(--accent);
+                font-size: 14px;
+                font-weight: 600;
+                padding: 6px 18px;
+                border-radius: 50px;
+                margin-bottom: 20px;
+                font-family: 'Inter', sans-serif;
+                letter-spacing: 0.5px;
+            }
+            .hero-tag i { margin-right: 6px; }
+            .page-hero h1 {
+                font-size: 48px;
+                font-weight: 800;
+                color: #fff;
+                margin-bottom: 20px;
+                line-height: 1.15;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .page-hero h1 .highlight { color: var(--accent); }
+            .page-hero .hero-desc {
+                font-size: 18px;
+                color: rgba(255,255,255,0.7);
+                margin-bottom: 28px;
+                line-height: 1.7;
+                font-family: 'Inter', sans-serif;
+            }
+            .check-features {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 20px;
+                margin-bottom: 32px;
+            }
+            .check-feature {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: rgba(255,255,255,0.8);
+                font-weight: 500;
+            }
+            .check-feature i {
+                color: var(--accent);
+                margin-right: 8px;
+                font-size: 14px;
+            }
+            .hero-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 16px 36px;
+                background: var(--accent);
+                color: #fff;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-family: 'Inter', sans-serif;
+            }
+            .hero-cta:hover {
+                background: var(--accent-dark);
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(236,130,40,0.35);
+            }
+
+            /* Mockup */
+            .mockup-card {
+                background: #fff;
+                border-radius: 20px;
+                padding: 32px;
+                box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+                position: relative;
+            }
+            .mockup-card::before {
+                content: '';
+                position: absolute;
+                top: -2px; left: -2px; right: -2px; bottom: -2px;
+                background: linear-gradient(135deg, var(--accent), transparent 60%);
+                border-radius: 22px;
+                z-index: -1;
+                opacity: 0.4;
+            }
+            .mockup-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 24px;
+                padding-bottom: 16px;
+                border-bottom: 2px solid #F5F5F5;
+            }
+            .mockup-top h3 {
+                font-size: 18px;
+                font-weight: 700;
+                margin: 0;
+                color: var(--header);
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .mockup-status {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--accent);
+                background: var(--accent-light);
+                padding: 5px 14px;
+                border-radius: 50px;
+                letter-spacing: 0.3px;
+            }
+            .mockup-field {
+                margin-bottom: 18px;
+            }
+            .mockup-field-label {
+                font-size: 12px;
+                color: #999;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 4px;
+                font-weight: 600;
+            }
+            .mockup-field-value {
+                font-weight: 700;
+                color: var(--header);
+                font-size: 15px;
+            }
+            .mockup-field-sub {
+                font-size: 13px;
+                color: var(--text);
+            }
+            .invoice-row {
+                display: flex;
+                justify-content: space-between;
+                padding: 12px 0;
+                border-bottom: 1px solid #F0F0F0;
+                font-size: 15px;
+                color: var(--header);
+            }
+            .invoice-row.total {
+                border-bottom: none;
+                border-top: 2px solid #E8E8E8;
+                margin-top: 8px;
+                padding-top: 14px;
+                font-weight: 800;
+                font-size: 22px;
+                color: var(--accent);
+            }
+            .invoice-row .positive { color: #22C55E; font-weight: 600; }
+            .mockup-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .mockup-btn {
+                flex: 1;
+                padding: 12px;
+                border-radius: 10px;
+                font-weight: 700;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.2s;
+                border: none;
+            }
+            .mockup-btn-outline {
+                background: #fff;
+                border: 2px solid #E8E8E8;
+                color: var(--header);
+            }
+            .mockup-btn-outline:hover { border-color: var(--accent); }
+            .mockup-btn-primary {
+                background: var(--accent);
+                color: #fff;
+            }
+            .mockup-btn-primary:hover { background: var(--accent-dark); }
+
+            /* Features */
+            .features-section {
+                padding: 100px 0;
+                background: #0F1219;
+                position: relative;
+            }
+            .features-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            }
+            .section-tag {
+                display: inline-block;
+                background: color-mix(in srgb, var(--accent) 12%, transparent);
+                color: var(--accent);
+                font-size: 13px;
+                font-weight: 700;
+                padding: 6px 16px;
+                border-radius: 50px;
+                margin-bottom: 16px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .section-title {
+                font-size: 42px;
+                font-weight: 800;
+                color: #E8ECF4;
+                margin-bottom: 16px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .section-title .highlight { color: var(--accent); }
+            .section-subtitle {
+                font-size: 17px;
+                color: rgba(255,255,255,0.55);
+                margin-bottom: 60px;
+                line-height: 1.6;
+            }
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+            .feature-card {
+                background: rgba(255,255,255,0.03);
+                border-radius: 16px;
+                padding: 32px 28px;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255,255,255,0.06);
+            }
+            .feature-card:hover {
+                background: rgba(255,255,255,0.06);
+                border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
+                transform: translateY(-4px);
+            }
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 14px;
+                font-size: 24px;
+                margin-bottom: 20px;
+                background: color-mix(in srgb, var(--accent) 12%, transparent);
+                color: var(--accent);
+                transition: all 0.3s;
+            }
+            .feature-card:hover .feature-icon {
+                background: var(--accent);
+                color: #fff;
+            }
+            .feature-card h3 {
+                font-size: 19px;
+                font-weight: 700;
+                color: #E8ECF4;
+                margin-bottom: 10px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .feature-card p {
+                font-size: 15px;
+                color: rgba(255,255,255,0.55);
+                margin: 0;
+                line-height: 1.6;
+            }
+
+            /* Benefits */
+            .benefits-section {
+                padding: 100px 0;
+                background: #111827;
+                position: relative;
+            }
+            .benefits-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            }
+            .benefits-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+            .benefit-card {
+                background: rgba(255,255,255,0.03);
+                border-radius: 20px;
+                padding: 36px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                border: 1px solid rgba(255,255,255,0.06);
+                transition: all 0.3s ease;
+            }
+            .benefit-card:hover {
+                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
+                transform: translateY(-3px);
+                border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+            }
+            .benefit-card-icon {
+                width: 56px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 14px;
+                font-size: 24px;
+                margin-bottom: 20px;
+                background: color-mix(in srgb, var(--accent) 12%, transparent);
+                color: var(--accent);
+            }
+            .benefit-card h3 {
+                font-size: 20px;
+                font-weight: 700;
+                color: #E8ECF4;
+                margin-bottom: 12px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .benefit-card p {
+                font-size: 15px;
+                color: rgba(255,255,255,0.55);
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+            .benefit-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .benefit-list li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                font-size: 14px;
+                color: rgba(255,255,255,0.75);
+                font-weight: 500;
+            }
+            .benefit-list li:last-child { margin-bottom: 0; }
+            .benefit-list li i {
+                color: var(--accent);
+                margin-right: 10px;
+                font-size: 14px;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: color-mix(in srgb, var(--accent) 12%, transparent);
+                border-radius: 50%;
+                flex-shrink: 0;
+            }
+
+            /* CTA */
+            .cta-section {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+                padding: 100px 0;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .cta-section::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -20%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+            .cta-section h2 {
+                color: #fff;
+                font-size: 42px;
+                font-weight: 800;
+                margin-bottom: 16px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .cta-section p {
+                color: rgba(255,255,255,0.9);
+                font-size: 18px;
+                margin-bottom: 36px;
+                font-family: 'Inter', sans-serif;
+            }
+            .cta-buttons {
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .cta-btn-white {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #fff;
+                color: var(--accent);
+                padding: 16px 36px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .cta-btn-white:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                color: var(--accent-dark);
+            }
+            .cta-btn-outline {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: transparent;
+                border: 2px solid rgba(255,255,255,0.5);
+                color: #fff;
+                padding: 14px 36px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .cta-btn-outline:hover {
+                border-color: #fff;
+                background: rgba(255,255,255,0.1);
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: 991px) {
+                .page-hero h1 { font-size: 36px; }
+                .section-title { font-size: 32px; }
+                .cta-section h2 { font-size: 32px; }
+                .features-grid { grid-template-columns: repeat(2, 1fr); }
+                .benefits-grid { grid-template-columns: 1fr; }
+            }
+            @media (max-width: 767px) {
+                .page-hero { padding: 70px 0 60px; }
+                .page-hero h1 { font-size: 30px; }
+                .features-grid { grid-template-columns: 1fr; }
+                .mockup-card { margin-top: 40px; }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
+            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+        </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <div class="header-top-section">
+            <div class="container-fluid">
+                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
+                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
+                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="countdown-days">00</span>d
+                        <span id="countdown-hours">00</span>h
+                        <span id="countdown-mins">00</span>m
+                        <span id="countdown-secs">00</span>s
+                    </div>
+                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
+                        Empezar ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+<script src="assets/js/header-include.js"></script>
+
+        <div class="search_popup">
+            <div class="container"><div class="row"><div class="col-xxl-12"><div class="search_wrapper">
+                <div class="search_top d-flex align-items-center">
+                    <div class="search_logo"><a href="index.html"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
+                    <div class="search_close"><button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button></div>
+                </div>
+                <div class="search_form"><form action="#"><div class="search_input">
+                    <input class="search-input-field" type="text" placeholder="Type here to search...">
+                    <span class="search-focus-border"></span>
+                    <button type="submit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button>
+                </div></form></div>
+            </div></div></div></div>
+        </div>
+        <div class="search-popup-overlay"></div>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                    <div class="container">
+                        <div class="page-heading">
+                            <div class="breadcrumb-sub-title">
+                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Crea y Envía Facturas</h1>
+                            </div>
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                                <li>/</li>
+                                <li>Crea y Envía Facturas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Section -->
+                <section class="page-hero">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-file-invoice"></i> Facturación Digital</div>
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Crea y envía <span class="highlight">facturas profesionales</span> en segundos</h1>
+                                <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Sistema de facturación inteligente que ahorra tiempo y elimina errores. Compatible con Verifactu y 100% legal.</p>
+                                <div class="check-features wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Sin tarjeta de crédito</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Sin límites</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Soporte incluido</div>
+                                </div>
+                                <a href="https://app.facturales.es/signup.html" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
+                                    <div class="mockup-top">
+                                        <h3>Nueva Factura</h3>
+                                        <span class="mockup-status"><i class="fa-solid fa-circle" style="font-size:6px;vertical-align:middle;margin-right:4px;"></i> Borrador</span>
+                                    </div>
+                                    <div class="mockup-field">
+                                        <div class="mockup-field-label">Cliente</div>
+                                        <div class="mockup-field-value">Empresa Ejemplo S.L.</div>
+                                        <div class="mockup-field-sub">B-12345678</div>
+                                    </div>
+                                    <div class="mockup-field">
+                                        <div class="mockup-field-label">Concepto</div>
+                                        <div class="mockup-field-value">Servicios de consultoría</div>
+                                    </div>
+                                    <div class="invoice-row"><span>Base imponible</span><span>1.500,00 €</span></div>
+                                    <div class="invoice-row"><span>IVA 21%</span><span class="positive">+315,00 €</span></div>
+                                    <div class="invoice-row total"><span>Total</span><span>1.815,00 €</span></div>
+                                    <div class="mockup-actions">
+                                        <button class="mockup-btn mockup-btn-outline"><i class="fa-solid fa-save"></i> Guardar</button>
+                                        <button class="mockup-btn mockup-btn-primary"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="container">
+                        <div class="text-center">
+                            <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Funcionalidades</div>
+                            <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Todo lo que necesitas para <span class="highlight">facturar</span></h2>
+                            <p class="section-subtitle wow fadeInUp" data-wow-delay=".4s">Funcionalidades diseñadas para hacer tu facturación más eficiente</p>
+                        </div>
+                        <div class="features-grid">
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
+                                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                                <h3>Creación rápida</h3>
+                                <p>Crea facturas profesionales en menos de 60 segundos con autocompletado inteligente</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
+                                <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                                <h3>Envío automático</h3>
+                                <p>Envía facturas por email directamente desde la plataforma con confirmación de lectura</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
+                                <div class="feature-icon"><i class="fa-solid fa-list-ol"></i></div>
+                                <h3>Numeración automática</h3>
+                                <p>Sistema de numeración secuencial configurable y sin errores</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
+                                <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+                                <h3>Cumplimiento legal</h3>
+                                <p>100% compatible con Verifactu y la Ley Antifraude española</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
+                                <div class="feature-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                <h3>Exportación PDF</h3>
+                                <p>Genera PDFs profesionales personalizados con tu marca y logotipo</p>
+                            </div>
+                            <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
+                                <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                <h3>Seguimiento</h3>
+                                <p>Controla el estado de tus facturas en tiempo real: enviada, vista y cobrada</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="benefits-section">
+                    <div class="container">
+                        <div class="text-center">
+                            <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Ventajas</div>
+                            <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Ventajas de facturar con <span class="highlight">Facturales</span></h2>
+                        </div>
+                        <div class="benefits-grid" style="margin-top: 50px;">
+                            <div class="benefit-card wow fadeInUp" data-wow-delay=".3s">
+                                <div class="benefit-card-icon"><i class="fa-solid fa-users"></i></div>
+                                <h3>Miles de empresas confían en nosotros</h3>
+                                <p>Autónomos, pymes y grandes empresas usan Facturales para su facturación diaria</p>
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Facturas ilimitadas</li>
+                                    <li><i class="fa-solid fa-check"></i> Plantillas versátiles</li>
+                                    <li><i class="fa-solid fa-check"></i> Recordatorios de pago automáticos</li>
+                                    <li><i class="fa-solid fa-check"></i> Facturas recurrentes</li>
+                                </ul>
+                            </div>
+                            <div class="benefit-card wow fadeInUp" data-wow-delay=".4s">
+                                <div class="benefit-card-icon"><i class="fa-solid fa-shield-check"></i></div>
+                                <h3>100% seguro y legal</h3>
+                                <p>Cumple con todas las normativas fiscales incluido Verifactu y la Ley Antifraude</p>
+                                <ul class="benefit-list">
+                                    <li><i class="fa-solid fa-check"></i> Plantillas personalizables</li>
+                                    <li><i class="fa-solid fa-check"></i> Múltiples series de facturación</li>
+                                    <li><i class="fa-solid fa-check"></i> Firma digital QR integrada</li>
+                                    <li><i class="fa-solid fa-check"></i> Máxima versatilidad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Orbit CTA Section -->
+                <section class="orbit-section">
+                    <div class="container" id="facturales-orbit">
+                        <svg class="orbit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <path class="oval" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
+                            <path class="path-line" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
+                        </svg>
+                        <div class="circle customers"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5"></circle><path d="M4.5 18c.7-2.5 2.8-4 4.5-4s3.8 1.5 4.5 4"></path><rect x="14.5" y="6" width="5" height="8" rx="1.2"></rect><path d="M16 8.5h2"></path><path d="M16 11h2"></path></svg></div>
+                        <div class="circle quotes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"></path><path d="M14.5 3.5V8h4"></path><path d="M9 11h6"></path><path d="M9 14h3.5"></path><path d="M13.5 15.5 17.5 11.5"></path><path d="M16.7 10.7 18.3 12.3"></path><path d="M13.2 15.8 13 18l2.2-.2"></path></svg></div>
+                        <div class="circle invoices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3.5h8v17l-2-1.25-2 1.25-2-1.25-2 1.25z"></path><path d="M10 8h4"></path><path d="M10 11h4"></path><path d="M10 14h2.5"></path><path d="M14.2 14.4l1.1 1.1 2.2-2.2"></path></svg></div>
+                        <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
+                        <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
+                        <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
+                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
+                            <span class="facturales-cta-glow"></span>
+                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
+                        </a>
+                    </div>
+                </section>
+
+                <footer class="footer-section fix">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                        <div class="container">
+                        <div class="footer-widget-wrapper">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><a href="index.html" class="footer-logo"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
+                                        <div class="footer-content">
+                                            <p>Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.</p>
+                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">Empezar ahora <i class="fa-solid fa-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Acceso r&aacute;pido</h3></div>
+                                        <ul class="list-area">
+                                            <li><a href="https://app.facturales.es/signup.html">Crea una cuenta gratuita</a></li>
+                                            <li><a href="https://app.facturales.es/signin.html">Iniciar sesi&oacute;n</a></li>
+                                            <li><a href="pricing.html">Precios</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Funcionalidades</h3></div>
+                                        <ul class="list-area">
+                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                            <li><a href="crea-envia-facturas.html">Crea y Envía Facturas</a></li>
+                                            <li><a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a></li>
+                                            <li><a href="factura-personalizada.html">Personaliza facturas</a></li>
+                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="footer-widget-items">
+                                        <div class="widget-head"><h3>Suscríbete al Boletín</h3></div>
+                                        <div class="contact-item">
+                                            <form action="#"><input type="text" placeholder="Email address"></form>
+                                            <button type="submit" class="theme-btn w-100">Subscribe now <i class="fa-solid fa-arrow-up-right"></i></button>
+                                            <div class="social-icon">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom-wrapper">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright <span>Facturales.</span> Todos los derechos reservados.</p>
+                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
+                                <li><a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a></li>
+                                <li>।</li>
+                                <li><a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/gsap.min.js"></script>
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <script src="assets/js/ScrollSmoother.min.js"></script>
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <script src="assets/js/SplitText.min.js"></script>
+        <script src="assets/js/TextPlugin.js"></script>
+        <script src="assets/js/chroma.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/parallaxie.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/countdown.js"></script>
+        <script src="assets/js/orbit-cta.js"></script>
+    <script src="../assets/js/version-switcher.js" defer></script>
+</body>
+</html>
