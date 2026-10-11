@@ -55,7 +55,7 @@
                         <div class="offcanvas__top d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/logo-color.svg" alt="Facturales" width="172" height="52">
+                                    <img src="assets/img/logo/logo-color.webp" alt="Facturales" width="172" height="52" loading="lazy">
                                 </a>
                             </div>
                             <button type="button" class="offcanvas__close" aria-label="Cerrar menú">
@@ -115,10 +115,10 @@
                         <div class="header-left">
                             <div class="logo">
                                 <a href="index.html" class="header-logo">
-                                    <img src="assets/img/logo/logo-white.svg" alt="Facturales" width="172" height="52">
+                                    <img src="assets/img/logo/logo-white.webp" alt="Facturales" width="172" height="52">
                                 </a>
                                 <a href="index.html" class="header-logo-2">
-                                    <img src="assets/img/logo/logo-color.svg" alt="Facturales" width="172" height="52">
+                                    <img src="assets/img/logo/logo-color.webp" alt="Facturales" width="172" height="52" loading="lazy">
                                 </a>
                             </div>
                         </div>
