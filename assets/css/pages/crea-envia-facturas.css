@@ -386,11 +386,15 @@
     .page-hero { padding: 110px 0 60px; }
     .page-hero h1 { font-size: 30px; }
     .features-grid { grid-template-columns: 1fr; }
-    .mockup-card { margin-top: 40px; }
 }
 
 /* Móvil: secciones con menos espacio vertical */
 @media (max-width: 575px) {
     .features-section { padding-top: 56px; padding-bottom: 56px; }
     .benefits-section { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* Con la columna de la maqueta apilada bajo el texto (< 992 px) la maqueta no puede quedar pegada al CTA */
+@media (max-width: 991px) {
+    .mockup-card { margin-top: 40px; }
 }

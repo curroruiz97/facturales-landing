@@ -330,13 +330,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.4s ease;
-}
-.pain-card:hover .solution-text {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Feature Deep Dive */
@@ -584,4 +577,11 @@
     .pain-points-section { padding-top: 56px; padding-bottom: 56px; }
     .feature-deepdive-section { padding-top: 56px; padding-bottom: 56px; }
     .before-after-section { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* 320 px: las tres cifras de la maqueta no caben en una fila con sus etiquetas, se apilan */
+@media (max-width: 359px) {
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
 }

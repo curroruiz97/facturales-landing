@@ -76,17 +76,7 @@
 }
 .pricing-card.featured {
     border-color: var(--theme);
-    box-shadow: 0 12px 40px rgba(249,77,0,0.15);
-}
-.pricing-card.featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-strong), var(--theme));
-    border-radius: 20px 20px 0 0;
+    box-shadow: inset 0 4px 0 var(--accent-strong), 0 12px 40px rgba(249,77,0,0.15);
 }
 .pricing-card .plan-badge {
     display: inline-flex;
@@ -400,17 +390,16 @@
     color: var(--accent-text);
     box-shadow: 0 4px 12px rgba(249,77,0,0.1);
 }
-.table-toggle-btn i {
-    transition: transform 0.3s ease;
-}
-.table-toggle-btn.expanded i {
-    transform: rotate(180deg);
-}
 
 /* --- FAQ Mini --- */
 .pricing-faq {
     padding: 80px 0;
     background: var(--bg);
+}
+.pricing-faq .accordion {
+    --bs-accordion-active-bg: var(--accent-light);
+    --bs-accordion-active-color: var(--header);
+    --bs-accordion-btn-focus-box-shadow: none;
 }
 
 /* --- CTA Section --- */
@@ -503,4 +492,11 @@
     .comparison-section { padding-top: 56px; padding-bottom: 56px; }
     .pricing-faq { padding-top: 56px; padding-bottom: 56px; }
     .pricing-cta { padding-top: 56px; padding-bottom: 56px; }
+    .comp-table { min-width: 0; table-layout: fixed; }
+    .comp-table thead th:first-child,
+    .comp-table tbody th { min-width: 0; max-width: none; width: 34%; padding-left: 10px; padding-right: 8px; font-size: 13px; }
+    .comp-table thead th,
+    .comp-table tbody td { padding: 10px 4px; font-size: 13px; }
+    .comp-table .category-row td,
+    .comp-table .category-row-inner { padding: 12px 10px; font-size: 15px; }
 }
