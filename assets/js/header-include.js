@@ -8,7 +8,7 @@
                         <div class="offcanvas__top d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/logo-color.svg" alt="logo-img">
+                                    <img src="assets/img/logo/logo-color.svg" alt="Facturales">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -19,11 +19,11 @@
                         </div>
                         <div class="mobile-menu fix"></div>
                         <div class="offcanvas__buttons">
-                            <a href="https://app.facturales.es/signin.html" class="offcanvas__btn offcanvas__btn--outline">
-                                <i class="fa-solid fa-right-to-bracket"></i> Acceder
+                            <a href="https://app.facturales.es/signin" class="offcanvas__btn offcanvas__btn--outline">
+                                <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
                             </a>
-                            <a href="https://app.facturales.es/signup.html" class="offcanvas__btn offcanvas__btn--primary">
-                                Registro <i class="fa-solid fa-arrow-up-right"></i>
+                            <a href="https://app.facturales.es/signup" class="offcanvas__btn offcanvas__btn--primary">
+                                Prueba 14 días <i class="fa-solid fa-arrow-up-right"></i>
                             </a>
                         </div>
                         <div class="offcanvas__contact">
@@ -52,10 +52,10 @@
                         <div class="header-left">
                             <div class="logo">
                             <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/logo-white.svg" alt="logo-img">
+                                <img src="assets/img/logo/logo-white.svg" alt="Facturales">
                             </a>
                             <a href="index.html" class="header-logo-2">
-                                <img src="assets/img/logo/logo-color.svg" alt="logo-img">
+                                <img src="assets/img/logo/logo-color.svg" alt="Facturales">
                             </a>
                         </div>
                         </div>
@@ -80,7 +80,7 @@
                                                               <i class="fa-solid fa-chart-line"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Tu Negocio Bajo Control</h4>
+                                                              <h4 class="homemenu-title">Tu negocio bajo control</h4>
                                                               <p class="homemenu-desc">Panel completo de gestión empresarial</p>
                                                             </div>
                                                           </a>
@@ -90,7 +90,7 @@
                                                               <i class="fa-solid fa-file-invoice"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Crea Y Envía Facturas</h4>
+                                                              <h4 class="homemenu-title">Crea y envía facturas</h4>
                                                               <p class="homemenu-desc">Facturación rápida y profesional</p>
                                                             </div>
                                                           </a>
@@ -100,7 +100,7 @@
                                                               <i class="fa-solid fa-file-invoice-dollar"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Crea Y Envía Presupuestos</h4>
+                                                              <h4 class="homemenu-title">Crea y envía presupuestos</h4>
                                                               <p class="homemenu-desc">Presupuestos personalizados al instante</p>
                                                             </div>
                                                           </a>
@@ -110,7 +110,7 @@
                                                               <i class="fa-solid fa-receipt"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Escanea Gastos</h4>
+                                                              <h4 class="homemenu-title">Escanea gastos</h4>
                                                               <p class="homemenu-desc">Digitaliza tickets y facturas recibidas</p>
                                                             </div>
                                                           </a>
@@ -120,7 +120,7 @@
                                                               <i class="fa-solid fa-users"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Gestiona Clientes</h4>
+                                                              <h4 class="homemenu-title">Gestiona clientes</h4>
                                                               <p class="homemenu-desc">CRM simple para tu cartera de clientes</p>
                                                             </div>
                                                           </a>
@@ -130,7 +130,7 @@
                                                               <i class="fa-solid fa-palette"></i>
                                                             </div>
                                                             <div class="homemenu-content">
-                                                              <h4 class="homemenu-title">Factura Personalizada</h4>
+                                                              <h4 class="homemenu-title">Personaliza tus facturas</h4>
                                                               <p class="homemenu-desc">Diseña facturas con tu marca</p>
                                                             </div>
                                                           </a>
@@ -147,7 +147,7 @@
                                                   
                                              <li>
                                                 <a href="faq.html">
-                                                    Preguntas Frecuentes
+                                                    Preguntas frecuentes
                                                 </a>
                                             </li>
                                            <li class="menu-item-highlighted">
@@ -160,16 +160,13 @@
                                 </div>
                             </div> 
                           <div class="header-right d-flex justify-content-end align-items-center">
-                            <div class="menu_search">
-                                <button class="search_btn"><i class="far fa-search"></i></button>
-                            </div>
                             <div class="header-btn">
-                                <h6>
-                                    <a href="https://app.facturales.es/signin.html">Acceder</a>
-                                </h6>
+                                <div class="header-login">
+                                    <a href="https://app.facturales.es/signin">Iniciar sesión</a>
+                                </div>
                                 <div class="header-button">
-                                    <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                       Registro <i class="fa-solid fa-arrow-up-right"></i>
+                                    <a href="https://app.facturales.es/signup" class="theme-btn">
+                                       Prueba 14 días <i class="fa-solid fa-arrow-up-right"></i>
                                     </a>
                                 </div>
                             </div>
