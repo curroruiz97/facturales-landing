@@ -51,7 +51,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--theme);
+    background: var(--accent-strong);
     color: #fff;
     font-weight: 700;
     font-size: 16px;
@@ -63,7 +63,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .gc-hero .btn-cta:hover {
-    background: var(--accent);
+    background: var(--accent-dark);
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(249,77,0,0.3);
 }
@@ -96,7 +96,7 @@
     margin-left: auto;
 }
 .client-card-mockup .card-header-mock {
-    background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent-dark) 100%);
     padding: 20px 24px;
     display: flex;
     align-items: center;
@@ -106,7 +106,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,11 +129,11 @@
 .client-card-mockup .card-header-mock .client-name p {
     margin: 0;
     font-size: 13px;
-    color: rgba(255,255,255,0.8);
+    color: #fff;
 }
 .client-card-mockup .card-header-mock .status-badge {
     margin-left: auto;
-    background: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.2);
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -142,6 +142,9 @@
 }
 .client-card-mockup .card-body-mock {
     padding: 24px;
+}
+.client-card-mockup .mockup-note {
+    padding: 0 20px 14px;
 }
 .client-card-mockup .card-body-mock .data-row {
     display: flex;
@@ -154,7 +157,7 @@
     border-bottom: none;
 }
 .client-card-mockup .card-body-mock .data-row .label {
-    color: #999;
+    color: var(--text-dim);
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -173,7 +176,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .client-card-mockup .card-body-mock .data-row .value.text-success {
-    color: #22c55e;
+    color: var(--success-strong);
 }
 
 /* Problem Section */
@@ -214,7 +217,7 @@
 }
 .gc-problem .section-desc {
     font-size: 17px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     max-width: 600px;
     margin: 0 auto 50px;
     line-height: 1.7;
@@ -254,7 +257,7 @@
     line-height: 1.2;
 }
 .pain-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
@@ -344,7 +347,7 @@
     line-height: 1.2;
 }
 .feature-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     line-height: 1.7;
     margin: 0;
@@ -441,14 +444,14 @@
     line-height: 1.2;
 }
 .step-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     line-height: 1.6;
 }
 
 /* Sidebar CTA Card */
 .sidebar-cta-card {
-    background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent-dark) 100%);
     border-radius: 16px;
     padding: 32px 24px;
     text-align: center;
@@ -463,7 +466,7 @@
     line-height: 1.5;
 }
 .sidebar-cta-card p {
-    color: rgba(255,255,255,0.9);
+    color: #fff;
     font-size: 15px;
     margin-bottom: 20px;
     line-height: 1.6;

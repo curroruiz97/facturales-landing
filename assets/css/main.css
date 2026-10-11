@@ -51,6 +51,8 @@ Version: 1.0.0
   --accent-strong: var(--theme-strong);
   --accent-text: var(--theme-text);
   --accent-dark: #A93000;
+  /* Naranja claro para texto sobre fondos oscuros que pide más contraste que --accent (>= 7:1 sobre --header) */
+  --accent-soft: #FF8A57;
   --accent-light: #FFF0E8;
   /* Colores de estado de las maquetas de interfaz */
   --success: #22c55e;
@@ -1810,7 +1812,7 @@ html.offcanvas-open body {
 .about-wrapper .about-image-feature .about-feature-badge {
   display: inline-block;
   background-color: rgba(249, 77, 0, 0.18);
-  color: var(--theme);
+  color: var(--accent-soft);
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
@@ -1898,6 +1900,15 @@ html.offcanvas-open body {
     font-size: 14px;
     line-height: 28px;
   }
+}
+/* Los enlaces de las respuestas se distinguen del texto por algo más que el color (WCAG 1.4.1) */
+.faq-items .accordion .accordion-item .accordion-body a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.faq-items .accordion .accordion-item .accordion-body a:hover {
+  color: var(--accent-dark);
 }
 .faq-items .accordion .accordion-button {
   background-color: var(--theme-strong);
@@ -3677,13 +3688,17 @@ html.offcanvas-open body {
   line-height: 1.4;
 }
 
-/* Nota bajo las maquetas de las fichas */
+/* Nota bajo las maquetas de las fichas ("Datos de ejemplo"): es el marcador que exige la política
+   de contenido, así que no se atenúa con opacity (texto de 12 px a >= 4,5:1 sobre claro y oscuro) */
 .mockup-note {
   margin: 10px 0 0;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
-  opacity: 0.75;
+  color: var(--text);
   text-align: right;
+}
+.dashboard-mockup .mockup-note {
+  color: rgba(255, 255, 255, 0.64);
 }
 
 /* Migas de pan compactas dentro del hero de las fichas de servicio */
@@ -3797,7 +3812,7 @@ html.offcanvas-open body {
   padding: 4px 14px;
   border-radius: 50px;
   background: rgba(249, 77, 0, 0.16);
-  color: #FF8A57;
+  color: var(--accent-soft);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -3835,7 +3850,7 @@ html.offcanvas-open body {
 }
 .article-meta i {
   margin-right: 6px;
-  color: #FF8A57;
+  color: var(--accent-soft);
 }
 .article-section {
   padding: 56px 0 96px;
@@ -3977,7 +3992,7 @@ html.offcanvas-open body {
   text-underline-offset: 3px;
 }
 .article .article-cta-link:hover {
-  color: #FF8A57;
+  color: var(--accent-soft);
 }
 .article-related {
   margin-top: 48px;

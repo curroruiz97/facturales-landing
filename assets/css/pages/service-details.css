@@ -78,7 +78,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    background: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent-dark) 100%);
     color: #fff;
     padding: 16px 36px;
     border-radius: 12px;
@@ -121,7 +121,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 14px;
     font-weight: 500;
 }
@@ -163,7 +163,7 @@
     background: rgba(255,255,255,0.06);
     padding: 5px 16px;
     border-radius: 6px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.62);
     font-size: 12px;
     font-family: monospace;
 }
@@ -178,7 +178,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .mockup-greeting-sub {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.62);
     font-size: 13px;
     margin-bottom: 20px;
 }
@@ -195,7 +195,7 @@
     padding: 18px 16px;
 }
 .mockup-stat-label {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.62);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -240,12 +240,12 @@
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 11px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.62);
     cursor: pointer;
 }
 .mockup-chart-tabs span.active {
     background: rgba(249,77,0,0.2);
-    color: var(--accent);
+    color: var(--accent-soft);
 }
 .mockup-bars {
     display: flex;
@@ -270,8 +270,8 @@
 .mockup-months span {
     flex: 1;
     text-align: center;
-    font-size: 10px;
-    color: rgba(255,255,255,0.25);
+    font-size: 11px;
+    color: rgba(255,255,255,0.62);
 }
 
 /* ===== SOCIAL PROOF BAR ===== */
@@ -311,7 +311,7 @@
     color: var(--accent);
 }
 .proof-label {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     font-weight: 500;
 }
@@ -360,7 +360,7 @@
 }
 .section-desc {
     font-size: 17px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     max-width: 600px;
     line-height: 1.7;
 }
@@ -414,7 +414,7 @@
     line-height: 1.5;
 }
 .feature-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     line-height: 1.65;
     margin-bottom: 20px;
@@ -469,10 +469,10 @@
 }
 .comparison-header-item.without {
     background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
 }
 .comparison-header-item.with {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent-dark));
     color: #fff;
 }
 .comparison-row {
@@ -556,7 +556,7 @@
     line-height: 1.5;
 }
 .step-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 15px;
     line-height: 1.7;
     max-width: 320px;
@@ -625,7 +625,7 @@
     line-height: 1.2;
 }
 .trust-card p {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     font-size: 14px;
     line-height: 1.65;
 }
@@ -684,7 +684,7 @@
     margin-bottom: 32px;
 }
 .final-cta-note {
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.7);
     font-size: 14px;
 }
 .final-cta-note i {

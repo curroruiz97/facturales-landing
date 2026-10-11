@@ -160,7 +160,7 @@
 }
 .mockup-field-label {
     font-size: 12px;
-    color: #999;
+    color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 4px;
@@ -192,7 +192,7 @@
     font-size: 22px;
     color: var(--accent-text);
 }
-.budget-row .discount { color: #22C55E; font-weight: 600; }
+.budget-row .discount { color: var(--success-strong); font-weight: 600; }
 .mockup-actions {
     display: flex;
     gap: 10px;
@@ -259,7 +259,7 @@
 .section-title .highlight { color: var(--accent); }
 .section-subtitle {
     font-size: 17px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     margin-bottom: 60px;
     line-height: 1.6;
 }
@@ -307,7 +307,7 @@
 }
 .feature-card p {
     font-size: 15px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     margin: 0;
     line-height: 1.6;
 }
