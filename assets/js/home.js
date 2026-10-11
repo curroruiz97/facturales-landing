@@ -33,8 +33,7 @@
         575: { slidesPerView: 1 },
         767: { slidesPerView: 2 },
         991: { slidesPerView: 3 },
-        1199: { slidesPerView: 4 },
-        1399: { slidesPerView: 5 }
+        1199: { slidesPerView: 4 }
       }
     });
   }
@@ -92,10 +91,11 @@
       }
     });
 
-    // Los paneles de "Lo que puedes hacer" se apilan con pin solo en pantallas de 1200 px o más.
+    // Los paneles de "Lo que puedes hacer" se apilan con pin solo en pantallas de 1400 px o más: por debajo
+    // cada panel (texto y maqueta apilados) mide más que la ventana y el siguiente tapaba el total y el botón.
     // ScrollTrigger.matchMedia revierte por sí solo lo creado en cada consulta cuando deja de cumplirse.
     ScrollTrigger.matchMedia({
-      '(min-width: 1200px)': function () {
+      '(min-width: 1400px)': function () {
         document.querySelectorAll('.project-panel').forEach(function (section) {
           gsap.to(section, {
             scrollTrigger: {

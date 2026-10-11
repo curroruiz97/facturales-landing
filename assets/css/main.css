@@ -111,6 +111,7 @@ h3 {
   margin: 0px;
   padding: 0;
   color: var(--header);
+  text-wrap: balance;
   transition: all 0.4s ease-in-out;
 }
 
@@ -1368,6 +1369,12 @@ html.offcanvas-open body {
   z-index: 9;
   text-align: center;
 }
+@media (min-width: 1400px) {
+  /* + 48 px de la barra promo */
+  .breadcrumb-wrapper .page-heading {
+    padding-top: 198px;
+  }
+}
 @media (max-width: 767px) {
   .breadcrumb-wrapper .page-heading {
     text-align: center;
@@ -1979,6 +1986,12 @@ html.offcanvas-open body {
   opacity: 0.8;
 }
 
+/* El título va primero en el DOM (y en pantallas pequeñas arriba); desde 992 px la tarjeta de email queda a la izquierda */
+@media (min-width: 992px) {
+  .counter-wrapper > .row {
+    flex-direction: row-reverse;
+  }
+}
 .counter-section {
   margin: 0;
   border-radius: 0;
@@ -1996,7 +2009,7 @@ html.offcanvas-open body {
   position: relative;
   overflow: hidden;
   z-index: 9;
-  margin-top: 50px;
+  margin-top: 48px;
 }
 @media (max-width: 1399px) {
   .hero-1 {
@@ -2301,6 +2314,7 @@ html.offcanvas-open body {
   justify-content: space-around;
   gap: 30px;
   min-width: 100%;
+  padding-right: 30px;
   animation: scroll var(--duration) linear infinite;
 }
 .marquee:hover .marquee-group {
@@ -2365,7 +2379,7 @@ html.offcanvas-open body {
   font-weight: 600;
   line-height: 150%;
 }
-@media (max-width: 991px) {
+@media (max-width: 1399px) {
   .project-box-wrapper .project-card-items .project-number {
     display: none;
   }
@@ -2373,6 +2387,7 @@ html.offcanvas-open body {
 .project-box-wrapper .project-card-items .project-content h3 {
   font-size: 80px;
   font-weight: 600;
+  margin-bottom: 14px;
 }
 @media (max-width: 1399px) {
   .project-box-wrapper .project-card-items .project-content h3 {
@@ -2448,6 +2463,8 @@ html.offcanvas-open body {
 @media (max-width: 1399px) {
   .project-box-wrapper .project-card-items .project-thumb {
     flex-basis: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 .project-box-wrapper .project-card-items .project-thumb img {
@@ -2472,6 +2489,23 @@ html.offcanvas-open body {
   border-radius: 12px;
   position: relative;
   overflow: hidden;
+}
+/* Carrusel de servicios: todas las tarjetas de una vista miden lo mismo y el botón queda siempre abajo */
+.service-slider .swiper-slide {
+  height: auto;
+}
+.service-slider .service-box-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.service-slider .service-box-item .content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.service-slider .service-box-item .content p {
+  flex: 1;
 }
 .service-box-item::before {
   position: absolute;
@@ -2609,15 +2643,7 @@ html.offcanvas-open body {
   }
 }
 .service-section .service-slider {
-  margin-left: -180px;
-  margin-right: -180px;
   margin-top: 60px;
-}
-@media (max-width: 1399px) {
-  .service-section .service-slider {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 }
 @media (max-width: 575px) {
   .service-section .service-slider {
@@ -2749,8 +2775,12 @@ html.offcanvas-open body {
 
 /* Ensure the link inherits styles from its parent */
 
+@media (min-width: 1400px) {
+  .custom-container {
+    max-width: 1323px;
+  }
+}
 .custom-container {
-  max-width: 1323px;
   margin: 0 auto;
 }
 .tp-clip-anim .mask {
