@@ -932,8 +932,11 @@ html:not(.reveal-ready) .tz-itm-anim div {
 .header-main .main-menu ul li:focus-within > .submenu.has-homemenu {
   transform: translateX(-40%) translateY(0px);
 }
-/* Escape cierra el submenú aunque el foco siga dentro (main.js añade la clase) */
+/* Escape cierra el submenú aunque el foco siga dentro (main.js añade la clase). Con display:none los
+   enlaces dejan de ser enfocables al instante: con solo visibility, un Tab inmediato entraba en ellos
+   y el foco se perdía al terminar la transición. */
 .header-main .main-menu ul li.submenu-dismissed > .submenu {
+  display: none;
   visibility: hidden;
   opacity: 0;
 }
@@ -1522,6 +1525,12 @@ html.offcanvas-open body {
     justify-content: center;
   }
 }
+/* El botón «Volver arriba» (fijo abajo a la derecha) no pisa el último enlace legal */
+@media (min-width: 1200px) {
+  .footer-bottom-wrapper {
+    padding-right: 72px;
+  }
+}
 .footer-bottom-wrapper p {
   color: rgba(255, 255, 255, 0.87);
 }
@@ -1900,6 +1909,7 @@ html.offcanvas-open body {
 .faq-items .accordion .accordion-button::before {
   position: absolute;
   content: "\f068";
+  content: "\f068" / ""; /* texto alternativo vacío: el icono no se lee como parte del nombre del botón */
   font-family: "Font Awesome 6 Pro";
   font-weight: 700;
   top: 50%;
@@ -1930,6 +1940,7 @@ html.offcanvas-open body {
 }
 .faq-items .accordion .accordion-button.collapsed::before {
   content: "\2b";
+  content: "\2b" / "";
   font-family: "Font Awesome 6 Pro";
   color: var(--white);
   background-color: var(--theme-strong);
@@ -4075,6 +4086,17 @@ main:focus,
   outline-offset: 3px;
   box-shadow: 0 0 0 3px #FFFFFF;
   z-index: 5;
+}
+
+/* WOW deja cada elemento con visibility:hidden en línea hasta que entra en pantalla, y un elemento oculto
+   no recibe foco: Tab se saltaba botones y enlaces que aún no habían aparecido (flechas del carrusel,
+   preguntas de precios, CTAs de las fichas). Mientras no se revela se oculta con opacity: igual de
+   invisible, pero alcanzable con el teclado (el navegador lo desplaza a la vista y WOW lo revela).
+   El selector solo casa con el estilo en línea que pone WOW: sin JS o con movimiento reducido, donde WOW
+   no actúa, el contenido sigue visible. */
+.wow[style*="visibility: hidden"] {
+  visibility: visible !important;
+  opacity: 0;
 }
 
 /* Movimiento reducido: sin animaciones ni transiciones largas y sin contenido oculto a la espera

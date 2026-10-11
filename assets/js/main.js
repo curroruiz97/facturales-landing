@@ -31,7 +31,7 @@
     window.requestAnimationFrame(function () {
       var y = window.pageYOffset || root.scrollTop;
       if (header) { header.classList.toggle('sticky', y > 250); }
-      if (backTop) { backTop.classList.toggle('show', y + window.innerHeight >= root.scrollHeight - 10); }
+      if (backTop) { backTop.classList.toggle('show', y > window.innerHeight); }
       ticking = false;
     });
   }

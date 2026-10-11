@@ -48,9 +48,19 @@
     gsap.registerPlugin(ScrollTrigger, window.SplitText);
     gsap.config({ nullTargetWarn: false });
 
+    // SplitText (versión sin opción aria) parte el titular en un <div> por línea, palabra y letra: se expone el texto
+    // completo en aria-label (son titulares h2) y se oculta el desglose a las tecnologías de apoyo.
+    function splitHeading(element, options) {
+      var label = (element.textContent || '').replace(/\s+/g, ' ').trim();
+      var split = new window.SplitText(element, options);
+      if (label) { element.setAttribute('aria-label', label); }
+      Array.prototype.forEach.call(element.children, function (child) { child.setAttribute('aria-hidden', 'true'); });
+      return split;
+    }
+
     // Titulares .text-anim: los caracteres entran al llegar a la vista
     document.querySelectorAll('.text-anim').forEach(function (element) {
-      var split = new window.SplitText(element, { type: 'chars, words' });
+      var split = splitHeading(element, { type: 'chars, words' });
       ScrollTrigger.create({
         trigger: element,
         start: 'top 85%',
@@ -62,7 +72,7 @@
 
     // Titulares .tz-itm-title: en táctil entran una vez; en escritorio avanzan con el scroll
     document.querySelectorAll('.tz-itm-title').forEach(function (el) {
-      el.split = new window.SplitText(el, { type: 'lines,words,chars', linesClass: 'split-line' });
+      el.split = splitHeading(el, { type: 'lines,words,chars', linesClass: 'split-line' });
       if (el.classList.contains('tz-itm-anim')) {
         gsap.set(el.split.chars, { opacity: 0, x: '-7' });
       }
