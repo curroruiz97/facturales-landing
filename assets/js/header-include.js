@@ -127,7 +127,7 @@
                                                             </div>
                                                             <div class="homemenu-content">
                                                               <h4 class="homemenu-title">Gestiona clientes</h4>
-                                                              <p class="homemenu-desc">CRM simple para tu cartera de clientes</p>
+                                                              <p class="homemenu-desc">Clientes y proveedores en un solo lugar</p>
                                                             </div>
                                                           </a>
                                                   

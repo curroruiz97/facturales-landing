@@ -1983,11 +1983,18 @@ html:not(.reveal-ready) .tz-itm-anim div {
   min-width: auto;
   box-sizing: border-box;
   border: 1.5px solid var(--theme);
+  white-space: nowrap;
 }
 @media (max-width: 575px) {
   .header-main .header-right .header-btn .header-button .theme-btn {
-    padding: 10px 16px;
+    padding: 10px 14px;
     font-size: 12px;
+    gap: 6px;
+  }
+}
+@media (max-width: 359px) {
+  .header-main .header-right .header-btn .header-button .theme-btn i {
+    display: none;
   }
 }
 .header-main .header-right .header__hamburger {
@@ -2046,6 +2053,23 @@ html:not(.reveal-ready) .tz-itm-anim div {
 }
 .header-1 .header-main .header-left .header-logo-2 {
   display: none;
+}
+@media (max-width: 575px) {
+  .header-1 .header-main .header-left .logo img {
+    width: 132px;
+    height: auto;
+  }
+}
+@media (max-width: 359px) {
+  .header-1 .header-main .header-left .logo img {
+    width: 112px;
+  }
+  .header-main .header-right {
+    gap: 8px;
+  }
+  .header-main .header-right .header__hamburger {
+    margin-left: 0;
+  }
 }
 .header-1.header-2 {
   margin-top: 30px;
@@ -3850,25 +3874,26 @@ html:not(.reveal-ready) .tz-itm-anim div {
 }
 .faq-items .accordion .accordion-item .accordion-header button {
   font-size: 24px;
-  line-height: 1;
+  line-height: 1.3;
   font-weight: 600;
   box-shadow: none;
   border-top-left-radius: 8px !important;
   border-top-right-radius: 8px !important;
-  padding: 24px 20px;
+  padding: 24px 72px 24px 20px;
+  text-align: left;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--header);
 }
 @media (max-width: 1399px) {
   .faq-items .accordion .accordion-item .accordion-header button {
     font-size: 20px;
-    padding: 24px 16px;
+    padding: 24px 68px 24px 16px;
   }
 }
 @media (max-width: 575px) {
   .faq-items .accordion .accordion-item .accordion-header button {
     font-size: 16px;
-    padding: 24px 16px;
+    padding: 20px 60px 20px 16px;
   }
 }
 .faq-items .accordion .accordion-item .accordion-body p {
@@ -3897,7 +3922,8 @@ html:not(.reveal-ready) .tz-itm-anim div {
   content: "\f068";
   font-family: "Font Awesome 6 Pro";
   font-weight: 700;
-  top: 13px;
+  top: 50%;
+  margin-top: -17px;
   right: 22px;
   font-size: 14px;
   text-align: center;
@@ -3915,6 +3941,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
     width: 30px;
     height: 30px;
     line-height: 30px;
+    margin-top: -15px;
   }
 }
 .faq-items .accordion .accordion-button.collapsed {

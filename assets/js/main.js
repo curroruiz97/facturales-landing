@@ -659,8 +659,14 @@ if (document.querySelectorAll(".marquee-group").length) {
                 if ($("body")) {
                     const e = document.querySelector(".cursor-inner"),
                         t = document.querySelector(".cursor-outer");
-                    let n, i = 0, o = !1;
+                    let n, i = 0, o = !1, shown = !1;
                     window.onmousemove = function(s) {
+                        if (!shown) {
+                            // El punto solo aparece cuando el ratón se mueve (antes se veía fijo en la esquina)
+                            shown = !0;
+                            e.style.visibility = "visible";
+                            t.style.visibility = "visible";
+                        }
                         if (!o) {
                             t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)";
                         }
@@ -678,8 +684,6 @@ if (document.querySelectorAll(".marquee-group").length) {
                             t.classList.remove("cursor-hover");
                         }
                     });
-                    e.style.visibility = "visible";
-                    t.style.visibility = "visible";
                 }
             }
         }
