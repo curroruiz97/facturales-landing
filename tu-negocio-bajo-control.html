@@ -203,12 +203,13 @@
                 padding-bottom: 16px;
                 border-bottom: 1px solid rgba(255,255,255,0.06);
             }
-            .mockup-header h5 {
+            .mockup-header .mock-title {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 16px;
                 color: rgba(255,255,255,0.9);
                 margin: 0;
+                line-height: 1.2;
             }
             .mockup-header .mockup-date {
                 font-size: 13px;
@@ -398,12 +399,13 @@
                 background: rgba(34,197,94,0.12);
                 color: var(--success);
             }
-            .pain-card h5 {
+            .pain-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 18px;
                 color: #E8ECF4;
                 margin-bottom: 12px;
+                line-height: 1.2;
             }
             .pain-card p {
                 font-size: 15px;
@@ -475,12 +477,13 @@
                 background: linear-gradient(135deg, var(--theme), var(--accent));
                 color: #fff;
             }
-            .feature-deep-card h5 {
+            .feature-deep-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 font-size: 19px;
                 color: #E8ECF4;
                 margin-bottom: 12px;
+                line-height: 1.2;
             }
             .feature-deep-card p {
                 font-size: 15px;
@@ -551,16 +554,17 @@
                 background: rgba(34, 197, 94, 0.15);
                 color: var(--success);
             }
-            .comparison-card .comp-header h4 {
+            .comparison-card .comp-header h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 800;
                 font-size: 22px;
                 margin: 0;
+                line-height: 1.5;
             }
-            .comparison-card.before .comp-header h4 {
+            .comparison-card.before .comp-header h3 {
                 color: var(--danger);
             }
-            .comparison-card.after .comp-header h4 {
+            .comparison-card.after .comp-header h3 {
                 color: var(--success);
             }
             .comparison-card ul {
@@ -735,7 +739,7 @@
                 text-align: center;
                 margin-top: 28px;
             }
-            .sidebar-cta-card h5 {
+            .sidebar-cta-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 color: #fff;
                 font-weight: 700;
@@ -819,6 +823,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
@@ -845,8 +851,8 @@
         </div>
 
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
         <!-- GT MouseCursor Start -->
@@ -870,6 +876,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
 
                 <!-- ===== HERO FEATURE SECTION ===== -->
@@ -886,7 +893,7 @@
                             <div class="col-lg-6">
                                 <div class="hero-feature-text">
                                     <span class="hero-badge wow fadeInUp" data-wow-delay=".2s">
-                                        <i class="fa-solid fa-chart-line"></i> Panel de control
+                                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Panel de control
                                     </span>
                                     <h1 class="hero-title wow fadeInUp" data-wow-delay=".25s">Tu negocio bajo control</h1>
                                     <p class="hero-hook wow fadeInUp" data-wow-delay=".3s">
@@ -897,23 +904,23 @@
                                     </p>
                                     <div class="hero-cta-group wow fadeInUp" data-wow-delay=".5s">
                                         <a href="https://app.facturales.es/signup" class="theme-btn">
-                                            Prueba 14 días <i class="fa-solid fa-arrow-up-right"></i>
+                                            Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                         </a>
                                         <a href="pricing.html" class="btn-demo">
-                                            <i class="fa-solid fa-tags"></i> Ver precios
+                                            <i class="fa-solid fa-tags" aria-hidden="true"></i> Ver precios
                                         </a>
                                     </div>
                                     <div class="trust-badges wow fadeInUp" data-wow-delay=".6s">
                                         <div class="badge-item">
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             14 días de prueba gratuita
                                         </div>
                                         <div class="badge-item">
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Cancela cuando quieras
                                         </div>
                                         <div class="badge-item">
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Soporte en español
                                         </div>
                                     </div>
@@ -922,48 +929,48 @@
                             <div class="col-lg-6">
                                 <div class="dashboard-mockup wow fadeInUp" data-wow-delay=".4s">
                                     <div class="mockup-header">
-                                        <h5><i class="fa-solid fa-grip" style="color: var(--theme); margin-right: 8px;"></i> Panel de Facturales</h5>
-                                        <span class="mockup-date"><i class="fa-regular fa-calendar"></i> Marzo 2026</span>
+                                        <p class="mock-title"><i class="fa-solid fa-grip" style="color: var(--theme); margin-right: 8px;" aria-hidden="true"></i> Panel de Facturales</p>
+                                        <span class="mockup-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Marzo 2026</span>
                                     </div>
                                     <div class="metric-cards">
                                         <div class="metric-card">
                                             <div class="metric-icon revenue">
-                                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
                                             </div>
                                             <div class="metric-label">Ingresos totales</div>
                                             <div class="metric-value">5.240 &euro;</div>
                                             <span class="metric-change positive">
-                                                <i class="fa-solid fa-caret-up"></i> +12% vs periodo anterior
+                                                <i class="fa-solid fa-caret-up" aria-hidden="true"></i> +12% vs periodo anterior
                                             </span>
                                         </div>
                                         <div class="metric-card">
                                             <div class="metric-icon expense">
-                                                <i class="fa-solid fa-arrow-trend-down"></i>
+                                                <i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i>
                                             </div>
                                             <div class="metric-label">Gastos totales</div>
                                             <div class="metric-value">1.870 &euro;</div>
                                             <span class="metric-change negative">
-                                                <i class="fa-solid fa-caret-up"></i> +3% vs periodo anterior
+                                                <i class="fa-solid fa-caret-up" aria-hidden="true"></i> +3% vs periodo anterior
                                             </span>
                                         </div>
                                         <div class="metric-card">
                                             <div class="metric-icon invoices">
-                                                <i class="fa-solid fa-file-invoice"></i>
+                                                <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
                                             </div>
                                             <div class="metric-label">Pendientes de cobro</div>
                                             <div class="metric-value">7</div>
                                             <span class="metric-change positive">
-                                                <i class="fa-solid fa-caret-down"></i> -2 que el periodo anterior
+                                                <i class="fa-solid fa-caret-down" aria-hidden="true"></i> -2 que el periodo anterior
                                             </span>
                                         </div>
                                         <div class="metric-card">
                                             <div class="metric-icon clients">
-                                                <i class="fa-solid fa-sack-dollar"></i>
+                                                <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
                                             </div>
                                             <div class="metric-label">Beneficio</div>
                                             <div class="metric-value">3.370 &euro;</div>
                                             <span class="metric-change positive">
-                                                <i class="fa-solid fa-caret-up"></i> +16% vs periodo anterior
+                                                <i class="fa-solid fa-caret-up" aria-hidden="true"></i> +16% vs periodo anterior
                                             </span>
                                         </div>
                                     </div>
@@ -993,7 +1000,7 @@
                     <div class="container">
                         <div class="text-center mb-5">
                             <span class="section-label wow fadeInUp" data-wow-delay=".2s">
-                                <i class="fa-solid fa-triangle-exclamation"></i> El problema
+                                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> El problema
                             </span>
                             <h2 class="section-heading mx-auto wow fadeInUp" data-wow-delay=".3s" style="max-width: 700px;">
                                 ¿Te suena alguna de estas situaciones?
@@ -1006,48 +1013,48 @@
                             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="pain-card">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-folder-open"></i>
+                                        <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Datos dispersos</h5>
+                                    <h3>Datos dispersos</h3>
                                     <p>Facturas en el correo, gastos en Excel, clientes en una libreta... La información está en mil sitios diferentes.</p>
                                     <div class="solution-text">
-                                        <i class="fa-solid fa-arrow-right"></i> Todo centralizado en un panel
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Todo centralizado en un panel
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="pain-card">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-eye-slash"></i>
+                                        <i class="fa-solid fa-eye-slash" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Cero visibilidad</h5>
+                                    <h3>Cero visibilidad</h3>
                                     <p>No sabes cuánto facturas realmente, cuáles son tus gastos principales ni si estás ganando o perdiendo dinero este mes.</p>
                                     <div class="solution-text">
-                                        <i class="fa-solid fa-arrow-right"></i> Métricas clave siempre al día
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Métricas clave siempre al día
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                 <div class="pain-card">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-hand-dots"></i>
+                                        <i class="fa-solid fa-hand-dots" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Todo manual</h5>
+                                    <h3>Todo manual</h3>
                                     <p>Cada dato lo apuntas a mano y cada resumen lo calculas desde cero. Un proceso tedioso y propenso a errores.</p>
                                     <div class="solution-text">
-                                        <i class="fa-solid fa-arrow-right"></i> Resumen fiscal calculado por trimestre
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Resumen fiscal calculado por trimestre
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                 <div class="pain-card">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-hourglass-half"></i>
+                                        <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Tiempo perdido</h5>
+                                    <h3>Tiempo perdido</h3>
                                     <p>Horas cada semana buscando datos, cruzando cifras y preparando informes que podrían estar listos al instante.</p>
                                     <div class="solution-text">
-                                        <i class="fa-solid fa-arrow-right"></i> Tus cifras, siempre a mano
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Tus cifras, siempre a mano
                                     </div>
                                 </div>
                             </div>
@@ -1060,7 +1067,7 @@
                     <div class="container">
                         <div class="text-center">
                             <span class="section-label wow fadeInUp" data-wow-delay=".2s">
-                                <i class="fa-solid fa-rocket"></i> Funcionalidades
+                                <i class="fa-solid fa-rocket" aria-hidden="true"></i> Funcionalidades
                             </span>
                             <h2 class="section-heading mx-auto wow fadeInUp" data-wow-delay=".3s" style="max-width: 700px;">
                                 Todo lo que necesitas para controlar tu negocio
@@ -1074,9 +1081,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">01</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-gauge-high"></i>
+                                        <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Panel de control</h5>
+                                    <h3>Panel de control</h3>
                                     <p>Visualiza el estado de tu negocio de un vistazo: ingresos, gastos, beneficio y facturas pendientes de cobro, siempre con tus últimos datos.</p>
                                 </div>
                             </div>
@@ -1084,9 +1091,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">02</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-chart-pie"></i>
+                                        <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Métricas clave de un vistazo</h5>
+                                    <h3>Métricas clave de un vistazo</h3>
                                     <p>Tarjetas con tus ingresos totales, gastos totales y beneficio, junto a una gráfica de la evolución mensual de ingresos y gastos.</p>
                                 </div>
                             </div>
@@ -1094,9 +1101,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">03</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-calculator"></i>
+                                        <i class="fa-solid fa-calculator" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Resumen fiscal trimestral</h5>
+                                    <h3>Resumen fiscal trimestral</h3>
                                     <p>Calcula cada trimestre el IVA (modelo 303) y el pago fraccionado de IRPF (modelo 130) como ayuda para preparar tus declaraciones.</p>
                                 </div>
                             </div>
@@ -1104,9 +1111,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">04</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-file-export"></i>
+                                        <i class="fa-solid fa-file-export" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Exportación a CSV</h5>
+                                    <h3>Exportación a CSV</h3>
                                     <p>Exporta tus facturas y tus datos a CSV para pasárselos a tu gestor o analizarlos por tu cuenta.</p>
                                 </div>
                             </div>
@@ -1114,9 +1121,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">05</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                        <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Acceso multidispositivo</h5>
+                                    <h3>Acceso multidispositivo</h3>
                                     <p>Consulta tu panel desde el navegador del ordenador, la tablet o el móvil, estés donde estés.</p>
                                 </div>
                             </div>
@@ -1124,9 +1131,9 @@
                                 <div class="feature-deep-card">
                                     <span class="fdc-number">06</span>
                                     <div class="fdc-icon">
-                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                        <i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Cifras por trimestre o año natural</h5>
+                                    <h3>Cifras por trimestre o año natural</h3>
                                     <p>Filtra tus cifras por trimestre o por año natural y consulta la evolución mes a mes en la gráfica para detectar tendencias.</p>
                                 </div>
                             </div>
@@ -1139,7 +1146,7 @@
                     <div class="container">
                         <div class="text-center mb-5">
                             <span class="section-label wow fadeInUp" data-wow-delay=".2s">
-                                <i class="fa-solid fa-right-left"></i> La diferencia
+                                <i class="fa-solid fa-right-left" aria-hidden="true"></i> La diferencia
                             </span>
                             <h2 class="section-heading mx-auto wow fadeInUp" data-wow-delay=".3s" style="max-width: 600px;">
                                 El antes y el después de usar Facturales
@@ -1150,33 +1157,33 @@
                                 <div class="comparison-card before">
                                     <div class="comp-header">
                                         <div class="comp-icon">
-                                            <i class="fa-solid fa-xmark"></i>
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                         </div>
-                                        <h4>Sin Facturales</h4>
+                                        <h3>Sin Facturales</h3>
                                     </div>
                                     <ul>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             Datos repartidos entre Excel, correo, carpetas y papeles
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             No sabes cuánto has facturado este mes hasta que lo calculas a mano
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             Pierdes de vista qué facturas están pendientes de cobro
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             Preparar los datos para el gestor te lleva horas cada trimestre
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             Tomas decisiones a ciegas, sin datos fiables ni actualizados
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-xmark"></i>
+                                            <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                                             Solo puedes revisar números cuando estás en el ordenador de la oficina
                                         </li>
                                     </ul>
@@ -1186,33 +1193,33 @@
                                 <div class="comparison-card after">
                                     <div class="comp-header">
                                         <div class="comp-icon">
-                                            <i class="fa-solid fa-check"></i>
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i>
                                         </div>
-                                        <h4>Con Facturales</h4>
+                                        <h3>Con Facturales</h3>
                                     </div>
                                     <ul>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Todo centralizado en un panel visual e intuitivo
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Ingresos, gastos y beneficio neto actualizados al instante
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Ves de un vistazo cuánto tienes pendiente de cobro
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Resumen fiscal trimestral y exportación a CSV
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Decisiones basadas en datos reales y cifras por periodo
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-circle-check"></i>
+                                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                             Acceso desde cualquier dispositivo, en cualquier momento
                                         </li>
                                     </ul>
@@ -1243,6 +1250,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

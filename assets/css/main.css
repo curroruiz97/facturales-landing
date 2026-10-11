@@ -231,11 +231,6 @@ button {
   padding: 0;
 }
 
-input:focus {
-  color: var(--white);
-  outline: none;
-}
-
 input {
   color: var(--white);
 }
@@ -360,7 +355,6 @@ h6 {
 
 a {
   text-decoration: none;
-  outline: none !important;
   cursor: pointer;
   color: var(--header);
   transition: all 0.4s ease-in-out;
@@ -383,7 +377,6 @@ span {
   vertical-align: middle;
   -webkit-appearance: none;
   appearance: none;
-  outline: none !important;
   border: none;
   font-weight: 700;
   font-size: 16px;
@@ -4679,7 +4672,9 @@ html:not(.reveal-ready) .tz-itm-anim div {
     margin-bottom: 12px;
   }
 }
-.hero-1 .hero-content h6 {
+.hero-1 .hero-content .hero-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.2;
   font-size: 14px;
   font-weight: 700;
   color: var(--white);
@@ -4691,17 +4686,17 @@ html:not(.reveal-ready) .tz-itm-anim div {
   border-radius: 100px;
 }
 @media (max-width: 575px) {
-  .hero-1 .hero-content h6 {
+  .hero-1 .hero-content .hero-eyebrow {
     font-size: 11px;
     padding: 4px 8px;
   }
 }
-.hero-1 .hero-content h6 img {
+.hero-1 .hero-content .hero-eyebrow img {
   margin-right: 5px;
   margin-top: -5px;
 }
 @media (max-width: 575px) {
-  .hero-1 .hero-content h6 img {
+  .hero-1 .hero-content .hero-eyebrow img {
     width: 14px;
     height: 14px;
   }
@@ -10282,4 +10277,47 @@ html:not(.reveal-ready) .tz-itm-anim div {
   padding: 0 20px 20px;
   color: var(--text);
   font-size: 14px;
+}
+
+/* ==========================================================================
+   07. Accesibilidad: enlace de salto, foco visible y movimiento reducido
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  z-index: 100001;
+  padding: 12px 20px;
+  border-radius: 0 0 10px 10px;
+  background: var(--header);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  transform: translateY(-130%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  color: #fff;
+}
+
+/* Foco de teclado: anillo oscuro de 3 px con un halo blanco. El halo lo hace visible
+   sobre fondos oscuros (el anillo oscuro se ve sobre los claros). */
+:focus-visible {
+  outline: 3px solid #0B0D17;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px #FFFFFF;
+}
+main:focus {
+  outline: none;
+  box-shadow: none;
+}
+.accordion-button:focus-visible,
+.faq-items .accordion .accordion-item .accordion-header button:focus-visible {
+  outline: 3px solid #0B0D17;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px #FFFFFF;
+  z-index: 5;
 }

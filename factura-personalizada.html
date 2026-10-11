@@ -469,6 +469,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
@@ -485,7 +487,7 @@
             </div>
         </div>
 
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba"><i class="fa-regular fa-arrow-up" aria-hidden="true"></i></button>
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
@@ -503,6 +505,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
 
                 <!-- Hero Section -->
@@ -517,15 +520,15 @@
                         </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-paintbrush"></i> Personalización</div>
+                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Personalización</div>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">Refleja tu <span class="highlight">identidad de marca</span> en cada documento</h1>
                                 <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Añade tu logo, elige la plantilla y el color de tu marca y configura series de numeración propias. Cada factura y presupuesto refleja tu marca.</p>
                                 <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Tu logo en cada documento</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Plantilla y color de marca</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Series de numeración</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tu logo en cada documento</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Plantilla y color de marca</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Series de numeración</div>
                                 </div>
-                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
@@ -533,16 +536,16 @@
                                         <div class="mockup-brand">
                                             <div class="mockup-logo">
                                                 TM
-                                                <span class="mockup-logo-badge"><i class="fa-solid fa-check"></i></span>
+                                                <span class="mockup-logo-badge"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
                                             </div>
                                             <div>
-                                                <div class="mockup-company-name">Tu Marca S.L. <span class="mockup-highlight-label"><i class="fa-solid fa-image"></i> Logo</span></div>
+                                                <div class="mockup-company-name">Tu Marca S.L. <span class="mockup-highlight-label"><i class="fa-solid fa-image" aria-hidden="true"></i> Logo</span></div>
                                                 <div class="mockup-company-sub">B-12345678</div>
                                             </div>
                                         </div>
                                         <div class="mockup-invoice-num">
                                             <div class="mockup-invoice-label">N.&ordm; Factura</div>
-                                            <div class="mockup-invoice-value">F-2026-0042 <span class="mockup-highlight-label"><i class="fa-solid fa-hashtag"></i> Serie</span></div>
+                                            <div class="mockup-invoice-value">F-2026-0042 <span class="mockup-highlight-label"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> Serie</span></div>
                                         </div>
                                     </div>
                                     <div class="mockup-color-bar"></div>
@@ -570,17 +573,17 @@
                         </div>
                         <div class="features-grid">
                             <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></div>
                                 <h3>Tu logo corporativo</h3>
                                 <p>Sube el logotipo de tu empresa (PNG, JPG o WebP de hasta 500 KB) y aparecerá automáticamente en tus facturas y presupuestos en PDF</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
                                 <h3>Plantilla y color de marca</h3>
                                 <p>Elige la plantilla de tus PDF y el color de tu marca, que se aplica a los encabezados, los totales y los detalles del documento</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-hashtag"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-hashtag" aria-hidden="true"></i></div>
                                 <h3>Series de numeración</h3>
                                 <p>Configura series personalizadas para organizar tus facturas y presupuestos con prefijos y formatos propios</p>
                             </div>
@@ -597,17 +600,17 @@
                         </div>
                         <div class="benefits-grid" style="margin-top: 50px;">
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-building"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
                                 <h3>Imagen profesional</h3>
                                 <p>Un documento con tu marca transmite seriedad y profesionalidad. Tus clientes perciben una empresa consolidada y de confianza</p>
                             </div>
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></div>
                                 <h3>Coherencia de marca</h3>
                                 <p>Mantén la misma identidad visual en todos los documentos que envías: facturas y presupuestos</p>
                             </div>
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-folder-tree"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-folder-tree" aria-hidden="true"></i></div>
                                 <h3>Más organización</h3>
                                 <p>Con series de numeración propias, separa tus documentos por tipo, ejercicio fiscal o línea de negocio de forma clara y ordenada</p>
                             </div>
@@ -636,6 +639,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

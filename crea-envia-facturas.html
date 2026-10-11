@@ -185,12 +185,13 @@
                 padding-bottom: 16px;
                 border-bottom: 2px solid #F5F5F5;
             }
-            .mockup-top h3 {
+            .mockup-top .mock-title {
                 font-size: 18px;
                 font-weight: 700;
                 margin: 0;
                 color: var(--header);
                 font-family: 'Plus Jakarta Sans', sans-serif;
+                line-height: 133%;
             }
             .mockup-status {
                 font-size: 12px;
@@ -540,6 +541,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
@@ -556,7 +559,7 @@
             </div>
         </div>
 
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba"><i class="fa-regular fa-arrow-up" aria-hidden="true"></i></button>
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
@@ -574,6 +577,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
 
                 <!-- Hero Section -->
@@ -588,21 +592,21 @@
                         </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-file-invoice"></i> Facturación digital</div>
+                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i> Facturación digital</div>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">Crea y envía <span class="highlight">facturas profesionales</span> en pocos pasos</h1>
                                 <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Elige el cliente, añade los conceptos y Facturales calcula la base imponible, los impuestos y el total. Descarga el PDF o envíalo por email.</p>
                                 <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> 14 días de prueba gratuita</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Numeración correlativa por serie</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Soporte en español</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 14 días de prueba gratuita</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Numeración correlativa por serie</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Soporte en español</div>
                                 </div>
-                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
                                     <div class="mockup-top">
-                                        <h3>Nueva factura</h3>
-                                        <span class="mockup-status"><i class="fa-solid fa-circle" style="font-size:6px;vertical-align:middle;margin-right:4px;"></i> Borrador</span>
+                                        <p class="mock-title">Nueva factura</p>
+                                        <span class="mockup-status"><i class="fa-solid fa-circle" style="font-size:6px;vertical-align:middle;margin-right:4px;" aria-hidden="true"></i> Borrador</span>
                                     </div>
                                     <div class="mockup-field">
                                         <div class="mockup-field-label">Cliente</div>
@@ -617,8 +621,8 @@
                                     <div class="invoice-row"><span>IVA 21%</span><span class="positive">+315,00 €</span></div>
                                     <div class="invoice-row total"><span>Total</span><span>1.815,00 €</span></div>
                                     <div class="mockup-actions">
-                                        <button class="mockup-btn mockup-btn-outline"><i class="fa-solid fa-save"></i> Guardar</button>
-                                        <button class="mockup-btn mockup-btn-primary"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+                                        <button class="mockup-btn mockup-btn-outline"><i class="fa-solid fa-save" aria-hidden="true"></i> Guardar</button>
+                                        <button class="mockup-btn mockup-btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar</button>
                                     </div>
                                     <p class="mockup-note">Datos de ejemplo</p>
                                 </div>
@@ -637,32 +641,32 @@
                         </div>
                         <div class="features-grid">
                             <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
                                 <h3>Creación rápida</h3>
                                 <p>Elige un cliente y tus productos ya guardados y Facturales calcula la base imponible, los impuestos y el total</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
                                 <h3>Envío por email</h3>
                                 <p>Envía la factura al cliente desde la plataforma, con el PDF adjunto, o programa el envío para otra fecha</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-list-ol"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></div>
                                 <h3>Numeración correlativa</h3>
                                 <p>Series con prefijo y contador automático: los números son correlativos y no se pueden saltar ni duplicar</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
-                                <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
                                 <h3>Preparados para Veri*Factu</h3>
                                 <p>Estamos preparando Facturales para Veri*Factu, obligatorio a partir de 2027. Cada factura emitida es inalterable</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
-                                <div class="feature-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
                                 <h3>Exportación PDF</h3>
                                 <p>Genera PDFs profesionales personalizados con tu marca y logotipo</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
-                                <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
                                 <h3>Estado de cobro</h3>
                                 <p>Marca tus facturas como cobradas y consulta de un vistazo cuáles tienes pendientes</p>
                             </div>
@@ -679,25 +683,25 @@
                         </div>
                         <div class="benefits-grid" style="margin-top: 50px;">
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-users"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
                                 <h3>Pensado para autónomos y pymes</h3>
                                 <p>Facturales está diseñado para la facturación diaria de autónomos y pequeñas empresas en España</p>
                                 <ul class="benefit-list">
-                                    <li><i class="fa-solid fa-check"></i> IVA, IGIC e IPSI</li>
-                                    <li><i class="fa-solid fa-check"></i> Retenciones de IRPF</li>
-                                    <li><i class="fa-solid fa-check"></i> Facturas rectificativas</li>
-                                    <li><i class="fa-solid fa-check"></i> Descarga en PDF y Facturae</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> IVA, IGIC e IPSI</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Retenciones de IRPF</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Facturas rectificativas</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Descarga en PDF y Facturae</li>
                                 </ul>
                             </div>
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-shield-check"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-shield-check" aria-hidden="true"></i></div>
                                 <h3>Facturas inalterables</h3>
                                 <p>Una factura emitida no se edita ni se borra: se corrige con una factura rectificativa, y la numeración es correlativa</p>
                                 <ul class="benefit-list">
-                                    <li><i class="fa-solid fa-check"></i> Plantillas personalizables</li>
-                                    <li><i class="fa-solid fa-check"></i> Múltiples series de facturación</li>
-                                    <li><i class="fa-solid fa-check"></i> Borradores hasta que emitas</li>
-                                    <li><i class="fa-solid fa-check"></i> Envío programado por email</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Plantillas personalizables</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Múltiples series de facturación</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Borradores hasta que emitas</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Envío programado por email</li>
                                 </ul>
                             </div>
                         </div>
@@ -725,6 +729,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

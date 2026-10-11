@@ -180,12 +180,13 @@
             .mockup-top {
                 margin-bottom: 20px;
             }
-            .mockup-top h3 {
+            .mockup-top .mock-title {
                 font-size: 18px;
                 font-weight: 700;
                 margin: 0 0 4px 0;
                 color: var(--header);
                 font-family: 'Plus Jakarta Sans', sans-serif;
+                line-height: 133%;
             }
             .mockup-top-sub {
                 font-size: 14px;
@@ -419,6 +420,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
@@ -435,7 +438,7 @@
             </div>
         </div>
 
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba"><i class="fa-regular fa-arrow-up" aria-hidden="true"></i></button>
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
@@ -453,6 +456,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
 
                 <!-- Hero Section -->
@@ -467,20 +471,20 @@
                         </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-receipt"></i> Control de gastos</div>
+                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-receipt" aria-hidden="true"></i> Control de gastos</div>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">Gestiona y controla tus <span class="highlight">gastos fácilmente</span></h1>
                                 <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Sube la foto o el PDF de un ticket o de una factura y el OCR extrae los datos principales. Tú los revisas, eliges la categoría y guardas el gasto.</p>
                                 <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Foto o PDF del documento</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Datos extraídos con OCR</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Filtros por categoría, fecha e importe</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Foto o PDF del documento</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Datos extraídos con OCR</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Filtros por categoría, fecha e importe</div>
                                 </div>
-                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
                                     <div class="mockup-top">
-                                        <h3>Resumen de gastos</h3>
+                                        <p class="mock-title">Resumen de gastos</p>
                                         <div class="mockup-top-sub">Ejemplo</div>
                                     </div>
                                     <div class="summary-grid">
@@ -494,7 +498,7 @@
                                         </div>
                                     </div>
                                     <div class="expense-item">
-                                        <div class="expense-icon red"><i class="fa-solid fa-building"></i></div>
+                                        <div class="expense-icon red"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
                                         <div class="expense-info">
                                             <div class="expense-name">Factura de luz</div>
                                             <div class="expense-cat">Suministros</div>
@@ -502,7 +506,7 @@
                                         <div class="expense-amount">890 €</div>
                                     </div>
                                     <div class="expense-item">
-                                        <div class="expense-icon orange"><i class="fa-solid fa-pen-ruler"></i></div>
+                                        <div class="expense-icon orange"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></div>
                                         <div class="expense-info">
                                             <div class="expense-name">Papelería</div>
                                             <div class="expense-cat">Material de oficina</div>
@@ -510,7 +514,7 @@
                                         <div class="expense-amount">420 €</div>
                                     </div>
                                     <div class="expense-item">
-                                        <div class="expense-icon blue"><i class="fa-solid fa-laptop"></i></div>
+                                        <div class="expense-icon blue"><i class="fa-solid fa-laptop" aria-hidden="true"></i></div>
                                         <div class="expense-info">
                                             <div class="expense-name">Licencia de software</div>
                                             <div class="expense-cat">Servicios profesionales</div>
@@ -534,32 +538,32 @@
                         </div>
                         <div class="features-grid">
                             <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-camera"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-camera" aria-hidden="true"></i></div>
                                 <h3>Foto o PDF</h3>
                                 <p>Sube la foto o el PDF de un ticket o de una factura y el OCR lee el documento</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-file-lines"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
                                 <h3>Datos extraídos</h3>
                                 <p>El OCR extrae fecha, proveedor, base imponible, IVA y total para que solo tengas que revisarlos</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></div>
                                 <h3>Gráfica de evolución</h3>
                                 <p>Consulta tus gastos junto a tus ingresos en la gráfica del panel de control</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
-                                <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
                                 <h3>Búsqueda y filtros</h3>
                                 <p>Filtra tus movimientos por categoría, tipo, fechas e importe</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
-                                <div class="feature-icon"><i class="fa-solid fa-calendar"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-calendar" aria-hidden="true"></i></div>
                                 <h3>Control por trimestre</h3>
                                 <p>Consulta tus gastos por trimestre o por año natural</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
-                                <div class="feature-icon"><i class="fa-solid fa-file-export"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-file-export" aria-hidden="true"></i></div>
                                 <h3>Exportación a CSV</h3>
                                 <p>Exporta tus gastos y movimientos a CSV para pasárselos a tu gestor</p>
                             </div>
@@ -588,6 +592,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

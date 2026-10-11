@@ -20,8 +20,10 @@
         <link rel="stylesheet" href="/assets/css/main.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <button id="back-top" class="back-to-top" type="button"><i class="fa-regular fa-arrow-up"></i></button>
+
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba"><i class="fa-regular fa-arrow-up" aria-hidden="true"></i></button>
 
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
@@ -39,6 +41,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 <section class="error-hero">
                     <div class="container">
@@ -55,6 +58,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(/assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

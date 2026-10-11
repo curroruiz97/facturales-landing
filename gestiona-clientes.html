@@ -207,11 +207,12 @@
                 color: #fff;
                 font-family: 'Plus Jakarta Sans', sans-serif;
             }
-            .client-card-mockup .card-header-mock .client-name h5 {
+            .client-card-mockup .card-header-mock .client-name .mock-title {
                 margin: 0;
                 font-size: 18px;
                 font-weight: 700;
                 color: #fff;
+                line-height: 1.2;
             }
             .client-card-mockup .card-header-mock .client-name p {
                 margin: 0;
@@ -359,12 +360,13 @@
                 font-size: 26px;
                 color: var(--theme);
             }
-            .pain-card h5 {
+            .pain-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 12px;
                 font-size: 18px;
+                line-height: 1.2;
             }
             .pain-card p {
                 color: rgba(255,255,255,0.55);
@@ -448,12 +450,13 @@
                 font-size: 22px;
                 color: #fff;
             }
-            .feature-card h5 {
+            .feature-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 12px;
                 font-size: 20px;
+                line-height: 1.2;
             }
             .feature-card p {
                 color: rgba(255,255,255,0.55);
@@ -571,12 +574,13 @@
                 background: linear-gradient(90deg, var(--theme), rgba(249,77,0,0.2));
                 z-index: 1;
             }
-            .step-card h5 {
+            .step-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 10px;
                 font-size: 20px;
+                line-height: 1.2;
             }
             .step-card p {
                 color: rgba(255,255,255,0.55);
@@ -592,12 +596,13 @@
                 text-align: center;
                 margin-top: 0;
             }
-            .sidebar-cta-card h4 {
+            .sidebar-cta-card h3 {
                 color: #fff;
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-weight: 700;
                 margin-bottom: 12px;
                 font-size: 22px;
+                line-height: 1.5;
             }
             .sidebar-cta-card p {
                 color: rgba(255,255,255,0.9);
@@ -726,6 +731,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
@@ -752,8 +759,8 @@
         </div>
 
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
         <!-- GT MouseCursor Start -->
@@ -775,6 +782,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
 
                 <!-- ===== HERO SECTION ===== -->
@@ -790,7 +798,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <span class="hero-tag wow fadeInUp" data-wow-delay=".2s">
-                                    <i class="fa-solid fa-users"></i> Clientes y proveedores
+                                    <i class="fa-solid fa-users" aria-hidden="true"></i> Clientes y proveedores
                                 </span>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">
                                     Tus clientes son tu mayor activo. <span>Gestiónalos como se merecen.</span>
@@ -799,19 +807,19 @@
                                     Centraliza los datos de tus clientes y proveedores y consulta lo que has facturado a cada uno desde un único panel.
                                 </p>
                                 <a href="https://app.facturales.es/signup" class="btn-cta wow fadeInUp" data-wow-delay=".5s">
-                                    Prueba 14 días <i class="fa-solid fa-arrow-right"></i>
+                                    Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                                 <div class="trust-badges wow fadeInUp" data-wow-delay=".6s">
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                         14 días de prueba gratuita
                                     </div>
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                         Datos en la UE
                                     </div>
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                         Soporte en español
                                     </div>
                                 </div>
@@ -821,30 +829,30 @@
                                     <div class="card-header-mock">
                                         <div class="avatar">CE</div>
                                         <div class="client-name">
-                                            <h5>Cliente de ejemplo</h5>
+                                            <p class="mock-title">Cliente de ejemplo</p>
                                             <p>Empresa Ejemplo S.L.</p>
                                         </div>
                                         <span class="status-badge">Activo</span>
                                     </div>
                                     <div class="card-body-mock">
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-id-card"></i> NIF</span>
+                                            <span class="label"><i class="fa-solid fa-id-card" aria-hidden="true"></i> NIF</span>
                                             <span class="value">B-12345678</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-user-tag"></i> Rol</span>
+                                            <span class="label"><i class="fa-solid fa-user-tag" aria-hidden="true"></i> Rol</span>
                                             <span class="value">Cliente</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-rotate"></i> Frecuencia</span>
+                                            <span class="label"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Frecuencia</span>
                                             <span class="value">Recurrente</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-file-invoice-dollar"></i> Total facturado</span>
+                                            <span class="label"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> Total facturado</span>
                                             <span class="value text-success">24.850,00 EUR</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-scale-balanced"></i> Balance</span>
+                                            <span class="label"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Balance</span>
                                             <span class="value">21.750,00 EUR</span>
                                         </div>
                                     </div>
@@ -869,36 +877,36 @@
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-folder-open"></i>
+                                        <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Datos dispersos</h5>
+                                    <h3>Datos dispersos</h3>
                                     <p>Información repartida entre hojas de cálculo, emails, notas adhesivas y la memoria. Imposible tener una visión clara.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-clone"></i>
+                                        <i class="fa-solid fa-clone" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Registros duplicados</h5>
+                                    <h3>Registros duplicados</h3>
                                     <p>El mismo cliente con tres nombres distintos, direcciones desactualizadas y NIFs repetidos que generan errores en facturas.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Sin historial</h5>
+                                    <h3>Sin historial</h3>
                                     <p>No sabes cuánto ha facturado cada cliente, cuándo fue la última vez que le cobraste, ni qué presupuestos tiene pendientes.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".5s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-user-slash"></i>
+                                        <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Pérdida de seguimiento</h5>
+                                    <h3>Pérdida de seguimiento</h3>
                                     <p>Clientes que se escapan porque nadie les hizo seguimiento. Oportunidades perdidas por falta de organización.</p>
                                 </div>
                             </div>
@@ -918,14 +926,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-address-card"></i>
+                                        <i class="fa-solid fa-address-card" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Fichas de cliente completas</h5>
+                                    <h3>Fichas de cliente completas</h3>
                                     <p>Cada cliente o proveedor tiene una ficha con su razón social, NIF/CIF, dirección fiscal, email, teléfono y país.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Datos fiscales completos</li>
-                                        <li><i class="fa-solid fa-check"></i> Clientes y proveedores</li>
-                                        <li><i class="fa-solid fa-check"></i> Frecuencia: puntual o recurrente</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Datos fiscales completos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Clientes y proveedores</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Frecuencia: puntual o recurrente</li>
                                     </ul>
                                 </div>
                             </div>
@@ -933,14 +941,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                        <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Facturación por contacto</h5>
+                                    <h3>Facturación por contacto</h3>
                                     <p>Consulta lo que has facturado a cada contacto, los gastos asociados y su balance, y asocia sus facturas en un solo vistazo.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Facturas asociadas</li>
-                                        <li><i class="fa-solid fa-check"></i> Total facturado</li>
-                                        <li><i class="fa-solid fa-check"></i> Balance por contacto</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Facturas asociadas</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Total facturado</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Balance por contacto</li>
                                     </ul>
                                 </div>
                             </div>
@@ -948,14 +956,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-import"></i>
+                                        <i class="fa-solid fa-file-import" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Importaci&oacute;n masiva desde Excel o CSV</h5>
+                                    <h3>Importaci&oacute;n masiva desde Excel o CSV</h3>
                                     <p>Sube tu listado de clientes en formato Excel o CSV y tendr&aacute;s toda tu base de datos organizada en segundos. Sin perder tiempo registrando clientes uno a uno manualmente.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Importa desde Excel (.xlsx) y CSV</li>
-                                        <li><i class="fa-solid fa-check"></i> Mapeo autom&aacute;tico de campos</li>
-                                        <li><i class="fa-solid fa-check"></i> Detecci&oacute;n de duplicados</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Importa desde Excel (.xlsx) y CSV</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mapeo autom&aacute;tico de campos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Detecci&oacute;n de duplicados</li>
                                     </ul>
                                 </div>
                             </div>
@@ -963,14 +971,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-export"></i>
+                                        <i class="fa-solid fa-file-export" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Exportación de datos</h5>
+                                    <h3>Exportación de datos</h3>
                                     <p>Exporta tu base de clientes a CSV. Compártela con tu gestor o llévatela a otra herramienta cuando lo necesites.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Exportación a CSV</li>
-                                        <li><i class="fa-solid fa-check"></i> Datos fiscales y de contacto</li>
-                                        <li><i class="fa-solid fa-check"></i> Listo para tu gestor</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Exportación a CSV</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Datos fiscales y de contacto</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Listo para tu gestor</li>
                                     </ul>
                                 </div>
                             </div>
@@ -978,24 +986,24 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Búsqueda y filtros</h5>
+                                    <h3>Búsqueda y filtros</h3>
                                     <p>Encuentra cualquier contacto, filtra por estado o por tipo y ordénalos por nombre, facturación o balance.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Búsqueda de contactos</li>
-                                        <li><i class="fa-solid fa-check"></i> Filtros por estado y tipo</li>
-                                        <li><i class="fa-solid fa-check"></i> Orden por facturación o balance</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Búsqueda de contactos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Filtros por estado y tipo</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Orden por facturación o balance</li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- CTA Card -->
                             <div class="col-lg-4 col-md-6">
                                 <div class="sidebar-cta-card wow fadeInUp" data-wow-delay=".4s" style="height:100%; display:flex; flex-direction:column; justify-content:center;">
-                                    <h4>¿Listo para organizar tus clientes?</h4>
+                                    <h3>¿Listo para organizar tus clientes?</h3>
                                     <p>Empieza tu prueba de 14 días y gestiona tus clientes y proveedores desde un único panel.</p>
                                     <a href="https://app.facturales.es/signup" class="btn-white">
-                                        Prueba 14 días <i class="fa-solid fa-arrow-right"></i>
+                                        Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1015,7 +1023,7 @@
                                 <div class="step-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="step-number">1</div>
                                     <div class="step-connector"></div>
-                                    <h5>Importa tus clientes</h5>
+                                    <h3>Importa tus clientes</h3>
                                     <p>Sube tu listado desde Excel o CSV, o añade clientes manualmente. En minutos tendrás toda tu base de datos organizada.</p>
                                 </div>
                             </div>
@@ -1023,14 +1031,14 @@
                                 <div class="step-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="step-number">2</div>
                                     <div class="step-connector"></div>
-                                    <h5>Gestiona desde un panel</h5>
+                                    <h3>Gestiona desde un panel</h3>
                                     <p>Busca, filtra y consulta lo facturado a cada cliente. Toda la información centralizada y accesible al instante.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="step-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="step-number">3</div>
-                                    <h5>Factura más rápido</h5>
+                                    <h3>Factura más rápido</h3>
                                     <p>Con los datos de tus clientes siempre a mano, crear facturas y presupuestos es mucho más rápido: eliges el cliente y sus datos ya están ahí.</p>
                                 </div>
                             </div>
@@ -1059,6 +1067,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

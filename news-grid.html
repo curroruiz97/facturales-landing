@@ -123,6 +123,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
@@ -149,8 +151,8 @@
         </div>
 
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
         <!-- GT MouseCursor Start -->
@@ -174,6 +176,7 @@
         
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 <!-- Breadcrumb Section Start -->
                 <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
@@ -293,6 +296,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

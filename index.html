@@ -166,6 +166,8 @@
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
@@ -192,8 +194,8 @@
         </div>
 
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
         <!-- GT MouseCursor Start -->
@@ -217,6 +219,7 @@
         
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 
                  <!-- Hero Section Start -->
@@ -225,10 +228,10 @@
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h6>
+                                    <span class="hero-eyebrow">
                                         <img src="assets/img/home-1/hero/setting.png" alt="" aria-hidden="true">
                                         Suite de facturación electrónica
-                                    </h6>
+                                    </span>
                                     <h1 class="text-anims">
                                         Factura en segundos Automatiza tu empresa
                                     </h1>
@@ -962,6 +965,8 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">

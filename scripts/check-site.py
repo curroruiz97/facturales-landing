@@ -22,7 +22,10 @@ Qué comprueba, para cada .html:
     CONTENT_RULES) ni los CTAs a rutas antiguas de la app;
   * SEO: título de 50-60 caracteres y descripción de 120-160, canonical correcto, Open Graph
     y Twitter Card con imagen 1200x630 existente, JSON-LD válido y coherente con la página
-    (sin aggregateRating), sitemap.xml y robots.txt, y noindex en la 404.
+    (sin aggregateRating), sitemap.xml y robots.txt, y noindex en la 404;
+  * accesibilidad: skip link y un único <main id="main">, jerarquía de encabezados sin
+    saltos ni encabezados vacíos, <img> con alt útil, botones/enlaces con nombre accesible,
+    iconos decorativos con aria-hidden y ningún "outline: none !important".
 """
 from __future__ import annotations
 
@@ -601,6 +604,40 @@ def check_jsonld(path: Path, p: PageParser, raw: str) -> None:
                 err(path, None, f"BreadcrumbList apunta a una URL inexistente: {e.get('item')}")
 
 
+GENERIC_ALT = {"img", "image", "imagen", "logo-img", "logo", "icon", "icono", "photo", "foto", "picture", "banner"}
+
+
+def check_a11y(path: Path, p: PageParser) -> None:
+    if path.name in NOINDEX_PAGES and not p.mains:
+        pass  # la 404 también debe cumplirlo: se sigue comprobando abajo
+    first = p.body_links[0] if p.body_links else {}
+    if first.get("href") != "#main":
+        err(path, None, 'el primer enlace del <body> debe ser el skip link <a href="#main">Saltar al contenido</a>')
+    if len(p.mains) != 1 or p.mains[0].get("id") != "main":
+        err(path, None, f'debe haber un único <main id="main"> (hay {len(p.mains)})')
+    prev = 0
+    for line, level, text in p.headings:
+        if not text:
+            err(path, line, f"encabezado h{level} vacío")
+        if prev == 0 and level != 1:
+            err(path, line, f"el primer encabezado de la página es h{level}, debería ser h1")
+        elif prev and level > prev + 1:
+            err(path, line, f"salto de jerarquía de h{prev} a h{level}: {text[:50]!r}")
+        prev = level
+    for line, a in p.imgs:
+        alt = a.get("alt")
+        if alt is None:
+            err(path, line, f"<img> sin atributo alt: {a.get('src', '')}")
+        elif alt.strip().lower() in GENERIC_ALT or re.search(r"\.(png|jpe?g|webp|svg)$", alt.strip(), re.I):
+            err(path, line, f"<img> con alt genérico {alt!r} (usa una descripción o alt=\"\" si es decorativa)")
+    for line, tag in p.unnamed_controls[:5]:
+        err(path, line, f"<{tag}> sin nombre accesible (añade texto o aria-label)")
+    for line in p.icons_without_hidden[:5]:
+        err(path, line, 'icono decorativo <i class="fa…"> sin aria-hidden="true"')
+    if len(p.icons_without_hidden) > 5:
+        err(path, None, f"... y {len(p.icons_without_hidden) - 5} iconos sin aria-hidden más")
+
+
 def check_page(path: Path, titles: dict, descriptions: dict) -> None:
     raw = path.read_text(encoding="utf-8")
     p = PageParser()
@@ -635,6 +672,7 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
         err(path, None, f"debe haber exactamente un <h1> (hay {p.h1_count})")
     check_seo(path, p, title, desc)
     check_jsonld(path, p, raw)
+    check_a11y(path, p)
 
     # Enlaces muertos y anclas
     for line in p.dead_links:

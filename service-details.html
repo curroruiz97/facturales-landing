@@ -458,12 +458,13 @@
                 background: rgba(236,130,40,0.1);
                 color: #ec8228;
             }
-            .feature-card h4 {
+            .feature-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 20px;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 12px;
+                line-height: 1.5;
             }
             .feature-card p {
                 color: rgba(255,255,255,0.55);
@@ -599,12 +600,13 @@
                 color: #fff;
                 box-shadow: 0 8px 24px rgba(236,130,40,0.3);
             }
-            .step-card h4 {
+            .step-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 22px;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 12px;
+                line-height: 1.5;
             }
             .step-card p {
                 color: rgba(255,255,255,0.55);
@@ -667,12 +669,13 @@
                 font-size: 26px;
                 color: #ec8228;
             }
-            .trust-card h5 {
+            .trust-card h3 {
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 18px;
                 font-weight: 700;
                 color: #E8ECF4;
                 margin-bottom: 10px;
+                line-height: 1.2;
             }
             .trust-card p {
                 color: rgba(255,255,255,0.55);
@@ -816,6 +819,8 @@
         </style>
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
@@ -842,8 +847,8 @@
         </div>
 
         <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-regular fa-arrow-up" aria-hidden="true"></i>
         </button>
 
         <!-- GT MouseCursor Start -->
@@ -867,6 +872,7 @@
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 <!-- ============================== -->
                 <!-- HERO SECTION -->
@@ -876,7 +882,7 @@
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="hero-badge wow fadeInUp" data-wow-delay=".1s">
-                                    <i class="fa-solid fa-bolt"></i> Facturación para autónomos y pymes
+                                    <i class="fa-solid fa-bolt" aria-hidden="true"></i> Facturación para autónomos y pymes
                                 </div>
                                 <h1 class="wow fadeInUp" data-wow-delay=".2s">
                                     Facturación, gastos y clientes en <span>un solo lugar</span>
@@ -886,21 +892,21 @@
                                 </p>
                                 <div class="hero-cta-group wow fadeInUp" data-wow-delay=".4s">
                                     <a href="https://app.facturales.es/signup" class="btn-hero-primary">
-                                        Prueba 14 días <i class="fa-solid fa-arrow-right"></i>
+                                        Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                     <a href="https://app.facturales.es/signin" class="btn-hero-secondary">
-                                        <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+                                        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Iniciar sesión
                                     </a>
                                 </div>
                                 <div class="trust-indicators wow fadeInUp" data-wow-delay=".5s">
                                     <div class="trust-item">
-                                        <i class="fa-solid fa-clock"></i> 14 días de prueba gratuita
+                                        <i class="fa-solid fa-clock" aria-hidden="true"></i> 14 días de prueba gratuita
                                     </div>
                                     <div class="trust-item">
-                                        <i class="fa-solid fa-xmark-circle"></i> Cancela cuando quieras
+                                        <i class="fa-solid fa-xmark-circle" aria-hidden="true"></i> Cancela cuando quieras
                                     </div>
                                     <div class="trust-item">
-                                        <i class="fa-solid fa-headset"></i> Soporte en español
+                                        <i class="fa-solid fa-headset" aria-hidden="true"></i> Soporte en español
                                     </div>
                                 </div>
                             </div>
@@ -921,21 +927,21 @@
                                                 <div class="mockup-stat-label">Ingresos mes</div>
                                                 <div class="mockup-stat-value">12.450€</div>
                                                 <div class="mockup-stat-change positive">
-                                                    <i class="fa-solid fa-arrow-up"></i> +18% vs mes anterior
+                                                    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i> +18% vs mes anterior
                                                 </div>
                                             </div>
                                             <div class="mockup-stat-card">
                                                 <div class="mockup-stat-label">Facturas pendientes</div>
                                                 <div class="mockup-stat-value">3</div>
                                                 <div class="mockup-stat-change negative">
-                                                    <i class="fa-solid fa-clock"></i> 2.180€ por cobrar
+                                                    <i class="fa-solid fa-clock" aria-hidden="true"></i> 2.180€ por cobrar
                                                 </div>
                                             </div>
                                             <div class="mockup-stat-card">
                                                 <div class="mockup-stat-label">Gastos mes</div>
                                                 <div class="mockup-stat-value">4.320€</div>
                                                 <div class="mockup-stat-change positive">
-                                                    <i class="fa-solid fa-arrow-down"></i> -5% vs mes anterior
+                                                    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> -5% vs mes anterior
                                                 </div>
                                             </div>
                                         </div>
@@ -1018,12 +1024,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-chart-mixed"></i>
+                                        <i class="fa-solid fa-chart-mixed" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Tu negocio bajo control</h4>
+                                    <h3>Tu negocio bajo control</h3>
                                     <p>Panel con métricas clave: ingresos, gastos, beneficio y evolución mensual de tu actividad.</p>
                                     <a href="tu-negocio-bajo-control.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1031,12 +1037,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-file-invoice"></i>
+                                        <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Crea y envía facturas</h4>
+                                    <h3>Crea y envía facturas</h3>
                                     <p>Emite facturas profesionales en pocos pasos, con numeración correlativa y estado de cobro.</p>
                                     <a href="crea-envia-facturas.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1044,12 +1050,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-file-lines"></i>
+                                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Crea y envía presupuestos</h4>
+                                    <h3>Crea y envía presupuestos</h3>
                                     <p>Presupuestos claros que conviertes en factura con un clic y envías por email.</p>
                                     <a href="crea-envia-presupuestos.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1057,12 +1063,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-receipt"></i>
+                                        <i class="fa-solid fa-receipt" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Escanea y gestiona gastos</h4>
+                                    <h3>Escanea y gestiona gastos</h3>
                                     <p>Digitaliza tickets y facturas de gasto con OCR y regístralos con su proveedor, su fecha y sus importes.</p>
                                     <a href="escanea-gastos.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1070,12 +1076,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-users"></i>
+                                        <i class="fa-solid fa-users" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Gestiona clientes</h4>
+                                    <h3>Gestiona clientes</h3>
                                     <p>Fichas de clientes y proveedores con sus datos fiscales, lo facturado y su balance.</p>
                                     <a href="gestiona-clientes.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1083,12 +1089,12 @@
                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="feature-card">
                                     <div class="feature-icon">
-                                        <i class="fa-solid fa-palette"></i>
+                                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
                                     </div>
-                                    <h4>Factura personalizada</h4>
+                                    <h3>Factura personalizada</h3>
                                     <p>Añade tu logo, colores y datos fiscales. Cada documento refleja la identidad de tu marca.</p>
                                     <a href="factura-personalizada.html" class="feature-link">
-                                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                                        Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1117,50 +1123,50 @@
                                 <div class="comparison-table">
                                     <div class="comparison-header">
                                         <div class="comparison-header-item without">
-                                            <i class="fa-regular fa-face-frown"></i> Sin Facturales
+                                            <i class="fa-regular fa-face-frown" aria-hidden="true"></i> Sin Facturales
                                         </div>
                                         <div class="comparison-header-item with">
-                                            <i class="fa-regular fa-face-smile"></i> Con Facturales
+                                            <i class="fa-regular fa-face-smile" aria-hidden="true"></i> Con Facturales
                                         </div>
                                     </div>
                                     <div class="comparison-row">
                                         <div class="comparison-cell without">
-                                            <i class="fa-solid fa-xmark"></i> Facturas en Excel con errores de numeración
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i> Facturas en Excel con errores de numeración
                                         </div>
                                         <div class="comparison-cell with">
-                                            <i class="fa-solid fa-check"></i> Facturas profesionales con numeración correlativa por serie
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i> Facturas profesionales con numeración correlativa por serie
                                         </div>
                                     </div>
                                     <div class="comparison-row">
                                         <div class="comparison-cell without">
-                                            <i class="fa-solid fa-xmark"></i> Recibos acumulados en una caja de zapatos
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i> Recibos acumulados en una caja de zapatos
                                         </div>
                                         <div class="comparison-cell with">
-                                            <i class="fa-solid fa-check"></i> Gastos escaneados con OCR
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i> Gastos escaneados con OCR
                                         </div>
                                     </div>
                                     <div class="comparison-row">
                                         <div class="comparison-cell without">
-                                            <i class="fa-solid fa-xmark"></i> No sabes cuánto has ganado este mes
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i> No sabes cuánto has ganado este mes
                                         </div>
                                         <div class="comparison-cell with">
-                                            <i class="fa-solid fa-check"></i> Panel con tus ingresos y gastos siempre al día
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i> Panel con tus ingresos y gastos siempre al día
                                         </div>
                                     </div>
                                     <div class="comparison-row">
                                         <div class="comparison-cell without">
-                                            <i class="fa-solid fa-xmark"></i> Enviar datos al gestor es un caos trimestral
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i> Enviar datos al gestor es un caos trimestral
                                         </div>
                                         <div class="comparison-cell with">
-                                            <i class="fa-solid fa-check"></i> Resumen fiscal trimestral y exportación a CSV para tu gestor
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i> Resumen fiscal trimestral y exportación a CSV para tu gestor
                                         </div>
                                     </div>
                                     <div class="comparison-row">
                                         <div class="comparison-cell without">
-                                            <i class="fa-solid fa-xmark"></i> Datos de clientes dispersos en contactos y notas
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i> Datos de clientes dispersos en contactos y notas
                                         </div>
                                         <div class="comparison-cell with">
-                                            <i class="fa-solid fa-check"></i> Fichas de clientes con lo facturado y su balance
+                                            <i class="fa-solid fa-check" aria-hidden="true"></i> Fichas de clientes con lo facturado y su balance
                                         </div>
                                     </div>
                                 </div>
@@ -1189,34 +1195,34 @@
                             <div class="col-lg-4 wow fadeInUp" data-wow-delay=".1s">
                                 <div class="step-card">
                                     <div class="step-number">1</div>
-                                    <h4>Crea tu cuenta</h4>
+                                    <h3>Crea tu cuenta</h3>
                                     <p>Regístrate con tu email y una contraseña, elige un plan y empieza tus 14 días de prueba gratuita.</p>
                                     <div class="step-connector d-none d-lg-flex">
-                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                        <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="step-card">
                                     <div class="step-number">2</div>
-                                    <h4>Configura tu negocio</h4>
+                                    <h3>Configura tu negocio</h3>
                                     <p>Añade tus datos fiscales, logo y personaliza tus documentos. Importa clientes y productos si ya los tienes.</p>
                                     <div class="step-connector d-none d-lg-flex">
-                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                        <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="step-card">
                                     <div class="step-number">3</div>
-                                    <h4>Empieza a facturar</h4>
+                                    <h3>Empieza a facturar</h3>
                                     <p>Crea tu primera factura, registra gastos y controla tu negocio desde el primer día. Así de fácil.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="text-center mt-5 wow fadeInUp" data-wow-delay=".4s">
                             <a href="https://app.facturales.es/signup" class="btn-hero-primary">
-                                Prueba 14 días <i class="fa-solid fa-arrow-right"></i>
+                                Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -1242,54 +1248,54 @@
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Preparándonos para Veri*Factu</h5>
+                                    <h3>Preparándonos para Veri*Factu</h3>
                                     <p>Veri*Factu es obligatorio a partir de 2027 (1 de enero para sociedades, 1 de julio para el resto). Estamos preparando Facturales; todavía no enviamos registros a la AEAT.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-scale-balanced"></i>
+                                        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Facturas inalterables</h5>
+                                    <h3>Facturas inalterables</h3>
                                     <p>Una factura emitida no se edita ni se borra: se corrige con una factura rectificativa. La numeración es correlativa dentro de cada serie.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-lock"></i>
+                                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Conexión cifrada</h5>
+                                    <h3>Conexión cifrada</h3>
                                     <p>Toda la comunicación con la aplicación viaja cifrada mediante HTTPS.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-earth-europe"></i>
+                                        <i class="fa-solid fa-earth-europe" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Datos en la Unión Europea</h5>
+                                    <h3>Datos en la Unión Europea</h3>
                                     <p>Tus datos se almacenan cifrados en servidores de la Unión Europea, con copias automáticas diarias.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-headset"></i>
+                                        <i class="fa-solid fa-headset" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Soporte en español</h5>
+                                    <h3>Soporte en español</h3>
                                     <p>Escríbenos a info@facturales.es o abre una incidencia desde la propia aplicación.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="trust-card">
                                     <div class="trust-card-icon">
-                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Mejoras continuas</h5>
+                                    <h3>Mejoras continuas</h3>
                                     <p>Las mejoras del producto se incluyen en tu suscripción, sin coste adicional.</p>
                                 </div>
                             </div>
@@ -1309,20 +1315,22 @@
                             </p>
                             <div class="final-cta-buttons">
                                 <a href="https://app.facturales.es/signup" class="btn-hero-primary">
-                                    Prueba 14 días <i class="fa-solid fa-arrow-right"></i>
+                                    Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://app.facturales.es/signin" class="btn-hero-secondary">
                                     Iniciar sesión
                                 </a>
                             </div>
                             <div class="final-cta-note">
-                                <i class="fa-solid fa-clock"></i> 14 días de prueba gratuita &nbsp;&bull;&nbsp; Sin permanencia &nbsp;&bull;&nbsp; Cancela cuando quieras
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> 14 días de prueba gratuita &nbsp;&bull;&nbsp; Sin permanencia &nbsp;&bull;&nbsp; Cancela cuando quieras
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
                     <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
                         <div class="container">
