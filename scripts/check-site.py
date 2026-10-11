@@ -396,8 +396,12 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
 
 def check_content(path: Path, raw: str) -> None:
     for pattern, reason in CONTENT_RULES:
+        seen_lines: set[int] = set()
         for m in re.finditer(pattern, raw, re.I):
             line = raw.count("\n", 0, m.start()) + 1
+            if line in seen_lines:
+                continue
+            seen_lines.add(line)
             snippet = re.sub(r"\s+", " ", raw[max(0, m.start() - 25): m.end() + 25]).strip()
             err(path, line, f"contenido no permitido ({reason}): …{snippet}…")
 
