@@ -25,7 +25,11 @@ Qué comprueba, para cada .html:
     (sin aggregateRating), sitemap.xml y robots.txt, y noindex en la 404;
   * accesibilidad: skip link y un único <main id="main">, jerarquía de encabezados sin
     saltos ni encabezados vacíos, <img> con alt útil, botones/enlaces con nombre accesible,
-    iconos decorativos con aria-hidden.
+    iconos decorativos con aria-hidden, sin manejadores onclick en línea y ningún
+    "outline: none !important";
+  * movimiento y color: foco visible y prefers-reduced-motion definidos, sin autoplay de menos
+    de 6 s ni ScrollSmoother en el JS propio, sin los naranjas sueltos que unificaron los
+    tokens y tokens de color con contraste suficiente (>= 4,5:1).
 """
 from __future__ import annotations
 
@@ -49,6 +53,8 @@ ARTICLES = {
     "factura-electronica-vs-verifactu.html",
     "contabilidad-negocio-7-pasos.html",
 }
+# Naranjas sueltos que la paleta unificada (main.css) reemplazó.
+STRAY_COLORS = ("#ec8228", "#ff7300", "#d4a017")
 
 # Hosts a los que el sitio puede hacer peticiones (recursos). Los <a> externos se admiten siempre.
 ALLOWED_REQUEST_HOSTS = {"app.facturales.es"}
@@ -63,7 +69,8 @@ FIRST_PARTY_ASSETS = [
     "assets/js/header-include.js", "assets/js/main.js", "assets/js/home.js",
     "assets/js/pricing.js", "assets/js/orbit-cta.js",
 ]
-
+# CSS de terceros (no se revisan sus reglas de foco ni sus colores)
+VENDOR_CSS = {"bootstrap.min.css", "animate.css", "swiper-bundle.min.css", "all.min.css"}
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param",
@@ -709,6 +716,16 @@ def check_page(path: Path, titles: dict, descriptions: dict) -> None:
         line = raw.count("\n", 0, m.start()) + 1
         err(path, line, "texto de relleno 'lorem ipsum'")
 
+    # Manejadores en línea y naranjas sueltos en el HTML
+    for m in INLINE_HANDLER.finditer(raw):
+        err(path, raw.count("\n", 0, m.start()) + 1, "manejador de evento en línea (usa addEventListener en un JS propio)")
+    for c in STRAY_COLORS:
+        for m in re.finditer(re.escape(c), raw, re.I):
+            err(path, raw.count("\n", 0, m.start()) + 1, f"naranja suelto {c}: usa los tokens de main.css")
+    for line, css in p.styles:
+        for m in OUTLINE_NONE.finditer(css):
+            err(path, line, "outline: none !important en un <style> (el foco de teclado debe verse)")
+
     # Veracidad del contenido (se ignoran los bloques <style> y <script> que no son JSON-LD)
     check_content(path, strip_code_blocks(raw))
 
@@ -787,6 +804,87 @@ def check_assets() -> None:
             err(f, line, f"el JS propio menciona un host externo: {host}")
 
 
+def hex_to_rgb(h: str) -> tuple[int, int, int]:
+    h = h.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    return int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+
+
+def luminance(h: str) -> float:
+    def f(c: int) -> float:
+        c = c / 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = hex_to_rgb(h)
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+
+
+def contrast(a: str, b: str) -> float:
+    la, lb = luminance(a), luminance(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+OUTLINE_NONE = re.compile(r"outline\s*:\s*(?:none|0)\b[^;{}]*!important", re.I)
+INLINE_HANDLER = re.compile(r"\son(?:click|change|load|submit|input|focus|blur|mouse\w+|key\w+|touch\w+)\s*=", re.I)
+
+
+def check_styles_and_scripts() -> None:
+    """Foco, movimiento reducido, naranjas sueltos, contraste de los tokens y JS propio."""
+    css_dir = ROOT / "assets/css"
+    own_css = [f for f in sorted(css_dir.rglob("*.css")) if f.name not in VENDOR_CSS]
+    for css in own_css:
+        text = strip_comments(css.read_text(encoding="utf-8", errors="replace"), js=False)
+        for m in OUTLINE_NONE.finditer(text):
+            err(css, text.count("\n", 0, m.start()) + 1, "outline: none !important (el foco de teclado debe verse)")
+        for c in STRAY_COLORS:
+            if c in text.lower():
+                err(css, None, f"naranja suelto {c}: usa los tokens de main.css (--accent, --theme-strong, --theme-text)")
+        if re.search(r"rgba\(\s*236\s*,\s*130\s*,\s*40", text):
+            err(css, None, "naranja suelto rgba(236,130,40,…): usa rgba(249,77,0,…) o los tokens")
+
+    main_css = css_dir / "main.css"
+    if main_css.exists():
+        text = main_css.read_text(encoding="utf-8", errors="replace")
+        if ":focus-visible" not in text:
+            err(main_css, None, "falta la regla global :focus-visible")
+        if "prefers-reduced-motion" not in text:
+            err(main_css, None, "falta el bloque @media (prefers-reduced-motion: reduce)")
+        root = re.search(r":root\s*\{(.*?)\}", text, re.S)
+        tokens = dict(re.findall(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\s*;", root.group(1))) if root else {}
+        pairs = [("theme-strong", "white", 4.5, "fondo de botones con texto blanco"),
+                 ("theme-text", "bg", 4.5, "texto naranja sobre --bg"),
+                 ("theme-text", "white", 4.5, "texto naranja sobre blanco"),
+                 ("text-dim", "bg", 4.5, "texto atenuado de titulares sobre --bg"),
+                 ("success-strong", "white", 4.5, "fondo verde con texto blanco"),
+                 ("accent-dark", "white", 4.5, "final de degradados con texto blanco"),
+                 ("text", "bg", 4.5, "texto de cuerpo sobre --bg"),
+                 ("theme", "header", 4.5, "naranja de marca sobre fondos oscuros")]
+        for a, b, minimum, why in pairs:
+            ca = "#FFFFFF" if a == "white" else tokens.get(a)
+            cb = "#FFFFFF" if b == "white" else tokens.get(b)
+            if not ca or not cb:
+                err(main_css, None, f"falta el token --{a if not ca else b} en :root")
+                continue
+            ratio = contrast(ca, cb)
+            if ratio < minimum:
+                err(main_css, None, f"contraste insuficiente de --{a} sobre --{b} ({ratio:.2f}:1 < {minimum}): {why}")
+
+    for rel in FIRST_PARTY_ASSETS:
+        f = ROOT / rel
+        if not f.exists():
+            continue
+        text = strip_comments(f.read_text(encoding="utf-8", errors="replace"), js=True)
+        if "ScrollSmoother" in text:
+            err(f, None, "usa ScrollSmoother (el scroll es nativo)")
+        for m in re.finditer(r"autoplay\s*:\s*\{[^}]*?delay\s*:\s*(\d+)", text):
+            if int(m.group(1)) < 6000:
+                err(f, text.count("\n", 0, m.start()) + 1, f"autoplay de {m.group(1)} ms (mínimo 6000 o sin autoplay)")
+    for rel in ("assets/js/main.js", "assets/js/home.js"):
+        f = ROOT / rel
+        if f.exists() and "prefers-reduced-motion" not in f.read_text(encoding="utf-8", errors="replace"):
+            err(f, None, "no tiene en cuenta prefers-reduced-motion")
+
+
 def check_sitemap(pages: list[Path]) -> None:
     """sitemap.xml lista exactamente las páginas indexables y robots.txt lo anuncia."""
     import xml.etree.ElementTree as ET
@@ -846,6 +944,7 @@ def main() -> int:
     if not args.files:
         check_header_include()
         check_assets()
+        check_styles_and_scripts()
         check_sitemap(pages)
 
     if args.json:

@@ -159,453 +159,7 @@
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
 
-        <style>
-            /* ===== Pricing Page Custom Styles ===== */
-            :root {
-                --pr-green: #22c55e;
-                --pr-gold: #d4a017;
-            }
-
-            /* --- Toggle --- */
-            .pricing-toggle-wrapper {
-                display: inline-flex;
-                align-items: center;
-                gap: 16px;
-                background: #fff;
-                padding: 6px 8px;
-                border-radius: 60px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-                border: 1px solid rgba(0,0,0,0.06);
-            }
-            .toggle-option {
-                padding: 10px 24px;
-                border-radius: 50px;
-                font-weight: 600;
-                font-size: 15px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                color: var(--text);
-                user-select: none;
-            }
-            .toggle-option.active {
-                background: var(--theme);
-                color: #fff;
-                box-shadow: 0 4px 12px rgba(249,77,0,0.3);
-            }
-            .toggle-save-badge {
-                background: linear-gradient(135deg, var(--pr-green), #16a34a);
-                color: #fff;
-                padding: 4px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 0.3px;
-            }
-
-            /* --- Pricing Cards --- */
-            .pricing-card {
-                background: #fff;
-                border-radius: 20px;
-                padding: 40px 32px 36px;
-                position: relative;
-                border: 2px solid rgba(0,0,0,0.06);
-                transition: all 0.4s ease;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-            .pricing-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            }
-            .pricing-card.featured {
-                border-color: var(--theme);
-                box-shadow: 0 12px 40px rgba(249,77,0,0.15);
-            }
-            .pricing-card.featured::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: linear-gradient(90deg, var(--theme), var(--accent, #ec8228));
-                border-radius: 20px 20px 0 0;
-            }
-            .pricing-card .plan-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                padding: 6px 16px;
-                border-radius: 8px;
-                font-size: 13px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                margin-bottom: 20px;
-                width: fit-content;
-            }
-            .pricing-card.starter .plan-badge {
-                background: rgba(249,77,0,0.08);
-                color: var(--theme);
-                border: 1px solid rgba(249,77,0,0.15);
-            }
-            .pricing-card.pro .plan-badge {
-                background: rgba(249,77,0,0.08);
-                color: var(--theme);
-                border: 1px solid rgba(249,77,0,0.15);
-            }
-            .pricing-card.unlimited .plan-badge {
-                background: linear-gradient(135deg, var(--pr-gold), #f59e0b);
-                color: #fff;
-                border: none;
-            }
-            .popular-tag {
-                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
-                color: #fff;
-                padding: 3px 10px;
-                border-radius: 6px;
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-            .pricing-card .price-row {
-                display: flex;
-                align-items: baseline;
-                gap: 4px;
-                margin-bottom: 4px;
-            }
-            .pricing-card .price-amount {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 52px;
-                font-weight: 800;
-                color: var(--header);
-                line-height: 1;
-            }
-            .pricing-card .price-currency {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 28px;
-                font-weight: 800;
-                color: var(--header);
-            }
-            .pricing-card .price-period {
-                font-size: 16px;
-                color: var(--text);
-                font-weight: 500;
-            }
-            .pricing-card .price-annual-note {
-                font-size: 13px;
-                color: var(--text);
-                margin-bottom: 8px;
-                min-height: 20px;
-            }
-            .pricing-card .plan-desc {
-                font-size: 15px;
-                color: var(--text);
-                margin-bottom: 24px;
-                line-height: 1.5;
-                font-weight: 500;
-            }
-            .pricing-card .btn-plan {
-                display: block;
-                text-align: center;
-                padding: 14px 24px;
-                border-radius: 10px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                margin-bottom: 28px;
-                border: 2px solid;
-            }
-            .pricing-card.starter .btn-plan {
-                background: var(--theme);
-                border-color: var(--theme);
-                color: #fff;
-            }
-            .pricing-card.starter .btn-plan:hover {
-                background: #D94000;
-                border-color: #D94000;
-                color: #fff;
-                box-shadow: 0 8px 25px rgba(249,77,0,0.3);
-                transform: translateY(-2px);
-            }
-            .pricing-card.pro .btn-plan {
-                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
-                border-color: transparent;
-                color: #fff;
-                box-shadow: 0 4px 15px rgba(249,77,0,0.3);
-                font-size: 17px;
-                padding: 16px 24px;
-            }
-            .pricing-card.pro .btn-plan:hover {
-                box-shadow: 0 8px 30px rgba(249,77,0,0.4);
-                transform: translateY(-2px);
-            }
-            .pricing-card.unlimited .btn-plan {
-                background: transparent;
-                border-color: var(--pr-gold);
-                color: var(--pr-gold);
-            }
-            .pricing-card.unlimited .btn-plan:hover {
-                background: linear-gradient(135deg, var(--pr-gold), #f59e0b);
-                color: #fff;
-                box-shadow: 0 8px 25px rgba(212,160,23,0.3);
-                transform: translateY(-2px);
-            }
-            .pricing-card .features-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                flex-grow: 1;
-            }
-            .pricing-card .features-list li {
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-                padding: 9px 0;
-                font-size: 14px;
-                color: var(--text);
-                line-height: 1.5;
-            }
-            .pricing-card .features-list li i {
-                color: var(--pr-green);
-                font-size: 14px;
-                margin-top: 3px;
-                flex-shrink: 0;
-            }
-            .pricing-card .features-list li strong {
-                color: var(--header);
-                font-weight: 600;
-            }
-
-            /* --- Included Section --- */
-            .included-section {
-                padding: 100px 0;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .included-section::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                right: -10%;
-                width: 500px;
-                height: 500px;
-                background: radial-gradient(circle, rgba(249,77,0,0.06) 0%, transparent 70%);
-                border-radius: 50%;
-            }
-            .included-card {
-                background: rgba(255,255,255,0.04);
-                border: 1px solid rgba(255,255,255,0.08);
-                border-radius: 16px;
-                padding: 32px 24px;
-                height: 100%;
-                transition: all 0.3s ease;
-            }
-            .included-card:hover {
-                background: rgba(255,255,255,0.07);
-                border-color: rgba(249,77,0,0.2);
-                transform: translateY(-4px);
-            }
-            .included-card .card-icon {
-                width: 52px;
-                height: 52px;
-                border-radius: 14px;
-                background: linear-gradient(135deg, var(--theme), var(--accent, #ec8228));
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                color: #fff;
-                margin-bottom: 18px;
-                box-shadow: 0 4px 15px rgba(249,77,0,0.25);
-            }
-            .included-card h3 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 17px;
-                font-weight: 700;
-                color: #fff;
-                margin-bottom: 10px;
-                line-height: 1.2;
-            }
-            .included-card p {
-                font-size: 14px;
-                color: rgba(255,255,255,0.6);
-                line-height: 1.6;
-                margin: 0;
-            }
-
-            /* --- Comparison Table --- */
-            .comparison-section {
-                padding: 100px 0;
-                background: #fff;
-            }
-            .comparison-table-wrapper {
-                background: #fff;
-                border-radius: 16px;
-                overflow: hidden;
-                border: 1px solid rgba(0,0,0,0.08);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-            }
-            .comp-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            .comp-table thead th {
-                padding: 20px 24px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                font-size: 16px;
-                color: var(--header);
-                background: var(--bg);
-                border-bottom: 2px solid rgba(0,0,0,0.08);
-                text-align: center;
-            }
-            .comp-table thead th:first-child {
-                text-align: left;
-                font-size: 15px;
-                color: var(--text);
-                font-weight: 600;
-            }
-            .comp-table thead th.starter-col { color: var(--theme); }
-            .comp-table thead th.pro-col { color: var(--theme); }
-            .comp-table thead th.unlimited-col { color: var(--pr-gold); }
-            .comp-table .category-row td {
-                padding: 16px 24px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                font-size: 16px;
-                color: var(--header);
-                background: rgba(249,77,0,0.03);
-                border-bottom: 1px solid rgba(0,0,0,0.06);
-            }
-            .comp-table tbody td {
-                padding: 14px 24px;
-                font-size: 14px;
-                color: var(--text);
-                border-bottom: 1px solid rgba(0,0,0,0.04);
-                text-align: center;
-                vertical-align: middle;
-            }
-            .comp-table tbody td:first-child {
-                text-align: left;
-                font-weight: 500;
-            }
-            .comp-table tbody tr:hover {
-                background: rgba(249,77,0,0.02);
-            }
-            .comp-table .check-icon {
-                color: var(--pr-green);
-                font-size: 18px;
-            }
-            .comp-table .dash-icon {
-                color: #d1d5db;
-                font-size: 16px;
-            }
-            .comp-table .value-text {
-                font-weight: 600;
-                color: var(--header);
-            }
-            .table-toggle-btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                padding: 14px 32px;
-                border: 2px solid rgba(0,0,0,0.1);
-                border-radius: 10px;
-                background: #fff;
-                font-weight: 600;
-                font-size: 15px;
-                color: var(--header);
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .table-toggle-btn:hover {
-                border-color: var(--theme);
-                color: var(--theme);
-                box-shadow: 0 4px 12px rgba(249,77,0,0.1);
-            }
-            .table-toggle-btn i {
-                transition: transform 0.3s ease;
-            }
-            .table-toggle-btn.expanded i {
-                transform: rotate(180deg);
-            }
-
-            /* --- FAQ Mini --- */
-            .pricing-faq {
-                padding: 80px 0;
-                background: var(--bg);
-            }
-
-            /* --- CTA Section --- */
-            .pricing-cta {
-                padding: 80px 0;
-                background: linear-gradient(135deg, #F94D00 0%, #D94000 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .pricing-cta::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                right: -10%;
-                width: 500px;
-                height: 500px;
-                background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-                border-radius: 50%;
-            }
-            .pricing-cta h2 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 40px;
-                font-weight: 800;
-                color: #fff;
-                margin-bottom: 16px;
-            }
-            .pricing-cta p {
-                font-size: 18px;
-                color: rgba(255,255,255,0.9);
-                margin-bottom: 32px;
-                max-width: 550px;
-            }
-            .pricing-cta .btn-cta-white {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                background: #fff;
-                color: var(--header);
-                padding: 16px 36px;
-                border-radius: 8px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            }
-            .pricing-cta .btn-cta-white:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-                color: var(--theme);
-            }
-
-            /* --- Responsive --- */
-            @media (max-width: 991px) {
-                .pricing-card .price-amount { font-size: 42px; }
-                .pricing-cta h2 { font-size: 30px; }
-                .comp-table thead th, .comp-table tbody td { padding: 10px 12px; font-size: 13px; }
-            }
-            @media (max-width: 767px) {
-                .pricing-card { padding: 28px 20px; }
-                .pricing-card .price-amount { font-size: 36px; }
-                .pricing-cta h2 { font-size: 26px; }
-                .comparison-table-wrapper { overflow-x: auto; }
-                .comp-table { min-width: 600px; }
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/pages/pricing.css">
     </head>
     <body>
         <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -659,7 +213,7 @@
                                 Empieza con 14 días de prueba y escala a medida que creces. Sin permanencia: cancela cuando quieras.
                             </p>
                             <div class="wow fadeInUp" data-wow-delay=".45s" style="margin-top:16px;">
-                                <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#16a34a; padding:8px 20px; border-radius:50px; font-size:14px; font-weight:700;">
+                                <span class="pricing-trial-badge">
                                     <i class="fa-solid fa-gift" aria-hidden="true"></i> 14 d&iacute;as de prueba gratuita en todos los planes
                                 </span>
                             </div>
@@ -667,12 +221,13 @@
 
                         <!-- Toggle Switch -->
                         <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="pricing-toggle-wrapper">
-                                <span class="toggle-option active" id="annualToggle" onclick="setPricing('annual')">
+                            <div class="pricing-toggle-wrapper" role="group" aria-label="Periodo de facturación">
+                                <button type="button" class="toggle-option" id="annualToggle" aria-pressed="true">
                                     Anual <span class="toggle-save-badge">Ahorra hasta un 25&nbsp;%</span>
-                                </span>
-                                <span class="toggle-option" id="monthlyToggle" onclick="setPricing('monthly')">Mensual</span>
+                                </button>
+                                <button type="button" class="toggle-option" id="monthlyToggle" aria-pressed="false">Mensual</button>
                             </div>
+                            <p class="visually-hidden" id="pricingStatus" role="status"></p>
                         </div>
 
                         <!-- Pricing Cards -->
@@ -687,7 +242,7 @@
                                         <span class="price-period">/mes + IVA</span>
                                     </div>
                                     <div class="price-annual-note annual-note">59,40 &euro; facturados anualmente</div>
-                                    <div class="price-annual-note monthly-note" style="display:none;">&nbsp;</div>
+                                    <div class="price-annual-note monthly-note" hidden>&nbsp;</div>
                                     <p class="plan-desc">Para aut&oacute;nomos que empiezan.</p>
                                     <a href="https://app.facturales.es/signup" class="btn-plan">
                                         Prueba 14 d&iacute;as <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -716,7 +271,7 @@
                                         <span class="price-period">/mes + IVA</span>
                                     </div>
                                     <div class="price-annual-note annual-note">107,40 &euro; facturados anualmente</div>
-                                    <div class="price-annual-note monthly-note" style="display:none;">&nbsp;</div>
+                                    <div class="price-annual-note monthly-note" hidden>&nbsp;</div>
                                     <p class="plan-desc">Para negocios en crecimiento.</p>
                                     <a href="https://app.facturales.es/signup" class="btn-plan">
                                         Prueba 14 d&iacute;as <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -742,7 +297,7 @@
                                         <span class="price-period">/mes + IVA</span>
                                     </div>
                                     <div class="price-annual-note annual-note">215,40 &euro; facturados anualmente</div>
-                                    <div class="price-annual-note monthly-note" style="display:none;">&nbsp;</div>
+                                    <div class="price-annual-note monthly-note" hidden>&nbsp;</div>
                                     <p class="plan-desc">Para equipos y alta facturaci&oacute;n.</p>
                                     <a href="https://app.facturales.es/signup" class="btn-plan">
                                         Prueba 14 d&iacute;as <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -838,98 +393,99 @@
                             <span class="sub-title wow fadeInUp" data-wow-delay=".2s">
                                 <i class="fa-solid fa-table-cells" aria-hidden="true"></i> Comparativa detallada
                             </span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s" id="comp-title">
                                 Compara los planes <span class="accent-text">al detalle</span>
                             </h2>
                         </div>
 
-                        <div class="comparison-table-wrapper wow fadeInUp" data-wow-delay=".3s">
+                        <div class="comparison-table-wrapper wow fadeInUp" data-wow-delay=".3s" role="region" aria-labelledby="comp-title" tabindex="0">
                             <table class="comp-table">
+                                <caption class="visually-hidden">Funcionalidades incluidas en cada plan</caption>
                                 <thead>
                                     <tr>
-                                        <th>Funcionalidades</th>
-                                        <th class="starter-col">Starter</th>
-                                        <th class="pro-col">Pro</th>
-                                        <th class="unlimited-col">Ilimitado</th>
+                                        <th scope="col">Funcionalidades</th>
+                                        <th scope="col" class="starter-col">Starter</th>
+                                        <th scope="col" class="pro-col">Pro</th>
+                                        <th scope="col" class="unlimited-col">Ilimitado</th>
                                     </tr>
                                 </thead>
                                 <tbody id="compTableBody">
                                     <!-- Facturacion -->
-                                    <tr class="category-row"><td colspan="4"><i class="fa-solid fa-file-invoice-dollar" style="margin-right:8px; color:var(--theme);" aria-hidden="true"></i> Facturaci&oacute;n</td></tr>
+                                    <tr class="category-row"><td colspan="4"><span class="category-label"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> Facturaci&oacute;n</span></td></tr>
                                     <tr>
-                                        <td>Facturas y presupuestos emitidos <small class="table-note">(l&iacute;mite mensual compartido)</small></td>
+                                        <th scope="row">Facturas y presupuestos emitidos <small class="table-note">(l&iacute;mite mensual compartido)</small></th>
                                         <td><span class="value-text">10/mes</span></td>
                                         <td><span class="value-text">Ilimitados</span></td>
                                         <td><span class="value-text">Ilimitados</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Factura electr&oacute;nica (Facturae)</td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
+                                        <th scope="row">Factura electr&oacute;nica (Facturae)</th>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Numeraci&oacute;n correlativa por serie</td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
+                                        <th scope="row">Numeraci&oacute;n correlativa por serie</th>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Presupuestos con conversi&oacute;n a factura</td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
+                                        <th scope="row">Presupuestos con conversi&oacute;n a factura</th>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
                                     </tr>
 
                                     <!-- Hidden rows -->
-                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-users" style="margin-right:8px; color:var(--theme);" aria-hidden="true"></i> Clientes y productos</td></tr>
+                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner"><span class="category-label"><i class="fa-solid fa-users" aria-hidden="true"></i> Clientes y productos</span></td></tr>
                                     <tr class="extra-rows">
-                                        <td>Clientes</td>
+                                        <th scope="row">Clientes</th>
                                         <td><span class="value-text">10</span></td>
                                         <td><span class="value-text">150</span></td>
                                         <td><span class="value-text">Ilimitados</span></td>
                                     </tr>
                                     <tr class="extra-rows">
-                                        <td>Productos / Servicios</td>
+                                        <th scope="row">Productos / Servicios</th>
                                         <td><span class="value-text">30</span></td>
                                         <td><span class="value-text">150</span></td>
                                         <td><span class="value-text">Ilimitados</span></td>
                                     </tr>
                                     <tr class="extra-rows">
-                                        <td>Usuarios</td>
+                                        <th scope="row">Usuarios</th>
                                         <td><span class="value-text">1</span></td>
                                         <td><span class="value-text">3</span></td>
                                         <td><span class="value-text">Ilimitados</span></td>
                                     </tr>
 
-                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-camera" style="margin-right:8px; color:var(--theme);" aria-hidden="true"></i> Digitalizaci&oacute;n</td></tr>
+                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner"><span class="category-label"><i class="fa-solid fa-camera" aria-hidden="true"></i> Digitalizaci&oacute;n</span></td></tr>
                                     <tr class="extra-rows">
-                                        <td>Escaneado OCR (docs/mes)</td>
+                                        <th scope="row">Escaneado OCR (docs/mes)</th>
                                         <td><span class="value-text">10</span></td>
                                         <td><span class="value-text">75</span></td>
                                         <td><span class="value-text">300</span></td>
                                     </tr>
 
-                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner" style="padding:16px 24px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:16px; color:var(--header); background:rgba(249,77,0,0.03);"><i class="fa-solid fa-headset" style="margin-right:8px; color:var(--theme);" aria-hidden="true"></i> Soporte</td></tr>
+                                    <tr class="extra-rows"><td colspan="4" class="category-row-inner"><span class="category-label"><i class="fa-solid fa-headset" aria-hidden="true"></i> Soporte</span></td></tr>
                                     <tr class="extra-rows">
-                                        <td>Canales de soporte</td>
+                                        <th scope="row">Canales de soporte</th>
                                         <td><span class="value-text">Email</span></td>
                                         <td><span class="value-text">Chat + email</span></td>
                                         <td><span class="value-text">Chat, email y tel&eacute;fono</span></td>
                                     </tr>
                                     <tr class="extra-rows">
-                                        <td>Soporte prioritario</td>
-                                        <td><i class="fa-solid fa-minus dash-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-minus dash-icon" aria-hidden="true"></i></td>
-                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i></td>
+                                        <th scope="row">Soporte prioritario</th>
+                                        <td><i class="fa-solid fa-minus dash-icon" aria-hidden="true"></i><span class="visually-hidden">No incluido</span></td>
+                                        <td><i class="fa-solid fa-minus dash-icon" aria-hidden="true"></i><span class="visually-hidden">No incluido</span></td>
+                                        <td><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i><span class="visually-hidden">Incluido</span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <div class="text-center mt-4 wow fadeInUp" data-wow-delay=".4s">
-                            <button class="table-toggle-btn expanded" id="tableToggleBtn" onclick="toggleTable()">
-                                Ocultar funcionalidades <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                            <button type="button" class="table-toggle-btn expanded" id="tableToggleBtn" aria-expanded="true" aria-controls="compTableBody">
+                                <span class="table-toggle-label">Ocultar funcionalidades</span> <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
@@ -948,7 +504,7 @@
                                 <div class="accordion" id="pricingFAQ">
                                     <div class="accordion-item wow fadeInUp" data-wow-delay=".2s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
                                         <h3 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-weight:600; font-size:16px; color:var(--header);">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1" style="font-weight:600; font-size:16px; color:var(--header);">
                                                 &iquest;Puedo cambiar de plan en cualquier momento?
                                             </button>
                                         </h3>
@@ -960,7 +516,7 @@
                                     </div>
                                     <div class="accordion-item wow fadeInUp" data-wow-delay=".3s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
                                         <h3 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-weight:600; font-size:16px; color:var(--header);">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2" style="font-weight:600; font-size:16px; color:var(--header);">
                                                 &iquest;Hay permanencia o compromiso m&iacute;nimo?
                                             </button>
                                         </h3>
@@ -972,7 +528,7 @@
                                     </div>
                                     <div class="accordion-item wow fadeInUp" data-wow-delay=".4s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
                                         <h3 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-weight:600; font-size:16px; color:var(--header);">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3" style="font-weight:600; font-size:16px; color:var(--header);">
                                                 &iquest;Los precios incluyen IVA?
                                             </button>
                                         </h3>
@@ -984,7 +540,7 @@
                                     </div>
                                     <div class="accordion-item wow fadeInUp" data-wow-delay=".5s" style="border:1px solid rgba(0,0,0,0.08); border-radius:12px; margin-bottom:12px; overflow:hidden;">
                                         <h3 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="font-weight:600; font-size:16px; color:var(--header);">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4" style="font-weight:600; font-size:16px; color:var(--header);">
                                                 &iquest;Qu&eacute; m&eacute;todos de pago aceptan?
                                             </button>
                                         </h3>
@@ -1109,44 +665,11 @@
             </div>
         </div>
 
-        <!-- Scripts propios (sin jQuery) -->
+        <!-- Scripts (sin jQuery) -->
         <script src="assets/js/bootstrap.bundle.min.js" defer></script>
         <script src="assets/js/wow.min.js" defer></script>
         <script src="assets/js/main.js" defer></script>
 
-        <script>
-            // Pricing toggle
-            function setPricing(mode) {
-                var monthly = mode === 'monthly';
-                document.getElementById('monthlyToggle').classList.toggle('active', monthly);
-                document.getElementById('annualToggle').classList.toggle('active', !monthly);
-
-                document.querySelectorAll('.price-amount').forEach(function(el) {
-                    el.textContent = monthly ? el.dataset.monthly : el.dataset.annual;
-                });
-                document.querySelectorAll('.annual-note').forEach(function(el) {
-                    el.style.display = monthly ? 'none' : 'block';
-                });
-                document.querySelectorAll('.monthly-note').forEach(function(el) {
-                    el.style.display = monthly ? 'block' : 'none';
-                });
-            }
-
-            // Comparison table toggle
-            function toggleTable() {
-                var rows = document.querySelectorAll('.extra-rows');
-                var btn = document.getElementById('tableToggleBtn');
-                var visible = rows[0].style.display !== 'none';
-
-                rows.forEach(function(row) {
-                    row.style.display = visible ? 'none' : 'table-row';
-                });
-
-                btn.classList.toggle('expanded', !visible);
-                btn.innerHTML = visible
-                    ? 'Mostrar todas las funcionalidades <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>'
-                    : 'Ocultar funcionalidades <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>';
-            }
-        </script>
+        <script src="assets/js/pricing.js" defer></script>
     </body>
 </html>
