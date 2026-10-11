@@ -2841,17 +2841,23 @@ html:not(.reveal-ready) .tz-itm-anim div {
 .about-wrapper .about-content .about-item .count-item {
   min-width: 260px;
 }
-.about-wrapper .about-content .about-item .count-item h2 {
-  color: var(--theme);
+.about-wrapper .about-content .about-item .count-item .count-number {
+  color: var(--theme-text);
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 134px;
   font-weight: 600;
+  line-height: 117%;
 }
 @media (max-width: 1399px) {
-  .about-wrapper .about-content .about-item .count-item h2 {
+  .about-wrapper .about-content .about-item .count-item .count-number {
     font-size: 80px;
   }
 }
-.about-wrapper .about-content .about-item .count-item h5 {
+.about-wrapper .about-content .about-item .count-item .count-caption {
+  color: var(--header);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 156%;
 }
 .about-wrapper .about-content .about-item .content-box {
@@ -2920,7 +2926,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
   padding: 8px 14px;
   width: fit-content;
 }
-.about-wrapper .about-image-feature h4 {
+.about-wrapper .about-image-feature h3 {
   font-size: 34px;
   line-height: 1.2;
   margin: 18px 0 14px;
@@ -3683,7 +3689,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
   padding: 0;
   border-radius: 8px !important;
 }
-.faq-items .accordion .accordion-item h2 button {
+.faq-items .accordion .accordion-item .accordion-header button {
   font-size: 24px;
   line-height: 1;
   font-weight: 600;
@@ -3695,13 +3701,13 @@ html:not(.reveal-ready) .tz-itm-anim div {
   color: var(--header);
 }
 @media (max-width: 1399px) {
-  .faq-items .accordion .accordion-item h2 button {
+  .faq-items .accordion .accordion-item .accordion-header button {
     font-size: 20px;
     padding: 24px 16px;
   }
 }
 @media (max-width: 575px) {
-  .faq-items .accordion .accordion-item h2 button {
+  .faq-items .accordion .accordion-item .accordion-header button {
     font-size: 16px;
     padding: 24px 16px;
   }
@@ -3729,7 +3735,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
 }
 .faq-items .accordion .accordion-button::before {
   position: absolute;
-  content: "+";
+  content: "\f068";
   font-family: "Font Awesome 6 Pro";
   font-weight: 700;
   top: 13px;
@@ -3757,7 +3763,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
   color: var(--header) !important;
 }
 .faq-items .accordion .accordion-button.collapsed::before {
-  content: "\f068";
+  content: "\2b";
   font-family: "Font Awesome 6 Pro";
   color: var(--white);
   background-color: var(--theme);
@@ -3807,7 +3813,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
   padding: 0;
   border-radius: 8px !important;
 }
-.faq-wrapper-3 .faq-items-3 .accordion .accordion-item h2 button {
+.faq-wrapper-3 .faq-items-3 .accordion .accordion-item .accordion-header button {
   font-size: 24px;
   line-height: 1;
   font-weight: 600;
@@ -3819,7 +3825,7 @@ html:not(.reveal-ready) .tz-itm-anim div {
   color: var(--header);
 }
 @media (max-width: 1399px) {
-  .faq-wrapper-3 .faq-items-3 .accordion .accordion-item h2 button {
+  .faq-wrapper-3 .faq-items-3 .accordion .accordion-item .accordion-header button {
     font-size: 16px;
     padding: 24px 16px;
   }
@@ -5090,7 +5096,8 @@ html:not(.reveal-ready) .tz-itm-anim div {
   background-size: 100% 2px;
   background-image: linear-gradient(180deg, var(--theme) 0%, var(--theme) 100%);
 }
-.news-card-items .news-top-content .news-content span {
+.news-card-items .news-top-content .news-content span,
+.news-card-items .news-top-content .news-content time {
   color: #02060A;
   font-weight: 500;
   display: inline-block;
@@ -6296,13 +6303,18 @@ html:not(.reveal-ready) .tz-itm-anim div {
     gap: 30px;
   }
 }
-.project-box-wrapper .project-card-items h4 {
+.project-box-wrapper .project-card-items .project-number {
   position: absolute;
   top: 55px;
   left: 55px;
+  color: var(--header);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 150%;
 }
 @media (max-width: 991px) {
-  .project-box-wrapper .project-card-items h4 {
+  .project-box-wrapper .project-card-items .project-number {
     display: none;
   }
 }
@@ -9380,5 +9392,338 @@ html:not(.reveal-ready) .tz-itm-anim div {
   }
   .large-shadows {
     display: none !important;
+  }
+}
+
+/*---------------------------------------
+06. Componentes propios de Facturales
+---------------------------------------*/
+/* Maquetas ilustrativas de la home (antes con estilos en línea) */
+.mock-card {
+  position: relative;
+  max-width: 370px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+  text-align: left;
+}
+.mock-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #F5F5F5;
+}
+.mock-card-title {
+  color: var(--header);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.mock-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: #FFF0E5;
+  color: var(--theme-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.mock-field {
+  margin-bottom: 14px;
+}
+.mock-label {
+  margin-bottom: 3px;
+  color: var(--text);
+  font-size: 12px;
+}
+.mock-value {
+  color: var(--header);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mock-sub {
+  color: var(--text);
+  font-size: 12px;
+}
+.mock-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #F0F0F0;
+  color: var(--text);
+  font-size: 14px;
+}
+.mock-row strong {
+  color: var(--header);
+  font-weight: 600;
+}
+.mock-row strong.mock-pos {
+  color: #2E7D32;
+}
+.mock-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 14px 0 0;
+  border-top: 2px solid #E0E0E0;
+  color: var(--theme-text);
+  font-size: 20px;
+  font-weight: 700;
+}
+.mock-btn {
+  margin-top: 16px;
+  padding: 11px;
+  border-radius: 8px;
+  background: var(--theme-strong);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.mock-note {
+  margin-top: 12px;
+  color: var(--text);
+  font-size: 11px;
+  text-align: right;
+}
+.mock-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.mock-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #FFF0E5;
+  color: var(--theme-text);
+  font-size: 20px;
+}
+.mock-lines {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--theme-strong);
+  border-radius: 0 8px 8px 0;
+  background: #FFF8F2;
+}
+.mock-lines-head,
+.mock-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.mock-lines-head {
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 600;
+}
+.mock-line {
+  margin-bottom: 4px;
+  color: var(--header);
+}
+.mock-line:last-child {
+  margin-bottom: 0;
+}
+.mock-swatches {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.mock-swatches span {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--theme-strong);
+}
+.mock-swatches span:nth-child(2) {
+  background: #9AA3B5;
+}
+.mock-swatches span:nth-child(3) {
+  background: var(--header);
+}
+.mock-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 12px;
+}
+.mock-foot i {
+  color: var(--theme-text);
+}
+.mock-stat-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.mock-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-size: 18px;
+}
+.mock-stat-value {
+  margin-bottom: 6px;
+  color: var(--header);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.mock-stat-trend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  color: #2E7D32;
+  font-size: 13px;
+}
+.mock-stat-trend span {
+  color: var(--text);
+}
+.mock-stat-pair {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.mock-stat {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+.mock-stat small {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 11px;
+}
+.mock-stat strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+.mock-stat.is-red {
+  background: #FFEBEE;
+}
+.mock-stat.is-red strong {
+  color: #C62828;
+}
+.mock-stat.is-orange {
+  background: #FFF0E5;
+}
+.mock-stat.is-orange strong {
+  color: var(--theme-text);
+}
+.mock-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 50px;
+  padding-top: 6px;
+}
+.mock-bars span {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: #E8F5E9;
+}
+.mock-bars span.is-top {
+  background: #43A047;
+}
+
+/* Contacto de la home: una única tarjeta con el email */
+.counter-wrapper .contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  text-decoration: none;
+}
+.counter-wrapper .contact-card:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-4px);
+}
+.contact-card-icon {
+  display: flex;
+  flex: 0 0 64px;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--theme-strong);
+  color: var(--white);
+  font-size: 26px;
+}
+.contact-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.contact-card-title {
+  color: var(--white);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.contact-card-mail {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+.contact-faq {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+.contact-faq a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 575px) {
+  .counter-wrapper .contact-card {
+    padding: 20px;
+  }
+  .contact-card-title {
+    font-size: 20px;
+  }
+}
+
+/* FAQ de la home: enlace a todas las preguntas */
+.faq-more {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Home: el titular de "Sobre Facturales" ya no lleva saltos de línea forzados */
+.about-section .section-title .sub-title {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+@media (min-width: 1400px) {
+  .about-section .section-title h2 {
+    max-width: 720px;
+  }
+  .project-box-wrapper .project-card-items .project-thumb {
+    flex: 0 0 360px;
   }
 }
