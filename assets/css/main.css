@@ -9727,3 +9727,15 @@ html:not(.reveal-ready) .tz-itm-anim div {
     flex: 0 0 360px;
   }
 }
+
+/* Texto de énfasis en naranja accesible (sobre fondos claros) y notas de tabla */
+.accent-text {
+  color: var(--theme-text);
+}
+.table-note {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
