@@ -585,6 +585,15 @@ def check_jsonld(path: Path, p: PageParser, raw: str) -> None:
         for token in ("6,45", "11,95", "23,95", "4,95", "8,95", "17,95"):
             if token not in raw:
                 err(path, None, f"el precio {token} no aparece en la página, pero sí en el JSON-LD")
+    for o in objs:
+        for sub in walk(o):
+            logo = sub.get("logo")
+            if isinstance(logo, dict):
+                logo = logo.get("url")
+            if isinstance(logo, str):
+                local = local_from_site_url(logo)
+                if local is None or not local.exists():
+                    err(path, None, f"logo del JSON-LD inexistente: {logo}")
     for o in by_type.get("FAQPage", []):
         questions = [q.get("name", "") for q in o.get("mainEntity", [])]
         visible = [t for (_l, lvl, t) in p.headings if lvl >= 2 and t.endswith("?")]
