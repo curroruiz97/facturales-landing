@@ -506,3 +506,10 @@
     .gc-problem h2, .gc-features h2, .gc-steps h2 { font-size: 26px; }
     .gc-hero .trust-badges { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+/* Móvil: secciones con menos espacio vertical */
+@media (max-width: 575px) {
+    .gc-problem { padding-top: 56px; padding-bottom: 56px; }
+    .gc-features { padding-top: 56px; padding-bottom: 56px; }
+    .gc-steps { padding-top: 56px; padding-bottom: 56px; }
+}

@@ -1,5 +1,10 @@
 /* Estilos de pricing.html */
 /* ===== Pricing Page Custom Styles ===== */
+.pricing-plans {
+    padding: 56px 0 100px;
+    background: var(--bg);
+}
+
 /* --- Toggle --- */
 .pricing-toggle-wrapper {
     display: inline-flex;
@@ -486,4 +491,16 @@
         display: inline-flex;
         align-items: center;
     }
+}
+
+/* Móvil: secciones con menos espacio vertical */
+@media (max-width: 575px) {
+    .pricing-toggle-wrapper { width: 100%; gap: 4px; justify-content: space-between; }
+    .toggle-option { flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px; padding: 10px 12px; }
+    .toggle-save-badge { white-space: nowrap; font-size: 11px; padding: 3px 8px; }
+    .pricing-plans { padding-top: 40px; padding-bottom: 56px; }
+    .included-section { padding-top: 56px; padding-bottom: 56px; }
+    .comparison-section { padding-top: 56px; padding-bottom: 56px; }
+    .pricing-faq { padding-top: 56px; padding-bottom: 56px; }
+    .pricing-cta { padding-top: 56px; padding-bottom: 56px; }
 }

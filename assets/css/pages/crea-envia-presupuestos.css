@@ -434,3 +434,10 @@
     .benefits-list { grid-template-columns: 1fr; }
     .mockup-card { margin-top: 40px; }
 }
+
+/* Móvil: secciones con menos espacio vertical */
+@media (max-width: 575px) {
+    .features-section { padding-top: 56px; padding-bottom: 56px; }
+    .process-section { padding-top: 56px; padding-bottom: 56px; }
+    .benefits-section { padding-top: 56px; padding-bottom: 56px; }
+}

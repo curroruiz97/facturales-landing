@@ -578,3 +578,10 @@
         gap: 12px;
     }
 }
+
+/* Móvil: secciones con menos espacio vertical */
+@media (max-width: 575px) {
+    .pain-points-section { padding-top: 56px; padding-bottom: 56px; }
+    .feature-deepdive-section { padding-top: 56px; padding-bottom: 56px; }
+    .before-after-section { padding-top: 56px; padding-bottom: 56px; }
+}

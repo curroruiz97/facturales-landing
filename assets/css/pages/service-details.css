@@ -763,3 +763,12 @@
         padding: 70px 0;
     }
 }
+
+/* Móvil: secciones con menos espacio vertical */
+@media (max-width: 575px) {
+    .features-section { padding-top: 56px; padding-bottom: 56px; }
+    .benefits-section { padding-top: 56px; padding-bottom: 56px; }
+    .how-it-works-section { padding-top: 56px; padding-bottom: 56px; }
+    .trust-section { padding-top: 56px; padding-bottom: 56px; }
+    .final-cta-section { padding-top: 56px; padding-bottom: 56px; }
+}

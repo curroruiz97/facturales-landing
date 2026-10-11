@@ -1359,38 +1359,34 @@ html.offcanvas-open body {
 }
 .breadcrumb-wrapper .page-heading {
   position: relative;
-  padding: 200px 0 120px;
+  padding: 150px 0 56px;
   z-index: 9;
   text-align: center;
 }
 @media (max-width: 767px) {
   .breadcrumb-wrapper .page-heading {
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 120px;
+    padding-top: 108px;
+    padding-bottom: 40px;
   }
 }
 .breadcrumb-wrapper .page-heading h1 {
   color: var(--white);
-  font-size: 72px;
+  font-size: 56px;
   position: relative;
   z-index: 9;
   font-weight: 500;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 @media (max-width: 767px) {
   .breadcrumb-wrapper .page-heading h1 {
-    font-size: 60px;
+    font-size: 44px;
+    letter-spacing: -1px;
   }
 }
 @media (max-width: 575px) {
   .breadcrumb-wrapper .page-heading h1 {
-    font-size: 50px;
-  }
-}
-@media (max-width: 470px) {
-  .breadcrumb-wrapper .page-heading h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 .breadcrumb-wrapper .page-heading .breadcrumb-items {
@@ -1995,31 +1991,14 @@ html.offcanvas-open body {
 }
 @media (max-width: 767px) {
   .hero-1 {
-    padding-top: 90px;
-    padding-bottom: 24px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    align-items: stretch;
-  }
-  .hero-1 > .container,
-  .hero-1 > .container.custom-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-  }
-  .hero-1 > .container > .row,
-  .hero-1 > .container.custom-container > .row {
-    flex: 1;
-    align-items: center;
+    padding-top: 104px;
+    padding-bottom: 48px;
   }
 }
 @media (max-width: 575px) {
   .hero-1 {
-    padding-top: 80px;
-    padding-bottom: 16px;
+    padding-top: 96px;
+    padding-bottom: 48px;
   }
 }
 .hero-1 .hero-content {
@@ -2074,43 +2053,51 @@ html.offcanvas-open body {
   color: var(--white);
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: 64px;
+  line-height: 1.08;
+}
+@media (max-width: 1399px) {
+  .hero-1 .hero-content h1 {
+    font-size: 56px;
+  }
+}
+@media (max-width: 1199px) {
+  .hero-1 .hero-content h1 {
+    font-size: 52px;
+  }
 }
 @media (max-width: 991px) {
   .hero-1 .hero-content h1 {
-    font-size: 36px;
+    font-size: 44px;
   }
 }
 @media (max-width: 767px) {
   .hero-1 .hero-content h1 {
-    font-size: 30px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    line-height: 1.2;
+    font-size: 38px;
+    margin-bottom: 14px;
+    margin-top: 14px;
   }
 }
 @media (max-width: 575px) {
   .hero-1 .hero-content h1 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    font-size: 34px;
+  }
+}
+@media (max-width: 359px) {
+  .hero-1 .hero-content h1 {
+    font-size: 32px;
   }
 }
 .hero-1 .hero-content p {
-  line-height: 155.556%;
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--white);
-  max-width: 464px;
+  max-width: 520px;
 }
 @media (max-width: 767px) {
   .hero-1 .hero-content p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 16px;
     max-width: 100%;
-  }
-}
-@media (max-width: 575px) {
-  .hero-1 .hero-content p {
-    font-size: 13px;
-    line-height: 1.45;
   }
 }
 .hero-1 .hero-content .hero-btn {
@@ -2134,8 +2121,8 @@ html.offcanvas-open body {
 }
 @media (max-width: 575px) {
   .hero-1 .hero-content .hero-btn .theme-btn {
-    padding: 12px 20px;
-    font-size: 13px;
+    padding: 14px 24px;
+    font-size: 15px;
   }
 }
 .hero-1 .hero-content .hero-btn .theme-btn.style-2 {
@@ -2161,23 +2148,13 @@ html.offcanvas-open body {
   }
 }
 @media (max-width: 767px) {
+  /* El cubo 3D (162 capas con transformaciones) es decorativo y pesa: no se muestra en móvil */
   .hero-1 .hero-image {
-    max-width: 100%;
-    margin: 0 auto;
+    display: none;
   }
 }
 .hero-1 .hero-image .cubes-wrapper {
   width: 100%;
-}
-@media (max-width: 767px) {
-  .hero-1 .hero-image .cubes-wrapper {
-    height: 260px !important;
-  }
-}
-@media (max-width: 575px) {
-  .hero-1 .hero-image .cubes-wrapper {
-    height: 200px !important;
-  }
 }
 .hero-1 .hero-image img {
   border-radius: 16px;
@@ -2283,7 +2260,7 @@ html.offcanvas-open body {
   gap: 0;
   margin-bottom: 120px;
   padding: 30px 0;
-  background-color: var(--theme);
+  background-color: var(--theme-strong);
 }
 @media (max-width: 1399px) {
   .marquee {
@@ -2304,11 +2281,13 @@ html.offcanvas-open body {
   min-width: 100%;
   animation: scroll var(--duration) linear infinite;
 }
+.marquee:hover .marquee-group {
+  animation-play-state: paused;
+}
 .marquee .text {
   color: var(--white);
   font-size: 32px;
   font-weight: 600;
-  text-transform: capitalize;
   display: flex;
   align-items: center;
   gap: 50px;
@@ -2857,7 +2836,8 @@ html.offcanvas-open body {
   backface-visibility: visible;
   overflow: visible;
   will-change: transform;
-  animation: cube-spin 24s linear infinite;
+  /* Una vuelta (24 s) y se queda quieto: el cubo ya no gira para siempre */
+  animation: cube-spin 24s linear 1;
 }
 .cubes *, .cubes *:before, .cubes *:after {
   box-sizing: border-box;
@@ -2924,7 +2904,8 @@ html.offcanvas-open body {
   backface-visibility: visible;
   transform-origin: center center -0.5vmin;
   will-change: transform;
-  animation: cube-piece-spin 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  /* Tres vueltas por pieza (24 s) y reposo: las dos animaciones terminan en la pose de partida */
+  animation: cube-piece-spin 8s cubic-bezier(0.4, 0, 0.2, 1) 3;
 }
 @keyframes cube-piece-spin {
   0%, 8% {
@@ -4119,5 +4100,43 @@ main:focus,
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   08. Móvil y táctil (hasta 575 px): texto de 16 px, objetivos táctiles de 44 px y
+   secciones menos espaciadas
+   ========================================================================== */
+@media (max-width: 575px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .section-padding {
+    padding: 56px 0;
+  }
+  .theme-btn {
+    min-height: 48px;
+  }
+  .header-main .header-right .header-btn .header-button .theme-btn {
+    min-height: 44px;
+  }
+  .header-main .header-right .header__hamburger .sidebar__toggle {
+    width: 44px;
+    height: 44px;
+  }
+  /* Enlaces del pie: objetivos de al menos 44 px de alto */
+  .footer-widget-wrapper .footer-widget-items .list-area li a,
+  .footer-widget-wrapper .footer-widget-items .footer-contact a,
+  .footer-bottom-wrapper .footer-list li a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+  .footer-widget-wrapper .footer-widget-items .list-area li:not(:last-child),
+  .footer-widget-wrapper .footer-widget-items .footer-contact .footer-mail {
+    margin-bottom: 0;
+  }
+  .toggle-option {
+    min-height: 44px;
   }
 }
