@@ -27,6 +27,7 @@ Qué comprueba, para cada .html:
     saltos ni encabezados vacíos, <img> con alt útil, botones/enlaces con nombre accesible,
     iconos decorativos con aria-hidden, sin manejadores onclick en línea y ningún
     "outline: none !important";
+  * iconos: todo fa-* usado está en el subconjunto de Font Awesome (assets/css/icons.css);
   * movimiento y color: foco visible y prefers-reduced-motion definidos, sin autoplay de menos
     de 6 s ni ScrollSmoother en el JS propio, sin los naranjas sueltos que unificaron los
     tokens y tokens de color con contraste suficiente (>= 4,5:1).
@@ -885,6 +886,27 @@ def check_styles_and_scripts() -> None:
             err(f, None, "no tiene en cuenta prefers-reduced-motion")
 
 
+ICON_STYLE_WORDS = {"solid", "regular", "light", "thin", "brands", "duotone", "fw", "lg", "xs", "sm", "xl", "2xl", "2xs", "spin", "pulse"}
+
+
+def check_icons(pages: list[Path]) -> None:
+    """Todo icono fa-* usado debe estar en el subconjunto de assets/css/icons.css."""
+    icons_css = ROOT / "assets/css/icons.css"
+    if not icons_css.exists():
+        err("assets/css/icons.css", None, "falta la hoja de iconos")
+        return
+    available = set(re.findall(r"\.fa-([a-z0-9-]+)::before", icons_css.read_text(encoding="utf-8")))
+    sources = list(pages) + [ROOT / rel for rel in FIRST_PARTY_ASSETS if (ROOT / rel).exists()]
+    for f in sources:
+        text = f.read_text(encoding="utf-8")
+        for m in re.finditer(r"(?<![\w/.-])fa-([a-z0-9-]+)", text):
+            name = m.group(1)
+            if name in ICON_STYLE_WORDS or name in available:
+                continue
+            err(f, text.count("\n", 0, m.start()) + 1,
+                f"el icono fa-{name} no está en assets/css/icons.css (hay que regenerar el subconjunto de la fuente)")
+
+
 def check_sitemap(pages: list[Path]) -> None:
     """sitemap.xml lista exactamente las páginas indexables y robots.txt lo anuncia."""
     import xml.etree.ElementTree as ET
@@ -945,6 +967,7 @@ def main() -> int:
         check_header_include()
         check_assets()
         check_styles_and_scripts()
+        check_icons(pages)
         check_sitemap(pages)
 
     if args.json:
