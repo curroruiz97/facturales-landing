@@ -1,0 +1,28 @@
+# Comprobaciones estáticas de la landing en cada push y pull request.
+# No hay build ni dependencias: scripts/check-site.py solo usa la biblioteca estándar de Python.
+#
+# Dónde corre: por defecto en los runners de GitHub (ubuntu-latest). Si no arrancan (cuota de minutos o facturación) o
+# prefieres máquinas propias, define la variable de repositorio CI_RUNNER (Settings -> Secrets and variables -> Actions ->
+# Variables) con la etiqueta de tus runners, p. ej. facturales-ci. Borrarla devuelve el CI a GitHub.
+name: Landing CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-site:
+    runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Comprobar el sitio (HTML, enlaces, SEO, accesibilidad y contenido veraz)
+        run: python3 scripts/check-site.py

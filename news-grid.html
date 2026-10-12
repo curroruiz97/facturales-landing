@@ -6,110 +6,69 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Avenue Media">
-        <meta name="description" content="Blog de Facturales - Artículos sobre facturación, contabilidad, VERI*FACTU y gestión para autónomos y pymes en España.">
+        <meta name="description" content="Artículos sobre facturación, VERI*FACTU y contabilidad para autónomos y pymes: guías claras, plazos de 2027 y checklists prácticos para tu negocio.">
         <!-- ======== Page title ============ -->
-        <title>Facturales - Blog | Artículos sobre facturación y contabilidad</title>
+        <title>Blog de facturación, VERI*FACTU y contabilidad | Facturales</title>
+        <!-- SEO -->
+        <link rel="canonical" href="https://facturales.es/news-grid.html">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="theme-color" content="#0B0D17">
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="Facturales">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Blog de facturación, VERI*FACTU y contabilidad | Facturales">
+        <meta property="og:description" content="Artículos sobre facturación, VERI*FACTU y contabilidad para autónomos y pymes: guías claras, plazos de 2027 y checklists prácticos para tu negocio.">
+        <meta property="og:url" content="https://facturales.es/news-grid.html">
+        <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Blog de facturación, VERI*FACTU y contabilidad | Facturales">
+        <meta name="twitter:description" content="Artículos sobre facturación, VERI*FACTU y contabilidad para autónomos y pymes: guías claras, plazos de 2027 y checklists prácticos para tu negocio.">
+        <meta name="twitter:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta name="twitter:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://facturales.es/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://facturales.es/news-grid.html"
+            }
+          ]
+        }
+        </script>
+        <!-- /SEO -->
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/orbit-cta.css">
 
-        <style>
-            /* Dark theme for blog grid */
-            .news-section.section-padding {
-                background: #0F1219;
-                position: relative;
-            }
-            .news-section.section-padding::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .news-card-items {
-                border-radius: 16px;
-                overflow: hidden;
-                border: 1px solid rgba(255,255,255,0.06);
-                transition: all 0.4s ease;
-            }
-            .news-card-items:hover {
-                border-color: rgba(249,77,0,0.2);
-                box-shadow: 0 20px 50px rgba(249,77,0,0.08);
-                transform: translateY(-6px);
-            }
-            .news-card-items .news-top-content {
-                background-color: rgba(255,255,255,0.03);
-            }
-            .news-card-items .news-top-content .news-content h3 a {
-                color: #E8ECF4;
-            }
-            .news-card-items .news-top-content .news-content h3 a:hover {
-                color: #F94D00;
-            }
-            .news-card-items .news-top-content .news-content span {
-                color: rgba(255,255,255,0.4);
-            }
-            .news-card-items .news-top-content .read-button {
-                border-top: 1px solid rgba(255,255,255,0.06);
-            }
-            .news-card-items .news-top-content .read-button .link-btn {
-                color: rgba(255,255,255,0.55);
-            }
-            .news-card-items .news-top-content .read-button .link-btn:hover {
-                color: #F94D00;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/pages/news-grid.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
-        </button>
 
         <!-- GT MouseCursor Start -->
         <div class="mouseCursor cursor-outer"></div>
@@ -117,94 +76,27 @@
 
        
 
-        <!-- Header-Top Section Start -->
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
 <script src="assets/js/header-include.js"></script>
 
-        <!-- start: Search Popup -->
-        <div class="search_popup">
-            <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                <div class="search_wrapper">
-                    <div class="search_top d-flex align-items-center">
-                    <div class="search_logo">
-                        <a href="index.html">
-                        <img src="assets/img/logo/logo-white.svg" alt="img">
-                        </a>
-                    </div>
-                    <div class="search_close">
-                        <button type="button" class="search_close_btn">
-                        <i class="fa-thin fa-times"></i>
-                        </button>
-                    </div>
-                    </div>
-                    <div class="search_form">
-                    <form action="#">
-                        <div class="search_input">
-                        <input class="search-input-field" type="text" placeholder="Type here to search...">
-                        <span class="search-focus-border"></span>
-                        <button type="submit">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="search-popup-overlay"></div>
 
         
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.webp');">
                     <div class="container">
                         <div class="page-heading">
                             <div class="breadcrumb-sub-title">
                                 <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Blog Facturales</h1>
                             </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                   Blog
-                                </li>
-                            </ul>
+                            <nav aria-label="Migas de pan" class="wow fadeInUp" data-wow-delay=".5s">
+                                <ol class="breadcrumb-items">
+                                    <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Inicio</a></li>
+                                    <li aria-current="page">Blog</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -216,22 +108,22 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="news-card-items mt-0">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/01.jpg" alt="VERI*FACTU 2027">
-                                        <img src="assets/img/home-1/news/01.jpg" alt="VERI*FACTU 2027">
+                                        <img src="assets/img/blog/verifactu-2027.webp" width="1200" height="630" alt="">
+                                        <img src="assets/img/blog/verifactu-2027.webp" width="1200" height="630" alt="" aria-hidden="true">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
-                                            <h3>
+                                            <h2>
                                                 <a href="verifactu-2027-guia-autonomos-pymes.html">
                                                     VERI*FACTU en 2027: qué es, a quién afecta y cómo prepararte sin perder tiempo
                                                 </a>
-                                            </h3>
-                                            <span>30 Ene, 2026</span>
+                                            </h2>
+                                            <time datetime="2026-02-03">3 de febrero de 2026</time>
                                         </div>
-                                         <div class="read-button">
-                                                <a href="verifactu-2027-guia-autonomos-pymes.html" class="link-btn">
+                                        <div class="read-button">
+                                            <a href="verifactu-2027-guia-autonomos-pymes.html" class="link-btn" aria-label="Leer más: VERI*FACTU en 2027: qué es, a quién afecta y cómo prepararte sin perder tiempo">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -240,22 +132,22 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                 <div class="news-card-items mt-0">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/02.jpg" alt="Factura Electrónica">
-                                        <img src="assets/img/home-1/news/02.jpg" alt="Factura Electrónica">
+                                        <img src="assets/img/blog/factura-electronica-vs-verifactu.webp" width="1200" height="630" alt="">
+                                        <img src="assets/img/blog/factura-electronica-vs-verifactu.webp" width="1200" height="630" alt="" aria-hidden="true">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
-                                            <h3>
+                                            <h2>
                                                 <a href="factura-electronica-vs-verifactu.html">
                                                     Factura electrónica obligatoria vs VERI*FACTU: diferencias reales y plazos
                                                 </a>
-                                            </h3>
-                                            <span>25 Ene, 2026</span>
+                                            </h2>
+                                            <time datetime="2026-02-10">10 de febrero de 2026</time>
                                         </div>
                                         <div class="read-button">
-                                                <a href="factura-electronica-vs-verifactu.html" class="link-btn">
+                                            <a href="factura-electronica-vs-verifactu.html" class="link-btn" aria-label="Leer más: Factura electrónica obligatoria vs VERI*FACTU: diferencias reales y plazos">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -264,22 +156,22 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                                 <div class="news-card-items mt-0">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/03.jpg" alt="Contabilidad para Negocios">
-                                        <img src="assets/img/home-1/news/03.jpg" alt="Contabilidad para Negocios">
+                                        <img src="assets/img/blog/contabilidad-7-pasos.webp" width="1200" height="630" alt="">
+                                        <img src="assets/img/blog/contabilidad-7-pasos.webp" width="1200" height="630" alt="" aria-hidden="true">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
-                                            <h3>
+                                            <h2>
                                                 <a href="contabilidad-negocio-7-pasos.html">
                                                     Cómo llevar la contabilidad de tu negocio en 7 pasos (sin ser contable)
                                                 </a>
-                                            </h3>
-                                            <span>15 Ene, 2026</span>
+                                            </h2>
+                                            <time datetime="2026-02-17">17 de febrero de 2026</time>
                                         </div>
                                         <div class="read-button">
-                                                <a href="contabilidad-negocio-7-pasos.html" class="link-btn">
+                                            <a href="contabilidad-negocio-7-pasos.html" class="link-btn" aria-label="Leer más: Cómo llevar la contabilidad de tu negocio en 7 pasos (sin ser contable)">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -302,113 +194,84 @@
                         <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
                         <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
                         <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
-                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
+                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup" aria-label="Prueba 14 días en Facturales">
                             <span class="facturales-cta-glow"></span>
-                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
+                            <span class="facturales-cta-inner">
+                                <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                <span class="facturales-cta-label">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
+                            </span>
                         </a>
                     </div>
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.webp);">
                         <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <a href="index.html" class="footer-logo">
-                                                <img src="assets/img/logo/logo-white.svg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="footer-content">
-                                            <p>
-                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
-                                            </p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </a>
+                            <div class="footer-widget-wrapper">
+                                <div class="row justify-content-between">
+                                    <div class="col-xl-4 col-lg-5 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head">
+                                                <a href="index.html" class="footer-logo">
+                                                    <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="footer-content">
+                                                <p>Facturación para autónomos y pymes: facturas, presupuestos, gastos y clientes en un solo lugar.</p>
+                                                <a href="https://app.facturales.es/signup" class="theme-btn">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Acceso r&aacute;pido</h3>
+                                    <div class="col-xl-2 col-lg-3 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Acceso rápido</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="https://app.facturales.es/signup">Crear cuenta</a></li>
+                                                <li><a href="https://app.facturales.es/signin">Iniciar sesión</a></li>
+                                                <li><a href="pricing.html">Precios</a></li>
+                                                <li><a href="faq.html">Preguntas frecuentes</a></li>
+                                                <li><a href="news-grid.html">Blog</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="https://app.facturales.es/signup.html">
-                                                    Crea una cuenta gratuita
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://app.facturales.es/signin.html">
-                                                    Iniciar sesi&oacute;n
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html">
-                                                    Precios
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Funcionalidades</h3>
+                                    <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Funcionalidades</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                                <li><a href="crea-envia-facturas.html">Crea y envía facturas</a></li>
+                                                <li><a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a></li>
+                                                <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                                <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                                <li><a href="factura-personalizada.html">Personaliza tus facturas</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
-                                            <li><a href="crea-envia-facturas.html">Crea y Envía Facturas</a></li>
-                                            <li><a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a></li>
-                                            <li><a href="factura-personalizada.html">Personaliza facturas</a></li>
-                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
-                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Suscríbete al Boletín</h3>
-                                        </div>
-                                        <div class="contact-item">
-                                            <form action="#">
-                                                <input type="text" placeholder="Email address">
-                                            </form>
-                                            <button type="submit" class="theme-btn w-100">
-                                                    Subscribe now <i class="fa-solid fa-arrow-up-right"></i>
-                                            </button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Contacto</p></div>
+                                            <div class="footer-content footer-contact">
+                                                <p>¿Tienes dudas? Escríbenos y te respondemos por email.</p>
+                                                <a href="mailto:info@facturales.es" class="footer-mail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@facturales.es</a>
+                                                <a href="faq.html" class="footer-faq-link">Consulta las preguntas frecuentes</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-bottom-wrapper">
+                                <p>© Facturales · AVENUE DIGITAL GROUP, S.L.</p>
+                                <ul class="footer-list">
+                                    <li><a href="https://app.facturales.es/aviso-legal">Aviso legal</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-privacidad">Política de privacidad</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-cookies">Política de cookies</a></li>
+                                    <li><a href="https://app.facturales.es/condiciones-legales">Condiciones legales</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">
-                               Copyright <span>Facturales.</span> Todos los derechos reservados.
-                            </p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li>
-                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
-                                </li>
-                                <li>।</li>
-                                <li>
-                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     </div>
                 </footer>
 
@@ -418,45 +281,16 @@
        
 
         
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Gsap Min Js >>-->
-        <script src="assets/js/gsap.min.js"></script>
-        <!--<< ScrollTrigger Min Js >>-->
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <!--<< SplitText Min Js >>-->
-        <script src="assets/js/SplitText.min.js"></script>
-        <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
-         <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Parallaxie Js >>-->
-        <script src="assets/js/parallaxie.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/orbit-cta.js"></script>
+        <!-- Volver arriba: al final del documento para que el orden de tabulación lo deje tras el pie -->
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Scripts (sin jQuery) -->
+        <script src="assets/js/wow.min.js" defer></script>
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/orbit-cta.js" defer></script>
+        <!-- Conmutador v1/v2 (temporal; ver CLAUDE.md): para quitarlo, borra estas dos líneas y assets/js/version-switcher.js -->
+        <script src="assets/js/version-switcher.js" defer></script>
     </body>
 </html>

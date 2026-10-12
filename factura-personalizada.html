@@ -4,511 +4,102 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Avenue Media">
-        <meta name="description" content="Personaliza tus facturas y presupuestos con tu logo, colores corporativos y series de numeración propias. Refleja tu marca en cada documento con Facturales.">
-        <title>Facturales - Personaliza Facturas y Presupuestos</title>
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <meta name="description" content="Personaliza tus facturas y presupuestos con tu logo, plantilla y color de marca. Define tus series de numeración y descarga el PDF. Prueba 14 días.">
+        <title>Facturas personalizadas con tu logo y color | Facturales</title>
+        <!-- SEO -->
+        <link rel="canonical" href="https://facturales.es/factura-personalizada.html">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="theme-color" content="#0B0D17">
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="Facturales">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Facturas personalizadas con tu logo y color | Facturales">
+        <meta property="og:description" content="Personaliza tus facturas y presupuestos con tu logo, plantilla y color de marca. Define tus series de numeración y descarga el PDF. Prueba 14 días.">
+        <meta property="og:url" content="https://facturales.es/factura-personalizada.html">
+        <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Facturas personalizadas con tu logo y color | Facturales">
+        <meta name="twitter:description" content="Personaliza tus facturas y presupuestos con tu logo, plantilla y color de marca. Define tus series de numeración y descarga el PDF. Prueba 14 días.">
+        <meta name="twitter:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta name="twitter:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://facturales.es/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Servicios",
+              "item": "https://facturales.es/service-details.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Personaliza tus facturas",
+              "item": "https://facturales.es/factura-personalizada.html"
+            }
+          ]
+        }
+        </script>
+        <!-- /SEO -->
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/orbit-cta.css">
-        <style>
-            :root {
-                --accent: #E91E63;
-                --accent-light: #FCE4EC;
-                --accent-dark: #C2185B;
-                --header: #0B0D17;
-                --text: #534F5A;
-            }
-
-            /* Hero */
-            .page-hero {
-                padding: 100px 0 80px;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .page-hero::before {
-                content: '';
-                position: absolute;
-                top: -40%;
-                right: -15%;
-                width: 600px;
-                height: 600px;
-                background: radial-gradient(circle, rgba(233,30,99,0.12) 0%, transparent 70%);
-                border-radius: 50%;
-                pointer-events: none;
-            }
-            .hero-tag {
-                display: inline-block;
-                background: rgba(233,30,99,0.15);
-                color: var(--accent);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 20px;
-                font-family: 'Inter', sans-serif;
-                letter-spacing: 0.5px;
-            }
-            .hero-tag i { margin-right: 6px; }
-            .page-hero h1 {
-                font-size: 48px;
-                font-weight: 800;
-                color: #fff;
-                margin-bottom: 20px;
-                line-height: 1.15;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .page-hero h1 .highlight { color: var(--accent); }
-            .page-hero .hero-desc {
-                font-size: 18px;
-                color: rgba(255,255,255,0.7);
-                margin-bottom: 28px;
-                line-height: 1.7;
-                font-family: 'Inter', sans-serif;
-            }
-            .check-features {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px 20px;
-                margin-bottom: 32px;
-            }
-            .check-feature {
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                color: rgba(255,255,255,0.8);
-                font-weight: 500;
-            }
-            .check-feature i {
-                color: var(--accent);
-                margin-right: 8px;
-                font-size: 14px;
-            }
-            .hero-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                padding: 16px 36px;
-                background: var(--accent);
-                color: #fff;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-family: 'Inter', sans-serif;
-            }
-            .hero-cta:hover {
-                background: var(--accent-dark);
-                color: #fff;
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(233,30,99,0.35);
-            }
-
-            /* Mockup */
-            .mockup-card {
-                background: #fff;
-                border-radius: 20px;
-                padding: 32px;
-                box-shadow: 0 25px 80px rgba(0,0,0,0.25);
-                position: relative;
-            }
-            .mockup-card::before {
-                content: '';
-                position: absolute;
-                top: -2px; left: -2px; right: -2px; bottom: -2px;
-                background: linear-gradient(135deg, var(--accent), transparent 60%);
-                border-radius: 22px;
-                z-index: -1;
-                opacity: 0.4;
-            }
-            .mockup-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                margin-bottom: 24px;
-                padding-bottom: 16px;
-                border-bottom: 2px solid #F5F5F5;
-            }
-            .mockup-brand {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-            }
-            .mockup-logo {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-                background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-weight: 800;
-                font-size: 18px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                position: relative;
-            }
-            .mockup-logo-badge {
-                position: absolute;
-                top: -6px;
-                right: -6px;
-                width: 20px;
-                height: 20px;
-                background: #22C55E;
-                border-radius: 50%;
-                border: 2px solid #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 9px;
-                color: #fff;
-            }
-            .mockup-company-name {
-                font-weight: 700;
-                color: var(--header);
-                font-size: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .mockup-company-sub {
-                font-size: 12px;
-                color: var(--text);
-            }
-            .mockup-invoice-num {
-                text-align: right;
-            }
-            .mockup-invoice-label {
-                font-size: 11px;
-                color: #999;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                font-weight: 600;
-            }
-            .mockup-invoice-value {
-                font-weight: 800;
-                color: var(--accent);
-                font-size: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .mockup-color-bar {
-                height: 4px;
-                background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-                border-radius: 2px;
-                margin-bottom: 20px;
-            }
-            .mockup-field {
-                margin-bottom: 16px;
-            }
-            .mockup-field-label {
-                font-size: 12px;
-                color: #999;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                margin-bottom: 4px;
-                font-weight: 600;
-            }
-            .mockup-field-value {
-                font-weight: 700;
-                color: var(--header);
-                font-size: 15px;
-            }
-            .mockup-row {
-                display: flex;
-                justify-content: space-between;
-                padding: 12px 0;
-                border-bottom: 1px solid #F0F0F0;
-                font-size: 15px;
-                color: var(--header);
-            }
-            .mockup-row.total {
-                border-bottom: none;
-                border-top: 2px solid #E8E8E8;
-                margin-top: 8px;
-                padding-top: 14px;
-                font-weight: 800;
-                font-size: 22px;
-                color: var(--accent);
-            }
-            .mockup-highlight-label {
-                display: inline-flex;
-                align-items: center;
-                gap: 4px;
-                font-size: 10px;
-                font-weight: 700;
-                color: var(--accent);
-                background: var(--accent-light);
-                padding: 2px 8px;
-                border-radius: 4px;
-                margin-left: 8px;
-                text-transform: uppercase;
-                letter-spacing: 0.3px;
-            }
-
-            /* Features */
-            .features-section {
-                padding: 100px 0;
-                background: #0F1219;
-                position: relative;
-            }
-            .features-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .section-tag {
-                display: inline-block;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                font-size: 13px;
-                font-weight: 700;
-                padding: 6px 16px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-            }
-            .section-title {
-                font-size: 42px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .section-title .highlight { color: var(--accent); }
-            .section-subtitle {
-                font-size: 17px;
-                color: rgba(255,255,255,0.55);
-                margin-bottom: 60px;
-                line-height: 1.6;
-            }
-            .features-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-            }
-            .feature-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 16px;
-                padding: 32px 28px;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255,255,255,0.06);
-            }
-            .feature-card:hover {
-                background: rgba(255,255,255,0.06);
-                border-color: color-mix(in srgb, var(--accent) 30%, transparent);
-                box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
-                transform: translateY(-4px);
-            }
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 14px;
-                font-size: 24px;
-                margin-bottom: 20px;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                transition: all 0.3s;
-            }
-            .feature-card:hover .feature-icon {
-                background: var(--accent);
-                color: #fff;
-            }
-            .feature-card h3 {
-                font-size: 19px;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 10px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .feature-card p {
-                font-size: 15px;
-                color: rgba(255,255,255,0.55);
-                margin: 0;
-                line-height: 1.6;
-            }
-
-            /* Benefits */
-            .benefits-section {
-                padding: 100px 0;
-                background: #111827;
-                position: relative;
-            }
-            .benefits-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .benefits-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-            }
-            .benefit-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 20px;
-                padding: 36px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                border: 1px solid rgba(255,255,255,0.06);
-                transition: all 0.3s ease;
-                text-align: center;
-            }
-            .benefit-card:hover {
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
-                transform: translateY(-3px);
-                border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-            }
-            .benefit-card-icon {
-                width: 64px;
-                height: 64px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 16px;
-                font-size: 26px;
-                margin: 0 auto 20px;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-            }
-            .benefit-card h3 {
-                font-size: 20px;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 12px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .benefit-card p {
-                font-size: 15px;
-                color: rgba(255,255,255,0.55);
-                margin: 0;
-                line-height: 1.6;
-            }
-
-            @media (max-width: 991px) {
-                .page-hero h1 { font-size: 36px; }
-                .section-title { font-size: 32px; }
-                .features-grid { grid-template-columns: repeat(2, 1fr); }
-                .benefits-grid { grid-template-columns: 1fr; }
-            }
-            @media (max-width: 767px) {
-                .page-hero { padding: 70px 0 60px; }
-                .page-hero h1 { font-size: 30px; }
-                .features-grid { grid-template-columns: 1fr; }
-                .mockup-card { margin-top: 40px; }
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/pages/factura-personalizada.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
 <script src="assets/js/header-include.js"></script>
 
-        <div class="search_popup">
-            <div class="container"><div class="row"><div class="col-xxl-12"><div class="search_wrapper">
-                <div class="search_top d-flex align-items-center">
-                    <div class="search_logo"><a href="index.html"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                    <div class="search_close"><button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button></div>
-                </div>
-                <div class="search_form"><form action="#"><div class="search_input">
-                    <input class="search-input-field" type="text" placeholder="Type here to search...">
-                    <span class="search-focus-border"></span>
-                    <button type="submit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></button>
-                </div></form></div>
-            </div></div></div></div>
-        </div>
-        <div class="search-popup-overlay"></div>
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Personaliza Facturas</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                                <li>/</li>
-                                <li>Personaliza Facturas</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Hero Section -->
                 <section class="page-hero">
                     <div class="container">
+                        <nav class="page-breadcrumb" aria-label="Migas de pan">
+                            <ol>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="service-details.html">Servicios</a></li>
+                                <li aria-current="page">Personaliza tus facturas</li>
+                            </ol>
+                        </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-paintbrush"></i> Personalización</div>
+                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Personalización</div>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">Refleja tu <span class="highlight">identidad de marca</span> en cada documento</h1>
-                                <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Añade tu logo, aplica tus colores corporativos y configura series de numeración propias. Cada factura y presupuesto habla de tu marca.</p>
+                                <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Añade tu logo, elige la plantilla y el color de tu marca y configura series de numeración propias. Cada factura y presupuesto refleja tu marca.</p>
                                 <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Tu logo en cada documento</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Colores corporativos</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Series de numeración</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tu logo en cada documento</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Plantilla y color de marca</div>
+                                    <div class="check-feature"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Series de numeración</div>
                                 </div>
-                                <a href="https://app.facturales.es/signup.html" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="https://app.facturales.es/signup" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
@@ -516,16 +107,16 @@
                                         <div class="mockup-brand">
                                             <div class="mockup-logo">
                                                 TM
-                                                <span class="mockup-logo-badge"><i class="fa-solid fa-check"></i></span>
+                                                <span class="mockup-logo-badge"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
                                             </div>
                                             <div>
-                                                <div class="mockup-company-name">Tu Marca S.L. <span class="mockup-highlight-label"><i class="fa-solid fa-image"></i> Logo</span></div>
+                                                <div class="mockup-company-name">Tu Marca S.L. <span class="mockup-highlight-label"><i class="fa-solid fa-image" aria-hidden="true"></i> Logo</span></div>
                                                 <div class="mockup-company-sub">B-12345678</div>
                                             </div>
                                         </div>
                                         <div class="mockup-invoice-num">
                                             <div class="mockup-invoice-label">N.&ordm; Factura</div>
-                                            <div class="mockup-invoice-value">FACT-2025-042 <span class="mockup-highlight-label"><i class="fa-solid fa-hashtag"></i> Serie</span></div>
+                                            <div class="mockup-invoice-value">F-2026-0042 <span class="mockup-highlight-label"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> Serie</span></div>
                                         </div>
                                     </div>
                                     <div class="mockup-color-bar"></div>
@@ -536,6 +127,7 @@
                                     <div class="mockup-row"><span>Servicio de consultoría</span><span>2.500,00 &euro;</span></div>
                                     <div class="mockup-row"><span>IVA 21%</span><span>525,00 &euro;</span></div>
                                     <div class="mockup-row total"><span>Total</span><span>3.025,00 &euro;</span></div>
+                                    <p class="mockup-note">Datos de ejemplo</p>
                                 </div>
                             </div>
                         </div>
@@ -548,21 +140,21 @@
                         <div class="text-center">
                             <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Personalización</div>
                             <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Haz tuya cada <span class="highlight">factura</span></h2>
-                            <p class="section-subtitle wow fadeInUp" data-wow-delay=".4s">Tres herramientas de personalización para que tus documentos reflejen la profesionalidad de tu negocio</p>
+                            <p class="section-subtitle wow fadeInUp" data-wow-delay=".4s">Tres opciones de personalización para que tus documentos reflejen la profesionalidad de tu negocio</p>
                         </div>
                         <div class="features-grid">
                             <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></div>
                                 <h3>Tu logo corporativo</h3>
-                                <p>Sube el logotipo de tu empresa y aparecerá automáticamente en todas las facturas y presupuestos que generes</p>
+                                <p>Sube el logotipo de tu empresa (PNG, JPG o WebP de hasta 500 KB) y aparecerá automáticamente en tus facturas y presupuestos en PDF</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
-                                <h3>Colores de marca</h3>
-                                <p>Selecciona los colores corporativos de tu empresa para personalizar el aspecto visual de cada documento</p>
+                                <div class="feature-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+                                <h3>Plantilla y color de marca</h3>
+                                <p>Elige la plantilla de tus PDF y el color de tu marca, que se aplica a los encabezados, los totales y los detalles del documento</p>
                             </div>
                             <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-hashtag"></i></div>
+                                <div class="feature-icon"><i class="fa-solid fa-hashtag" aria-hidden="true"></i></div>
                                 <h3>Series de numeración</h3>
                                 <p>Configura series personalizadas para organizar tus facturas y presupuestos con prefijos y formatos propios</p>
                             </div>
@@ -579,19 +171,19 @@
                         </div>
                         <div class="benefits-grid" style="margin-top: 50px;">
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-building"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
                                 <h3>Imagen profesional</h3>
                                 <p>Un documento con tu marca transmite seriedad y profesionalidad. Tus clientes perciben una empresa consolidada y de confianza</p>
                             </div>
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></div>
                                 <h3>Coherencia de marca</h3>
-                                <p>Mantén la misma identidad visual en todos los documentos que envías: facturas, presupuestos y comunicaciones</p>
+                                <p>Mantén la misma identidad visual en todos los documentos que envías: facturas y presupuestos</p>
                             </div>
                             <div class="benefit-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="benefit-card-icon"><i class="fa-solid fa-folder-tree"></i></div>
-                                <h3>Organización impecable</h3>
-                                <p>Con series de numeración personalizadas, clasifica tus documentos por tipo, proyecto o cliente de forma clara y ordenada</p>
+                                <div class="benefit-card-icon"><i class="fa-solid fa-folder-tree" aria-hidden="true"></i></div>
+                                <h3>Más organización</h3>
+                                <p>Con series de numeración propias, separa tus documentos por tipo, ejercicio fiscal o línea de negocio de forma clara y ordenada</p>
                             </div>
                         </div>
                     </div>
@@ -610,102 +202,100 @@
                         <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
                         <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
                         <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
-                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
+                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup" aria-label="Prueba 14 días en Facturales">
                             <span class="facturales-cta-glow"></span>
-                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
+                            <span class="facturales-cta-inner">
+                                <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                <span class="facturales-cta-label">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
+                            </span>
                         </a>
                     </div>
                 </section>
 
+                <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.webp);">
                         <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><a href="index.html" class="footer-logo"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                                        <div class="footer-content">
-                                            <p>Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.</p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">Empezar ahora <i class="fa-solid fa-arrow-up-right"></i></a>
+                            <div class="footer-widget-wrapper">
+                                <div class="row justify-content-between">
+                                    <div class="col-xl-4 col-lg-5 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head">
+                                                <a href="index.html" class="footer-logo">
+                                                    <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="footer-content">
+                                                <p>Facturación para autónomos y pymes: facturas, presupuestos, gastos y clientes en un solo lugar.</p>
+                                                <a href="https://app.facturales.es/signup" class="theme-btn">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Acceso r&aacute;pido</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="https://app.facturales.es/signup.html">Crea una cuenta gratuita</a></li>
-                                            <li><a href="https://app.facturales.es/signin.html">Iniciar sesi&oacute;n</a></li>
-                                            <li><a href="pricing.html">Precios</a></li>
-                                        </ul>
+                                    <div class="col-xl-2 col-lg-3 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Acceso rápido</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="https://app.facturales.es/signup">Crear cuenta</a></li>
+                                                <li><a href="https://app.facturales.es/signin">Iniciar sesión</a></li>
+                                                <li><a href="pricing.html">Precios</a></li>
+                                                <li><a href="faq.html">Preguntas frecuentes</a></li>
+                                                <li><a href="news-grid.html">Blog</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Funcionalidades</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
-                                            <li><a href="crea-envia-facturas.html">Crea y Envía Facturas</a></li>
-                                            <li><a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a></li>
-                                            <li><a href="factura-personalizada.html">Personaliza facturas</a></li>
-                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
-                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
-                                        </ul>
+                                    <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Funcionalidades</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                                <li><a href="crea-envia-facturas.html">Crea y envía facturas</a></li>
+                                                <li><a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a></li>
+                                                <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                                <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                                <li><a href="factura-personalizada.html">Personaliza tus facturas</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Suscríbete al Boletín</h3></div>
-                                        <div class="contact-item">
-                                            <form action="#"><input type="text" placeholder="Email address"></form>
-                                            <button type="submit" class="theme-btn w-100">Subscribe now <i class="fa-solid fa-arrow-up-right"></i></button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Contacto</p></div>
+                                            <div class="footer-content footer-contact">
+                                                <p>¿Tienes dudas? Escríbenos y te respondemos por email.</p>
+                                                <a href="mailto:info@facturales.es" class="footer-mail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@facturales.es</a>
+                                                <a href="faq.html" class="footer-faq-link">Consulta las preguntas frecuentes</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-bottom-wrapper">
+                                <p>© Facturales · AVENUE DIGITAL GROUP, S.L.</p>
+                                <ul class="footer-list">
+                                    <li><a href="https://app.facturales.es/aviso-legal">Aviso legal</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-privacidad">Política de privacidad</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-cookies">Política de cookies</a></li>
+                                    <li><a href="https://app.facturales.es/condiciones-legales">Condiciones legales</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright <span>Facturales.</span> Todos los derechos reservados.</p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li><a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a></li>
-                                <li>।</li>
-                                <li><a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     </div>
                 </footer>
 
             </div>
         </div>
 
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/viewport.jquery.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/gsap.min.js"></script>
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <script src="assets/js/SplitText.min.js"></script>
-        <script src="assets/js/TextPlugin.js"></script>
-        <script src="assets/js/chroma.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <script src="assets/js/parallaxie.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/orbit-cta.js"></script>
+        <!-- Volver arriba: al final del documento para que el orden de tabulación lo deje tras el pie -->
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Scripts (sin jQuery) -->
+        <script src="assets/js/wow.min.js" defer></script>
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/orbit-cta.js" defer></script>
+        <!-- Conmutador v1/v2 (temporal; ver CLAUDE.md): para quitarlo, borra estas dos líneas y assets/js/version-switcher.js -->
+        <script src="assets/js/version-switcher.js" defer></script>
     </body>
 </html>

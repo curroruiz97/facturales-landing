@@ -1,0 +1,48 @@
+/* Estilos de news-grid.html */
+/* Dark theme for blog grid */
+.news-section.section-padding {
+    background: #0F1219;
+    position: relative;
+}
+.news-section.section-padding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+}
+.news-card-items {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.4s ease;
+}
+.news-card-items:hover {
+    border-color: rgba(249,77,0,0.2);
+    box-shadow: 0 20px 50px rgba(249,77,0,0.08);
+    transform: translateY(-6px);
+}
+.news-card-items .news-top-content {
+    background-color: rgba(255,255,255,0.03);
+}
+.news-card-items .news-top-content .news-content h2 a {
+    color: #E8ECF4;
+}
+.news-card-items .news-top-content .news-content h2 a:hover {
+    color: var(--accent-text);
+}
+.news-card-items .news-top-content .news-content time {
+    color: rgba(255,255,255,0.72);
+}
+.news-card-items .news-top-content .read-button {
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+.news-card-items .news-top-content .read-button .link-btn {
+    color: rgba(255,255,255,0.7);
+}
+.news-card-items .news-top-content .read-button .link-btn:hover {
+    color: var(--accent-text);
+}

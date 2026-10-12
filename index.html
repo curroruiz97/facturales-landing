@@ -1,64 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <!--<< Header Area >>-->
     <head>
         <!-- ========== Meta Tags ========== -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Gramentheme">
-        <meta name="description" content="Software de facturación para autónomos y empresas">
+        <meta name="description" content="Programa de facturación online para autónomos y pymes: crea facturas y presupuestos, escanea gastos y gestiona clientes. Prueba Facturales 14 días.">
         <!-- ======== Page title ============ -->
-        <title>Facturales - Software de facturación</title>
+        <title>Programa de facturación para autónomos y pymes | Facturales</title>
+        <!-- SEO -->
+        <link rel="canonical" href="https://facturales.es/">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="theme-color" content="#0B0D17">
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="Facturales">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Programa de facturación para autónomos y pymes | Facturales">
+        <meta property="og:description" content="Programa de facturación online para autónomos y pymes: crea facturas y presupuestos, escanea gastos y gestiona clientes. Prueba Facturales 14 días.">
+        <meta property="og:url" content="https://facturales.es/">
+        <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Programa de facturación para autónomos y pymes | Facturales">
+        <meta name="twitter:description" content="Programa de facturación online para autónomos y pymes: crea facturas y presupuestos, escanea gastos y gestiona clientes. Prueba Facturales 14 días.">
+        <meta name="twitter:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta name="twitter:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@id": "https://facturales.es/#organization",
+          "@type": "Organization",
+          "name": "Facturales",
+          "legalName": "AVENUE DIGITAL GROUP, S.L.",
+          "url": "https://facturales.es/",
+          "logo": "https://facturales.es/assets/img/logo/logo-color.webp",
+          "email": "info@facturales.es",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "info@facturales.es",
+            "availableLanguage": "es"
+          }
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "@id": "https://facturales.es/#software",
+          "name": "Facturales",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://facturales.es/",
+          "inLanguage": "es",
+          "description": "Programa de facturación online para autónomos y pymes: facturas, presupuestos, gastos con OCR, clientes y resumen fiscal.",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://facturales.es/#organization",
+            "name": "Facturales",
+            "url": "https://facturales.es/"
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Starter",
+              "url": "https://facturales.es/pricing.html",
+              "price": "6.45",
+              "priceCurrency": "EUR",
+              "description": "Plan Starter: 6,45 € al mes, o 4,95 € al mes con facturación anual (59,40 € al año). Precios sin IVA.",
+              "availability": "https://schema.org/InStock",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "6.45",
+                  "priceCurrency": "EUR",
+                  "unitCode": "MON",
+                  "valueAddedTaxIncluded": false
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "59.40",
+                  "priceCurrency": "EUR",
+                  "unitCode": "ANN",
+                  "valueAddedTaxIncluded": false
+                }
+              ]
+            },
+            {
+              "@type": "Offer",
+              "name": "Pro",
+              "url": "https://facturales.es/pricing.html",
+              "price": "11.95",
+              "priceCurrency": "EUR",
+              "description": "Plan Pro: 11,95 € al mes, o 8,95 € al mes con facturación anual (107,40 € al año). Precios sin IVA.",
+              "availability": "https://schema.org/InStock",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "11.95",
+                  "priceCurrency": "EUR",
+                  "unitCode": "MON",
+                  "valueAddedTaxIncluded": false
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "107.40",
+                  "priceCurrency": "EUR",
+                  "unitCode": "ANN",
+                  "valueAddedTaxIncluded": false
+                }
+              ]
+            },
+            {
+              "@type": "Offer",
+              "name": "Ilimitado",
+              "url": "https://facturales.es/pricing.html",
+              "price": "23.95",
+              "priceCurrency": "EUR",
+              "description": "Plan Ilimitado: 23,95 € al mes, o 17,95 € al mes con facturación anual (215,40 € al año). Precios sin IVA.",
+              "availability": "https://schema.org/InStock",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "23.95",
+                  "priceCurrency": "EUR",
+                  "unitCode": "MON",
+                  "valueAddedTaxIncluded": false
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "215.40",
+                  "priceCurrency": "EUR",
+                  "unitCode": "ANN",
+                  "valueAddedTaxIncluded": false
+                }
+              ]
+            }
+          ]
+        }
+        </script>
+        <!-- /SEO -->
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
         <!--<< Swiper Bundle.css >>-->
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
-        </button>
 
         <!-- GT MouseCursor Start -->
         <div class="mouseCursor cursor-outer"></div>
@@ -66,105 +169,40 @@
 
        
 
-         <!-- Header-Top Section Start -->
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
 <script src="assets/js/header-include.js"></script>
 
-        <!-- start: Search Popup -->
-        <div class="search_popup">
-            <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                <div class="search_wrapper">
-                    <div class="search_top d-flex align-items-center">
-                    <div class="search_logo">
-                        <a href="index.html">
-                        <img src="assets/img/logo/logo-white.svg" alt="img">
-                        </a>
-                    </div>
-                    <div class="search_close">
-                        <button type="button" class="search_close_btn">
-                        <i class="fa-thin fa-times"></i>
-                        </button>
-                    </div>
-                    </div>
-                    <div class="search_form">
-                    <form action="#">
-                        <div class="search_input">
-                        <input class="search-input-field" type="text" placeholder="Type here to search...">
-                        <span class="search-focus-border"></span>
-                        <button type="submit">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="search-popup-overlay"></div>
 
         
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
                 
                  <!-- Hero Section Start -->
-                <section class="hero-section hero-1 fix bg-cover" style="background-image: url(assets/img/home-1/hero/hero-bg.jpg);">
+                <section class="hero-section hero-1 fix bg-cover" style="background-image: url(assets/img/home-1/hero/hero-bg.webp);">
                     <div class="container custom-container">
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h6>
-                                        <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                        Suite de facturación electrónica
-                                    </h6>
+                                    <span class="hero-eyebrow">
+                                        <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                        Programa de facturación online
+                                    </span>
                                     <h1 class="text-anims">
-                                        Factura en segundos Automatiza tu empresa
+                                        Facturación para autónomos y pymes
                                     </h1>
                                     <p class="wow fadeInUp" data-wow-delay=".3s">
-                                        Gestiona, automatiza y optimiza tu tiempo.<br>Todo el control de tus finanzas en un solo lugar.
+                                        Crea y envía facturas y presupuestos, escanea tus gastos y consulta tu resumen fiscal en un solo lugar. Prueba Facturales 14 días y cancela cuando quieras.
                                     </p>
                                     <div class="hero-btn text-anims">
-                                         <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                           Regístrate ahora gratis<i class="fa-solid fa-arrow-up-right"></i>
+                                        <a href="https://app.facturales.es/signup" class="theme-btn">
+                                            Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                         </a>
-                                        <a href="https://app.facturales.es/signin.html" class="theme-btn style-2">
-                                           Accede a tu cuenta <i class="fa-solid fa-arrow-up-right"></i>
+                                        <a href="pricing.html" class="theme-btn style-2">
+                                            Ver precios <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="ratting-image wow fadeInUp" data-wow-delay=".7s">
-                                    <img src="assets/img/home-1/hero/rating.png" alt="img">
-                                </div>
-                                -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="hero-image">
@@ -222,45 +260,45 @@
                     <div class="container">
                         <div class="section-title">
                             <span class="sub-title mb-0">
-                                <img src="assets/img/home-1/hero/setting.png" alt="img">
+                                <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
                                 Sobre Facturales
                             </span>
-                            <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
-                                Qué puedes hacer con el programa de <br> facturación online de Facturales <br> 
+                            <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+                                Qué puedes hacer con el programa de facturación online de Facturales
                             </h2>
                         </div>
                         <div class="about-wrapper">
                             <div class="row g-4">
-                            <div class="col-lg-4">
+                                <div class="col-lg-4">
                                     <div class="about-image about-image-feature">
                                         <div class="about-feature-badge">Facturales</div>
-                                        <h4>Control total de facturas, clientes y cobros</h4>
+                                        <h3>Control total de facturas, clientes y cobros</h3>
                                         <ul>
-                                            <li><i class="fa-solid fa-check"></i> Emite facturas y tickets en segundos</li>
-                                            <li><i class="fa-solid fa-check"></i> Personaliza presupuestos con tu marca</li>
-                                            <li><i class="fa-solid fa-check"></i> Visualiza ingresos y gastos al instante</li>
+                                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Emite facturas y presupuestos en pocos pasos</li>
+                                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Personaliza tus documentos con tu logo y tu color</li>
+                                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Consulta ingresos y gastos en tu panel</li>
                                         </ul>
-                                        <a href="https://app.facturales.es/signup.html" class="theme-btn">Solicitar demo <i class="fa-solid fa-arrow-up-right"></i></a>
+                                        <a href="https://app.facturales.es/signup" class="theme-btn">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
                                     </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="about-content">
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="about-content">
                                         <div class="about-item">
                                             <div class="count-item">
-                                                <h2><span class="count">16</span><sup>+</sup></h2>
-                                                <h5>
-                                                    Ahorra hasta 16 horas <br> semanales en gestión administrativa*.
-                                                </h5>
+                                                <p class="count-number">14</p>
+                                                <p class="count-caption">
+                                                    días de prueba gratuita para probar Facturales con tus propios datos.
+                                                </p>
                                             </div>
                                             <div class="content-box text-anims">
                                                 <p>
-                                                    Hemos creado Facturales para que emitas facturas, presupuestos, tickets y albaranes de forma rápida, segura y sin errores.
+                                                    Hemos creado Facturales para que emitas facturas y presupuestos de forma rápida y ordenada, con tus clientes y tus productos siempre a mano.
                                                 </p>
                                                 <p>
-                                                    y lo mejor de todo, <strong>el acceso al programa es gratuito.</strong>
+                                                    <strong>Pruébalo durante 14 días y cancela cuando quieras.</strong>
                                                 </p>
-                                                <a href="about.html" class="theme-btn">
-                                                   Crear cuenta gratis <i class="fa-solid fa-arrow-up-right"></i>
+                                                <a href="https://app.facturales.es/signup" class="theme-btn">
+                                                    Crear cuenta <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -277,279 +315,244 @@
                         <div class="section-title-area">
                             <div class="section-title">
                                 <span class="sub-title style-3 wow fadeInUp">
-                                    <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                     Conoce nuestros servicios
+                                    <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                    Conoce nuestros servicios
                                 </span>
                                 <h2 class="text-anim">
-                                    Simplificamos la contabilidad <br> de tu empresa.
+                                    Simplificamos la contabilidad de tu empresa
                                 </h2>
                             </div>
-                            
+
                             <div class="array-button wow fadeInUp" data-wow-delay=".5s">
-                                <button class="array-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button class="array-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                <button class="array-prev" type="button" aria-label="Servicios anteriores"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                                <button class="array-next" type="button" aria-label="Servicios siguientes"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper service-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-chart-line"></i>
+                    <div class="container">
+                        <div class="swiper service-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a>
+                                            </h3>
+                                            <p>
+                                                Panel con tus ingresos, gastos y facturas pendientes de cobro.
+                                            </p>
+                                            <a href="tu-negocio-bajo-control.html" class="theme-btn" aria-label="Más información: Tu negocio bajo control">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a>
-                                        </h3>
-                                        <p>
-                                            Panel de control completo con estadísticas en tiempo real.
-                                        </p>
-                                        <a href="tu-negocio-bajo-control.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="crea-envia-facturas.html">Crea y envía facturas</a>
+                                            </h3>
+                                            <p>
+                                                Genera facturas profesionales y envíalas por email.
+                                            </p>
+                                            <a href="crea-envia-facturas.html" class="theme-btn" aria-label="Más información: Crea y envía facturas">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a>
+                                            </h3>
+                                            <p>
+                                                Presupuestos que puedes convertir en facturas con un clic.
+                                            </p>
+                                            <a href="crea-envia-presupuestos.html" class="theme-btn" aria-label="Más información: Crea y envía presupuestos">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="escanea-gastos.html">Escanea gastos</a>
+                                            </h3>
+                                            <p>
+                                                Digitaliza tickets y facturas de gasto con OCR.
+                                            </p>
+                                            <a href="escanea-gastos.html" class="theme-btn" aria-label="Más información: Escanea gastos">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-users" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="gestiona-clientes.html">Gestiona clientes</a>
+                                            </h3>
+                                            <p>
+                                                Clientes y proveedores en un solo lugar, con su facturación y saldo.
+                                            </p>
+                                            <a href="gestiona-clientes.html" class="theme-btn" aria-label="Más información: Gestiona clientes">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-box-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
+                                                <a href="factura-personalizada.html">Personaliza tus facturas</a>
+                                            </h3>
+                                            <p>
+                                                Añade tu logo y el color de tu marca a facturas y presupuestos.
+                                            </p>
+                                            <a href="factura-personalizada.html" class="theme-btn" aria-label="Más información: Personaliza tus facturas">
+                                                Más información <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-file-invoice"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="crea-envia-facturas.html">Crea y Envía Facturas</a>
-                                        </h3>
-                                        <p>
-                                            Genera facturas profesionales en segundos.
-                                        </p>
-                                        <a href="crea-envia-facturas.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="swiper-dot">
+                                <div class="dot"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a>
-                                        </h3>
-                                        <p>
-                                            Presupuestos que puedes convertir en facturas con un clic.
-                                        </p>
-                                        <a href="crea-envia-presupuestos.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-boxes-stacked"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="gestiona-tu-stock.html">Gestiona tu stock</a>
-                                        </h3>
-                                        <p>
-                                            Control de inventario y gestión de productos.
-                                        </p>
-                                        <a href="gestiona-tu-stock.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-receipt"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="escanea-gastos.html">Escanea gastos</a>
-                                        </h3>
-                                        <p>
-                                            Digitaliza recibos y gestiona gastos fácilmente.
-                                        </p>
-                                        <a href="escanea-gastos.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-users"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="gestiona-clientes.html">Gestiona clientes</a>
-                                        </h3>
-                                        <p>
-                                            Base de datos completa de clientes.
-                                        </p>
-                                        <a href="gestiona-clientes.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-box-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-palette"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>
-                                            <a href="factura-personalizada.html">Factura personalizada</a>
-                                        </h3>
-                                        <p>
-                                            Personaliza con tu logo y colores corporativos.
-                                        </p>
-                                        <a href="factura-personalizada.html" class="theme-btn">
-                                           Más Información <i class="fa-solid fa-arrow-up-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-dot">
-                            <div class="dot"></div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Project Section Start -->
+                <!-- Funcionalidades Section Start -->
                 <section class="project-section section-padding fix">
                     <div class="container">
                         <div class="section-title text-center">
                             <span class="sub-title wow fadeInUp">
-                                <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                Nuestro Proyecto
+                                <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                Funcionalidades
                             </span>
                             <h2 class="text-anim">
-                                Los servicios más reconocidos
+                                Lo que puedes hacer con Facturales
                             </h2>
                         </div>
                         <div class="project-box-wrapper project-panel-area">
                             <div class="project-card-items project-panel">
-                                <h4>01.</h4>
+                                <span class="project-number">01.</span>
                                 <div class="project-content">
                                     <h3 class="project-title-compact">
-                                        <a href="service-details.html">Crea facturas y tickets fácil y sin errores</a>
+                                        <a href="crea-envia-facturas.html">Crea facturas y presupuestos en pocos pasos</a>
                                     </h3>
                                     <p>
-                                       ¡Ahorra hasta 16 horas de facturación al mes!<br>Con Facturales, puedes crear facturas, presupuestos, tickets de<br>compra, facturas, proformas, albaranes y mucho más en menos de<br>un minuto.<br>Hemos creado un programa de facturación adaptado a las<br>necesidades de autónomos y pymes.
+                                        Eliges el cliente, añades los conceptos y Facturales calcula la base imponible, los impuestos y los totales. Guarda borradores, descarga el PDF o envíalo por email al cliente. Un programa de facturación adaptado a las necesidades de autónomos y pymes.
                                     </p>
-                                    <a href="project-details.html" class="theme-btn">
-                                        Saber más <i class="fa-solid fa-arrow-up-right"></i>
+                                    <a href="crea-envia-facturas.html" class="theme-btn">
+                                        Saber más <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
-                                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #F5F5F5;">
-                                            <span style="font-size:16px;font-weight:700;color:#0B0D17;">Nueva Factura</span>
-                                            <span style="font-size:12px;color:#ec8228;font-weight:600;background:#FFF0E5;padding:4px 12px;border-radius:12px;"><i class="fa-solid fa-check-circle"></i> Borrador</span>
+                                    <div class="mock-card" role="img" aria-label="Ejemplo de factura en borrador con base imponible, IVA y total">
+                                        <div class="mock-card-head">
+                                            <span class="mock-card-title">Nueva factura</span>
+                                            <span class="mock-badge"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Borrador</span>
                                         </div>
-                                        <div style="margin-bottom:14px;">
-                                            <div style="font-size:12px;color:#999;margin-bottom:3px;">Cliente</div>
-                                            <div style="font-weight:600;color:#0B0D17;font-size:14px;">Empresa Ejemplo S.L.</div>
-                                            <div style="font-size:12px;color:#534F5A;">B-12345678</div>
+                                        <div class="mock-field">
+                                            <div class="mock-label">Cliente</div>
+                                            <div class="mock-value">Empresa Ejemplo S.L.</div>
+                                            <div class="mock-sub">B-12345678</div>
                                         </div>
-                                        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F0;font-size:14px;color:#534F5A;"><span>Base imponible</span><span style="font-weight:600;color:#0B0D17;">1.500,00 €</span></div>
-                                        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F0;font-size:14px;color:#534F5A;"><span>IVA 21%</span><span style="font-weight:600;color:#4CAF50;">+315,00 €</span></div>
-                                        <div style="display:flex;justify-content:space-between;padding:14px 0 0;font-size:20px;font-weight:700;color:#ec8228;border-top:2px solid #E0E0E0;margin-top:8px;"><span>Total</span><span>1.815,00 €</span></div>
-                                        <div style="margin-top:16px;">
-                                            <div style="width:100%;padding:11px;background:#ec8228;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:14px;text-align:center;"><i class="fa-solid fa-paper-plane"></i> Guardar y enviar</div>
-                                        </div>
+                                        <div class="mock-row"><span>Base imponible</span><strong>1.500,00 €</strong></div>
+                                        <div class="mock-row"><span>IVA 21%</span><strong class="mock-pos">+315,00 €</strong></div>
+                                        <div class="mock-total"><span>Total</span><span>1.815,00 €</span></div>
+                                        <div class="mock-btn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Guardar y enviar</div>
+                                        <div class="mock-note">Datos de ejemplo</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="project-card-items project-panel">
-                                <h4>02.</h4>
+                                <span class="project-number">02.</span>
                                 <div class="project-content">
                                     <h3 class="project-title-compact">
-                                        <a href="service-details.html">Personaliza facturas y presupuestos con tu marca</a>
+                                        <a href="factura-personalizada.html">Personaliza facturas y presupuestos con tu marca</a>
                                     </h3>
                                     <p>
-                                        Puedes elegir entre las diferentes plantillas profesionales disponibles para personalizar tus facturas y presupuestos con tu marca. Adaptando tus documentos y comunicaciones a tu imagen corporativa, como la inclusión de tu logotipo, tipografía y colores.
+                                        Sube tu logo y elige el color de marca y la plantilla de tus facturas y presupuestos en PDF para que tus documentos reflejen la imagen de tu negocio.
                                     </p>
-                                    <a href="service-details.html" class="theme-btn">
-                                        Personaliza facturas <i class="fa-solid fa-arrow-up-right"></i>
+                                    <a href="factura-personalizada.html" class="theme-btn">
+                                        Personaliza facturas <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
-                                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-                                            <div style="width:44px;height:44px;background:#FFF0E5;border-radius:10px;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-palette" style="color:#ec8228;font-size:20px;"></i></div>
+                                    <div class="mock-card" role="img" aria-label="Ejemplo de factura con logo, color de marca y número de serie">
+                                        <div class="mock-brand">
+                                            <div class="mock-brand-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
                                             <div>
-                                                <div style="font-size:16px;font-weight:700;color:#0B0D17;">TU EMPRESA S.A.</div>
-                                                <div style="font-size:12px;color:#534F5A;">Factura Nº F-2025-042</div>
+                                                <div class="mock-card-title">TU EMPRESA S.A.</div>
+                                                <div class="mock-sub">Factura Nº F-2026-0042</div>
                                             </div>
                                         </div>
-                                        <div style="background:#FFF8F2;border-left:3px solid #ec8228;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:16px;">
-                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#534F5A;margin-bottom:6px;font-weight:600;"><span>Concepto</span><span>Importe</span></div>
-                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#0B0D17;margin-bottom:4px;"><span>Consultoría estratégica</span><span>1.200,00 €</span></div>
-                                            <div style="display:flex;justify-content:space-between;font-size:13px;color:#0B0D17;"><span>Diseño de marca</span><span>850,00 €</span></div>
+                                        <div class="mock-lines">
+                                            <div class="mock-lines-head"><span>Concepto</span><span>Importe</span></div>
+                                            <div class="mock-line"><span>Consultoría estratégica</span><span>1.200,00 €</span></div>
+                                            <div class="mock-line"><span>Diseño de marca</span><span>850,00 €</span></div>
                                         </div>
-                                        <div style="display:flex;gap:8px;margin-bottom:14px;">
-                                            <div style="flex:1;height:6px;background:#ec8228;border-radius:3px;"></div>
-                                            <div style="flex:1;height:6px;background:#FDD835;border-radius:3px;"></div>
-                                            <div style="flex:1;height:6px;background:#0B0D17;border-radius:3px;"></div>
-                                        </div>
-                                        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#534F5A;">
-                                            <i class="fa-solid fa-swatchbook" style="color:#ec8228;"></i> Personaliza colores, logo y tipografía
-                                        </div>
+                                        <div class="mock-swatches" aria-hidden="true"><span></span><span></span><span></span></div>
+                                        <div class="mock-foot"><i class="fa-solid fa-swatchbook" aria-hidden="true"></i> Elige plantilla, logo y color de marca</div>
+                                        <div class="mock-note">Datos de ejemplo</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="project-card-items mb-0 project-panel">
-                                <h4>03.</h4>
+                                <span class="project-number">03.</span>
                                 <div class="project-content">
                                     <h3 class="project-title-compact">
-                                        <a href="service-details.html">Controla tus ingresos y gastos en tiempo real</a>
+                                        <a href="tu-negocio-bajo-control.html">Controla tus ingresos y gastos</a>
                                     </h3>
                                     <p>
-                                        Organiza y gestiona las facturas de tus clientes y proveedores desde un<br>mismo sitio.<br>Ten el control de tu negocio y supervisa tu facturación en tiempo<br>real desde tu ordenador o teléfono móvil, estés donde estés.
+                                        Organiza las facturas de tus clientes y las de tus proveedores desde un mismo sitio y consulta ingresos, gastos y beneficio por trimestre o por año natural, desde el ordenador, la tablet o el móvil.
                                     </p>
-                                    <a href="service-details.html" class="theme-btn">
-                                        Controla tus ingresos y gastos <i class="fa-solid fa-arrow-up-right"></i>
+                                    <a href="tu-negocio-bajo-control.html" class="theme-btn">
+                                        Controla tus ingresos y gastos <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="project-thumb scale">
-                                    <div style="background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.10);max-width:370px;font-family:'Inter',sans-serif;">
-                                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-                                            <div style="width:40px;height:40px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-chart-line" style="color:#4CAF50;font-size:18px;"></i></div>
-                                            <span style="font-size:15px;font-weight:700;color:#0B0D17;">Ingresos Totales</span>
+                                    <div class="mock-card" role="img" aria-label="Ejemplo de panel con ingresos, gastos y gastos deducibles">
+                                        <div class="mock-stat-head">
+                                            <span class="mock-stat-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+                                            <span class="mock-card-title">Ingresos totales</span>
                                         </div>
-                                        <div style="font-size:36px;font-weight:800;color:#0B0D17;margin-bottom:6px;">5.240 €</div>
-                                        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#4CAF50;margin-bottom:20px;"><i class="fa-solid fa-arrow-trend-up"></i> <span style="font-weight:600;">+3,5%</span> <span style="color:#534F5A;">que la semana pasada</span></div>
-                                        <div style="display:flex;gap:12px;margin-bottom:14px;">
-                                            <div style="flex:1;background:#FFEBEE;border-radius:10px;padding:14px;text-align:center;">
-                                                <div style="font-size:11px;color:#999;margin-bottom:4px;">Gastos</div>
-                                                <div style="font-size:18px;font-weight:700;color:#F44336;">3.840 €</div>
-                                            </div>
-                                            <div style="flex:1;background:#FFF0E5;border-radius:10px;padding:14px;text-align:center;">
-                                                <div style="font-size:11px;color:#999;margin-bottom:4px;">Deducible</div>
-                                                <div style="font-size:18px;font-weight:700;color:#ec8228;">2.850 €</div>
-                                            </div>
+                                        <div class="mock-stat-value">5.240 €</div>
+                                        <div class="mock-stat-trend"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> <strong>+3,5%</strong> <span>frente al periodo anterior</span></div>
+                                        <div class="mock-stat-pair">
+                                            <div class="mock-stat is-red"><small>Gastos</small><strong>3.840 €</strong></div>
+                                            <div class="mock-stat is-orange"><small>Deducible</small><strong>2.850 €</strong></div>
                                         </div>
-                                        <div style="display:flex;align-items:end;gap:4px;height:50px;padding-top:6px;">
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:30%;"></div>
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:50%;"></div>
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:35%;"></div>
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:70%;"></div>
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:55%;"></div>
-                                            <div style="flex:1;background:#4CAF50;border-radius:3px 3px 0 0;height:90%;"></div>
-                                            <div style="flex:1;background:#E8F5E9;border-radius:3px 3px 0 0;height:100%;"></div>
-                                        </div>
+                                        <div class="mock-bars" aria-hidden="true"><span class="" style="height:30%"></span><span class="" style="height:50%"></span><span class="" style="height:35%"></span><span class="" style="height:70%"></span><span class="" style="height:55%"></span><span class="is-top" style="height:90%"></span><span class="" style="height:100%"></span></div>
+                                        <div class="mock-note">Datos de ejemplo</div>
                                     </div>
                                 </div>
                             </div>
@@ -557,523 +560,131 @@
                     </div>
                 </section>
 
-                <!-- Counter Section Start -->
-                <section class="counter-section section-padding fix bg-cover" style="background-image: url(assets/img/home-1/bg.jpg);">
+                <!-- Contacto Section Start -->
+                <section class="counter-section section-padding fix bg-cover" style="background-image: url(assets/img/home-1/bg.webp);">
                     <div class="container">
                         <div class="counter-wrapper">
-                            <div class="row g-4">
-                                <div class="col-xl-6 col-lg-7">
-                                    <div class="row g-4">
-                                        <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
-                                                <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                                    <div class="counter-top-item">
-                                                        <h2><i class="fa-solid fa-comments" style="font-size: 48px; color: #ec8228;"></i></h2>
-                                                        <div class="top-right">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                    <h4>Pregúntanos en tiempo real</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
-                                                <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                                    <div class="counter-top-item">
-                                                        <h2><i class="fa-solid fa-envelope" style="font-size: 48px; color: #ec8228;"></i></h2>
-                                                        <div class="top-right">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                    <h4>Escríbenos por email</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
-                                                <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                                    <div class="counter-top-item">
-                                                        <h2><i class="fa-solid fa-phone" style="font-size: 48px; color: #ec8228;"></i></h2>
-                                                        <div class="top-right">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                    <h4>Llámanos por teléfono</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 text-anims">
-                                            <a href="https://app.facturales.es/signup.html" style="text-decoration: none; color: inherit;">
-                                                <div class="counter-box-item" style="cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                                    <div class="counter-top-item">
-                                                        <h2><i class="fa-solid fa-paper-plane" style="font-size: 48px; color: #ec8228;"></i></h2>
-                                                        <div class="top-right">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                    </div>
-                                                    <h4>Envía un formulario</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="row g-4 align-items-center">
                                 <div class="col-xl-6 col-lg-5">
                                     <div class="counter-content">
-                                         <div class="section-title mb-0">
+                                        <div class="section-title mb-0">
                                             <span class="sub-title style-2 text-white wow fadeInUp">
-                                                <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                                  Contacto
+                                                <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                                Contacto
                                             </span>
                                             <h2 class="text-white text-anim">
-                                             ¿Necesitas ayuda?
+                                                ¿Necesitas ayuda?
                                             </h2>
                                         </div>
                                         <p class="text">
-                                            Somos más que un programa para facturar. <span>Somos personas ayudando a personas.</span> <br> Horario:<br> Lunes a Jueves: 09:00h a 18:00h <br> Viernes: 09:00h a 15:00h
-                                        </p>
-                                        <div class="video-circle">
-                                            <a href="https://www.youtube.com/watch?v=Rrqswsdz05Q" class="video-btn ripple video-popup">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                            <div class="text-circle">
-                                                <img src="assets/img/home-1/hero/text.png" alt="img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-top-item" style="display: none;">
-                        <div class="container">
-                            <div class="section-title-area">
-                                <div class="section-title mb-0">
-                                    <span class="sub-title style-2 text-white mb-0">
-                                        <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                            Business Growth
-                                    </span>
-                                </div>
-                                <div class="section-right">
-                                    <div class="section-title mb-0">
-                                        <h2 class="text-white">
-                                            Innovate, Integrate, And <br> Scale Your Business
-                                        </h2>
-                                        <p class="mt-3">
-                                            Businesses to thrive in changing digital  world. With over a decade.
+                                            Somos más que un programa para facturar. <span>Somos personas ayudando a personas.</span> Escríbenos y te responderemos por email.
                                         </p>
                                     </div>
-                                     <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                      More integration <i class="fa-solid fa-arrow-up-right"></i>
+                                </div>
+                                <div class="col-xl-6 col-lg-7">
+                                    <a href="mailto:info@facturales.es" class="counter-box-item contact-card">
+                                        <span class="contact-card-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                                        <span class="contact-card-text">
+                                            <span class="contact-card-title">Escríbenos por email</span>
+                                            <span class="contact-card-mail">info@facturales.es</span>
+                                        </span>
                                     </a>
+                                    <p class="contact-faq">¿Prefieres consultar antes? Lee las <a href="faq.html">preguntas frecuentes</a>.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper box-slider">
-                            <div class="swiper-wrapper slide-transtion">
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/01.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/02.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/03.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/04.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/05.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/06.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/07.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/08.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/09.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/10.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/11.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/12.png" alt="img">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div dir="rtl" class="swiper box-slider-2 mt-3">
-                            <div class="swiper-wrapper slide-transtion">
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/10.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/11.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/08.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/13.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/12.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/14.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/15.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/02.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/16.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/01.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/17.png" alt="img">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide brand-slide-element">
-                                    <div class="feature-icon-item">
-                                        <img src="assets/img/home-1/feature/04.png" alt="img">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Testimonial Section Start -->
-                <section class="testimonial-section section-padding fix" style="padding-bottom: 40px;">
-                    <div class="array-button">
-                        <button class="array-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="array-next"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <span class="sub-title wow fadeInUp">
-                                <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                 TESTIMONIOS DE CLIENTES
-                            </span>
-                            <h2 class="text-anim">
-                                Lo que dicen nuestros <br>
-                                clientes sobre Facturales
-                            </h2>
-                        </div>
-                        <div class="swiper testimonial-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-item">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <p>
-                                            “Facturales ha revolucionado la gestión de mi negocio. la facturación electrónica es muy intuitiva y el cumplimiento con VeriFactu me da tranquilidad total. Además, el soporte técnico es excelente y responden rápidamente.”
-                                        </p>
-                                        <div class="client-info-item">
-                                            <div class="info-item">
-                                                <div class="content">
-                                                    <h4>María García López</h4>
-                                                    <span>Autónoma - Diseño Gráfico</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-item">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <p>
-                                            “Desde que uso Facturales ahorro más de 10 horas al mes en gestión administrativa. el control de gastos y la analítica son impresionantes. Perfecta para pequeñas empresas que quieren profesionalizar su gestión.”
-                                        </p>
-                                        <div class="client-info-item">
-                                            <div class="info-item">
-                                                <div class="content">
-                                                    <h4>Carlos Martínez Ruiz</h4>
-                                                    <span>Gerente - Consultoría IT</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-item">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            
-                                        </div>
-                                        <p>
-                                            “Muy buena herramienta en general. la interfaz es clara y fácil de usar. Me gustaría que tuviera más opciones de personalización en las plantillas de facturas, pero por el precio que tiene, cumple perfectamente con lo esperado.”
-                                        </p>
-                                        <div class="client-info-item">
-                                            <div class="info-item">
-                                                <div class="content">
-                                                    <h4>Laura Fernández Soto</h4>
-                                                    <span>Propietaria - Tienda Online</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-item">
-                                        <div class="star">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            
-                                        </div>
-                                        <p>
-                                            “Lo mejor que he encontrado para llevar la contabilidad de mi asesoría. las integraciones con otras herramientas son fantásticas y el escaneo de gastos con OCR funciona a la perfección. Totalmente recomendable para profesionales.”
-                                        </p>
-                                        <div class="client-info-item">
-                                            <div class="info-item">
-                                                <div class="content">
-                                                    <h4>Javier Torres Méndez</h4>
-                                                    <span>Asesor Fiscal</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-dot">
-                            <div class="dot"></div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Faq Section Start -->
-                <section class="faq-section fix section-padding" style="padding-top: 40px;">
+                <section class="faq-section fix section-padding">
                     <div class="container">
                         <div class="section-title text-center">
                             <span class="sub-title wow fadeInUp">
-                                <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                Preguntas Frecuentes
+                                <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                Preguntas frecuentes
                             </span>
                             <h2 class="text-anim">
-                               Todo lo que necesitas <br>
-                                saber sobre Facturales
+                                Todo lo que necesitas saber sobre Facturales
                             </h2>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-xl-10">
                                 <div class="faq-items">
                                     <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingOne">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="headingOne">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                   1. ¿Qué es Facturales y a quién está dirigido?
+                                                    ¿Qué es Facturales y a quién está dirigido?
                                                 </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample" role="region">
+                                            </h3>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                                data-bs-parent="#accordionExample" role="region">
                                                 <div class="accordion-body">
-                                                    <p>
-                                                       Facturales es una herramienta de facturación y contabilidad en la nube diseñada para autónomos y pequeñas empresas. Permite emitir facturas electrónicas, registrar gastos y llevar la contabilidad de ingresos y gastos en un solo lugar, ayudando a cumplir con la normativa española de facturación.
-                                                    </p>
+                                                    <p>Facturales es una aplicación web de facturación para autónomos y pequeñas empresas en España. Permite emitir facturas y presupuestos, registrar gastos, gestionar clientes y proveedores y consultar un resumen fiscal en un solo lugar.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
-                                            <h2 class="accordion-header" id="headingTwo">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="headingTwo">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    2. ¿Cómo cumple Facturales con la normativa VeriFactu de la AEAT?
+                                                    ¿Facturales cumple con Veri*Factu?
                                                 </button>
-                                            </h2>
+                                            </h3>
                                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                                 data-bs-parent="#accordionExample" role="region">
                                                 <div class="accordion-body">
-                                                    <p>
-                                                     la normativa VeriFactu de la Agencia Tributaria exige que, a partir de 2027, todas las facturas digitales se emitan mediante programas certificados adaptados al reglamento. Facturales está diseñado para adaptarse a estas exigencias: genera facturas que incluyen todos los datos fiscales obligatorios y puede enviar los registros de forma segura a la AEAT, garantizando la integridad y trazabilidad de la información.
-                                                    </p>
+                                                    <p>Estamos preparando Facturales para Veri*Factu, obligatorio a partir de 2027 (1 de enero de 2027 para sociedades y 1 de julio de 2027 para el resto). Cada factura emitida es inalterable y se numera de forma correlativa. Todavía no enviamos registros de facturación a la AEAT. Más detalles en nuestra <a href="verifactu-2027-guia-autonomos-pymes.html">guía de Veri*Factu</a>.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                            <h2 class="accordion-header" id="headingthree">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="headingThree">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsethree" aria-expanded="false"
-                                                    aria-controls="collapsethree">
-                                                    3. ¿Qué funcionalidades de facturación ofrece Facturales?
+                                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    ¿Qué incluye la prueba de 14 días?
                                                 </button>
-                                            </h2>
-                                            <div id="collapsethree" class="accordion-collapse collapse"
-                                                aria-labelledby="headingthree" data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                        Al emitir una factura puedes completar los datos del emisor y el cliente, seleccionar la serie y el número, definir referencias internas, añadir líneas de conceptos con descripción, cantidad, precio e impuestos y aplicar descuentos o retenciones. El sistema permite guardar borradores y emitir las facturas cuando estén listas, y mantiene un listado de facturas emitidas con su estado de pago.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingfour">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsefour" aria-expanded="false"
-                                                    aria-controls="collapsefour">
-                                                    4. ¿Cómo se registran y controlan los gastos?
-                                                </button>
-                                            </h2>
-                                            <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                                            </h3>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                                 data-bs-parent="#accordionExample" role="region">
                                                 <div class="accordion-body">
-                                                    <p>
-                                                        En la sección "Gastos", puedes añadir y revisar tus gastos registrados. La interfaz es funcional y amigable, permitiéndote hacer una búsqueda por proveedor, concepto, fecha y filtrar por categoría o importe gastado. Cada gasto registrado te muestra el proveedor, el concepto, la fecha y el importe, facilitando el control y la deducción de gastos en tu contabilidad.
-                                                    </p>
+                                                    <p>Puedes usar Facturales durante 14 días con el plan que elijas. Se solicita un método de pago al contratar y puedes cancelar cuando quieras desde la aplicación. Consulta los límites de cada plan en la página de <a href="pricing.html">precios</a>.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingfive">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="headingFour">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsefive" aria-expanded="false"
-                                                    aria-controls="collapsefive">
-                                                    5. ¿Integra la contabilidad de ingresos y gastos en un panel de análisis?
+                                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    ¿Cómo se registran los gastos?
                                                 </button>
-                                            </h2>
-                                            <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
+                                            </h3>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                                                 data-bs-parent="#accordionExample" role="region">
                                                 <div class="accordion-body">
-                                                    <p>
-                                                        Sí. Facturales incluye secciones de "Estadísticas" y "Analítica", representados en gráficos y tarjetas de resumen con el balance general, la evolución mensual de los ingresos, los gastos y un reporte detallado sobre la eficiencia de tu negocio. Estas vistas e información de valor, te permitirán y ayudarán a visualizar la salud financiera de tu empresa, para la toma de decisiones asertivas basadas en datos en tiempo real. 
-                                                    </p>
+                                                    <p>Subes una foto o un PDF del ticket o de la factura y el OCR extrae la fecha, el proveedor, la base imponible, el IVA y el total. Revisas los datos, eliges la categoría y guardas el gasto.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingsix">
+                                        <div class="accordion-item mb-0">
+                                            <h3 class="accordion-header" id="headingFive">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsesix" aria-expanded="false"
-                                                    aria-controls="collapsesix">
-                                                    6. ¿Cómo se gestionan y concilian las transacciones?
+                                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    ¿Se puede conectar Facturales con otras herramientas?
                                                 </button>
-                                            </h2>
-                                            <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
+                                            </h3>
+                                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                                                 data-bs-parent="#accordionExample" role="region">
                                                 <div class="accordion-body">
-                                                    <p>
-                                                        La sección "Transacciones", organiza tus movimientos financieros en una tabla donde puedes realizar una búsqueda por nombre, correo electrónico u otros datos relevantes.  Así como aplicar filtros por ubicación, importe, fecha o tipo de transacción. Esto facilita la conciliación de ingresos y gastos, permitiéndote mantener un registro actualizado de todas las operaciones realizadas.
-                                                    </p>
+                                                    <p>Puedes importar y exportar contactos en Excel o CSV, descargar facturas y presupuestos en PDF, descargar facturas en formato Facturae y enviar documentos por email desde la propia aplicación. De momento no hay integraciones con otros programas.</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingseven">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseseven" aria-expanded="false"
-                                                    aria-controls="collapseseven">
-                                                    7. ¿Se puede conectar Facturales con otras herramientas?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                        Sí, Facturales te ofrece integraciones con aplicaciones populares de productividad y gestión, como Microsoft Excel, Trello, Mailchimp y Slack. Estas integraciones te permitirán exportar datos, sincronizar tareas, optimizar el proceso y mejorar la colaboración con otros equipos o aplicaciones que ya utilices.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingeight">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseeight" aria-expanded="false"
-                                                    aria-controls="collapseeight">
-                                                    8. ¿Cómo administra Facturales los datos de clientes y proveedores?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                        El módulo de "Contactos", te permitirá crear y gestionar fichas de clientes o proveedores con sus datos de contacto y detalles de facturación. Puedes buscar clientes, ver su estado, asociar facturas y pagos a cada registro, de modo que mantienes la información organizada y accesible 24/7.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    <div class="faq-more">
+                                        <a href="faq.html" class="theme-btn">Ver todas las preguntas <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -1082,156 +693,136 @@
                 </section>
 
                 <!-- Marquee Section Start -->
-                <div class="marquee-section fix">
+                <div class="marquee-section fix" aria-hidden="true">
                     <div class="marquee">
                         <div class="marquee-group">
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Facturas
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Presupuestos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Gastos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Reporting
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Clientes
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Stock
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Resumen fiscal
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Contabilidad
-                            </div>
-                            <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                VeriFactu
                             </div>
                         </div>
                         <div class="marquee-group">
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Facturas
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Presupuestos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Gastos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Reporting
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Clientes
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Stock
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Resumen fiscal
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Contabilidad
-                            </div>
-                            <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                VeriFactu
                             </div>
                         </div>
                         <div class="marquee-group">
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Facturas
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Presupuestos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Gastos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Reporting
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Clientes
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Stock
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Resumen fiscal
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Contabilidad
-                            </div>
-                            <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                VeriFactu
                             </div>
                         </div>
                         <div class="marquee-group">
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Facturas
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Presupuestos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Gastos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Reporting
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Clientes
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Stock
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Resumen fiscal
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Contabilidad
-                            </div>
-                            <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                VeriFactu
                             </div>
                         </div>
                         <div class="marquee-group">
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Facturas
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Presupuestos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Gastos
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Reporting
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Clientes
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                Stock
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
+                                Resumen fiscal
                             </div>
                             <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
+                                <img src="assets/img/home-1/star2.svg" width="27" height="26" alt="" aria-hidden="true" loading="lazy">
                                 Contabilidad
-                            </div>
-                            <div class="text">
-                                <img src="assets/img/home-1/star2.svg" alt="img">
-                                VeriFactu
                             </div>
                         </div>
                     </div>
@@ -1243,23 +834,23 @@
                         <div class="section-title-area">
                             <div class="section-title mb-0">
                                 <span class="sub-title wow fadeInUp">
-                                    <img src="assets/img/home-1/hero/setting.png" alt="img">
-                                    Últimas noticias del blog
+                                    <img src="assets/img/home-1/hero/setting.png" width="16" height="16" alt="" aria-hidden="true">
+                                    Del blog
                                 </span>
                                 <h2 class="text-anim">
                                     Nuestros artículos recientes
                                 </h2>
                             </div>
                             <a href="news-grid.html" class="theme-btn">
-                                Ver más artículos <i class="fa-solid fa-arrow-up-right"></i>
+                                Ver más artículos <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="row">
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="news-card-items tp_fade_anim" data-delay=".3" data-fade-from="left">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/01.jpg" alt="VERI*FACTU 2027">
-                                        <img src="assets/img/home-1/news/01.jpg" alt="VERI*FACTU 2027">
+                                        <img src="assets/img/blog/verifactu-2027.webp" width="1200" height="630" alt="" loading="lazy">
+                                        <img src="assets/img/blog/verifactu-2027.webp" width="1200" height="630" alt="" aria-hidden="true" loading="lazy">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
@@ -1268,12 +859,12 @@
                                                     VERI*FACTU en 2027: qué es, a quién afecta y cómo prepararte sin perder tiempo
                                                 </a>
                                             </h3>
-                                            <span>30 Ene, 2026</span>
+                                            <time datetime="2026-02-03">3 de febrero de 2026</time>
                                         </div>
-                                         <div class="read-button">
-                                                <a href="verifactu-2027-guia-autonomos-pymes.html" class="link-btn">
+                                        <div class="read-button">
+                                            <a href="verifactu-2027-guia-autonomos-pymes.html" class="link-btn" aria-label="Leer más: VERI*FACTU en 2027: qué es, a quién afecta y cómo prepararte sin perder tiempo">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -1282,8 +873,8 @@
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="news-card-items tp_fade_anim" data-delay=".5" data-fade-from="left">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/02.jpg" alt="Factura Electrónica">
-                                        <img src="assets/img/home-1/news/02.jpg" alt="Factura Electrónica">
+                                        <img src="assets/img/blog/factura-electronica-vs-verifactu.webp" width="1200" height="630" alt="" loading="lazy">
+                                        <img src="assets/img/blog/factura-electronica-vs-verifactu.webp" width="1200" height="630" alt="" aria-hidden="true" loading="lazy">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
@@ -1292,12 +883,12 @@
                                                     Factura electrónica obligatoria vs VERI*FACTU: diferencias reales y plazos
                                                 </a>
                                             </h3>
-                                            <span>25 Ene, 2026</span>
+                                            <time datetime="2026-02-10">10 de febrero de 2026</time>
                                         </div>
                                         <div class="read-button">
-                                                <a href="factura-electronica-vs-verifactu.html" class="link-btn">
+                                            <a href="factura-electronica-vs-verifactu.html" class="link-btn" aria-label="Leer más: Factura electrónica obligatoria vs VERI*FACTU: diferencias reales y plazos">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -1306,8 +897,8 @@
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="news-card-items tp_fade_anim" data-delay=".7" data-fade-from="left">
                                     <div class="news-image">
-                                        <img src="assets/img/home-1/news/03.jpg" alt="Contabilidad para Negocios">
-                                        <img src="assets/img/home-1/news/03.jpg" alt="Contabilidad para Negocios">
+                                        <img src="assets/img/blog/contabilidad-7-pasos.webp" width="1200" height="630" alt="" loading="lazy">
+                                        <img src="assets/img/blog/contabilidad-7-pasos.webp" width="1200" height="630" alt="" aria-hidden="true" loading="lazy">
                                     </div>
                                     <div class="news-top-content">
                                         <div class="news-content">
@@ -1316,12 +907,12 @@
                                                     Cómo llevar la contabilidad de tu negocio en 7 pasos (sin ser contable)
                                                 </a>
                                             </h3>
-                                            <span>15 Ene, 2026</span>
+                                            <time datetime="2026-02-17">17 de febrero de 2026</time>
                                         </div>
                                         <div class="read-button">
-                                                <a href="contabilidad-negocio-7-pasos.html" class="link-btn">
+                                            <a href="contabilidad-negocio-7-pasos.html" class="link-btn" aria-label="Leer más: Cómo llevar la contabilidad de tu negocio en 7 pasos (sin ser contable)">
                                                 Leer más
-                                                <i class="fa-solid fa-arrow-up-right"></i>
+                                                <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -1332,134 +923,73 @@
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.webp);">
                         <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <a href="index.html" class="footer-logo">
-                                                <img src="assets/img/logo/logo-white.svg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="footer-content">
-                                            <p>
-                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
-                                            </p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </a>
+                            <div class="footer-widget-wrapper">
+                                <div class="row justify-content-between">
+                                    <div class="col-xl-4 col-lg-5 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head">
+                                                <a href="index.html" class="footer-logo">
+                                                    <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="footer-content">
+                                                <p>Facturación para autónomos y pymes: facturas, presupuestos, gastos y clientes en un solo lugar.</p>
+                                                <a href="https://app.facturales.es/signup" class="theme-btn">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Acceso r&aacute;pido</h3>
+                                    <div class="col-xl-2 col-lg-3 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Acceso rápido</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="https://app.facturales.es/signup">Crear cuenta</a></li>
+                                                <li><a href="https://app.facturales.es/signin">Iniciar sesión</a></li>
+                                                <li><a href="pricing.html">Precios</a></li>
+                                                <li><a href="faq.html">Preguntas frecuentes</a></li>
+                                                <li><a href="news-grid.html">Blog</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="https://app.facturales.es/signup.html">
-                                                    Crea una cuenta gratuita
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://app.facturales.es/signin.html">
-                                                    Iniciar sesi&oacute;n
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html">
-                                                    Precios
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Funcionalidades</h3>
+                                    <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Funcionalidades</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                                <li><a href="crea-envia-facturas.html">Crea y envía facturas</a></li>
+                                                <li><a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a></li>
+                                                <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                                <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                                <li><a href="factura-personalizada.html">Personaliza tus facturas</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="tu-negocio-bajo-control.html">
-                                                    Tu negocio bajo control
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-facturas.html">
-                                                    Crea y envía facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-presupuestos.html">
-                                                    Crea y envía presupuestos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Personaliza facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="escanea-gastos.html">
-                                                    Escanea gastos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="gestiona-clientes.html">
-                                                    Gestiona clientes
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Factura personalizada
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Suscríbete al Boletín</h3>
-                                        </div>
-                                        <div class="contact-item">
-                                            <form action="#">
-                                                <input type="text" placeholder="Correo electrónico">
-                                            </form>
-                                            <button type="submit" class="theme-btn w-100">
-                                                    Suscribirse ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Contacto</p></div>
+                                            <div class="footer-content footer-contact">
+                                                <p>¿Tienes dudas? Escríbenos y te respondemos por email.</p>
+                                                <a href="mailto:info@facturales.es" class="footer-mail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@facturales.es</a>
+                                                <a href="faq.html" class="footer-faq-link">Consulta las preguntas frecuentes</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-bottom-wrapper">
+                                <p>© Facturales · AVENUE DIGITAL GROUP, S.L.</p>
+                                <ul class="footer-list">
+                                    <li><a href="https://app.facturales.es/aviso-legal">Aviso legal</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-privacidad">Política de privacidad</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-cookies">Política de cookies</a></li>
+                                    <li><a href="https://app.facturales.es/condiciones-legales">Condiciones legales</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">
-                               Copyright <span>Facturales.</span> Todos los derechos reservados.
-                            </p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li>
-                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
-                                </li>
-                                <li>।</li>
-                                <li>
-                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     </div>
                 </footer>
 
@@ -1469,44 +999,21 @@
        
 
         
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Gsap Min Js >>-->
-        <script src="assets/js/gsap.min.js"></script>
-        <!--<< ScrollTrigger Min Js >>-->
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <!--<< SplitText Min Js >>-->
-        <script src="assets/js/SplitText.min.js"></script>
-        <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
-         <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Parallaxie Js >>-->
-        <script src="assets/js/parallaxie.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
+        <!-- Volver arriba: al final del documento para que el orden de tabulación lo deje tras el pie -->
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Scripts (sin jQuery) -->
+        <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+        <script src="assets/js/gsap.min.js" defer></script>
+        <script src="assets/js/ScrollTrigger.min.js" defer></script>
+        <script src="assets/js/SplitText.min.js" defer></script>
+        <script src="assets/js/swiper-bundle.min.js" defer></script>
+        <script src="assets/js/wow.min.js" defer></script>
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/home.js" defer></script>
+        <!-- Conmutador v1/v2 (temporal; ver CLAUDE.md): para quitarlo, borra estas dos líneas y assets/js/version-switcher.js -->
+        <script src="assets/js/version-switcher.js" defer></script>
     </body>
 </html>

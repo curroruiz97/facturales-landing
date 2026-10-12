@@ -6,829 +6,124 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Avenue Media">
-        <meta name="description" content="Gestiona clientes con Facturales. CRM completo para autonomos y pymes: fichas de cliente, historial de facturacion, etiquetas, notas y mucho mas.">
+        <meta name="description" content="Guarda clientes y proveedores en fichas completas, impórtalos desde Excel o CSV y factura por contacto. Con búsqueda y filtros. Prueba 14 días.">
         <!-- ======== Page title ============ -->
-        <title>Facturales - Gestiona Clientes | CRM para Autonomos y Pymes</title>
+        <title>Gestión de clientes y proveedores para facturar | Facturales</title>
+        <!-- SEO -->
+        <link rel="canonical" href="https://facturales.es/gestiona-clientes.html">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="theme-color" content="#0B0D17">
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="Facturales">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Gestión de clientes y proveedores para facturar | Facturales">
+        <meta property="og:description" content="Guarda clientes y proveedores en fichas completas, impórtalos desde Excel o CSV y factura por contacto. Con búsqueda y filtros. Prueba 14 días.">
+        <meta property="og:url" content="https://facturales.es/gestiona-clientes.html">
+        <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Gestión de clientes y proveedores para facturar | Facturales">
+        <meta name="twitter:description" content="Guarda clientes y proveedores en fichas completas, impórtalos desde Excel o CSV y factura por contacto. Con búsqueda y filtros. Prueba 14 días.">
+        <meta name="twitter:image" content="https://facturales.es/assets/img/og-facturales.png">
+        <meta name="twitter:image:alt" content="Facturales: facturación para autónomos y pymes">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://facturales.es/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Servicios",
+              "item": "https://facturales.es/service-details.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Gestiona clientes",
+              "item": "https://facturales.es/gestiona-clientes.html"
+            }
+          ]
+        }
+        </script>
+        <!-- /SEO -->
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <!-- Fuentes autoalojadas: se precargan los pesos principales -->
+        <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/orbit-cta.css">
 
-        <style>
-            /* ===== Custom Page Styles ===== */
-            :root {
-                --theme: #F94D00;
-                --header: #0B0D17;
-                --text: #534F5A;
-                --bg: #EFEDE5;
-                --accent: #ec8228;
-            }
-
-            /* Hero Section */
-            .gc-hero {
-                padding: 100px 0 80px;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .gc-hero::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                right: -20%;
-                width: 600px;
-                height: 600px;
-                background: radial-gradient(circle, rgba(249,77,0,0.12) 0%, transparent 70%);
-                border-radius: 50%;
-            }
-            .gc-hero .hero-tag {
-                display: inline-block;
-                background: rgba(249,77,0,0.15);
-                color: var(--theme);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 20px;
-                font-family: 'Inter', sans-serif;
-                letter-spacing: 0.5px;
-            }
-            .gc-hero h1 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 48px;
-                font-weight: 800;
-                color: #fff;
-                line-height: 1.2;
-                margin-bottom: 20px;
-            }
-            .gc-hero h1 span {
-                color: var(--theme);
-            }
-            .gc-hero .hero-subtitle {
-                font-size: 18px;
-                color: rgba(255,255,255,0.7);
-                line-height: 1.7;
-                max-width: 520px;
-                margin-bottom: 32px;
-            }
-            .gc-hero .btn-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                background: var(--theme);
-                color: #fff;
-                font-weight: 700;
-                font-size: 16px;
-                padding: 16px 36px;
-                border-radius: 8px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                border: none;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .gc-hero .btn-cta:hover {
-                background: var(--accent);
-                transform: translateY(-2px);
-                box-shadow: 0 12px 30px rgba(249,77,0,0.3);
-            }
-            .gc-hero .trust-badges {
-                display: flex;
-                align-items: center;
-                gap: 24px;
-                margin-top: 28px;
-                flex-wrap: wrap;
-            }
-            .gc-hero .trust-badges .badge-item {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                color: rgba(255,255,255,0.6);
-                font-size: 14px;
-            }
-            .gc-hero .trust-badges .badge-item i {
-                color: #22c55e;
-                font-size: 16px;
-            }
-
-            /* Client Card Mockup */
-            .client-card-mockup {
-                background: #fff;
-                border-radius: 16px;
-                box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-                overflow: hidden;
-                max-width: 480px;
-                margin-left: auto;
-            }
-            .client-card-mockup .card-header-mock {
-                background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
-                padding: 20px 24px;
-                display: flex;
-                align-items: center;
-                gap: 14px;
-            }
-            .client-card-mockup .card-header-mock .avatar {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background: rgba(255,255,255,0.25);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                font-weight: 800;
-                color: #fff;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .client-card-mockup .card-header-mock .client-name {
-                color: #fff;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .client-card-mockup .card-header-mock .client-name h5 {
-                margin: 0;
-                font-size: 18px;
-                font-weight: 700;
-                color: #fff;
-            }
-            .client-card-mockup .card-header-mock .client-name p {
-                margin: 0;
-                font-size: 13px;
-                color: rgba(255,255,255,0.8);
-            }
-            .client-card-mockup .card-header-mock .status-badge {
-                margin-left: auto;
-                background: rgba(255,255,255,0.2);
-                color: #fff;
-                font-size: 12px;
-                font-weight: 600;
-                padding: 4px 12px;
-                border-radius: 50px;
-            }
-            .client-card-mockup .card-body-mock {
-                padding: 24px;
-            }
-            .client-card-mockup .card-body-mock .data-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 0;
-                border-bottom: 1px solid #f0f0f0;
-            }
-            .client-card-mockup .card-body-mock .data-row:last-child {
-                border-bottom: none;
-            }
-            .client-card-mockup .card-body-mock .data-row .label {
-                color: #999;
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            .client-card-mockup .card-body-mock .data-row .label i {
-                color: var(--theme);
-                font-size: 14px;
-                width: 16px;
-                text-align: center;
-            }
-            .client-card-mockup .card-body-mock .data-row .value {
-                font-weight: 700;
-                color: var(--header);
-                font-size: 15px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .client-card-mockup .card-body-mock .data-row .value.text-success {
-                color: #22c55e;
-            }
-            .client-card-mockup .card-body-mock .data-row .value.text-warning {
-                color: #f59e0b;
-            }
-            .client-card-mockup .card-footer-mock {
-                padding: 16px 24px;
-                background: #fafafa;
-                display: flex;
-                gap: 10px;
-            }
-            .client-card-mockup .card-footer-mock .mock-btn {
-                flex: 1;
-                text-align: center;
-                padding: 10px;
-                border-radius: 8px;
-                font-size: 13px;
-                font-weight: 600;
-                font-family: 'Inter', sans-serif;
-                cursor: default;
-            }
-            .client-card-mockup .card-footer-mock .mock-btn.primary {
-                background: var(--theme);
-                color: #fff;
-            }
-            .client-card-mockup .card-footer-mock .mock-btn.secondary {
-                background: #f0f0f0;
-                color: var(--header);
-            }
-
-            /* Problem Section */
-            .gc-problem {
-                padding: 100px 0;
-                background: #0F1219;
-                position: relative;
-            }
-            .gc-problem::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .gc-problem .section-tag {
-                display: inline-block;
-                background: rgba(249,77,0,0.15);
-                color: var(--theme);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-            }
-            .gc-problem h2 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 40px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 16px;
-            }
-            .gc-problem h2 span {
-                color: var(--theme);
-            }
-            .gc-problem .section-desc {
-                font-size: 17px;
-                color: rgba(255,255,255,0.55);
-                max-width: 600px;
-                margin: 0 auto 50px;
-                line-height: 1.7;
-            }
-            .pain-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 16px;
-                padding: 32px 28px;
-                text-align: center;
-                height: 100%;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255,255,255,0.06);
-            }
-            .pain-card:hover {
-                border-color: rgba(249,77,0,0.2);
-                transform: translateY(-5px);
-                box-shadow: 0 15px 40px rgba(249,77,0,0.08);
-            }
-            .pain-card .pain-icon {
-                width: 64px;
-                height: 64px;
-                border-radius: 16px;
-                background: rgba(249,77,0,0.1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 20px;
-                font-size: 26px;
-                color: var(--theme);
-            }
-            .pain-card h5 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 12px;
-                font-size: 18px;
-            }
-            .pain-card p {
-                color: rgba(255,255,255,0.55);
-                font-size: 15px;
-                line-height: 1.6;
-                margin: 0;
-            }
-
-            /* Feature Deep-Dive */
-            .gc-features {
-                padding: 100px 0;
-                background: #111827;
-                position: relative;
-            }
-            .gc-features::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .gc-features .section-tag {
-                display: inline-block;
-                background: rgba(249,77,0,0.1);
-                color: var(--theme);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-            }
-            .gc-features h2 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 40px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 50px;
-            }
-            .feature-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 16px;
-                padding: 36px 28px;
-                height: 100%;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255,255,255,0.06);
-                position: relative;
-                overflow: hidden;
-            }
-            .feature-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 4px;
-                height: 0;
-                background: var(--theme);
-                border-radius: 0 0 4px 0;
-                transition: height 0.4s ease;
-            }
-            .feature-card:hover::before {
-                height: 100%;
-            }
-            .feature-card:hover {
-                background: rgba(255,255,255,0.05);
-                border-color: rgba(249,77,0,0.2);
-                box-shadow: 0 15px 40px rgba(249,77,0,0.08);
-                transform: translateY(-4px);
-            }
-            .feature-card .feat-icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 14px;
-                background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 20px;
-                font-size: 22px;
-                color: #fff;
-            }
-            .feature-card h5 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 12px;
-                font-size: 20px;
-            }
-            .feature-card p {
-                color: rgba(255,255,255,0.55);
-                font-size: 15px;
-                line-height: 1.7;
-                margin: 0;
-            }
-            .feature-card .feat-list {
-                list-style: none;
-                padding: 0;
-                margin: 14px 0 0;
-            }
-            .feature-card .feat-list li {
-                padding: 4px 0;
-                font-size: 14px;
-                color: rgba(255,255,255,0.6);
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            .feature-card .feat-list li i {
-                color: #22c55e;
-                font-size: 12px;
-            }
-
-            /* Value Metrics */
-            .gc-metrics {
-                padding: 80px 0;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-            }
-            .metric-box {
-                text-align: center;
-                padding: 40px 20px;
-            }
-            .metric-box .metric-number {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 56px;
-                font-weight: 800;
-                color: var(--theme);
-                line-height: 1;
-                margin-bottom: 8px;
-            }
-            .metric-box .metric-unit {
-                font-size: 18px;
-                color: var(--theme);
-                font-weight: 600;
-            }
-            .metric-box .metric-label {
-                font-size: 16px;
-                color: rgba(255,255,255,0.7);
-                margin-top: 8px;
-                line-height: 1.5;
-            }
-
-            /* How It Works */
-            .gc-steps {
-                padding: 100px 0;
-                background: #0F1219;
-                position: relative;
-            }
-            .gc-steps::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .gc-steps .section-tag {
-                display: inline-block;
-                background: rgba(249,77,0,0.1);
-                color: var(--theme);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-            }
-            .gc-steps h2 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 40px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 60px;
-            }
-            .step-card {
-                text-align: center;
-                position: relative;
-                padding: 0 20px;
-            }
-            .step-card .step-number {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 24px;
-                font-size: 32px;
-                font-weight: 800;
-                color: #fff;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                position: relative;
-                z-index: 2;
-            }
-            .step-card .step-connector {
-                position: absolute;
-                top: 40px;
-                right: -50%;
-                width: 100%;
-                height: 3px;
-                background: linear-gradient(90deg, var(--theme), rgba(249,77,0,0.2));
-                z-index: 1;
-            }
-            .step-card h5 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 10px;
-                font-size: 20px;
-            }
-            .step-card p {
-                color: rgba(255,255,255,0.55);
-                font-size: 15px;
-                line-height: 1.6;
-            }
-
-            /* Sidebar CTA Card */
-            .sidebar-cta-card {
-                background: linear-gradient(135deg, var(--theme) 0%, var(--accent) 100%);
-                border-radius: 16px;
-                padding: 32px 24px;
-                text-align: center;
-                margin-top: 0;
-            }
-            .sidebar-cta-card h4 {
-                color: #fff;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 700;
-                margin-bottom: 12px;
-                font-size: 22px;
-            }
-            .sidebar-cta-card p {
-                color: rgba(255,255,255,0.9);
-                font-size: 15px;
-                margin-bottom: 20px;
-                line-height: 1.6;
-            }
-            .sidebar-cta-card .btn-white {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                background: #fff;
-                color: var(--theme);
-                font-weight: 700;
-                font-size: 15px;
-                padding: 14px 28px;
-                border-radius: 8px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .sidebar-cta-card .btn-white:hover {
-                background: var(--header);
-                color: #fff;
-                transform: translateY(-2px);
-            }
-
-            /* CTA Section */
-            .gc-cta {
-                padding: 100px 0;
-                background: linear-gradient(135deg, var(--theme) 0%, #d63d00 50%, var(--accent) 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .gc-cta::before {
-                content: '';
-                position: absolute;
-                top: -100px;
-                right: -100px;
-                width: 400px;
-                height: 400px;
-                background: rgba(255,255,255,0.05);
-                border-radius: 50%;
-            }
-            .gc-cta::after {
-                content: '';
-                position: absolute;
-                bottom: -80px;
-                left: -80px;
-                width: 300px;
-                height: 300px;
-                background: rgba(255,255,255,0.05);
-                border-radius: 50%;
-            }
-            .gc-cta h2 {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 44px;
-                font-weight: 800;
-                color: #fff;
-                margin-bottom: 16px;
-                position: relative;
-                z-index: 2;
-            }
-            .gc-cta p {
-                font-size: 18px;
-                color: rgba(255,255,255,0.9);
-                margin-bottom: 36px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-                line-height: 1.7;
-                position: relative;
-                z-index: 2;
-            }
-            .gc-cta .btn-white-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                background: #fff;
-                color: var(--theme);
-                font-weight: 700;
-                font-size: 17px;
-                padding: 18px 40px;
-                border-radius: 8px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                position: relative;
-                z-index: 2;
-            }
-            .gc-cta .btn-white-cta:hover {
-                background: var(--header);
-                color: #fff;
-                transform: translateY(-3px);
-                box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            }
-            .gc-cta .cta-note {
-                margin-top: 20px;
-                font-size: 14px;
-                color: rgba(255,255,255,0.7);
-                position: relative;
-                z-index: 2;
-            }
-            .gc-cta .cta-note i {
-                margin-right: 6px;
-            }
-
-            /* Responsive */
-            @media (max-width: 991px) {
-                .gc-hero h1 { font-size: 36px; }
-                .gc-hero { padding: 70px 0 60px; }
-                .client-card-mockup { margin: 40px auto 0; max-width: 100%; }
-                .gc-problem h2, .gc-features h2, .gc-steps h2, .gc-cta h2 { font-size: 32px; }
-                .metric-box .metric-number { font-size: 44px; }
-                .step-card .step-connector { display: none; }
-            }
-            @media (max-width: 576px) {
-                .gc-hero h1 { font-size: 28px; }
-                .gc-problem h2, .gc-features h2, .gc-steps h2, .gc-cta h2 { font-size: 26px; }
-                .metric-box .metric-number { font-size: 36px; }
-                .gc-hero .trust-badges { flex-direction: column; align-items: flex-start; gap: 12px; }
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/pages/gestiona-clientes.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
-        </button>
 
         <!-- GT MouseCursor Start -->
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
-         <!-- Header-Top Section Start -->
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
 <script src="assets/js/header-include.js"></script>
 
-        <!-- start: Search Popup -->
-        <div class="search_popup">
-            <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                <div class="search_wrapper">
-                    <div class="search_top d-flex align-items-center">
-                    <div class="search_logo">
-                        <a href="index.html">
-                        <img src="assets/img/logo/logo-white.svg" alt="img">
-                        </a>
-                    </div>
-                    <div class="search_close">
-                        <button type="button" class="search_close_btn">
-                        <i class="fa-thin fa-times"></i>
-                        </button>
-                    </div>
-                    </div>
-                    <div class="search_form">
-                    <form action="#">
-                        <div class="search_input">
-                        <input class="search-input-field" type="text" placeholder="Type here to search...">
-                        <span class="search-focus-border"></span>
-                        <button type="submit">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="search-popup-overlay"></div>
 
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
+                <main id="main" tabindex="-1">
 
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Gestiona clientes</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                    Gestiona clientes
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- ===== HERO SECTION ===== -->
                 <section class="gc-hero">
                     <div class="container">
+                        <nav class="page-breadcrumb" aria-label="Migas de pan">
+                            <ol>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="service-details.html">Servicios</a></li>
+                                <li aria-current="page">Gestiona clientes</li>
+                            </ol>
+                        </nav>
                         <div class="row align-items-center">
                             <div class="col-lg-6">
                                 <span class="hero-tag wow fadeInUp" data-wow-delay=".2s">
-                                    <i class="fa-solid fa-users"></i> CRM integrado
+                                    <i class="fa-solid fa-users" aria-hidden="true"></i> Clientes y proveedores
                                 </span>
                                 <h1 class="wow fadeInUp" data-wow-delay=".3s">
-                                    Tus clientes son tu mayor activo. <span>Gestionálos como se merecen.</span>
+                                    Tus clientes son tu mayor activo. <span>Gestiónalos como se merecen.</span>
                                 </h1>
                                 <p class="hero-subtitle wow fadeInUp" data-wow-delay=".4s">
-                                    Centraliza toda la información de tus clientes, controla su historial de facturación y mejora tu relación comercial desde un único panel.
+                                    Centraliza los datos de tus clientes y proveedores y consulta lo que has facturado a cada uno desde un único panel.
                                 </p>
-                                <a href="https://app.facturales.es/signup.html" class="btn-cta wow fadeInUp" data-wow-delay=".5s">
-                                    Empieza gratis <i class="fa-solid fa-arrow-right"></i>
+                                <a href="https://app.facturales.es/signup" class="btn-cta wow fadeInUp" data-wow-delay=".5s">
+                                    Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                                 <div class="trust-badges wow fadeInUp" data-wow-delay=".6s">
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        Sin tarjeta de crédito
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                        14 días de prueba gratuita
                                     </div>
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        Datos seguros (RGPD)
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                        Datos en la UE
                                     </div>
                                     <div class="badge-item">
-                                        <i class="fa-solid fa-circle-check"></i>
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                                         Soporte en español
                                     </div>
                                 </div>
@@ -836,39 +131,36 @@
                             <div class="col-lg-6">
                                 <div class="client-card-mockup wow fadeInUp" data-wow-delay=".5s">
                                     <div class="card-header-mock">
-                                        <div class="avatar">MG</div>
+                                        <div class="avatar">CE</div>
                                         <div class="client-name">
-                                            <h5>María García López</h5>
-                                            <p>Diseño Gráfico Profesional S.L.</p>
+                                            <p class="mock-title">Cliente de ejemplo</p>
+                                            <p>Empresa Ejemplo S.L.</p>
                                         </div>
                                         <span class="status-badge">Activo</span>
                                     </div>
                                     <div class="card-body-mock">
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-id-card"></i> NIF</span>
+                                            <span class="label"><i class="fa-solid fa-id-card" aria-hidden="true"></i> NIF</span>
                                             <span class="value">B-12345678</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-file-invoice-dollar"></i> Total facturado</span>
+                                            <span class="label"><i class="fa-solid fa-user-tag" aria-hidden="true"></i> Rol</span>
+                                            <span class="value">Cliente</span>
+                                        </div>
+                                        <div class="data-row">
+                                            <span class="label"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Frecuencia</span>
+                                            <span class="value">Recurrente</span>
+                                        </div>
+                                        <div class="data-row">
+                                            <span class="label"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> Total facturado</span>
                                             <span class="value text-success">24.850,00 EUR</span>
                                         </div>
                                         <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-clock"></i> Saldo pendiente</span>
-                                            <span class="value text-warning">1.200,00 EUR</span>
-                                        </div>
-                                        <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-calendar"></i> Última factura</span>
-                                            <span class="value">15/02/2026</span>
-                                        </div>
-                                        <div class="data-row">
-                                            <span class="label"><i class="fa-solid fa-receipt"></i> Facturas emitidas</span>
-                                            <span class="value">32</span>
+                                            <span class="label"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Balance</span>
+                                            <span class="value">21.750,00 EUR</span>
                                         </div>
                                     </div>
-                                    <div class="card-footer-mock">
-                                        <div class="mock-btn primary"><i class="fa-solid fa-plus"></i> Nueva factura</div>
-                                        <div class="mock-btn secondary"><i class="fa-solid fa-eye"></i> Ver historial</div>
-                                    </div>
+                                    <p class="mockup-note">Datos de ejemplo</p>
                                 </div>
                             </div>
                         </div>
@@ -889,36 +181,36 @@
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-folder-open"></i>
+                                        <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Datos dispersos</h5>
+                                    <h3>Datos dispersos</h3>
                                     <p>Información repartida entre hojas de cálculo, emails, notas adhesivas y la memoria. Imposible tener una visión clara.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-clone"></i>
+                                        <i class="fa-solid fa-clone" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Registros duplicados</h5>
+                                    <h3>Registros duplicados</h3>
                                     <p>El mismo cliente con tres nombres distintos, direcciones desactualizadas y NIFs repetidos que generan errores en facturas.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Sin historial</h5>
+                                    <h3>Sin historial</h3>
                                     <p>No sabes cuánto ha facturado cada cliente, cuándo fue la última vez que le cobraste, ni qué presupuestos tiene pendientes.</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <div class="pain-card wow fadeInUp" data-wow-delay=".5s">
                                     <div class="pain-icon">
-                                        <i class="fa-solid fa-user-slash"></i>
+                                        <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Pérdida de seguimiento</h5>
+                                    <h3>Pérdida de seguimiento</h3>
                                     <p>Clientes que se escapan porque nadie les hizo seguimiento. Oportunidades perdidas por falta de organización.</p>
                                 </div>
                             </div>
@@ -938,14 +230,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-address-card"></i>
+                                        <i class="fa-solid fa-address-card" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Fichas de cliente completas</h5>
-                                    <p>Cada cliente tiene una ficha con todos sus datos: razón social, NIF/CIF, dirección fiscal, datos de contacto, condiciones de pago y notas personalizadas.</p>
+                                    <h3>Fichas de cliente completas</h3>
+                                    <p>Cada cliente o proveedor tiene una ficha con su razón social, NIF/CIF, dirección fiscal, email, teléfono y país.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Datos fiscales completos</li>
-                                        <li><i class="fa-solid fa-check"></i> Múltiples direcciones</li>
-                                        <li><i class="fa-solid fa-check"></i> Personas de contacto</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Datos fiscales completos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Clientes y proveedores</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Frecuencia: puntual o recurrente</li>
                                     </ul>
                                 </div>
                             </div>
@@ -953,14 +245,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                        <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Historial de facturación</h5>
-                                    <p>Accede al historial completo de cada cliente: facturas emitidas, presupuestos enviados, cobros pendientes y pagos realizados en un solo vistazo.</p>
+                                    <h3>Facturación por contacto</h3>
+                                    <p>Consulta lo que has facturado a cada contacto, los gastos asociados y su balance, y asocia sus facturas en un solo vistazo.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Facturas y presupuestos</li>
-                                        <li><i class="fa-solid fa-check"></i> Estado de cobros</li>
-                                        <li><i class="fa-solid fa-check"></i> Volumen facturado</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Facturas asociadas</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Total facturado</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Balance por contacto</li>
                                     </ul>
                                 </div>
                             </div>
@@ -968,14 +260,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-import"></i>
+                                        <i class="fa-solid fa-file-import" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Importaci&oacute;n masiva desde Excel o CSV</h5>
+                                    <h3>Importaci&oacute;n masiva desde Excel o CSV</h3>
                                     <p>Sube tu listado de clientes en formato Excel o CSV y tendr&aacute;s toda tu base de datos organizada en segundos. Sin perder tiempo registrando clientes uno a uno manualmente.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Importa desde Excel (.xlsx) y CSV</li>
-                                        <li><i class="fa-solid fa-check"></i> Mapeo autom&aacute;tico de campos</li>
-                                        <li><i class="fa-solid fa-check"></i> Detecci&oacute;n de duplicados</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Importa desde Excel (.xlsx) y CSV</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mapeo autom&aacute;tico de campos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Detecci&oacute;n de duplicados</li>
                                     </ul>
                                 </div>
                             </div>
@@ -983,14 +275,14 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-file-export"></i>
+                                        <i class="fa-solid fa-file-export" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Exportación de datos</h5>
-                                    <p>Exporta tu base de clientes en formato CSV o Excel. Comparte datos con tu gestor, genera informes o migra tu información cuando lo necesites.</p>
+                                    <h3>Exportación de datos</h3>
+                                    <p>Exporta tu base de clientes a CSV. Compártela con tu gestor o llévatela a otra herramienta cuando lo necesites.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> CSV y Excel</li>
-                                        <li><i class="fa-solid fa-check"></i> Exportación selectiva</li>
-                                        <li><i class="fa-solid fa-check"></i> Compatible con gestorías</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Exportación a CSV</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Datos fiscales y de contacto</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Listo para tu gestor</li>
                                     </ul>
                                 </div>
                             </div>
@@ -998,51 +290,25 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="feat-icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                                     </div>
-                                    <h5>Búsqueda avanzada</h5>
-                                    <p>Encuentra cualquier cliente en segundos. Busca por nombre, NIF, email, etiqueta, volumen de facturación o cualquier campo personalizado.</p>
+                                    <h3>Búsqueda y filtros</h3>
+                                    <p>Encuentra cualquier contacto, filtra por estado o por tipo y ordénalos por nombre, facturación o balance.</p>
                                     <ul class="feat-list">
-                                        <li><i class="fa-solid fa-check"></i> Búsqueda instantánea</li>
-                                        <li><i class="fa-solid fa-check"></i> Filtros avanzados</li>
-                                        <li><i class="fa-solid fa-check"></i> Resultados en tiempo real</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Búsqueda de contactos</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Filtros por estado y tipo</li>
+                                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Orden por facturación o balance</li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- CTA Card -->
                             <div class="col-lg-4 col-md-6">
                                 <div class="sidebar-cta-card wow fadeInUp" data-wow-delay=".4s" style="height:100%; display:flex; flex-direction:column; justify-content:center;">
-                                    <h4>¿Listo para organizar tus clientes?</h4>
-                                    <p>Crea tu cuenta gratuita y empieza a gestionar tus clientes como un profesional en menos de 2 minutos.</p>
-                                    <a href="https://app.facturales.es/signup.html" class="btn-white">
-                                        Crear cuenta gratis <i class="fa-solid fa-arrow-right"></i>
+                                    <h3>¿Listo para organizar tus clientes?</h3>
+                                    <p>Empieza tu prueba de 14 días y gestiona tus clientes y proveedores desde un único panel.</p>
+                                    <a href="https://app.facturales.es/signup" class="btn-white">
+                                        Prueba 14 días <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                     </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ===== VALUE METRICS ===== -->
-                <section class="gc-metrics">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="metric-box wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="metric-number">5<span class="metric-unit">h</span></div>
-                                    <p class="metric-label">Ahorro semanal en gestión administrativa de clientes</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="metric-box wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="metric-number">90<span class="metric-unit">%</span></div>
-                                    <p class="metric-label">Reducción de errores en datos fiscales y duplicados</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="metric-box wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="metric-number">35<span class="metric-unit">%</span></div>
-                                    <p class="metric-label">Mejora en la retención y seguimiento de clientes</p>
                                 </div>
                             </div>
                         </div>
@@ -1061,7 +327,7 @@
                                 <div class="step-card wow fadeInUp" data-wow-delay=".2s">
                                     <div class="step-number">1</div>
                                     <div class="step-connector"></div>
-                                    <h5>Importa tus clientes</h5>
+                                    <h3>Importa tus clientes</h3>
                                     <p>Sube tu listado desde Excel o CSV, o añade clientes manualmente. En minutos tendrás toda tu base de datos organizada.</p>
                                 </div>
                             </div>
@@ -1069,15 +335,15 @@
                                 <div class="step-card wow fadeInUp" data-wow-delay=".3s">
                                     <div class="step-number">2</div>
                                     <div class="step-connector"></div>
-                                    <h5>Gestiona desde un panel</h5>
-                                    <p>Visualiza, filtra, etiqueta y consulta el historial de cada cliente. Toda la información centralizada y accesible al instante.</p>
+                                    <h3>Gestiona desde un panel</h3>
+                                    <p>Busca, filtra y consulta lo facturado a cada cliente. Toda la información centralizada y accesible al instante.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="step-card wow fadeInUp" data-wow-delay=".4s">
                                     <div class="step-number">3</div>
-                                    <h5>Factura más rápido</h5>
-                                    <p>Con los datos de tus clientes siempre a mano, crear facturas y presupuestos es cuestión de segundos. Sin errores, sin búsquedas.</p>
+                                    <h3>Factura más rápido</h3>
+                                    <p>Con los datos de tus clientes siempre a mano, crear facturas y presupuestos es mucho más rápido: eliges el cliente y sus datos ya están ahí.</p>
                                 </div>
                             </div>
                         </div>
@@ -1097,142 +363,84 @@
                         <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
                         <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
                         <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
-                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
+                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup" aria-label="Prueba 14 días en Facturales">
                             <span class="facturales-cta-glow"></span>
-                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
+                            <span class="facturales-cta-inner">
+                                <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                <span class="facturales-cta-label">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
+                            </span>
                         </a>
                     </div>
                 </section>
 
                 <!-- Footer Section Start -->
+                </main>
+
                 <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
+                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.webp);">
                         <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <a href="index.html" class="footer-logo">
-                                                <img src="assets/img/logo/logo-white.svg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="footer-content">
-                                            <p>
-                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
-                                            </p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </a>
+                            <div class="footer-widget-wrapper">
+                                <div class="row justify-content-between">
+                                    <div class="col-xl-4 col-lg-5 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head">
+                                                <a href="index.html" class="footer-logo">
+                                                    <img src="assets/img/logo/logo-white.webp" width="172" height="52" alt="Facturales" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="footer-content">
+                                                <p>Facturación para autónomos y pymes: facturas, presupuestos, gastos y clientes en un solo lugar.</p>
+                                                <a href="https://app.facturales.es/signup" class="theme-btn">Prueba 14 días <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Acceso r&aacute;pido</h3>
+                                    <div class="col-xl-2 col-lg-3 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Acceso rápido</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="https://app.facturales.es/signup">Crear cuenta</a></li>
+                                                <li><a href="https://app.facturales.es/signin">Iniciar sesión</a></li>
+                                                <li><a href="pricing.html">Precios</a></li>
+                                                <li><a href="faq.html">Preguntas frecuentes</a></li>
+                                                <li><a href="news-grid.html">Blog</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="https://app.facturales.es/signup.html">
-                                                    Crea una cuenta gratuita
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://app.facturales.es/signin.html">
-                                                    Iniciar sesi&oacute;n
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html">
-                                                    Precios
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Funcionalidades</h3>
+                                    <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Funcionalidades</p></div>
+                                            <ul class="list-area">
+                                                <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
+                                                <li><a href="crea-envia-facturas.html">Crea y envía facturas</a></li>
+                                                <li><a href="crea-envia-presupuestos.html">Crea y envía presupuestos</a></li>
+                                                <li><a href="escanea-gastos.html">Escanea gastos</a></li>
+                                                <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
+                                                <li><a href="factura-personalizada.html">Personaliza tus facturas</a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="tu-negocio-bajo-control.html">
-                                                    Tu negocio bajo control
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-facturas.html">
-                                                    Crea y Envía Facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-presupuestos.html">
-                                                    Crea y Envía Presupuestos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Personaliza facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="escanea-gastos.html">
-                                                    Escanea gastos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="gestiona-clientes.html">
-                                                    Gestiona clientes
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Factura personalizada
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Suscríbete al Boletín</h3>
-                                        </div>
-                                        <div class="contact-item">
-                                            <form action="#">
-                                                <input type="text" placeholder="Email address">
-                                            </form>
-                                            <button type="submit" class="theme-btn w-100">
-                                                    Subscribe now <i class="fa-solid fa-arrow-up-right"></i>
-                                            </button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                                        <div class="footer-widget-items">
+                                            <div class="widget-head"><p class="widget-title">Contacto</p></div>
+                                            <div class="footer-content footer-contact">
+                                                <p>¿Tienes dudas? Escríbenos y te respondemos por email.</p>
+                                                <a href="mailto:info@facturales.es" class="footer-mail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@facturales.es</a>
+                                                <a href="faq.html" class="footer-faq-link">Consulta las preguntas frecuentes</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-bottom-wrapper">
+                                <p>© Facturales · AVENUE DIGITAL GROUP, S.L.</p>
+                                <ul class="footer-list">
+                                    <li><a href="https://app.facturales.es/aviso-legal">Aviso legal</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-privacidad">Política de privacidad</a></li>
+                                    <li><a href="https://app.facturales.es/politica-de-cookies">Política de cookies</a></li>
+                                    <li><a href="https://app.facturales.es/condiciones-legales">Condiciones legales</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">
-                               Copyright <span>Facturales.</span> Todos los derechos reservados.
-                            </p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li>
-                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
-                                </li>
-                                <li>।</li>
-                                <li>
-                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     </div>
                 </footer>
 
@@ -1240,45 +448,16 @@
         </div>
 
 
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Gsap Min Js >>-->
-        <script src="assets/js/gsap.min.js"></script>
-        <!--<< ScrollTrigger Min Js >>-->
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <!--<< SplitText Min Js >>-->
-        <script src="assets/js/SplitText.min.js"></script>
-        <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
-         <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Parallaxie Js >>-->
-        <script src="assets/js/parallaxie.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/orbit-cta.js"></script>
+        <!-- Volver arriba: al final del documento para que el orden de tabulación lo deje tras el pie -->
+        <button id="back-top" class="back-to-top" type="button" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Scripts (sin jQuery) -->
+        <script src="assets/js/wow.min.js" defer></script>
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/orbit-cta.js" defer></script>
+        <!-- Conmutador v1/v2 (temporal; ver CLAUDE.md): para quitarlo, borra estas dos líneas y assets/js/version-switcher.js -->
+        <script src="assets/js/version-switcher.js" defer></script>
     </body>
 </html>
