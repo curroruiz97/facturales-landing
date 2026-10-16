@@ -1,774 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Avenue Media">
-        <meta name="description" content="Gestiona tu stock con Facturales. Control de inventario en tiempo real, alertas automáticas y gestión de múltiples almacenes.">
-        <title>Facturales - Gestiona tu Stock e Inventario</title>
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/orbit-cta.css">
-        <style>
-            :root {
-                --accent: #F59E0B;
-                --accent-light: #FEF3C7;
-                --accent-dark: #D97706;
-                --header: #0B0D17;
-                --text: #534F5A;
-            }
-
-            /* Hero */
-            .page-hero {
-                padding: 100px 0 80px;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .page-hero::before {
-                content: '';
-                position: absolute;
-                top: -40%;
-                right: -15%;
-                width: 600px;
-                height: 600px;
-                background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
-                border-radius: 50%;
-                pointer-events: none;
-            }
-            .hero-tag {
-                display: inline-block;
-                background: rgba(245,158,11,0.15);
-                color: var(--accent);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 20px;
-                font-family: 'Inter', sans-serif;
-                letter-spacing: 0.5px;
-            }
-            .hero-tag i { margin-right: 6px; }
-            .page-hero h1 {
-                font-size: 48px;
-                font-weight: 800;
-                color: #fff;
-                margin-bottom: 20px;
-                line-height: 1.15;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .page-hero h1 .highlight { color: var(--accent); }
-            .page-hero .hero-desc {
-                font-size: 18px;
-                color: rgba(255,255,255,0.7);
-                margin-bottom: 28px;
-                line-height: 1.7;
-                font-family: 'Inter', sans-serif;
-            }
-            .check-features {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px 20px;
-                margin-bottom: 32px;
-            }
-            .check-feature {
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                color: rgba(255,255,255,0.8);
-                font-weight: 500;
-            }
-            .check-feature i {
-                color: var(--accent);
-                margin-right: 8px;
-                font-size: 14px;
-            }
-            .hero-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                padding: 16px 36px;
-                background: var(--accent);
-                color: #fff;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-family: 'Inter', sans-serif;
-            }
-            .hero-cta:hover {
-                background: var(--accent-dark);
-                color: #fff;
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(245,158,11,0.35);
-            }
-
-            /* Mockup */
-            .mockup-card {
-                background: #fff;
-                border-radius: 20px;
-                padding: 32px;
-                box-shadow: 0 25px 80px rgba(0,0,0,0.25);
-                position: relative;
-            }
-            .mockup-card::before {
-                content: '';
-                position: absolute;
-                top: -2px; left: -2px; right: -2px; bottom: -2px;
-                background: linear-gradient(135deg, var(--accent), transparent 60%);
-                border-radius: 22px;
-                z-index: -1;
-                opacity: 0.4;
-            }
-            .mockup-top {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 24px;
-                padding-bottom: 16px;
-                border-bottom: 2px solid #F5F5F5;
-            }
-            .mockup-top h3 {
-                font-size: 18px;
-                font-weight: 700;
-                margin: 0;
-                color: var(--header);
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .mockup-top-link {
-                font-size: 13px;
-                color: var(--accent);
-                font-weight: 600;
-                text-decoration: none;
-            }
-            .stock-item {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 16px;
-                margin-bottom: 10px;
-                border-radius: 12px;
-                background: #FAFAFA;
-                transition: all 0.2s;
-            }
-            .stock-item:last-child { margin-bottom: 0; }
-            .stock-item:hover { background: #F3F4F6; }
-            .stock-item.danger {
-                background: #FEF2F2;
-                border-left: 4px solid #EF4444;
-            }
-            .stock-item.warning {
-                background: #FFFBEB;
-                border-left: 4px solid #F59E0B;
-            }
-            .stock-item.info {
-                background: #EFF6FF;
-                border-left: 4px solid #3B82F6;
-            }
-            .stock-name {
-                font-weight: 700;
-                color: var(--header);
-                font-size: 15px;
-            }
-            .stock-status {
-                font-size: 12px;
-                color: var(--text);
-                margin-top: 2px;
-            }
-            .stock-qty {
-                font-weight: 800;
-                font-size: 20px;
-                text-align: right;
-            }
-            .stock-item.danger .stock-qty { color: #EF4444; }
-            .stock-item.warning .stock-qty { color: #F59E0B; }
-            .stock-item.info .stock-qty { color: #3B82F6; }
-            .stock-qty-label {
-                font-size: 12px;
-                font-weight: 600;
-                text-align: right;
-            }
-            .stock-item.danger .stock-qty-label { color: #EF4444; }
-            .stock-item.warning .stock-qty-label { color: #F59E0B; }
-            .stock-item.info .stock-qty-label { color: #3B82F6; }
-
-            /* Features */
-            .features-section {
-                padding: 100px 0;
-                background: #0F1219;
-                position: relative;
-            }
-            .features-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .section-tag {
-                display: inline-block;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                font-size: 13px;
-                font-weight: 700;
-                padding: 6px 16px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-            }
-            .section-title {
-                font-size: 42px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .section-title .highlight { color: var(--accent); }
-            .section-subtitle {
-                font-size: 17px;
-                color: rgba(255,255,255,0.55);
-                margin-bottom: 60px;
-                line-height: 1.6;
-            }
-            .features-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-            }
-            .feature-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 16px;
-                padding: 32px 28px;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255,255,255,0.06);
-            }
-            .feature-card:hover {
-                background: rgba(255,255,255,0.06);
-                border-color: color-mix(in srgb, var(--accent) 30%, transparent);
-                box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
-                transform: translateY(-4px);
-            }
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 14px;
-                font-size: 24px;
-                margin-bottom: 20px;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                transition: all 0.3s;
-            }
-            .feature-card:hover .feature-icon {
-                background: var(--accent);
-                color: #fff;
-            }
-            .feature-card h3 {
-                font-size: 19px;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 10px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .feature-card p {
-                font-size: 15px;
-                color: rgba(255,255,255,0.55);
-                margin: 0;
-                line-height: 1.6;
-            }
-
-            /* Alerts */
-            .alerts-section {
-                padding: 100px 0;
-                background: #111827;
-                position: relative;
-            }
-            .alerts-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .alerts-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-                margin-top: 60px;
-            }
-            .alert-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 20px;
-                padding: 36px;
-                text-align: center;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                border: 1px solid rgba(255,255,255,0.06);
-                transition: all 0.3s ease;
-            }
-            .alert-card:hover {
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-                transform: translateY(-4px);
-            }
-            .alert-card-icon {
-                width: 72px;
-                height: 72px;
-                margin: 0 auto 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 16px;
-                font-size: 30px;
-            }
-            .alert-card.yellow {
-                border-top: 3px solid #F59E0B;
-            }
-            .alert-card.yellow .alert-card-icon {
-                background: rgba(245,158,11,0.12);
-                color: #F59E0B;
-            }
-            .alert-card.yellow:hover {
-                border-color: rgba(255,255,255,0.06);
-                border-top-color: #F59E0B;
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 25px rgba(245,158,11,0.1);
-            }
-            .alert-card.red {
-                border-top: 3px solid #EF4444;
-            }
-            .alert-card.red .alert-card-icon {
-                background: rgba(239,68,68,0.12);
-                color: #EF4444;
-            }
-            .alert-card.red:hover {
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 25px rgba(239,68,68,0.1);
-            }
-            .alert-card.blue {
-                border-top: 3px solid #3B82F6;
-            }
-            .alert-card.blue .alert-card-icon {
-                background: rgba(59,130,246,0.12);
-                color: #3B82F6;
-            }
-            .alert-card.blue:hover {
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 25px rgba(59,130,246,0.1);
-            }
-            .alert-card h3 {
-                font-size: 20px;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 12px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .alert-card p {
-                font-size: 15px;
-                color: rgba(255,255,255,0.55);
-                margin: 0;
-                line-height: 1.6;
-            }
-
-            /* CTA */
-            .cta-section {
-                background: linear-gradient(135deg, #ec8228 0%, #D47524 100%);
-                padding: 100px 0;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-            }
-            .cta-section::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -20%;
-                width: 500px;
-                height: 500px;
-                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-                border-radius: 50%;
-            }
-            .cta-section h2 {
-                color: #fff;
-                font-size: 42px;
-                font-weight: 800;
-                margin-bottom: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .cta-section p {
-                color: rgba(255,255,255,0.9);
-                font-size: 18px;
-                margin-bottom: 36px;
-                font-family: 'Inter', sans-serif;
-            }
-            .cta-btn-white {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                background: #fff;
-                color: #ec8228;
-                padding: 16px 36px;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-            }
-            .cta-btn-white:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-                color: #D47524;
-            }
-
-            @media (max-width: 991px) {
-                .page-hero h1 { font-size: 36px; }
-                .section-title { font-size: 32px; }
-                .cta-section h2 { font-size: 32px; }
-                .features-grid { grid-template-columns: repeat(2, 1fr); }
-                .alerts-grid { grid-template-columns: repeat(2, 1fr); }
-            }
-            @media (max-width: 767px) {
-                .page-hero { padding: 70px 0 60px; }
-                .page-hero h1 { font-size: 30px; }
-                .features-grid { grid-template-columns: 1fr; }
-                .alerts-grid { grid-template-columns: 1fr; }
-                .mockup-card { margin-top: 40px; }
-            }
-        </style>
-    </head>
-    <body>
-
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
-        <div class="mouseCursor cursor-outer"></div>
-        <div class="mouseCursor cursor-inner"></div>
-
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo de productos y servicios · Facturales</title>
+<meta name="description" content="Catálogo de productos y servicios con referencia, precio de compra y venta, impuesto, descuento y margen. Importa en Excel o CSV y factura en segundos.">
+<link rel="canonical" href="https://facturales.es/gestiona-tu-stock.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Catálogo de productos y servicios · Facturales">
+<meta property="og:description" content="Catálogo de productos y servicios con referencia, precio de compra y venta, impuesto, descuento y margen. Importa en Excel o CSV y factura en segundos.">
+<meta property="og:url" content="https://facturales.es/gestiona-tu-stock.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Facturales controla existencias o almacenes?","acceptedAnswer":{"@type":"Answer","text":"No. Facturales gestiona un catálogo de productos y servicios con precios, impuestos y márgenes; no lleva control de existencias ni de almacenes."}},{"@type":"Question","name":"¿Cuántos productos puedo tener?","acceptedAnswer":{"@type":"Answer","text":"30 en Starter, 150 en Pro e ilimitados en Ilimitado."}}]}</script>
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
 <script src="assets/js/header-include.js"></script>
-
-        <div class="search_popup">
-            <div class="container"><div class="row"><div class="col-xxl-12"><div class="search_wrapper">
-                <div class="search_top d-flex align-items-center">
-                    <div class="search_logo"><a href="index.html"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                    <div class="search_close"><button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button></div>
-                </div>
-                <div class="search_form"><form action="#"><div class="search_input">
-                    <input class="search-input-field" type="text" placeholder="Type here to search...">
-                    <span class="search-focus-border"></span>
-                    <button type="submit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></button>
-                </div></form></div>
-            </div></div></div></div>
-        </div>
-        <div class="search-popup-overlay"></div>
-
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Gestiona tu Stock</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                                <li>/</li>
-                                <li>Gestiona tu Stock</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Section -->
-                <section class="page-hero">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-boxes-stacked"></i> Control de Inventario</div>
-                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Gestiona y configura <span class="highlight">alarmas de stock</span></h1>
-                                <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Controla tu inventario en tiempo real, recibe alertas automáticas cuando el stock sea bajo y optimiza tus compras para nunca quedarte sin productos.</p>
-                                <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Alertas automáticas</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Múltiples almacenes</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Stock en tiempo real</div>
-                                </div>
-                                <a href="https://app.facturales.es/signup.html" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="mockup-top">
-                                        <h3>Panel de Stock</h3>
-                                        <a href="#" class="mockup-top-link"><i class="fa-solid fa-circle-check"></i> Ver alertas</a>
-                                    </div>
-                                    <div class="stock-item danger">
-                                        <div>
-                                            <div class="stock-name">Producto A</div>
-                                            <div class="stock-status">En almacén principal</div>
-                                        </div>
-                                        <div>
-                                            <div class="stock-qty">5 uds</div>
-                                            <div class="stock-qty-label"><i class="fa-solid fa-circle-exclamation"></i> Crítico</div>
-                                        </div>
-                                    </div>
-                                    <div class="stock-item warning">
-                                        <div>
-                                            <div class="stock-name">Producto B</div>
-                                            <div class="stock-status">En almacén principal</div>
-                                        </div>
-                                        <div>
-                                            <div class="stock-qty">15 uds</div>
-                                            <div class="stock-qty-label"><i class="fa-solid fa-triangle-exclamation"></i> Bajo</div>
-                                        </div>
-                                    </div>
-                                    <div class="stock-item info">
-                                        <div>
-                                            <div class="stock-name">Producto C</div>
-                                            <div class="stock-status">En almacén secundario</div>
-                                        </div>
-                                        <div>
-                                            <div class="stock-qty">45 uds</div>
-                                            <div class="stock-qty-label"><i class="fa-solid fa-circle-check"></i> Correcto</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Features Section -->
-                <section class="features-section">
-                    <div class="container">
-                        <div class="text-center">
-                            <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Funcionalidades</div>
-                            <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Todo para tu <span class="highlight">control de stock</span></h2>
-                            <p class="section-subtitle wow fadeInUp" data-wow-delay=".4s">Gestiona tu inventario de forma profesional con herramientas potentes</p>
-                        </div>
-                        <div class="features-grid">
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
-                                <h3>Inventario en tiempo real</h3>
-                                <p>Visualiza el stock actualizado de todos tus productos al instante</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
-                                <h3>Alarmas personalizadas</h3>
-                                <p>Recibe avisos cuando el stock llegue al mínimo que configures</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
-                                <h3>Stock mínimo y máximo</h3>
-                                <p>Define umbrales personalizados para cada producto</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
-                                <div class="feature-icon"><i class="fa-solid fa-rotate"></i></div>
-                                <h3>Actualización automática</h3>
-                                <p>Se actualiza con cada factura emitida y entrada de mercancía</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
-                                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-                                <h3>Informes de movimientos</h3>
-                                <p>Registra compras, ventas y salidas con detalle completo</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
-                                <div class="feature-icon"><i class="fa-solid fa-warehouse"></i></div>
-                                <h3>Múltiples almacenes</h3>
-                                <p>Gestiona stock en diferentes ubicaciones desde un solo panel</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Alerts Section -->
-                <section class="alerts-section">
-                    <div class="container">
-                        <div class="text-center">
-                            <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Alertas</div>
-                            <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Tipos de <span class="highlight">alertas automáticas</span></h2>
-                        </div>
-                        <div class="alerts-grid">
-                            <div class="alert-card yellow wow fadeInUp" data-wow-delay=".3s">
-                                <div class="alert-card-icon">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                </div>
-                                <h3>Stock Bajo</h3>
-                                <p>Aviso cuando el stock baje del mínimo establecido para cada producto</p>
-                            </div>
-                            <div class="alert-card red wow fadeInUp" data-wow-delay=".4s">
-                                <div class="alert-card-icon">
-                                    <i class="fa-solid fa-bell"></i>
-                                </div>
-                                <h3>Stock Crítico</h3>
-                                <p>Alerta urgente cuando el stock es casi nulo y necesitas reponer</p>
-                            </div>
-                            <div class="alert-card blue wow fadeInUp" data-wow-delay=".5s">
-                                <div class="alert-card-icon">
-                                    <i class="fa-solid fa-box"></i>
-                                </div>
-                                <h3>Stock Excesivo</h3>
-                                <p>Notificación cuando hay demasiado inventario almacenado</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Orbit CTA Section -->
-                <section class="orbit-section">
-                    <div class="container" id="facturales-orbit">
-                        <svg class="orbit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                            <path class="oval" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
-                            <path class="path-line" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
-                        </svg>
-                        <div class="circle customers"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5"></circle><path d="M4.5 18c.7-2.5 2.8-4 4.5-4s3.8 1.5 4.5 4"></path><rect x="14.5" y="6" width="5" height="8" rx="1.2"></rect><path d="M16 8.5h2"></path><path d="M16 11h2"></path></svg></div>
-                        <div class="circle quotes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"></path><path d="M14.5 3.5V8h4"></path><path d="M9 11h6"></path><path d="M9 14h3.5"></path><path d="M13.5 15.5 17.5 11.5"></path><path d="M16.7 10.7 18.3 12.3"></path><path d="M13.2 15.8 13 18l2.2-.2"></path></svg></div>
-                        <div class="circle invoices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3.5h8v17l-2-1.25-2 1.25-2-1.25-2 1.25z"></path><path d="M10 8h4"></path><path d="M10 11h4"></path><path d="M10 14h2.5"></path><path d="M14.2 14.4l1.1 1.1 2.2-2.2"></path></svg></div>
-                        <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
-                        <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
-                        <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
-                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
-                            <span class="facturales-cta-glow"></span>
-                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
-                        </a>
-                    </div>
-                </section>
-
-                <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
-                        <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><a href="index.html" class="footer-logo"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                                        <div class="footer-content">
-                                            <p>Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.</p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">Empezar ahora <i class="fa-solid fa-arrow-up-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Acceso r&aacute;pido</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="https://app.facturales.es/signup.html">Crea una cuenta gratuita</a></li>
-                                            <li><a href="https://app.facturales.es/signin.html">Iniciar sesi&oacute;n</a></li>
-                                            <li><a href="pricing.html">Precios</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Funcionalidades</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
-                                            <li><a href="crea-envia-facturas.html">Crea y Envía Facturas</a></li>
-                                            <li><a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a></li>
-                                            <li><a href="factura-personalizada.html">Personaliza facturas</a></li>
-                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
-                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Suscríbete al Boletín</h3></div>
-                                        <div class="contact-item">
-                                            <form action="#"><input type="text" placeholder="Email address"></form>
-                                            <button type="submit" class="theme-btn w-100">Subscribe now <i class="fa-solid fa-arrow-up-right"></i></button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright <span>Facturales.</span> Todos los derechos reservados.</p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li><a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a></li>
-                                <li>।</li>
-                                <li><a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                </footer>
-
-            </div>
-        </div>
-
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/viewport.jquery.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/gsap.min.js"></script>
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <script src="assets/js/SplitText.min.js"></script>
-        <script src="assets/js/TextPlugin.js"></script>
-        <script src="assets/js/chroma.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <script src="assets/js/parallaxie.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/orbit-cta.js"></script>
-    </body>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-split">
+    <div>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Productos y servicios</li></ol></nav>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Productos y servicios</p>
+      <h1 id="hero-t">Tu catálogo de productos y servicios, listo para facturar.</h1>
+      <p class="fx-lead">Guarda lo que vendes con su precio, su impuesto y su margen, y añádelo a facturas y presupuestos en un clic.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+      
+    </div>
+    <div><figure class="fx-panel" role="img" aria-label="Maqueta del catálogo de productos y servicios con precio, impuesto y margen (datos de ejemplo)">
+  <div class="fx-panel__tit" aria-hidden="true">Productos y servicios <span>Catálogo</span></div>
+  <div class="fx-mock__filas" style="margin-top:0" aria-hidden="true">
+    <div class="fx-fila"><span>Hora de consultoría<small>Ref. SRV-01</small></span><span class="fx-chip fx-chip--neutro">IVA 21 %</span><b>60,00 €</b></div>
+    <div class="fx-fila"><span>Mantenimiento web<small>Ref. SRV-04 · margen 70 %</small></span><span class="fx-chip fx-chip--neutro">IVA 21 %</span><b>90,00 €</b></div>
+    <div class="fx-fila"><span>Libro técnico<small>Ref. PRD-12 · margen 35 %</small></span><span class="fx-chip fx-chip--neutro">IVA 4 %</span><b>24,00 €</b></div>
+  </div>
+  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
+</figure></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="funciones-t">Qué puedes hacer</h2></div>
+    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><h3>Productos y servicios</h3><p>Nombre, referencia y descripción de cada artículo o servicio.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Precios y margen</h3><p>Precio de compra y de venta, PVP con impuesto y margen calculado.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span><h3>Impuesto por artículo</h3><p>IVA, IGIC o IPSI y descuento por defecto en cada producto.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"/></svg></span><h3>Importación</h3><p>Sube tu catálogo en Excel o CSV; las referencias duplicadas se omiten.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></span><h3>Exportación</h3><p>Descarga el catálogo en CSV cuando quieras.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span><h3>Uso en documentos</h3><p>Añade productos a facturas y presupuestos sin teclear precios.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="pasos-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="pasos-t">Cómo funciona</h2></div>
+    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Crea o importa</h3><p>Añade tus productos uno a uno o importa tu lista.</p></div><div class="fx-card fx-paso"><h3>Factura</h3><p>Elígelos al emitir; precio e impuesto se rellenan solos.</p></div><div class="fx-card fx-paso"><h3>Ajusta</h3><p>Actualiza precios y márgenes cuando cambien.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="faq-t">
+  <div class="fx-wrap fx-wrap--estrecho">
+    <h2 id="faq-t" style="margin-bottom:24px">Preguntas frecuentes</h2>
+    <div class="fx-faq">
+<details><summary>¿Facturales controla existencias o almacenes?</summary><div class="fx-faq__resp"><p>No. Facturales gestiona un catálogo de productos y servicios con precios, impuestos y márgenes; no lleva control de existencias ni de almacenes.</p></div></details>
+<details><summary>¿Cuántos productos puedo tener?</summary><div class="fx-faq__resp"><p>30 en Starter, 150 en Pro e ilimitados en Ilimitado.</p></div></details>
+</div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="rel-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="rel-t">Funciona mejor junto a</h2></div>
+    <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="crea-envia-facturas.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+  <h3>Facturación</h3>
+  <p>Facturas, VERI*FACTU y envío por correo</p>
+  <span class="fx-enlace">Ver facturación <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="crea-envia-presupuestos.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span></div>
+  <h3>Presupuestos</h3>
+  <p>Del presupuesto a la factura sin reescribir</p>
+  <span class="fx-enlace">Ver presupuestos <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="gestiona-clientes.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div>
+  <h3>Clientes</h3>
+  <p>Contactos, importación y cobros por cliente</p>
+  <span class="fx-enlace">Ver clientes <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--compacta" aria-labelledby="cta-final">
+  <div class="fx-wrap">
+    <div class="fx-cta">
+      <h2 id="cta-final">Pon orden en tus finanzas esta semana</h2>
+      <p class="fx-lead">Crea tu cuenta, emite tu primera factura e importa tu primer extracto. Tienes 14 días de prueba en cualquier plan y puedes cancelar cuando quieras.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
 </html>

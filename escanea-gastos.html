@@ -1,663 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Avenue Media">
-        <meta name="description" content="Escanea y gestiona gastos con Facturales. Digitaliza recibos, clasifica automáticamente y ten el control total de tus finanzas.">
-        <title>Facturales - Escanea y Gestiona Gastos</title>
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/orbit-cta.css">
-        <style>
-            :root {
-                --accent: #EF4444;
-                --accent-light: #FEF2F2;
-                --accent-dark: #DC2626;
-                --header: #0B0D17;
-                --text: #534F5A;
-            }
-
-            /* Hero */
-            .page-hero {
-                padding: 100px 0 80px;
-                background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .page-hero::before {
-                content: '';
-                position: absolute;
-                top: -40%;
-                right: -15%;
-                width: 600px;
-                height: 600px;
-                background: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%);
-                border-radius: 50%;
-                pointer-events: none;
-            }
-            .hero-tag {
-                display: inline-block;
-                background: rgba(239,68,68,0.15);
-                color: var(--accent);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 18px;
-                border-radius: 50px;
-                margin-bottom: 20px;
-                font-family: 'Inter', sans-serif;
-                letter-spacing: 0.5px;
-            }
-            .hero-tag i { margin-right: 6px; }
-            .page-hero h1 {
-                font-size: 48px;
-                font-weight: 800;
-                color: #fff;
-                margin-bottom: 20px;
-                line-height: 1.15;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .page-hero h1 .highlight { color: var(--accent); }
-            .page-hero .hero-desc {
-                font-size: 18px;
-                color: rgba(255,255,255,0.7);
-                margin-bottom: 28px;
-                line-height: 1.7;
-                font-family: 'Inter', sans-serif;
-            }
-            .check-features {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px 20px;
-                margin-bottom: 32px;
-            }
-            .check-feature {
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                color: rgba(255,255,255,0.8);
-                font-weight: 500;
-            }
-            .check-feature i {
-                color: var(--accent);
-                margin-right: 8px;
-                font-size: 14px;
-            }
-            .hero-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                padding: 16px 36px;
-                background: var(--accent);
-                color: #fff;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-family: 'Inter', sans-serif;
-            }
-            .hero-cta:hover {
-                background: var(--accent-dark);
-                color: #fff;
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(239,68,68,0.35);
-            }
-
-            /* Mockup */
-            .mockup-card {
-                background: #fff;
-                border-radius: 20px;
-                padding: 32px;
-                box-shadow: 0 25px 80px rgba(0,0,0,0.25);
-                position: relative;
-            }
-            .mockup-card::before {
-                content: '';
-                position: absolute;
-                top: -2px; left: -2px; right: -2px; bottom: -2px;
-                background: linear-gradient(135deg, var(--accent), transparent 60%);
-                border-radius: 22px;
-                z-index: -1;
-                opacity: 0.4;
-            }
-            .mockup-top {
-                margin-bottom: 20px;
-            }
-            .mockup-top h3 {
-                font-size: 18px;
-                font-weight: 700;
-                margin: 0 0 4px 0;
-                color: var(--header);
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .mockup-top-sub {
-                font-size: 14px;
-                color: var(--text);
-            }
-            .summary-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                margin-bottom: 24px;
-            }
-            .summary-card {
-                padding: 18px;
-                border-radius: 12px;
-                text-align: center;
-            }
-            .summary-card.red { background: #FEF2F2; }
-            .summary-card.blue { background: #EFF6FF; }
-            .summary-label {
-                font-size: 12px;
-                color: var(--text);
-                margin-bottom: 6px;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.3px;
-            }
-            .summary-value {
-                font-size: 26px;
-                font-weight: 800;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .summary-card.red .summary-value { color: #EF4444; }
-            .summary-card.blue .summary-value { color: #3B82F6; }
-            .expense-item {
-                display: flex;
-                align-items: center;
-                padding: 14px;
-                background: #FAFAFA;
-                border-radius: 10px;
-                margin-bottom: 10px;
-                transition: all 0.2s;
-            }
-            .expense-item:last-child { margin-bottom: 0; }
-            .expense-item:hover { background: #F3F4F6; }
-            .expense-icon {
-                width: 42px;
-                height: 42px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 14px;
-                font-size: 16px;
-                flex-shrink: 0;
-            }
-            .expense-icon.red { background: #FEF2F2; color: #EF4444; }
-            .expense-icon.orange { background: #FFF7ED; color: #F97316; }
-            .expense-icon.blue { background: #EFF6FF; color: #3B82F6; }
-            .expense-info { flex: 1; }
-            .expense-name {
-                font-weight: 700;
-                color: var(--header);
-                font-size: 14px;
-            }
-            .expense-cat {
-                font-size: 12px;
-                color: var(--text);
-            }
-            .expense-amount {
-                font-weight: 800;
-                font-size: 16px;
-                color: var(--header);
-            }
-
-            /* Features */
-            .features-section {
-                padding: 100px 0;
-                background: #0F1219;
-                position: relative;
-            }
-            .features-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            }
-            .section-tag {
-                display: inline-block;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                font-size: 13px;
-                font-weight: 700;
-                padding: 6px 16px;
-                border-radius: 50px;
-                margin-bottom: 16px;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-            }
-            .section-title {
-                font-size: 42px;
-                font-weight: 800;
-                color: #E8ECF4;
-                margin-bottom: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .section-title .highlight { color: var(--accent); }
-            .section-subtitle {
-                font-size: 17px;
-                color: rgba(255,255,255,0.55);
-                margin-bottom: 60px;
-                line-height: 1.6;
-            }
-            .features-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-            }
-            .feature-card {
-                background: rgba(255,255,255,0.03);
-                border-radius: 16px;
-                padding: 32px 28px;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255,255,255,0.06);
-            }
-            .feature-card:hover {
-                background: rgba(255,255,255,0.06);
-                border-color: color-mix(in srgb, var(--accent) 30%, transparent);
-                box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px color-mix(in srgb, var(--accent) 8%, transparent);
-                transform: translateY(-4px);
-            }
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 14px;
-                font-size: 24px;
-                margin-bottom: 20px;
-                background: color-mix(in srgb, var(--accent) 12%, transparent);
-                color: var(--accent);
-                transition: all 0.3s;
-            }
-            .feature-card:hover .feature-icon {
-                background: var(--accent);
-                color: #fff;
-            }
-            .feature-card h3 {
-                font-size: 19px;
-                font-weight: 700;
-                color: #E8ECF4;
-                margin-bottom: 10px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .feature-card p {
-                font-size: 15px;
-                color: rgba(255,255,255,0.55);
-                margin: 0;
-                line-height: 1.6;
-            }
-
-            /* CTA */
-            .cta-section {
-                background: linear-gradient(135deg, #ec8228 0%, #D47524 100%);
-                padding: 100px 0;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-            }
-            .cta-section::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -20%;
-                width: 500px;
-                height: 500px;
-                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-                border-radius: 50%;
-            }
-            .cta-section h2 {
-                color: #fff;
-                font-size: 42px;
-                font-weight: 800;
-                margin-bottom: 16px;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .cta-section p {
-                color: rgba(255,255,255,0.9);
-                font-size: 18px;
-                margin-bottom: 36px;
-                font-family: 'Inter', sans-serif;
-            }
-            .cta-btn-white {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                background: #fff;
-                color: #ec8228;
-                padding: 16px 36px;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-            }
-            .cta-btn-white:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-                color: #D47524;
-            }
-
-            @media (max-width: 991px) {
-                .page-hero h1 { font-size: 36px; }
-                .section-title { font-size: 32px; }
-                .cta-section h2 { font-size: 32px; }
-                .features-grid { grid-template-columns: repeat(2, 1fr); }
-            }
-            @media (max-width: 767px) {
-                .page-hero { padding: 70px 0 60px; }
-                .page-hero h1 { font-size: 30px; }
-                .features-grid { grid-template-columns: 1fr; }
-                .mockup-card { margin-top: 40px; }
-            }
-        </style>
-    </head>
-    <body>
-
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <button id="back-top" class="back-to-top"><i class="fa-regular fa-arrow-up"></i></button>
-        <div class="mouseCursor cursor-outer"></div>
-        <div class="mouseCursor cursor-inner"></div>
-
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gastos, OCR y justificantes · Facturales</title>
+<meta name="description" content="Escanea tickets y facturas con OCR, controla qué gastos tienen justificante, organiza proveedores y revisa la matriz mensual por categoría. ZIP para tu gestoría.">
+<link rel="canonical" href="https://facturales.es/escanea-gastos.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Gastos, OCR y justificantes · Facturales">
+<meta property="og:description" content="Escanea tickets y facturas con OCR, controla qué gastos tienen justificante, organiza proveedores y revisa la matriz mensual por categoría. ZIP para tu gestoría.">
+<meta property="og:url" content="https://facturales.es/escanea-gastos.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuántos documentos puedo escanear?","acceptedAnswer":{"@type":"Answer","text":"Depende del plan: 10 al mes en Starter, 75 en Pro y 300 en Ilimitado."}},{"@type":"Question","name":"¿El gasto cuenta en el IVA soportado?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los gastos con ticket o factura registrada se incluyen en el resumen fiscal del trimestre."}},{"@type":"Question","name":"¿Están disponibles proveedores y matriz mensual?","acceptedAnswer":{"@type":"Answer","text":"Forman parte de Gastos, una función nueva que estamos activando de forma gradual. El escaneo OCR está disponible en todos los planes."}}]}</script>
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
 <script src="assets/js/header-include.js"></script>
-
-        <div class="search_popup">
-            <div class="container"><div class="row"><div class="col-xxl-12"><div class="search_wrapper">
-                <div class="search_top d-flex align-items-center">
-                    <div class="search_logo"><a href="index.html"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                    <div class="search_close"><button type="button" class="search_close_btn"><i class="fa-thin fa-times"></i></button></div>
-                </div>
-                <div class="search_form"><form action="#"><div class="search_input">
-                    <input class="search-input-field" type="text" placeholder="Type here to search...">
-                    <span class="search-focus-border"></span>
-                    <button type="submit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></button>
-                </div></form></div>
-            </div></div></div></div>
-        </div>
-        <div class="search-popup-overlay"></div>
-
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Escanea Gastos</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                                <li>/</li>
-                                <li>Escanea Gastos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Section -->
-                <section class="page-hero">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="hero-tag wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-receipt"></i> Control de Gastos</div>
-                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Gestiona y controla tus <span class="highlight">gastos fácilmente</span></h1>
-                                <p class="hero-desc wow fadeInUp" data-wow-delay=".4s">Digitaliza recibos, clasifica gastos automáticamente y ten el control total de tus finanzas. Ahorra tiempo con gestión inteligente.</p>
-                                <div class="check-features wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Escaneo con cámara</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Categorización automática</div>
-                                    <div class="check-feature"><i class="fa-solid fa-circle-check"></i> Informes detallados</div>
-                                </div>
-                                <a href="https://app.facturales.es/signup.html" class="hero-cta wow fadeInUp" data-wow-delay=".6s">Empieza gratis <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mockup-card wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="mockup-top">
-                                        <h3>Resumen de Gastos</h3>
-                                        <div class="mockup-top-sub">Noviembre 2025</div>
-                                    </div>
-                                    <div class="summary-grid">
-                                        <div class="summary-card red">
-                                            <div class="summary-label">Total Gastos</div>
-                                            <div class="summary-value">3.840 €</div>
-                                        </div>
-                                        <div class="summary-card blue">
-                                            <div class="summary-label">Deducibles</div>
-                                            <div class="summary-value">2.850 €</div>
-                                        </div>
-                                    </div>
-                                    <div class="expense-item">
-                                        <div class="expense-icon red"><i class="fa-solid fa-building"></i></div>
-                                        <div class="expense-info">
-                                            <div class="expense-name">Suministros</div>
-                                            <div class="expense-cat">Gastos fijos</div>
-                                        </div>
-                                        <div class="expense-amount">890 €</div>
-                                    </div>
-                                    <div class="expense-item">
-                                        <div class="expense-icon orange"><i class="fa-solid fa-pen-ruler"></i></div>
-                                        <div class="expense-info">
-                                            <div class="expense-name">Material oficina</div>
-                                            <div class="expense-cat">Gastos variables</div>
-                                        </div>
-                                        <div class="expense-amount">420 €</div>
-                                    </div>
-                                    <div class="expense-item">
-                                        <div class="expense-icon blue"><i class="fa-solid fa-laptop"></i></div>
-                                        <div class="expense-info">
-                                            <div class="expense-name">Software</div>
-                                            <div class="expense-cat">Herramientas digitales</div>
-                                        </div>
-                                        <div class="expense-amount">850 €</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Features Section -->
-                <section class="features-section">
-                    <div class="container">
-                        <div class="text-center">
-                            <div class="section-tag wow fadeInUp" data-wow-delay=".2s">Funcionalidades</div>
-                            <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Herramientas para <span class="highlight">gestionar gastos</span></h2>
-                            <p class="section-subtitle wow fadeInUp" data-wow-delay=".4s">Visualiza, clasifica y controla todos tus gastos en un solo lugar</p>
-                        </div>
-                        <div class="features-grid">
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-                                <div class="feature-icon"><i class="fa-solid fa-camera"></i></div>
-                                <h3>Escaneo de recibos</h3>
-                                <p>Digitaliza recibos y facturas con la cámara de tu móvil al instante</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
-                                <h3>Categorización automática</h3>
-                                <p>Clasifica gastos automáticamente por categoría con inteligencia artificial</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".5s">
-                                <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                                <h3>Informes detallados</h3>
-                                <p>Visualiza tus gastos en gráficos claros e intuitivos</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
-                                <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                                <h3>Búsqueda avanzada</h3>
-                                <p>Encuentra cualquier gasto en segundos con filtros potentes</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".7s">
-                                <div class="feature-icon"><i class="fa-solid fa-calendar"></i></div>
-                                <h3>Control por períodos</h3>
-                                <p>Analiza gastos por mes, trimestre o año fiscal</p>
-                            </div>
-                            <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
-                                <div class="feature-icon"><i class="fa-solid fa-file-export"></i></div>
-                                <h3>Exportación contable</h3>
-                                <p>Exporta tus datos para tu gestor o contabilidad externa</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Orbit CTA Section -->
-                <section class="orbit-section">
-                    <div class="container" id="facturales-orbit">
-                        <svg class="orbit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                            <path class="oval" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
-                            <path class="path-line" d="M 15,15 H 85 Q 99,15 99,30 V 70 Q 100,85 85,85 H 15 Q 1,85 0,70 V 30 Q 1,15 15,15 Z"/>
-                        </svg>
-                        <div class="circle customers"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5"></circle><path d="M4.5 18c.7-2.5 2.8-4 4.5-4s3.8 1.5 4.5 4"></path><rect x="14.5" y="6" width="5" height="8" rx="1.2"></rect><path d="M16 8.5h2"></path><path d="M16 11h2"></path></svg></div>
-                        <div class="circle quotes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"></path><path d="M14.5 3.5V8h4"></path><path d="M9 11h6"></path><path d="M9 14h3.5"></path><path d="M13.5 15.5 17.5 11.5"></path><path d="M16.7 10.7 18.3 12.3"></path><path d="M13.2 15.8 13 18l2.2-.2"></path></svg></div>
-                        <div class="circle invoices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3.5h8v17l-2-1.25-2 1.25-2-1.25-2 1.25z"></path><path d="M10 8h4"></path><path d="M10 11h4"></path><path d="M10 14h2.5"></path><path d="M14.2 14.4l1.1 1.1 2.2-2.2"></path></svg></div>
-                        <div class="circle payments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="2"></rect><path d="M4 10h16"></path><path d="M7.5 14.5h3.5"></path><circle cx="16.5" cy="14.5" r="1.3"></circle></svg></div>
-                        <div class="circle taxes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="17" rx="2"></rect><rect x="8.5" y="6.5" width="7" height="3" rx="0.8"></rect><path d="M9 12.5h1.5"></path><path d="M13.5 12.5H15"></path><path d="M9 16h1.5"></path><path d="M13.5 16H15"></path></svg></div>
-                        <div class="circle reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5h14"></path><rect x="7" y="11" width="2.5" height="6.5" rx="0.7"></rect><rect x="10.75" y="8.5" width="2.5" height="9" rx="0.7"></rect><rect x="14.5" y="6" width="2.5" height="11.5" rx="0.7"></rect></svg></div>
-                        <a class="facturales-cta pro" id="facturales-cta" href="https://app.facturales.es/signup.html" aria-label="Ir al registro de Facturales">
-                            <span class="facturales-cta-glow"></span>
-                            <span class="facturales-cta-inner"><img src="assets/img/logo/logo-white.svg" alt="Facturales"></span>
-                        </a>
-                    </div>
-                </section>
-
-                <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
-                        <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><a href="index.html" class="footer-logo"><img src="assets/img/logo/logo-white.svg" alt="img"></a></div>
-                                        <div class="footer-content">
-                                            <p>Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.</p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">Empezar ahora <i class="fa-solid fa-arrow-up-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Acceso r&aacute;pido</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="https://app.facturales.es/signup.html">Crea una cuenta gratuita</a></li>
-                                            <li><a href="https://app.facturales.es/signin.html">Iniciar sesi&oacute;n</a></li>
-                                            <li><a href="pricing.html">Precios</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Funcionalidades</h3></div>
-                                        <ul class="list-area">
-                                            <li><a href="tu-negocio-bajo-control.html">Tu negocio bajo control</a></li>
-                                            <li><a href="crea-envia-facturas.html">Crea y Envía Facturas</a></li>
-                                            <li><a href="crea-envia-presupuestos.html">Crea y Envía Presupuestos</a></li>
-                                            <li><a href="factura-personalizada.html">Personaliza facturas</a></li>
-                                            <li><a href="escanea-gastos.html">Escanea gastos</a></li>
-                                            <li><a href="gestiona-clientes.html">Gestiona clientes</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head"><h3>Suscríbete al Boletín</h3></div>
-                                        <div class="contact-item">
-                                            <form action="#"><input type="text" placeholder="Email address"></form>
-                                            <button type="submit" class="theme-btn w-100">Subscribe now <i class="fa-solid fa-arrow-up-right"></i></button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright <span>Facturales.</span> Todos los derechos reservados.</p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li><a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a></li>
-                                <li>।</li>
-                                <li><a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                </footer>
-
-            </div>
-        </div>
-
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/viewport.jquery.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/gsap.min.js"></script>
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <script src="assets/js/SplitText.min.js"></script>
-        <script src="assets/js/TextPlugin.js"></script>
-        <script src="assets/js/chroma.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <script src="assets/js/parallaxie.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/orbit-cta.js"></script>
-    </body>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-split">
+    <div>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Gastos y justificantes</li></ol></nav>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>Gastos y justificantes <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
+      <h1 id="hero-t">Cada gasto con su justificante, sin perseguir tickets.</h1>
+      <p class="fx-lead">Haz una foto al ticket o sube el PDF y el OCR extrae fecha, proveedor, base imponible, IVA y total. Después ves qué movimientos siguen sin justificante y cuánto gastas cada mes.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+      <p class="fx-nota" style="margin-top:20px">Proveedores, estado del justificante y matriz mensual: función nueva en despliegue gradual.</p>
+    </div>
+    <div><figure class="fx-panel" role="img" aria-label="Maqueta de la matriz mensual de gastos por categoría y estado de justificantes (datos de ejemplo)">
+  <div class="fx-panel__tit" aria-hidden="true">Matriz mensual <span>Gastos por categoría</span></div>
+  <div style="overflow-x:auto" aria-hidden="true"><table class="fx-matriz"><thead><tr><th></th><th>Jul</th><th>Ago</th><th>Sep</th></tr></thead><tbody><tr><th scope="row">Suministros</th><td class="">212 €</td><td class="">198 €</td><td class="medio">240 €</td></tr><tr><th scope="row">Software</th><td class="">89 €</td><td class="">89 €</td><td class="">129 €</td></tr><tr><th scope="row">Desplazamientos</th><td class="">64 €</td><td class="alto">310 €</td><td class="">45 €</td></tr><tr><th scope="row">Material</th><td class="">120 €</td><td class="">0 €</td><td class="alto">385 €</td></tr></tbody></table></div>
+  <div class="fx-mock__filas" aria-hidden="true">
+    <div class="fx-fila"><span>Gasolinera Repsol<small>Ticket · OCR</small></span><span class="fx-chip fx-chip--ok">Justificado</span><b>−52,30 €</b></div>
+    <div class="fx-fila"><span>Amazon Business<small>Pendiente de ticket</small></span><span class="fx-chip fx-chip--pend">Pendiente</span><b>−129,00 €</b></div>
+  </div>
+  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
+</figure></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="funciones-t">Qué puedes hacer</h2></div>
+    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span><h3>Escaneo OCR</h3><p>Fecha, proveedor, base, IVA y total leídos de la foto o del PDF. Revisas y guardas.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></span><h3>Estado del justificante</h3><p>Pendiente, justificado o no requiere, con revisión rápida uno a uno.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span><h3>Proveedores</h3><p>Tus gastos agrupados por proveedor.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></span><h3>Matriz mensual</h3><p>Gasto por categoría y mes, con avisos de lo que se sale de lo normal.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><h3>Justificantes privados</h3><p>Los archivos se guardan en almacenamiento privado de tu cuenta.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></span><h3>ZIP para la gestoría</h3><p>Descarga los justificantes del periodo en un único archivo.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="pasos-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="pasos-t">Cómo funciona</h2></div>
+    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Escanea</h3><p>Foto o PDF del ticket o factura recibida.</p></div><div class="fx-card fx-paso"><h3>Revisa</h3><p>Comprueba los datos y la categoría; el gasto entra en tus impuestos.</p></div><div class="fx-card fx-paso"><h3>Cierra el mes</h3><p>Sin justificantes pendientes y con el ZIP listo para tu gestoría.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="faq-t">
+  <div class="fx-wrap fx-wrap--estrecho">
+    <h2 id="faq-t" style="margin-bottom:24px">Preguntas frecuentes</h2>
+    <div class="fx-faq">
+<details><summary>¿Cuántos documentos puedo escanear?</summary><div class="fx-faq__resp"><p>Depende del plan: 10 al mes en Starter, 75 en Pro y 300 en Ilimitado.</p></div></details>
+<details><summary>¿El gasto cuenta en el IVA soportado?</summary><div class="fx-faq__resp"><p>Sí. Los gastos con ticket o factura registrada se incluyen en el resumen fiscal del trimestre.</p></div></details>
+<details><summary>¿Están disponibles proveedores y matriz mensual?</summary><div class="fx-faq__resp"><p>Forman parte de Gastos, una función nueva que estamos activando de forma gradual. El escaneo OCR está disponible en todos los planes.</p></div></details>
+</div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="rel-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="rel-t">Funciona mejor junto a</h2></div>
+    <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="bancos-conciliacion.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
+  <h3>Bancos y conciliación</h3>
+  <p>Importa extractos y concilia movimientos</p>
+  <span class="fx-enlace">Ver bancos y conciliación <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="impuestos.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span></div>
+  <h3>Impuestos</h3>
+  <p>Modelos 303 y 130 calculados y cierres</p>
+  <span class="fx-enlace">Ver impuestos <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="cobros.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
+  <h3>Cobros</h3>
+  <p>Pendientes, previsión y antigüedad de deuda</p>
+  <span class="fx-enlace">Ver cobros <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--compacta" aria-labelledby="cta-final">
+  <div class="fx-wrap">
+    <div class="fx-cta">
+      <h2 id="cta-final">Pon orden en tus finanzas esta semana</h2>
+      <p class="fx-lead">Crea tu cuenta, emite tu primera factura e importa tu primer extracto. Tienes 14 días de prueba en cualquier plan y puedes cancelar cuando quieras.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
 </html>

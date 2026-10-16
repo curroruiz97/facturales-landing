@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cobros, previsión y antigüedad de deuda · Facturales</title>
+<meta name="description" content="Controla las facturas pendientes de cobro, la previsión de las próximas semanas y la antigüedad de la deuda por cliente. Recordatorios por correo en dos clics.">
+<link rel="canonical" href="https://facturales.es/cobros.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Cobros, previsión y antigüedad de deuda · Facturales">
+<meta property="og:description" content="Controla las facturas pendientes de cobro, la previsión de las próximas semanas y la antigüedad de la deuda por cliente. Recordatorios por correo en dos clics.">
+<meta property="og:url" content="https://facturales.es/cobros.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Los recordatorios se envían solos?","acceptedAnswer":{"@type":"Answer","text":"No. Tú decides cuándo enviar cada recordatorio: puedes copiar el texto o enviarlo por correo desde Facturales."}},{"@type":"Question","name":"¿Se duplica el ingreso al conciliar el banco?","acceptedAnswer":{"@type":"Answer","text":"No. Una factura cobrada tiene exactamente un ingreso, que se enlaza con el movimiento del banco."}},{"@type":"Question","name":"¿Está disponible en mi cuenta?","acceptedAnswer":{"@type":"Answer","text":"Cobros es una función nueva que estamos activando de forma gradual. Si aún no la ves, escríbenos a soporte@facturales.es."}}]}</script>
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
+<script src="assets/js/header-include.js"></script>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-split">
+    <div>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Cobros</li></ol></nav>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>Cobros <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
+      <h1 id="hero-t">Cobra a tiempo sin perseguir a nadie.</h1>
+      <p class="fx-lead">Ve en una pantalla lo que te deben, cuándo deberían pagarte y quién se retrasa. Reparte cada cobro entre sus facturas y envía un recordatorio cuando haga falta.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+      <p class="fx-nota" style="margin-top:20px">Función nueva en despliegue gradual.</p>
+    </div>
+    <div><figure class="fx-panel" role="img" aria-label="Maqueta de Cobros: importes pendientes por antigüedad y previsión de cobro (datos de ejemplo)">
+  <div class="fx-panel__tit" aria-hidden="true">Antigüedad de la deuda <span>8.230 € pendientes</span></div>
+  <div class="fx-barras" aria-hidden="true"><div class="fx-barra"><span>Al día</span><i style="--v:62%;--c:var(--fx-pos)"></i><b>4.820 €</b></div><div class="fx-barra"><span>1–30 días</span><i style="--v:28%;--c:var(--fx-acento)"></i><b>2.140 €</b></div><div class="fx-barra"><span>31–60 días</span><i style="--v:12%;--c:var(--fx-aviso)"></i><b>860 €</b></div><div class="fx-barra"><span>Más de 60</span><i style="--v:6%;--c:var(--fx-neg)"></i><b>410 €</b></div></div>
+  <div class="fx-mock__filas" aria-hidden="true">
+    <div class="fx-fila"><span>Taller Norte<small>Plazo medio 38 días</small></span><span class="fx-chip fx-chip--pend">Vence 15 oct</span><b>860,00 €</b></div>
+    <div class="fx-fila"><span>Clínica Arce<small>Previsto esta semana</small></span><span class="fx-chip fx-chip--ok">Al día</span><b>1.420,00 €</b></div>
+  </div>
+  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
+</figure></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="funciones-t">Qué puedes hacer</h2></div>
+    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Pendientes</h3><p>Todas las facturas por cobrar con su vencimiento, por cliente.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span><h3>Previsión</h3><p>Lo que esperas cobrar en las próximas semanas, según los plazos de cada cliente.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><h3>Antigüedad de la deuda</h3><p>Importes pendientes por tramos de retraso para priorizar.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Por cliente</h3><p>Plazo medio de pago y valoración de cada cliente.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><h3>Reparto de cobros</h3><p>Un ingreso puede cubrir varias facturas, y una factura puede cobrarse en varios pagos.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><h3>Recordatorios</h3><p>Copia un recordatorio listo para enviar o mándalo por correo desde Facturales.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="pasos-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="pasos-t">Cómo funciona</h2></div>
+    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Emite</h3><p>Tus facturas emitidas aparecen como pendientes con su vencimiento.</p></div><div class="fx-card fx-paso"><h3>Registra el cobro</h3><p>A mano o al conciliar el extracto: la factura queda cobrada con un único ingreso.</p></div><div class="fx-card fx-paso"><h3>Revisa</h3><p>Previsión y antigüedad te dicen a quién llamar esta semana.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="faq-t">
+  <div class="fx-wrap fx-wrap--estrecho">
+    <h2 id="faq-t" style="margin-bottom:24px">Preguntas frecuentes</h2>
+    <div class="fx-faq">
+<details><summary>¿Los recordatorios se envían solos?</summary><div class="fx-faq__resp"><p>No. Tú decides cuándo enviar cada recordatorio: puedes copiar el texto o enviarlo por correo desde Facturales.</p></div></details>
+<details><summary>¿Se duplica el ingreso al conciliar el banco?</summary><div class="fx-faq__resp"><p>No. Una factura cobrada tiene exactamente un ingreso, que se enlaza con el movimiento del banco.</p></div></details>
+<details><summary>¿Está disponible en mi cuenta?</summary><div class="fx-faq__resp"><p>Cobros es una función nueva que estamos activando de forma gradual. Si aún no la ves, escríbenos a <a href="mailto:soporte@facturales.es">soporte@facturales.es</a>.</p></div></details>
+</div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="rel-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="rel-t">Funciona mejor junto a</h2></div>
+    <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="crea-envia-facturas.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+  <h3>Facturación</h3>
+  <p>Facturas, VERI*FACTU y envío por correo</p>
+  <span class="fx-enlace">Ver facturación <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="bancos-conciliacion.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
+  <h3>Bancos y conciliación</h3>
+  <p>Importa extractos y concilia movimientos</p>
+  <span class="fx-enlace">Ver bancos y conciliación <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="gestiona-clientes.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div>
+  <h3>Clientes</h3>
+  <p>Contactos, importación y cobros por cliente</p>
+  <span class="fx-enlace">Ver clientes <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--compacta" aria-labelledby="cta-final">
+  <div class="fx-wrap">
+    <div class="fx-cta">
+      <h2 id="cta-final">Pon orden en tus finanzas esta semana</h2>
+      <p class="fx-lead">Crea tu cuenta, emite tu primera factura e importa tu primer extracto. Tienes 14 días de prueba en cualquier plan y puedes cancelar cuando quieras.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
+</html>

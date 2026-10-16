@@ -1,11 +1,7 @@
 @charset "UTF-8";
 /*======================================================================================
-Theme Name: Neotix 
-Author: Gramentheme
-Author URI: https://themeforest.net/user/Gramentheme/portfolio
-Description: Neotix - IT Service & Solution HTML Template
-Service Html Template 
-Version: 1.0.0
+Facturales — hoja heredada de la plantilla base. Los componentes nuevos viven en
+facturales-ds.css, que se carga después de esta hoja en todas las páginas.
 =======================================================================================*/
 /*======================================================================================
   >> TABLE OF CONTENTS <<
@@ -19,19 +15,22 @@ Version: 1.0.0
 /*---------------------------------------
 01. Mixins & Variables
 ---------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap");
 :root {
-  --body: #fff;
+  /* Tokens Facturales (alineados con la interfaz Verdigris de la app). Ver facturales-ds.css. */
+  --body: #020100;
   --black: #000;
   --white: #fff;
-  --theme: #F94D00;
-  --header: #0B0D17;
-  --text: #534F5A;
-  --border: #02060A;
-  --bg: #EFEDE5;
-  --bg2: #0F172A;
-  --box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
+  --theme: #EC8228;
+  --theme-hover: #d47524;
+  --theme-text-light: #c2410c;
+  --on-theme: #1a0d02;
+  --header: #ffffff;
+  --text: rgba(255, 255, 255, 0.74);
+  --border: rgba(255, 255, 255, 0.14);
+  --bg: #020100;
+  --bg2: #110802;
+  --box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.35);
 }
 
 /*---------------------------------------
@@ -41,7 +40,7 @@ Version: 1.0.0
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
@@ -84,7 +83,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   margin: 0px;
   padding: 0;
   color: var(--header);
@@ -198,7 +197,6 @@ h6 {
 
 a {
   text-decoration: none;
-  outline: none !important;
   cursor: pointer;
   color: var(--header);
   transition: all 0.4s ease-in-out;
@@ -293,7 +291,7 @@ span {
   font-size: 16px;
   font-weight: 600;
   display: inline-block;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
 }
 .link-btn i {
   margin-left: 5px;
@@ -2631,7 +2629,7 @@ span {
   border-radius: 100px;
   line-height: 1;
   margin-bottom: 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   text-transform: uppercase;
 }
 .section-title .sub-title img {
@@ -3306,7 +3304,7 @@ span {
 .contact-us-wrapper .contact-box {
   margin-left: 50px;
   background: rgba(255, 255, 255, 0.1);
-  border-top: 3px solid #F94D00;
+  border-top: 3px solid #EC8228;
   backdrop-filter: blur(16px);
   border-radius: 12px;
   padding: 60px 30px;
@@ -3603,7 +3601,7 @@ span {
   border-top-left-radius: 8px !important;
   border-top-right-radius: 8px !important;
   padding: 24px 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   color: var(--header);
 }
 @media (max-width: 1399px) {
@@ -3727,7 +3725,7 @@ span {
   border-top-left-radius: 8px !important;
   border-top-right-radius: 8px !important;
   padding: 24px 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   color: var(--header);
 }
 @media (max-width: 1399px) {
@@ -4888,7 +4886,7 @@ span {
   border-radius: 100px;
   line-height: 1;
   margin-bottom: 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   text-transform: uppercase;
 }
 .hero-4 .hero-content .sub img {
@@ -5578,7 +5576,7 @@ span {
   transition: all 0.4s ease-in-out;
   background-color: var(--bg);
   padding: 22px 25px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   line-height: 1;
   text-transform: capitalize;
   border-radius: 8px;
@@ -5622,7 +5620,7 @@ span {
   font-weight: 600;
   font-size: 18px;
   line-height: 150%;
-  font-family: "Inter", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
 }
 @media (max-width: 1399px) {
   .gt-main-sideber .gt-single-sideber-widget .gt-recent-post-area .gt-recent-items .gt-recent-content h5 {
@@ -5642,7 +5640,7 @@ span {
   line-height: 1;
   font-weight: 600;
   background: var(--bg);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   margin-right: 10px;
   margin-bottom: 10px;
   text-transform: capitalize;
@@ -5827,7 +5825,7 @@ span {
   border: none;
   font-size: 16px;
   font-weight: 700;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   text-transform: capitalize;
   color: var(--white);
   padding: 12px 32px;
@@ -6005,7 +6003,7 @@ span {
   font-size: 16px;
   font-weight: 700;
   text-transform: capitalize;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   color: var(--white);
   padding: 12px 32px;
   border-radius: 70px;
@@ -7497,7 +7495,7 @@ span {
 .service-details-wrapper .service-details-sidebar .service-list-item li {
   font-size: 16px;
   font-weight: 600;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
 }
 .service-details-wrapper .service-details-sidebar .service-list-item li:not(:last-child) {
   margin-bottom: 10px;
@@ -8031,7 +8029,7 @@ span {
 .testimonial-box-item p {
   font-weight: 500;
   font-size: 22px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   border-bottom: 1px solid rgba(2, 6, 10, 0.08);
   padding-bottom: 30px;
   line-height: 136%;
@@ -8126,7 +8124,7 @@ span {
 .testimonial-content p {
   font-size: 24px;
   font-weight: 600;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   max-width: 885px;
   margin-bottom: 40px;
   margin: 0 auto;
@@ -8257,7 +8255,7 @@ span {
 .testimonial-wrapper-3 .testimonial-box-3 .testimonial-content-3 p {
   font-size: 22px;
   font-weight: 500;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   color: rgba(2, 6, 10, 0.7);
   max-width: 575px;
   border-bottom: 1px solid rgba(2, 6, 10, 0.1);
@@ -8305,7 +8303,7 @@ span {
 .testimonial-box-item-4 p {
   font-weight: 500;
   font-size: 22px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
   line-height: 136%;
 }
 @media (max-width: 1399px) {
@@ -8550,7 +8548,7 @@ span {
   transition: all 0.3s ease-in-out;
   margin: 0 2px;
   border-radius: 50%;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
 }
 @media (max-width: 767px) {
   .page-nav-wrap ul li .page-numbers {

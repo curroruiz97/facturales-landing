@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bancos y conciliación bancaria · Facturales</title>
+<meta name="description" content="Importa extractos bancarios en Excel o CSV y concilia cada movimiento con facturas y gastos. Reglas, memoria, cuadre de saldos e historial con deshacer.">
+<link rel="canonical" href="https://facturales.es/bancos-conciliacion.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Bancos y conciliación bancaria · Facturales">
+<meta property="og:description" content="Importa extractos bancarios en Excel o CSV y concilia cada movimiento con facturas y gastos. Reglas, memoria, cuadre de saldos e historial con deshacer.">
+<meta property="og:url" content="https://facturales.es/bancos-conciliacion.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Se conecta directamente con mi banco?","acceptedAnswer":{"@type":"Answer","text":"No. Hoy trabajas con los extractos que descargas de tu banco en Excel o CSV. Así no tienes que dar a nadie acceso a tu banca online."}},{"@type":"Question","name":"¿Puedo equivocarme y deshacerlo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada importación queda en el historial y puedes deshacerla por lotes."}},{"@type":"Question","name":"¿Qué pasa con una devolución?","acceptedAnswer":{"@type":"Answer","text":"Las devoluciones se tratan como tales y no se cuentan como un ingreso o un gasto nuevo."}},{"@type":"Question","name":"¿Está disponible en mi cuenta?","acceptedAnswer":{"@type":"Answer","text":"Bancos es una función nueva que estamos activando de forma gradual. Si aún no la ves, escríbenos a soporte@facturales.es."}}]}</script>
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
+<script src="assets/js/header-include.js"></script>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-split">
+    <div>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Bancos y conciliación</li></ol></nav>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></svg>Bancos y conciliación <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
+      <h1 id="hero-t">Concilia tu banco con tus facturas y gastos en minutos.</h1>
+      <p class="fx-lead">Importa el extracto que descargas de tu banco y Facturales te propone, movimiento a movimiento, con qué factura, gasto o transacción encaja. Tú confirmas; nada se registra sin tu acción.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+      <p class="fx-nota" style="margin-top:20px">Función nueva en despliegue gradual.</p>
+    </div>
+    <div><figure class="fx-panel" role="img" aria-label="Maqueta de la conciliación bancaria: movimientos del extracto emparejados con facturas y gastos (datos de ejemplo)">
+  <div class="fx-panel__tit" aria-hidden="true">Conciliar <span>Cuenta principal · extracto de septiembre</span></div>
+  <div class="fx-concilia" aria-hidden="true"><div class="fx-concilia__par"><div class="fx-concilia__lado"><small>Transferencia recibida</small><b>+1.210,00 €</b></div><span class="fx-concilia__enlace"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><div class="fx-concilia__lado"><small>Estudio Lumen S.L.</small><b>Factura F-2026-0141</b></div></div><div class="fx-concilia__par"><div class="fx-concilia__lado"><small>Recibo Iberdrola</small><b>−86,40 €</b></div><span class="fx-concilia__enlace"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><div class="fx-concilia__lado"><small>Ticket escaneado</small><b>Gasto · Suministros</b></div></div><div class="fx-concilia__par"><div class="fx-concilia__lado"><small>Bizum de Ana Ruiz</small><b>+150,00 €</b></div><span class="fx-concilia__enlace pend"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><div class="fx-concilia__lado"><small>Factura F-2026-0139</small><b>Sugerencia por regla</b></div></div></div>
+  <div class="fx-modelo" style="margin-top:12px" aria-hidden="true"><div class="fx-modelo__fila"><span>Saldo del extracto</span><b>12.408,15 €</b></div><div class="fx-modelo__fila fx-modelo__fila--total"><span>Diferencia de cuadre</span><b>0,00 €</b></div></div>
+  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
+</figure></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="funciones-t">Qué puedes hacer</h2></div>
+    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"/></svg></span><h3>Extractos en Excel o CSV</h3><p>Importa archivos xls, xlsx o csv de una o varias cuentas bancarias.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><h3>Emparejado uno a uno</h3><p>Cada movimiento se empareja con una factura, un gasto o una transacción, y siempre lo confirmas tú.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><path d="M18.36 5.64l-2.12 2.12"/><path d="M21 12h-3"/><path d="M18.36 18.36l-2.12-2.12"/><path d="M12 21v-3"/><path d="M5.64 18.36l2.12-2.12"/><path d="M3 12h3"/><path d="M5.64 5.64l2.12 2.12"/></svg></span><h3>Reglas y memoria</h3><p>Crea reglas para los movimientos que se repiten; Facturales recuerda cómo los clasificaste.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><h3>Cuadre de saldos</h3><p>Comprueba que el saldo de Facturales coincide con el de tu extracto.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg></span><h3>Historial con deshacer</h3><p>Cada importación queda en el historial y puedes deshacerla por lotes.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 9v12"/></svg></span><h3>Informe en CSV</h3><p>Descarga el resultado de la conciliación para tu gestoría.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="pasos-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="pasos-t">Cómo funciona</h2></div>
+    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Descarga el extracto</h3><p>Desde la web de tu banco, en Excel o CSV.</p></div><div class="fx-card fx-paso"><h3>Impórtalo</h3><p>Elige la cuenta y revisa los movimientos detectados.</p></div><div class="fx-card fx-paso"><h3>Concilia</h3><p>Acepta las sugerencias, ajusta las dudosas y cuadra el saldo.</p></div></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="faq-t">
+  <div class="fx-wrap fx-wrap--estrecho">
+    <h2 id="faq-t" style="margin-bottom:24px">Preguntas frecuentes</h2>
+    <div class="fx-faq">
+<details><summary>¿Se conecta directamente con mi banco?</summary><div class="fx-faq__resp"><p>No. Hoy trabajas con los extractos que descargas de tu banco en Excel o CSV. Así no tienes que dar a nadie acceso a tu banca online.</p></div></details>
+<details><summary>¿Puedo equivocarme y deshacerlo?</summary><div class="fx-faq__resp"><p>Sí. Cada importación queda en el historial y puedes deshacerla por lotes.</p></div></details>
+<details><summary>¿Qué pasa con una devolución?</summary><div class="fx-faq__resp"><p>Las devoluciones se tratan como tales y no se cuentan como un ingreso o un gasto nuevo.</p></div></details>
+<details><summary>¿Está disponible en mi cuenta?</summary><div class="fx-faq__resp"><p>Bancos es una función nueva que estamos activando de forma gradual. Si aún no la ves, escríbenos a <a href="mailto:soporte@facturales.es">soporte@facturales.es</a>.</p></div></details>
+</div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="rel-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="rel-t">Funciona mejor junto a</h2></div>
+    <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="cobros.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
+  <h3>Cobros</h3>
+  <p>Pendientes, previsión y antigüedad de deuda</p>
+  <span class="fx-enlace">Ver cobros <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="escanea-gastos.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
+  <h3>Gastos y justificantes</h3>
+  <p>OCR de tickets, proveedores y matriz mensual</p>
+  <span class="fx-enlace">Ver gastos y justificantes <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a><a class="fx-card fx-card--enlace" href="impuestos.html">
+  <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span></div>
+  <h3>Impuestos</h3>
+  <p>Modelos 303 y 130 calculados y cierres</p>
+  <span class="fx-enlace">Ver impuestos <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+</a></div>
+  </div>
+</section>
+<section class="fx-seccion fx-seccion--compacta" aria-labelledby="cta-final">
+  <div class="fx-wrap">
+    <div class="fx-cta">
+      <h2 id="cta-final">Pon orden en tus finanzas esta semana</h2>
+      <p class="fx-lead">Crea tu cuenta, emite tu primera factura e importa tu primer extracto. Tienes 14 días de prueba en cualquier plan y puedes cancelar cuando quieras.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
+</html>
