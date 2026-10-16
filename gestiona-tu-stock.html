@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Catálogo de productos y servicios · Facturales</title>
-<meta name="description" content="Catálogo de productos y servicios con referencia, precio de compra y venta, impuesto, descuento y margen. Importa en Excel o CSV y factura en segundos.">
+<title>Inventario: catálogo y control de stock · Facturales</title>
+<meta name="description" content="Inventario para autónomos y pymes: catálogo de productos y servicios, existencias, stock mínimo, movimientos, precios y márgenes. Las ventas descuentan stock al facturar.">
 <link rel="canonical" href="https://facturales.es/gestiona-tu-stock.html">
 <meta name="theme-color" content="#020100">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Facturales">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Catálogo de productos y servicios · Facturales">
-<meta property="og:description" content="Catálogo de productos y servicios con referencia, precio de compra y venta, impuesto, descuento y margen. Importa en Excel o CSV y factura en segundos.">
+<meta property="og:title" content="Inventario: catálogo y control de stock · Facturales">
+<meta property="og:description" content="Inventario para autónomos y pymes: catálogo de productos y servicios, existencias, stock mínimo, movimientos, precios y márgenes. Las ventas descuentan stock al facturar.">
 <meta property="og:url" content="https://facturales.es/gestiona-tu-stock.html">
 <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/facturales-ds.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Facturales controla existencias o almacenes?","acceptedAnswer":{"@type":"Answer","text":"No. Facturales gestiona un catálogo de productos y servicios con precios, impuestos y márgenes; no lleva control de existencias ni de almacenes."}},{"@type":"Question","name":"¿Cuántos productos puedo tener?","acceptedAnswer":{"@type":"Answer","text":"30 en Starter, 150 en Pro e ilimitados en Ilimitado."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Facturales controla existencias?","acceptedAnswer":{"@type":"Answer","text":"Sí. Activa «Controlar existencias» en cada producto y Facturales lleva sus unidades: entradas, salidas, ajustes por recuento y el descuento automático de lo que vendes al emitir una factura (y su devolución si la anulas). Los servicios no llevan stock."}},{"@type":"Question","name":"¿Cómo se descuenta el stock al facturar?","acceptedAnswer":{"@type":"Answer","text":"Cuando emites una factura, cada línea cuyo concepto coincide con el nombre de un producto con control de existencias resta sus unidades. Si añades los productos desde el catálogo, el concepto ya coincide."}},{"@type":"Question","name":"¿Gestiona varios almacenes?","acceptedAnswer":{"@type":"Answer","text":"De momento Facturales lleva un único stock por producto."}},{"@type":"Question","name":"¿Cuántos productos puedo tener?","acceptedAnswer":{"@type":"Answer","text":"30 en Starter, 150 en Pro e ilimitados en Ilimitado."}}]}</script>
 </head>
 <body class="fx">
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
@@ -34,19 +34,19 @@
 <section class="fx-pagehero" aria-labelledby="hero-t">
   <div class="fx-wrap fx-split">
     <div>
-      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Productos y servicios</li></ol></nav>
-      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Productos y servicios</p>
-      <h1 id="hero-t">Tu catálogo de productos y servicios, listo para facturar.</h1>
-      <p class="fx-lead">Guarda lo que vendes con su precio, su impuesto y su margen, y añádelo a facturas y presupuestos en un clic.</p>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Inventario</li></ol></nav>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Inventario <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
+      <h1 id="hero-t">Tu catálogo y tu stock, siempre al día.</h1>
+      <p class="fx-lead">Productos y servicios con sus precios y márgenes, existencias con alertas de stock bajo y un historial de cada movimiento. Lo que facturas se descuenta solo.</p>
       <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
       
     </div>
-    <div><figure class="fx-panel" role="img" aria-label="Maqueta del catálogo de productos y servicios con precio, impuesto y margen (datos de ejemplo)">
-  <div class="fx-panel__tit" aria-hidden="true">Productos y servicios <span>Catálogo</span></div>
+    <div><figure class="fx-panel" role="img" aria-label="Maqueta del inventario con existencias y alertas de stock (datos de ejemplo)">
+  <div class="fx-panel__tit" aria-hidden="true">Existencias <span>Inventario</span></div>
   <div class="fx-mock__filas" style="margin-top:0" aria-hidden="true">
-    <div class="fx-fila"><span>Hora de consultoría<small>Ref. SRV-01</small></span><span class="fx-chip fx-chip--neutro">IVA 21 %</span><b>60,00 €</b></div>
-    <div class="fx-fila"><span>Mantenimiento web<small>Ref. SRV-04 · margen 70 %</small></span><span class="fx-chip fx-chip--neutro">IVA 21 %</span><b>90,00 €</b></div>
-    <div class="fx-fila"><span>Libro técnico<small>Ref. PRD-12 · margen 35 %</small></span><span class="fx-chip fx-chip--neutro">IVA 4 %</span><b>24,00 €</b></div>
+    <div class="fx-fila"><span>Libro técnico<small>Ref. PRD-12 · mín. 10 ud</small></span><span class="fx-chip fx-chip--ok">42 ud</span><b>24,00 €</b></div>
+    <div class="fx-fila"><span>Cartucho de tinta<small>Ref. PRD-31 · mín. 15 ud</small></span><span class="fx-chip fx-chip--pend">Bajo mínimo · 6 ud</span><b>18,50 €</b></div>
+    <div class="fx-fila"><span>Hora de consultoría<small>Ref. SRV-01 · servicio</small></span><span class="fx-chip fx-chip--neutro">Sin stock</span><b>60,00 €</b></div>
   </div>
   <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
 </figure></div>
@@ -55,20 +55,22 @@
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
   <div class="fx-wrap">
     <div class="fx-cabecera-seccion"><h2 id="funciones-t">Qué puedes hacer</h2></div>
-    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><h3>Productos y servicios</h3><p>Nombre, referencia y descripción de cada artículo o servicio.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><h3>Precios y margen</h3><p>Precio de compra y de venta, PVP con impuesto y margen calculado.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span><h3>Impuesto por artículo</h3><p>IVA, IGIC o IPSI y descuento por defecto en cada producto.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"/></svg></span><h3>Importación</h3><p>Sube tu catálogo en Excel o CSV; las referencias duplicadas se omiten.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></span><h3>Exportación</h3><p>Descarga el catálogo en CSV cuando quieras.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span><h3>Uso en documentos</h3><p>Añade productos a facturas y presupuestos sin teclear precios.</p></div></div>
+    <div class="fx-grid fx-grid--3"><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span><h3>Existencias en tiempo real</h3><p>Activa el control de stock en los productos que lo necesiten y consulta las unidades disponibles de cada uno.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span><h3>Stock mínimo y alertas</h3><p>Fija un mínimo por artículo y recibe un aviso cuando baje; el panel te muestra lo que hay que reponer.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span><h3>Movimientos con historial</h3><p>Entradas, salidas y ajustes por recuento, con motivo, coste y el stock resultante de cada movimiento.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2 3 2V2l-3 2-3-2-3 2-3-2-3 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg></span><h3>Descuento al facturar</h3><p>Al emitir una factura se descuentan las unidades vendidas; si la anulas, vuelven al stock.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r=".5"/></svg></span><h3>Precios y márgenes</h3><p>Precio de compra y de venta, margen calculado y cambios de precio en bloque con vista previa.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span><h3>Valor del inventario</h3><p>Valor de tu stock a coste y a precio de venta, siempre actualizado.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg></span><h3>Importación y exportación</h3><p>Sube tu catálogo en Excel o CSV y descarga existencias y movimientos cuando quieras.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10"/><path d="M7 13h6"/></svg></span><h3>Productos y servicios</h3><p>Tipo, unidad (ud, h, kg…), categoría, referencia, impuesto y descuento por defecto en cada artículo.</p></div><div class="fx-card"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><h3>Uso en documentos</h3><p>Añade artículos a facturas y presupuestos sin teclear precios ni impuestos.</p></div></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="pasos-t">
   <div class="fx-wrap">
     <div class="fx-cabecera-seccion"><h2 id="pasos-t">Cómo funciona</h2></div>
-    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Crea o importa</h3><p>Añade tus productos uno a uno o importa tu lista.</p></div><div class="fx-card fx-paso"><h3>Factura</h3><p>Elígelos al emitir; precio e impuesto se rellenan solos.</p></div><div class="fx-card fx-paso"><h3>Ajusta</h3><p>Actualiza precios y márgenes cuando cambien.</p></div></div>
+    <div class="fx-pasos"><div class="fx-card fx-paso"><h3>Crea o importa</h3><p>Da de alta tus artículos y activa el control de stock con sus existencias iniciales.</p></div><div class="fx-card fx-paso"><h3>Vende y repón</h3><p>Las facturas descuentan las unidades vendidas; registra tus entradas de mercancía.</p></div><div class="fx-card fx-paso"><h3>Controla</h3><p>Revisa existencias, alertas de stock bajo y el valor de tu inventario.</p></div></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="faq-t">
   <div class="fx-wrap fx-wrap--estrecho">
     <h2 id="faq-t" style="margin-bottom:24px">Preguntas frecuentes</h2>
     <div class="fx-faq">
-<details><summary>¿Facturales controla existencias o almacenes?</summary><div class="fx-faq__resp"><p>No. Facturales gestiona un catálogo de productos y servicios con precios, impuestos y márgenes; no lleva control de existencias ni de almacenes.</p></div></details>
+<details><summary>¿Facturales controla existencias?</summary><div class="fx-faq__resp"><p>Sí. Activa «Controlar existencias» en cada producto y Facturales lleva sus unidades: entradas, salidas, ajustes por recuento y el descuento automático de lo que vendes al emitir una factura (y su devolución si la anulas). Los servicios no llevan stock.</p></div></details>
+<details><summary>¿Cómo se descuenta el stock al facturar?</summary><div class="fx-faq__resp"><p>Cuando emites una factura, cada línea cuyo concepto coincide con el nombre de un producto con control de existencias resta sus unidades. Si añades los productos desde el catálogo, el concepto ya coincide.</p></div></details>
+<details><summary>¿Gestiona varios almacenes?</summary><div class="fx-faq__resp"><p>De momento Facturales lleva un único stock por producto.</p></div></details>
 <details><summary>¿Cuántos productos puedo tener?</summary><div class="fx-faq__resp"><p>30 en Starter, 150 en Pro e ilimitados en Ilimitado.</p></div></details>
 </div>
   </div>
@@ -79,7 +81,7 @@
     <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="crea-envia-facturas.html">
   <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
   <h3>Facturación</h3>
-  <p>Facturas, VERI*FACTU y envío por correo</p>
+  <p>Facturas, recurrentes, VERI*FACTU y envío</p>
   <span class="fx-enlace">Ver más <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a><a class="fx-card fx-card--enlace" href="crea-envia-presupuestos.html">
   <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span></div>

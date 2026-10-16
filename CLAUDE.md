@@ -32,7 +32,7 @@ Font: **Onest** (Google Fonts, 400/500/600/700) everywhere. Icons: inline SVG, 2
 
 - `index.html` — Home (suite financiera: hero, módulos, Bancos, Cobros, Gastos, Impuestos+VERI*FACTU, Equipo, Seguridad, Apps, precios, FAQ, CTA)
 - `funciones.html` — all modules; `pricing.html`; `faq.html`; `contact.html`; `about.html`; `404.html`
-- Module pages: `crea-envia-facturas.html`, `crea-envia-presupuestos.html`, `bancos-conciliacion.html`, `cobros.html`, `escanea-gastos.html` (Gastos y justificantes), `impuestos.html`, `tu-negocio-bajo-control.html` (Panel y gráficas), `gestiona-clientes.html`, `gestiona-tu-stock.html` (catálogo de productos y servicios — the app has NO stock/warehouse control), `factura-personalizada.html`
+- Module pages: `crea-envia-facturas.html`, `crea-envia-presupuestos.html`, `bancos-conciliacion.html`, `cobros.html`, `escanea-gastos.html` (Gastos y justificantes), `impuestos.html`, `tu-negocio-bajo-control.html` (Panel y gráficas), `gestiona-clientes.html`, `gestiona-tu-stock.html` (Inventario: catálogo + control de stock), `factura-personalizada.html`
 - Blog: `news-grid.html` (index) + articles `verifactu-2027-guia-autonomos-pymes.html`, `factura-electronica-vs-verifactu.html`, `contabilidad-negocio-7-pasos.html`
 - `sitemap.xml` (only real, indexable pages) and `robots.txt`; OG image `assets/img/og-facturales.png`
 
@@ -46,7 +46,8 @@ npx serve .   # or: python3 -m http.server 5190
 
 ## Conventions
 
-- All user-facing text is in **Spanish**. No invented claims: no testimonials, customer counts, ratings, «sin tarjeta», direct bank connection (PSD2 is disabled), recurring invoices, automatic reminders, stock control or automatic AEAT submission. Bancos/Cobros/Gastos/Gráficas are «Nuevo» (gradual rollout) — no dates.
+- All user-facing text is in **Spanish**. No invented claims: no testimonials (the section was removed for good), customer counts, ratings, «sin tarjeta» or automatic AEAT submission. Direct bank connection is **«Próximamente»** (it will come through an external regulated bank aggregator; today: Excel/CSV statements). Available since 17/10/2026 and allowed in copy: **inventory** (stock per product, minimum stock alerts, movements, automatic deduction when an invoice is issued and return when cancelled; single warehouse), **recurring invoices** (generated automatically as drafts each period, the user issues them) and **automatic payment reminders** (configurable schedule, sent by email by the server). Bancos/Cobros/Gastos/Gráficas are «Nuevo» (gradual rollout) — no dates.
+- Annual promotion: «hasta −25 %» (never 30 %).
 - Prices must match the app defaults (`src/services/plans/plans-config.service.ts`): Starter 6,45/4,95, Pro 11,95/8,95, Ilimitado 23,95/17,95 €/mes + IVA (monthly/annual); 14-day trial.
 - App links use clean routes: `https://app.facturales.es/signin`, `/signup`, `/aviso-legal`, `/condiciones-legales`, `/politica-de-privacidad`, `/politica-de-cookies`, `/eliminar-cuenta`.
 - Accessibility: one `h1` per page, visible focus (`:focus-visible`), touch targets ≥44 px, AA contrast, `lang="es"`, `prefers-reduced-motion` respected.
