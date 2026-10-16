@@ -318,9 +318,10 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
   padding: 5px 12px; border-radius: var(--fx-r-full);
   border: 1px solid var(--fx-line); background: var(--fx-surface);
   font-size: 13px; font-weight: 500; line-height: 1.3; color: var(--fx-ink);
-  white-space: nowrap;
+  white-space: nowrap; max-width: 100%;
 }
-.fx-badge .fx-ic { width: 14px; height: 14px; }
+@media (max-width: 400px) { .fx-badge { white-space: normal; } }
+.fx-badge .fx-ic { width: 14px; height: 14px; flex: none; }
 .fx-badge--acento { border-color: rgba(236, 130, 40, .4); background: var(--fx-acento-suave); color: var(--fx-acento-texto); }
 .fx-badge--nuevo { border-color: rgba(236, 130, 40, .4); background: var(--fx-acento-suave); color: var(--fx-acento-texto); font-weight: 600; font-size: 12px; padding: 3px 10px; }
 .fx-chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: var(--fx-r-full); font-size: 12px; font-weight: 600; line-height: 1.6; white-space: nowrap; }
