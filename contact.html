@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Facturales</title>
+<meta name="description" content="Contacta con Facturales: información, soporte a clientes y gestorías. info@facturales.es y soporte@facturales.es.">
+<link rel="canonical" href="https://facturales.es/contact.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Contacto · Facturales">
+<meta property="og:description" content="Contacta con Facturales: información, soporte a clientes y gestorías. info@facturales.es y soporte@facturales.es.">
+<meta property="og:url" content="https://facturales.es/contact.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
+<script src="assets/js/header-include.js"></script>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-split" style="align-items:start">
+    <div>
+      <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li aria-current="page">Contacto</li></ol></nav>
+      <h1 id="hero-t">Hablemos.</h1>
+      <p class="fx-lead">¿Dudas antes de empezar, una consulta sobre tu cuenta o una propuesta? Te responde una persona del equipo.</p>
+      <div class="fx-grid" style="margin-top:32px">
+        <a class="fx-card fx-card--enlace" href="mailto:info@facturales.es"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><h2 style="font-size:1.125rem;margin-top:16px">Información y ventas</h2><p>info@facturales.es</p></a>
+        <a class="fx-card fx-card--enlace" href="mailto:soporte@facturales.es"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><h2 style="font-size:1.125rem;margin-top:16px">Soporte a clientes</h2><p>soporte@facturales.es · Si ya tienes cuenta, también desde Soporte dentro de la app.</p></a>
+      </div>
+    </div>
+    <div class="fx-card">
+      <h2 style="font-size:1.375rem">Escríbenos</h2>
+      <p>Al enviar, se abrirá tu programa de correo con el mensaje preparado.</p>
+      <form id="fx-contacto" class="fx-form" style="margin-top:24px" novalidate>
+        <div class="fx-form__fila">
+          <div class="fx-campo"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" required></div>
+          <div class="fx-campo"><label for="c-email">Correo electrónico</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="fx-form__fila">
+          <div class="fx-campo"><label for="c-empresa">Empresa <span class="fx-nota">(opcional)</span></label><input id="c-empresa" name="empresa" type="text" autocomplete="organization"></div>
+          <div class="fx-campo"><label for="c-motivo">Motivo</label><select id="c-motivo" name="motivo"><option value="info">Información sobre Facturales</option><option value="soporte">Ayuda con mi cuenta</option><option value="gestoria">Soy gestoría o asesoría</option><option value="otro">Otro</option></select></div>
+        </div>
+        <div class="fx-campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required></textarea></div>
+        <label class="fx-check"><input type="checkbox" name="privacidad" required><span>He leído la <a href="https://app.facturales.es/politica-de-privacidad">política de privacidad</a>.</span></label>
+        <div><button class="fx-btn fx-btn--primario" type="submit">Preparar correo <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button></div>
+        <p id="fx-contacto-estado" class="fx-form__estado" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
+</html>

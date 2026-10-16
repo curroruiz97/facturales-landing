@@ -1,488 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!--<< Header Area >>-->
-    <head>
-        <!-- ========== Meta Tags ========== -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Gramentheme">
-        <meta name="description" content="Brevon - Multipurpose Business HTML Template">
-        <!-- ======== Page title ============ -->
-        <title>Facturales - Sistema de contabilidad</title>
-        <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
-        <!--<< Bootstrap min.css >>-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <!--<< Main.css >>-->
-        <link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body>
-
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-            <img src="assets/img/logo/logo-white.svg" alt="Facturales" class="preloader-logo">
-            <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-        </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back To Top Start -->
-        <button id="back-top" class="back-to-top">
-            <i class="fa-regular fa-arrow-up"></i>
-        </button>
-
-        <!-- GT MouseCursor Start -->
-        <div class="mouseCursor cursor-outer"></div>
-        <div class="mouseCursor cursor-inner"></div>
-
-       
-
-        <!-- Header-Top Section Start -->
-        <div class="header-top-section">
-            <div class="container-fluid">
-                <div class="header-top-wrapper" style="justify-content: center; gap: 24px;">
-                    <div style="display:flex; align-items:center; gap:8px; color:#fff; font-weight:600; font-size:14px;">
-                        <i class="fa-solid fa-gift"></i> Oferta de lanzamiento: <strong>14 d&iacute;as de prueba gratis</strong>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:rgba(255,255,255,0.85); font-weight:500;">
-                        <i class="fa-regular fa-clock"></i>
-                        <span id="countdown-days">00</span>d
-                        <span id="countdown-hours">00</span>h
-                        <span id="countdown-mins">00</span>m
-                        <span id="countdown-secs">00</span>s
-                    </div>
-                    <a href="https://app.facturales.es/signup.html" style="background:#fff; color:#F94D00; padding:5px 16px; border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.3s;">
-                        Empezar ahora
-                    </a>
-                </div>
-            </div>
-        </div>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preguntas frecuentes · Facturales</title>
+<meta name="description" content="Dudas sobre Facturales: VERI*FACTU, facturación, conciliación bancaria, cobros, gastos, impuestos 303 y 130, equipo, seguridad, datos y planes.">
+<link rel="canonical" href="https://facturales.es/faq.html">
+<meta name="theme-color" content="#020100">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facturales">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Preguntas frecuentes · Facturales">
+<meta property="og:description" content="Dudas sobre Facturales: VERI*FACTU, facturación, conciliación bancaria, cobros, gastos, impuestos 303 y 130, equipo, seguridad, datos y planes.">
+<meta property="og:url" content="https://facturales.es/faq.html">
+<meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Facturales, suite financiera para autónomos y pymes">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es Facturales y a quién está dirigido?","acceptedAnswer":{"@type":"Answer","text":"Facturales es una suite financiera en la nube para autónomos y pymes en España. Reúne facturación, presupuestos, bancos y conciliación, cobros, gastos con justificantes e impuestos trimestrales en una sola cuenta."}},{"@type":"Question","name":"¿Necesito instalar algo?","acceptedAnswer":{"@type":"Answer","text":"No. Funciona en el navegador y, si lo prefieres, en las apps para iOS y Android con la misma cuenta."}},{"@type":"Question","name":"¿Puedo traer mis datos de otra herramienta?","acceptedAnswer":{"@type":"Answer","text":"Sí. Puedes importar clientes y productos en Excel o CSV, importar tus facturas existentes y cargar extractos bancarios."}},{"@type":"Question","name":"¿Cómo cumple Facturales con VERI*FACTU?","acceptedAnswer":{"@type":"Answer","text":"Cada factura emitida genera su registro de facturación con huella encadenada y lleva el código QR de cotejo. La remisión automática de registros a la AEAT se habilita al completar el alta de Facturales como colaborador; puedes consultar su estado en Ajustes › VERI*FACTU. Si quieres entender la norma, lee nuestra guía de VERI*FACTU."}},{"@type":"Question","name":"¿Qué diferencia hay entre borrador y factura emitida?","acceptedAnswer":{"@type":"Answer","text":"Un borrador no tiene número oficial ni cuenta en tus impuestos, y puedes cambiarlo o borrarlo. Una factura emitida recibe el siguiente número de su serie, cuenta en el resumen fiscal y solo se corrige con una factura rectificativa."}},{"@type":"Question","name":"¿Qué impuestos admite?","acceptedAnswer":{"@type":"Answer","text":"IVA peninsular y de Baleares, IGIC canario, IPSI de Ceuta y Melilla y operaciones exentas, con retenciones de IRPF por línea o sobre el total."}},{"@type":"Question","name":"¿Puedo emitir factura electrónica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Puedes descargar cualquier factura en Facturae 3.2.2, el formato que admite la Administración a través de FACe."}},{"@type":"Question","name":"¿Puedo enviar las facturas por correo?","acceptedAnswer":{"@type":"Answer","text":"Sí, con el PDF adjunto, al momento o programando el envío para una fecha y hora."}},{"@type":"Question","name":"¿Facturales se conecta directamente con mi banco?","acceptedAnswer":{"@type":"Answer","text":"No. Importas los extractos que descargas de tu banco en Excel (xls, xlsx) o CSV y Facturales te propone la conciliación de cada movimiento. Tú confirmas cada emparejamiento y puedes deshacer cualquier importación."}},{"@type":"Question","name":"¿Cómo controlo lo que me deben?","acceptedAnswer":{"@type":"Answer","text":"En Cobros ves las facturas pendientes, la previsión de cobros, la antigüedad de la deuda y los plazos de pago de cada cliente, y puedes enviar recordatorios por correo."}},{"@type":"Question","name":"¿Cómo registro un gasto con OCR?","acceptedAnswer":{"@type":"Answer","text":"Sube una foto o un PDF del ticket o factura: el OCR extrae fecha, proveedor, base imponible, IVA y total. Revisa los datos, ajusta la categoría y guarda."}},{"@type":"Question","name":"¿Bancos, Cobros y Gastos están ya en mi cuenta?","acceptedAnswer":{"@type":"Answer","text":"Son funciones nuevas que estamos activando de forma gradual. Si aún no las ves, escríbenos a soporte@facturales.es."}},{"@type":"Question","name":"¿Calcula los modelos 303 y 130?","acceptedAnswer":{"@type":"Answer","text":"Sí. Facturales calcula por trimestre el IVA repercutido y soportado y la estimación del pago fraccionado del IRPF a partir de tus facturas y gastos, listos para el 303 y el 130."}},{"@type":"Question","name":"¿Presenta Facturales los modelos en Hacienda?","acceptedAnswer":{"@type":"Answer","text":"No. Te da las cifras para que tú o tu gestoría presentéis los modelos en la sede electrónica de la Agencia Tributaria."}},{"@type":"Question","name":"¿Qué son los cierres?","acceptedAnswer":{"@type":"Answer","text":"Al cerrar un mes o un trimestre, sus documentos quedan protegidos frente a cambios accidentales una vez contabilizados."}},{"@type":"Question","name":"¿Puedo invitar a mi gestoría o a mi equipo?","acceptedAnswer":{"@type":"Answer","text":"Sí, con cuatro roles: Propietario (acceso completo), Colaborador (factura, registra gastos y gestiona contactos), Gestor (consulta, exporta a Excel y cierra meses) y Lector (solo lectura). El número de usuarios depende del plan."}},{"@type":"Question","name":"¿Dónde se guardan mis datos?","acceptedAnswer":{"@type":"Answer","text":"La base de datos, la autenticación y los archivos se alojan en Irlanda, dentro del Espacio Económico Europeo."}},{"@type":"Question","name":"¿Puedo activar la verificación en dos pasos?","acceptedAnswer":{"@type":"Answer","text":"Sí. En Ajustes › Seguridad puedes activar un segundo factor con una app de autenticación (TOTP)."}},{"@type":"Question","name":"¿Puedo exportar mis datos o eliminar mi cuenta?","acceptedAnswer":{"@type":"Answer","text":"Sí. Puedes exportar tus datos cuando quieras y solicitar la eliminación de la cuenta desde la página de eliminación de cuenta."}},{"@type":"Question","name":"¿Hay prueba gratuita?","acceptedAnswer":{"@type":"Answer","text":"Sí. Todos los planes empiezan con 14 días de prueba."}},{"@type":"Question","name":"¿Hay permanencia?","acceptedAnswer":{"@type":"Answer","text":"No. Puedes cambiar de plan o cancelar cuando quieras desde la app."}},{"@type":"Question","name":"¿Los precios incluyen IVA?","acceptedAnswer":{"@type":"Answer","text":"No. Los precios se muestran sin IVA; se añade al pagar y aparece desglosado en tu factura. Consulta los precios."}}]}</script>
+</head>
+<body class="fx">
+<a class="fx-skip" href="#contenido">Saltar al contenido</a>
 <script src="assets/js/header-include.js"></script>
-
-        <!-- start: Search Popup -->
-        <div class="search_popup">
-            <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                <div class="search_wrapper">
-                    <div class="search_top d-flex align-items-center">
-                    <div class="search_logo">
-                        <a href="index.html">
-                        <img src="assets/img/logo/logo-white.svg" alt="img">
-                        </a>
-                    </div>
-                    <div class="search_close">
-                        <button type="button" class="search_close_btn">
-                        <i class="fa-thin fa-times"></i>
-                        </button>
-                    </div>
-                    </div>
-                    <div class="search_form">
-                    <form action="#">
-                        <div class="search_input">
-                        <input class="search-input-field" type="text" placeholder="Type here to search...">
-                        <span class="search-focus-border"></span>
-                        <button type="submit">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="search-popup-overlay"></div>
-
-        
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-
-                <!-- Breadcrumb Section Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
-                    <div class="container">
-                        <div class="page-heading">
-                            <div class="breadcrumb-sub-title">
-                                <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Preguntas frecuentes</h1>
-                            </div>
-                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i> Inicio
-                                    </a>
-                                </li>
-                                <li>
-                                    /
-                                </li>
-                                <li>
-                                    Faq Page
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-              <!-- Faq Section Start -->
-                <section class="faq-section fix section-padding">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-8">
-                                <div class="faq-items mt-0">
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingOne">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                   1. ¿Qué es Facturales y a quién está dirigido?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                       Facturales es una herramienta de facturación y contabilidad en la nube diseñada para autónomos y pequeñas empresas. Permite emitir facturas electrónicas, registrar gastos y llevar la contabilidad de ingresos y gastos en un solo lugar, ayudando a cumplir con la normativa española de facturación.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
-                                            <h2 class="accordion-header" id="headingTwo">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    2. ¿Cómo cumple Facturales con la normativa VeriFactu de la AEAT?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                     la normativa VeriFactu de la Agencia Tributaria exige que, a partir de 2027, todas las facturas digitales se emitan mediante programas certificados adaptados al reglamento. Facturales está diseñado para adaptarse a estas exigencias: genera facturas que incluyen todos los datos fiscales obligatorios y puede enviar los registros de forma segura a la AEAT, garantizando la integridad y trazabilidad de la información.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                            <h2 class="accordion-header" id="headingthree">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsethree" aria-expanded="false"
-                                                    aria-controls="collapsethree">
-                                                    3. ¿Qué funcionalidades de facturación ofrece Facturales?
-                                                </button>
-                                            </h2>
-                                            <div id="collapsethree" class="accordion-collapse collapse"
-                                                aria-labelledby="headingthree" data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                         Al emitir una factura puedes completar los datos del emisor y del cliente, seleccionar la serie y el número, definir referencias internas, añadir líneas de conceptos con descripción, cantidad, precio e impuestos y aplicar descuentos o retenciones. el sistema permite guardar borradores y emitir las facturas cuando estén listas, y mantiene un listado de facturas emitidas con su estado de pago.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingfour">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsefour" aria-expanded="false"
-                                                    aria-controls="collapsefour">
-                                                    4. ¿Cómo se registran y controlan los gastos?
-                                                </button>
-                                            </h2>
-                                            <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                   en la sección "Gastos" puedes añadir y revisar tus gastos registrados. la interfaz te permite buscar por proveedor, concepto o fecha y filtrar por categoría o importe gastado. Cada gasto muestra el proveedor, el concepto, la fecha y el importe, facilitando el control y la deducción de gastos en tu contabilidad.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingfive">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsefive" aria-expanded="false"
-                                                    aria-controls="collapsefive">
-                                                    5. ¿Integra la contabilidad de ingresos y gastos en un panel de análisis?
-                                                </button>
-                                            </h2>
-                                            <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                   Sí. Facturales incluye secciones de "Estadísticas" y "Analítica" que presentan gráficos y tarjetas de resumen con el balance general, la evolución mensual de los ingresos y gastos y la eficiencia de tu negocio. Estas vistas te ayudan a visualizar la salud financiera de tu empresa y a tomar decisiones basadas en datos.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingsix">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsesix" aria-expanded="false"
-                                                    aria-controls="collapsesix">
-                                                    6. ¿Cómo se gestionan y concilian las transacciones?
-                                                </button>
-                                            </h2>
-                                            <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                   la sección "Transacciones" organiza tus movimientos financieros en una tabla donde puedes buscar por nombre, correo electrónico u otros datos y aplicar filtros por ubicación, importe, fecha o tipo de transacción. Esto facilita la conciliación de ingresos y gastos y te permite mantener un registro actualizado de todas las operaciones.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingseven">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseseven" aria-expanded="false"
-                                                    aria-controls="collapseseven">
-                                                    7. ¿Se puede conectar Facturales con otras herramientas?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                   Sí. Facturales ofrece integraciones con aplicaciones populares de productividad y gestión, como Microsoft Excel, Trello, Mailchimp y Slack. Estas integraciones permiten exportar datos, sincronizar tareas y mejorar la colaboración con otros equipos o aplicaciones que ya utilices.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".3s">
-                                            <h2 class="accordion-header" id="headingeight">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseeight" aria-expanded="false"
-                                                    aria-controls="collapseeight">
-                                                    8. ¿Cómo administra Facturales los datos de clientes y proveedores?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
-                                                data-bs-parent="#accordionExample" role="region">
-                                                <div class="accordion-body">
-                                                    <p>
-                                                   el módulo de "Contactos" te permite crear y gestionar fichas de clientes o proveedores con sus datos de contacto y facturación. Puedes buscar clientes, ver su estado y asociar facturas y pagos a cada registro, de modo que mantienes la información organizada y siempre accesible.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- Footer Section Start -->
-                <footer class="footer-section fix">
-                    <div class="footer-area bg-cover" style="background-image: url(assets/img/home-1/footer-bg.jpg);">
-                        <div class="container">
-                        <div class="footer-widget-wrapper">
-                            <div class="row justify-content-between">
-                                <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <a href="index.html" class="footer-logo">
-                                                <img src="assets/img/logo/logo-white.svg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="footer-content">
-                                            <p>
-                                                Simplificamos la contabilidad de tu empresa con herramientas intuitivas y poderosas. Gestiona facturas, presupuestos y más.
-                                            </p>
-                                            <a href="https://app.facturales.es/signup.html" class="theme-btn">
-                                                Empezar ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Acceso r&aacute;pido</h3>
-                                        </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="https://app.facturales.es/signup.html">
-                                                    Crea una cuenta gratuita
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://app.facturales.es/signin.html">
-                                                    Iniciar sesi&oacute;n
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html">
-                                                    Precios
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 ps-lg-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Funcionalidades</h3>
-                                        </div>
-                                        <ul class="list-area">
-                                            <li>
-                                                <a href="tu-negocio-bajo-control.html">
-                                                    Tu negocio bajo control
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-facturas.html">
-                                                    Crea y Envía Facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="crea-envia-presupuestos.html">
-                                                    Crea y Envía Presupuestos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Personaliza facturas
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="escanea-gastos.html">
-                                                    Escanea gastos
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="gestiona-clientes.html">
-                                                    Gestiona clientes
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="factura-personalizada.html">
-                                                    Factura personalizada
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="footer-widget-items">
-                                        <div class="widget-head">
-                                            <h3>Suscríbete al Boletín</h3>
-                                        </div>
-                                        <div class="contact-item">
-                                            <form action="#">
-                                                <input type="text" placeholder="Correo electrónico">
-                                            </form>
-                                            <button type="submit" class="theme-btn w-100">
-                                                    Suscribirse ahora <i class="fa-solid fa-arrow-up-right"></i>
-                                            </button>
-                                            <div class="social-icon">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom-wrapper">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">
-                               Copyright <span>Facturales.</span> Todos los derechos reservados.
-                            </p>
-                            <ul class="footer-list wow fadeInUp" data-wow-delay=".7s">
-                                <li>
-                                    <a href="https://app.facturales.es/politica-de-privacidad.html">Política de privacidad</a>
-                                </li>
-                                <li>।</li>
-                                <li>
-                                    <a href="https://app.facturales.es/condiciones-legales.html">Términos y condiciones</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                </footer>
-
-            </div>
-        </div>
-
-       
-
-        
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Gsap Min Js >>-->
-        <script src="assets/js/gsap.min.js"></script>
-        <!--<< ScrollTrigger Min Js >>-->
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <!--<< SplitText Min Js >>-->
-        <script src="assets/js/SplitText.min.js"></script>
-        <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
-         <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Parallaxie Js >>-->
-        <script src="assets/js/parallaxie.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/countdown.js"></script>
-    </body>
+<main id="contenido" tabindex="-1">
+<section class="fx-pagehero" aria-labelledby="hero-t">
+  <div class="fx-wrap fx-wrap--estrecho">
+    <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li aria-current="page">Preguntas frecuentes</li></ol></nav>
+    <h1 id="hero-t">Preguntas frecuentes</h1>
+    <p class="fx-lead">Respuestas directas sobre Facturales. Si no encuentras la tuya, escríbenos a <a class="fx-acento-t" href="mailto:soporte@facturales.es">soporte@facturales.es</a>.</p>
+  </div>
+</section>
+<section class="fx-seccion--compacta" style="padding-top:0" aria-label="Preguntas">
+  <div class="fx-wrap fx-wrap--estrecho"><div class="fx-faq-grupo"><h2>Sobre Facturales</h2><div class="fx-faq">
+<details><summary>¿Qué es Facturales y a quién está dirigido?</summary><div class="fx-faq__resp"><p>Facturales es una suite financiera en la nube para autónomos y pymes en España. Reúne facturación, presupuestos, bancos y conciliación, cobros, gastos con justificantes e impuestos trimestrales en una sola cuenta.</p></div></details>
+<details><summary>¿Necesito instalar algo?</summary><div class="fx-faq__resp"><p>No. Funciona en el navegador y, si lo prefieres, en las apps para iOS y Android con la misma cuenta.</p></div></details>
+<details><summary>¿Puedo traer mis datos de otra herramienta?</summary><div class="fx-faq__resp"><p>Sí. Puedes importar clientes y productos en Excel o CSV, importar tus facturas existentes y cargar extractos bancarios.</p></div></details>
+</div></div><div class="fx-faq-grupo"><h2>Facturación y VERI*FACTU</h2><div class="fx-faq">
+<details><summary>¿Cómo cumple Facturales con VERI*FACTU?</summary><div class="fx-faq__resp"><p>Cada factura emitida genera su registro de facturación con huella encadenada y lleva el código QR de cotejo. La remisión automática de registros a la AEAT se habilita al completar el alta de Facturales como colaborador; puedes consultar su estado en Ajustes › VERI*FACTU. Si quieres entender la norma, lee <a href="verifactu-2027-guia-autonomos-pymes.html">nuestra guía de VERI*FACTU</a>.</p></div></details>
+<details><summary>¿Qué diferencia hay entre borrador y factura emitida?</summary><div class="fx-faq__resp"><p>Un borrador no tiene número oficial ni cuenta en tus impuestos, y puedes cambiarlo o borrarlo. Una factura emitida recibe el siguiente número de su serie, cuenta en el resumen fiscal y solo se corrige con una factura rectificativa.</p></div></details>
+<details><summary>¿Qué impuestos admite?</summary><div class="fx-faq__resp"><p>IVA peninsular y de Baleares, IGIC canario, IPSI de Ceuta y Melilla y operaciones exentas, con retenciones de IRPF por línea o sobre el total.</p></div></details>
+<details><summary>¿Puedo emitir factura electrónica?</summary><div class="fx-faq__resp"><p>Sí. Puedes descargar cualquier factura en Facturae 3.2.2, el formato que admite la Administración a través de FACe.</p></div></details>
+<details><summary>¿Puedo enviar las facturas por correo?</summary><div class="fx-faq__resp"><p>Sí, con el PDF adjunto, al momento o programando el envío para una fecha y hora.</p></div></details>
+</div></div><div class="fx-faq-grupo"><h2>Bancos, cobros y gastos</h2><div class="fx-faq">
+<details><summary>¿Facturales se conecta directamente con mi banco?</summary><div class="fx-faq__resp"><p>No. Importas los extractos que descargas de tu banco en Excel (xls, xlsx) o CSV y Facturales te propone la conciliación de cada movimiento. Tú confirmas cada emparejamiento y puedes deshacer cualquier importación.</p></div></details>
+<details><summary>¿Cómo controlo lo que me deben?</summary><div class="fx-faq__resp"><p>En Cobros ves las facturas pendientes, la previsión de cobros, la antigüedad de la deuda y los plazos de pago de cada cliente, y puedes enviar recordatorios por correo.</p></div></details>
+<details><summary>¿Cómo registro un gasto con OCR?</summary><div class="fx-faq__resp"><p>Sube una foto o un PDF del ticket o factura: el OCR extrae fecha, proveedor, base imponible, IVA y total. Revisa los datos, ajusta la categoría y guarda.</p></div></details>
+<details><summary>¿Bancos, Cobros y Gastos están ya en mi cuenta?</summary><div class="fx-faq__resp"><p>Son funciones nuevas que estamos activando de forma gradual. Si aún no las ves, escríbenos a <a href="mailto:soporte@facturales.es">soporte@facturales.es</a>.</p></div></details>
+</div></div><div class="fx-faq-grupo"><h2>Impuestos</h2><div class="fx-faq">
+<details><summary>¿Calcula los modelos 303 y 130?</summary><div class="fx-faq__resp"><p>Sí. Facturales calcula por trimestre el IVA repercutido y soportado y la estimación del pago fraccionado del IRPF a partir de tus facturas y gastos, listos para el 303 y el 130.</p></div></details>
+<details><summary>¿Presenta Facturales los modelos en Hacienda?</summary><div class="fx-faq__resp"><p>No. Te da las cifras para que tú o tu gestoría presentéis los modelos en la sede electrónica de la Agencia Tributaria.</p></div></details>
+<details><summary>¿Qué son los cierres?</summary><div class="fx-faq__resp"><p>Al cerrar un mes o un trimestre, sus documentos quedan protegidos frente a cambios accidentales una vez contabilizados.</p></div></details>
+</div></div><div class="fx-faq-grupo"><h2>Equipo, seguridad y datos</h2><div class="fx-faq">
+<details><summary>¿Puedo invitar a mi gestoría o a mi equipo?</summary><div class="fx-faq__resp"><p>Sí, con cuatro roles: Propietario (acceso completo), Colaborador (factura, registra gastos y gestiona contactos), Gestor (consulta, exporta a Excel y cierra meses) y Lector (solo lectura). El número de usuarios depende del plan.</p></div></details>
+<details><summary>¿Dónde se guardan mis datos?</summary><div class="fx-faq__resp"><p>La base de datos, la autenticación y los archivos se alojan en Irlanda, dentro del Espacio Económico Europeo.</p></div></details>
+<details><summary>¿Puedo activar la verificación en dos pasos?</summary><div class="fx-faq__resp"><p>Sí. En Ajustes › Seguridad puedes activar un segundo factor con una app de autenticación (TOTP).</p></div></details>
+<details><summary>¿Puedo exportar mis datos o eliminar mi cuenta?</summary><div class="fx-faq__resp"><p>Sí. Puedes exportar tus datos cuando quieras y solicitar la eliminación de la cuenta desde <a href="https://app.facturales.es/eliminar-cuenta">la página de eliminación de cuenta</a>.</p></div></details>
+</div></div><div class="fx-faq-grupo"><h2>Planes y pagos</h2><div class="fx-faq">
+<details><summary>¿Hay prueba gratuita?</summary><div class="fx-faq__resp"><p>Sí. Todos los planes empiezan con 14 días de prueba.</p></div></details>
+<details><summary>¿Hay permanencia?</summary><div class="fx-faq__resp"><p>No. Puedes cambiar de plan o cancelar cuando quieras desde la app.</p></div></details>
+<details><summary>¿Los precios incluyen IVA?</summary><div class="fx-faq__resp"><p>No. Los precios se muestran sin IVA; se añade al pagar y aparece desglosado en tu factura. Consulta los <a href="pricing.html">precios</a>.</p></div></details>
+</div></div></div>
+</section>
+<section class="fx-seccion fx-seccion--compacta" aria-labelledby="cta-final">
+  <div class="fx-wrap">
+    <div class="fx-cta">
+      <h2 id="cta-final">Pon orden en tus finanzas esta semana</h2>
+      <p class="fx-lead">Crea tu cuenta, emite tu primera factura e importa tu primer extracto. Tienes 14 días de prueba en cualquier plan y puedes cancelar cuando quieras.</p>
+      <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/js/footer-include.js"></script>
+<script src="assets/js/facturales.js" defer></script>
+</body>
 </html>
