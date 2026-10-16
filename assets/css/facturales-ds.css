@@ -371,6 +371,7 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 }
 .fx-cta h2 { max-width: 22ch; margin-inline: auto; }
 .fx-cta .fx-lead { margin-inline: auto; }
+.fx-cta .fx-acciones { justify-content: center; }
 @media (min-width: 1024px) { .fx-cta { padding: 80px 48px; } }
 
 /* 9. Maquetas de producto (HTML/CSS, datos de ejemplo) -------------------- */
@@ -455,7 +456,7 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 
 /* Móvil (app) */
 .fx-movil { width: 236px; max-width: 100%; margin-inline: auto; padding: 10px; border-radius: 38px; background: #0d0907; border: 1px solid var(--fx-line); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .95), inset 0 0 0 1px rgba(255, 255, 255, .04); }
-.fx-movil__pantalla { position: relative; overflow: hidden; border-radius: 30px; padding: 34px 14px 16px; min-height: 430px; background: radial-gradient(ellipse 180% 180px at 85% 0, #c66121 0, #673011 30%, #110802 60%, #020100 80%) #020100; }
+.fx-movil__pantalla { position: relative; overflow: hidden; border-radius: 30px; padding: 34px 14px 72px; min-height: 430px; background: radial-gradient(ellipse 180% 180px at 85% 0, #c66121 0, #673011 30%, #110802 60%, #020100 80%) #020100; }
 .fx-movil__pantalla::before { content: ""; position: absolute; top: 10px; left: 50%; width: 70px; height: 18px; margin-left: -35px; border-radius: 12px; background: #000; }
 .fx-movil__pantalla > strong { display: block; font-size: 20px; color: #fff; letter-spacing: -.02em; }
 .fx-movil__pantalla > small { display: block; color: var(--fx-ink-3); font-size: 12px; margin-top: 2px; }
@@ -503,7 +504,7 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 @media (min-width: 900px) { .fx-planes { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; } }
 .fx-plan { display: flex; flex-direction: column; padding: 28px 24px; border: 1px solid var(--fx-line); border-radius: var(--fx-r-lg); background: linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .03)); }
 .fx-plan--destacado { border-color: rgba(236, 130, 40, .6); background: radial-gradient(ellipse 120% 60% at 100% 0, rgba(198, 97, 33, .32), rgba(2, 1, 0, 0) 70%), linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03)); box-shadow: 0 30px 70px -40px rgba(236, 130, 40, .55); }
-.fx-plan__cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.fx-plan__cab { min-height: 30px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .fx-plan__cab h2, .fx-plan__cab h3 { font-size: 22px; letter-spacing: -.02em; }
 .fx-plan__desc { margin-top: 6px; font-size: 15px; color: var(--fx-ink-3); }
 .fx-plan__precio { display: flex; align-items: baseline; gap: 6px; margin-top: 22px; color: var(--fx-ink); }
@@ -553,6 +554,8 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 .fx-prosa h3 { margin-top: 1.8em; font-size: 1.2rem; }
 .fx-prosa h2 + *, .fx-prosa h3 + * { margin-top: .7em; }
 .fx-prosa ul, .fx-prosa ol { padding-left: 1.3em; }
+.fx-prosa ul { list-style: disc; }
+.fx-prosa ol { list-style: decimal; }
 .fx-prosa li + li { margin-top: .45em; }
 .fx-prosa li::marker { color: var(--fx-acento-claro); }
 .fx-prosa a { color: var(--fx-acento-claro); text-decoration: underline; text-underline-offset: 3px; }
@@ -603,6 +606,7 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 .fx-nav { display: none; }
 .fx-header__acciones { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 .fx-header__acciones .fx-solo-escritorio { display: none; }
+@media (max-width: 359px) { .fx-header__acciones .fx-btn--primario { display: none; } }
 @media (min-width: 1080px) {
   .fx-nav { display: flex; align-items: center; gap: 2px; margin-left: 28px; }
   .fx-header__acciones .fx-solo-escritorio { display: inline-flex; }
