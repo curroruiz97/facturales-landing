@@ -155,3 +155,68 @@
     });
   }
 })();
+
+/* ---------- Recorrido por la suite (pestañas) ----------
+   Patrón de pestañas de ARIA: flechas izquierda/derecha, Inicio y Fin; solo la pestaña activa entra en el orden de
+   tabulación. Sin JS se ve el primer panel (los demás llevan hidden). */
+(function () {
+  "use strict";
+  document.querySelectorAll("[data-fx-tour]").forEach(function (tour) {
+    var tabs = Array.prototype.slice.call(tour.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+    function activar(tab, foco) {
+      tabs.forEach(function (t) {
+        var activa = t === tab;
+        t.setAttribute("aria-selected", activa ? "true" : "false");
+        t.tabIndex = activa ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (!panel) return;
+        panel.hidden = !activa;
+        if (activa) {
+          panel.classList.remove("is-entrando");
+          void panel.offsetWidth;
+          panel.classList.add("is-entrando");
+        }
+      });
+      if (foco) tab.focus();
+      // En móvil, que la pestaña elegida quede a la vista dentro de la tira.
+      if (tab.scrollIntoView) tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { activar(t, false); });
+      t.addEventListener("keydown", function (e) {
+        var destino = null;
+        if (e.key === "ArrowRight") destino = tabs[(i + 1) % tabs.length];
+        else if (e.key === "ArrowLeft") destino = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === "Home") destino = tabs[0];
+        else if (e.key === "End") destino = tabs[tabs.length - 1];
+        if (destino) { e.preventDefault(); activar(destino, true); }
+      });
+    });
+  });
+})();
+
+/* ---------- Aparición al bajar ----------
+   Las secciones con data-fx-revela aparecen con un fundido suave la primera vez que entran en pantalla. Con «reducir
+   movimiento» no ocurre: todo se ve quieto y completo desde el principio. */
+(function () {
+  "use strict";
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  if (!("IntersectionObserver" in window)) return;
+  var revelar = document.querySelectorAll("[data-fx-revela]");
+  if (!revelar.length) return;
+  document.documentElement.classList.add("fx-anim");
+  var io = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-visible");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  revelar.forEach(function (el) {
+    // Lo que ya está en pantalla al cargar se muestra sin esperar.
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-visible");
+    io.observe(el);
+  });
+})();

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Facturación con VERI*FACTU · Facturales</title>
-<meta name="description" content="Emite facturas con series correlativas, IVA, IGIC o IPSI y retenciones, envíalas por correo con PDF y genera el registro VERI*FACTU con QR. Facturae 3.2.2 incluida.">
+<meta name="description" content="Emite facturas con series correlativas, IVA, IGIC o IPSI y retenciones, envíalas por correo con PDF y automatiza las recurrentes. Registro VERI*FACTU con QR y Facturae 3.2.2.">
 <link rel="canonical" href="https://facturales.es/crea-envia-facturas.html">
 <meta name="theme-color" content="#020100">
 <meta name="color-scheme" content="dark">
@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Facturales">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Facturación con VERI*FACTU · Facturales">
-<meta property="og:description" content="Emite facturas con series correlativas, IVA, IGIC o IPSI y retenciones, envíalas por correo con PDF y genera el registro VERI*FACTU con QR. Facturae 3.2.2 incluida.">
+<meta property="og:description" content="Emite facturas con series correlativas, IVA, IGIC o IPSI y retenciones, envíalas por correo con PDF y automatiza las recurrentes. Registro VERI*FACTU con QR y Facturae 3.2.2.">
 <meta property="og:url" content="https://facturales.es/crea-envia-facturas.html">
 <meta property="og:image" content="https://facturales.es/assets/img/og-facturales.png">
 <meta property="og:image:width" content="1200">
@@ -31,9 +31,9 @@
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
 <script src="assets/js/header-include.js"></script>
 <main id="contenido" tabindex="-1">
-<section class="fx-pagehero" aria-labelledby="hero-t">
-  <div class="fx-wrap fx-split">
-    <div>
+<section class="fx-pagehero fx-pagehero--captura" aria-labelledby="hero-t">
+  <div class="fx-wrap">
+    <div class="fx-pagehero__texto">
       <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Facturación</li></ol></nav>
       <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>Facturación</p>
       <h1 id="hero-t">Facturas correctas a la primera, listas para VERI*FACTU.</h1>
@@ -41,20 +41,24 @@
       <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
       
     </div>
-    <div><figure class="fx-panel" role="img" aria-label="Maqueta de una factura en edición con líneas, impuestos, total y código QR VERI*FACTU (datos de ejemplo)">
-  <div class="fx-panel__tit" aria-hidden="true">Nueva factura <span class="fx-chip fx-chip--neutro">Serie F-2026</span></div>
-  <div class="fx-mock__filas" style="margin-top:0" aria-hidden="true">
-    <div class="fx-fila"><span>Estudio Lumen S.L.<small>B12345678 · Valencia</small></span><span></span><b><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></b></div>
-    <div class="fx-fila"><span>Diseño de identidad<small>1 × 1.200,00 €</small></span><span class="fx-chip fx-chip--neutro">IVA 21 %</span><b>1.200,00 €</b></div>
-    <div class="fx-fila"><span>Retención IRPF<small>15 %</small></span><span></span><b>−180,00 €</b></div>
+    <div class="fx-pagehero__captura"><div class="fx-adaptable"><figure class="fx-captura fx-solo-ancho"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/facturas/emitidas</span></div><img src="assets/img/app/facturas-emitidas-1280.webp" srcset="assets/img/app/facturas-emitidas-1280.webp 1280w, assets/img/app/facturas-emitidas-2400.webp 2400w" sizes="(min-width: 1248px) 1200px, 96vw" width="2880" height="1800" alt="Facturas emitidas con lo facturado, cobrado, pendiente y vencido (captura real con datos de ejemplo)" loading="eager" fetchpriority="high" decoding="async"></div></figure><figure class="fx-telefono fx-solo-estrecho"><div class="fx-telefono__pantalla"><img src="assets/img/app/movil/facturas-emitidas-400.webp" srcset="assets/img/app/movil/facturas-emitidas-400.webp 400w, assets/img/app/movil/facturas-emitidas-780.webp 780w" sizes="(max-width: 699px) 272px, 264px" width="780" height="1688" alt="Facturas emitidas con lo facturado, cobrado, pendiente y vencido (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div><p class="fx-pie-captura">Captura real de Facturales con datos de ejemplo.</p></div>
   </div>
-  <div class="fx-modelo" style="margin-top:12px" aria-hidden="true">
-    <div class="fx-modelo__fila"><span>Base imponible</span><b>1.200,00 €</b></div>
-    <div class="fx-modelo__fila fx-modelo__fila--total"><span>Total</span><b>1.272,00 €</b></div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="app-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="app-t">Así se ve en la app</h2></div>
+    <div class="fx-galeria fx-galeria--2" data-fx-revela style="margin-top:40px"><div><h3>La ficha de cada factura<small>Estado, líneas, cobro y acciones sin salir de la lista.</small></h3><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/facturas/emitidas</span></div><img src="assets/img/app/factura-ficha-1280.webp" srcset="assets/img/app/factura-ficha-1280.webp 1280w, assets/img/app/factura-ficha-2400.webp 2400w" sizes="(min-width: 1248px) 584px, (min-width: 900px) 48vw, 94vw" width="2880" height="1800" alt="Ficha lateral de una factura emitida (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div><div><h3>Emitir es rellenar y revisar<small>Cliente, líneas, impuestos y retenciones, con la vista previa del PDF.</small></h3><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/facturas/emision</span></div><img src="assets/img/app/factura-nueva-1280.webp" srcset="assets/img/app/factura-nueva-1280.webp 1280w, assets/img/app/factura-nueva-2400.webp 2400w" sizes="(min-width: 1248px) 584px, (min-width: 900px) 48vw, 94vw" width="2880" height="1800" alt="Editor de una nueva factura (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div></div>
   </div>
-  <div class="fx-mock__filas" aria-hidden="true"><div class="fx-fila"><span>Registro VERI*FACTU<small>Huella encadenada y QR de cotejo</small></span><span></span><b><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3z"/><path d="M21 14v.01"/><path d="M21 21h-4v-4"/></svg></b></div></div>
-  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
-</figure></div>
+</section>
+<section class="fx-seccion fx-seccion--borde" id="recurrentes" aria-labelledby="recurrentes-t">
+  <div class="fx-wrap fx-split">
+    <div>
+      <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>Facturas recurrentes <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
+      <h2 id="recurrentes-t">Lo que facturas cada mes, preparado solo.</h2>
+      <p class="fx-lead">Convierte cualquier factura en recurrente, elige cada cuánto se repite y cuándo termina. Cada periodo Facturales deja el borrador listo con las fechas nuevas y te avisa: tú lo revisas y lo emites, de uno en uno o todos a la vez.</p>
+      <ul class="fx-lista" style="margin-top:24px"><li>Semanal, mensual, bimestral, trimestral, semestral o anual</li><li>Termina en una fecha, tras un número de facturas o nunca</li><li>Vista previa de las próximas fechas y días de vencimiento</li><li>Pausa, reanuda o genera la del periodo cuando quieras</li></ul><p class="fx-nota" style="margin-top:20px">Las facturas se emiten siempre con tu confirmación, con su numeración correlativa y su registro VERI*FACTU.</p>
+    </div>
+    <div data-fx-revela><div class="fx-adaptable"><figure class="fx-captura fx-solo-ancho"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/facturas/recurrentes</span></div><img src="assets/img/app/recurrentes-recorte-800.webp" srcset="assets/img/app/recurrentes-recorte-800.webp 800w, assets/img/app/recurrentes-recorte-1600.webp 1600w" sizes="(min-width: 1248px) 620px, (min-width: 1024px) 52vw, 94vw" width="1600" height="1182" alt="Lista de facturas recurrentes con su equivalente mensual y el próximo borrador (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure><figure class="fx-telefono fx-solo-estrecho"><div class="fx-telefono__pantalla"><img src="assets/img/app/movil/recurrentes-400.webp" srcset="assets/img/app/movil/recurrentes-400.webp 400w, assets/img/app/movil/recurrentes-780.webp 780w" sizes="272px" width="780" height="1688" alt="Facturas recurrentes en el móvil (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">

@@ -31,9 +31,9 @@
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
 <script src="assets/js/header-include.js"></script>
 <main id="contenido" tabindex="-1">
-<section class="fx-pagehero" aria-labelledby="hero-t">
-  <div class="fx-wrap fx-split">
-    <div>
+<section class="fx-pagehero fx-pagehero--captura" aria-labelledby="hero-t">
+  <div class="fx-wrap">
+    <div class="fx-pagehero__texto">
       <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Gastos y justificantes</li></ol></nav>
       <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>Gastos y justificantes <span class="fx-badge fx-badge--nuevo">Nuevo</span></p>
       <h1 id="hero-t">Cada gasto con su justificante, sin perseguir tickets.</h1>
@@ -41,15 +41,13 @@
       <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
       <p class="fx-nota" style="margin-top:20px">Proveedores, estado del justificante y matriz mensual: función nueva en despliegue gradual.</p>
     </div>
-    <div><figure class="fx-panel" role="img" aria-label="Maqueta de la matriz mensual de gastos por categoría y estado de justificantes (datos de ejemplo)">
-  <div class="fx-panel__tit" aria-hidden="true">Matriz mensual <span>Gastos por categoría</span></div>
-  <div style="overflow-x:auto" aria-hidden="true"><table class="fx-matriz"><thead><tr><th></th><th>Jul</th><th>Ago</th><th>Sep</th></tr></thead><tbody><tr><th scope="row">Suministros</th><td class="">212 €</td><td class="">198 €</td><td class="medio">240 €</td></tr><tr><th scope="row">Software</th><td class="">89 €</td><td class="">89 €</td><td class="">129 €</td></tr><tr><th scope="row">Desplazamientos</th><td class="">64 €</td><td class="alto">310 €</td><td class="">45 €</td></tr><tr><th scope="row">Material</th><td class="">120 €</td><td class="">0 €</td><td class="alto">385 €</td></tr></tbody></table></div>
-  <div class="fx-mock__filas" aria-hidden="true">
-    <div class="fx-fila"><span>Gasolinera Repsol<small>Ticket · OCR</small></span><span class="fx-chip fx-chip--ok">Justificado</span><b>−52,30 €</b></div>
-    <div class="fx-fila"><span>Amazon Business<small>Pendiente de ticket</small></span><span class="fx-chip fx-chip--pend">Pendiente</span><b>−129,00 €</b></div>
+    <div class="fx-pagehero__captura"><div class="fx-adaptable"><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/gastos</span></div><img src="assets/img/app/gastos-1280.webp" srcset="assets/img/app/gastos-1280.webp 1280w, assets/img/app/gastos-2400.webp 2400w" sizes="(min-width: 1248px) 1200px, 96vw" width="2880" height="1800" alt="Movimientos de gastos con su categoría y el estado del justificante (captura real con datos de ejemplo)" loading="eager" fetchpriority="high" decoding="async"></div></figure></div><p class="fx-pie-captura">Captura real de Facturales con datos de ejemplo.</p></div>
   </div>
-  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
-</figure></div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="app-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="app-t">Así se ve en la app</h2></div>
+    <div class="fx-galeria fx-galeria--2" data-fx-revela style="margin-top:40px"><div><h3>Matriz mensual<small>Cuánto gastas cada mes, por categoría.</small></h3><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/gastos/matriz</span></div><img src="assets/img/app/gastos-matriz-1280.webp" srcset="assets/img/app/gastos-matriz-1280.webp 1280w, assets/img/app/gastos-matriz-2400.webp 2400w" sizes="(min-width: 1248px) 584px, (min-width: 900px) 48vw, 94vw" width="2880" height="1800" alt="Matriz mensual de gastos por categoría (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div><div><h3>Ingresos y gastos<small>Todas tus transacciones, con «Escanear gasto» a mano.</small></h3><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/transacciones</span></div><img src="assets/img/app/transacciones-1280.webp" srcset="assets/img/app/transacciones-1280.webp 1280w, assets/img/app/transacciones-2400.webp 2400w" sizes="(min-width: 1248px) 584px, (min-width: 900px) 48vw, 94vw" width="2880" height="1800" alt="Lista de ingresos y gastos (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
