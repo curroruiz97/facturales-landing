@@ -164,6 +164,17 @@
   document.querySelectorAll("[data-fx-tour]").forEach(function (tour) {
     var tabs = Array.prototype.slice.call(tour.querySelectorAll('[role="tab"]'));
     if (!tabs.length) return;
+    // Si la tira de pestañas no cabe, se difumina por la derecha hasta llegar al final.
+    var lista = tour.querySelector(".fx-tour__lista");
+    if (lista) {
+      var medir = function () {
+        lista.classList.toggle("is-desborda", lista.scrollWidth > lista.clientWidth + 2);
+        lista.classList.toggle("is-final", lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 2);
+      };
+      lista.addEventListener("scroll", medir, { passive: true });
+      window.addEventListener("resize", medir);
+      medir();
+    }
     function activar(tab, foco) {
       tabs.forEach(function (t) {
         var activa = t === tab;
