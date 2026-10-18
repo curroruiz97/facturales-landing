@@ -23,17 +23,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<link rel="stylesheet" href="assets/css/main.css?v=20261018">
+<link rel="stylesheet" href="assets/css/facturales-ds.css?v=20261018">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuántos clientes puedo tener?","acceptedAnswer":{"@type":"Answer","text":"10 en Starter, 150 en Pro e ilimitados en Ilimitado."}},{"@type":"Question","name":"¿Puedo migrar desde otra herramienta?","acceptedAnswer":{"@type":"Answer","text":"Sí. Exporta tus contactos a Excel o CSV desde tu herramienta actual e impórtalos en Facturales."}}]}</script>
 </head>
 <body class="fx">
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
-<script src="assets/js/header-include.js"></script>
+<script src="assets/js/header-include.js?v=20261018"></script>
 <main id="contenido" tabindex="-1">
-<section class="fx-pagehero" aria-labelledby="hero-t">
-  <div class="fx-wrap fx-split">
-    <div>
+<section class="fx-pagehero fx-pagehero--captura" aria-labelledby="hero-t">
+  <div class="fx-wrap">
+    <div class="fx-pagehero__texto">
       <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Clientes</li></ol></nav>
       <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clientes</p>
       <h1 id="hero-t">Tus clientes, con todo lo que les has facturado.</h1>
@@ -41,16 +41,7 @@
       <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
       
     </div>
-    <div><figure class="fx-panel" role="img" aria-label="Maqueta de la lista de clientes con importe facturado y pendiente (datos de ejemplo)">
-  <div class="fx-panel__tit" aria-hidden="true">Clientes <span>Importar · Exportar</span></div>
-  <div class="fx-mock__filas" style="margin-top:0" aria-hidden="true">
-    <div class="fx-fila"><span>Estudio Lumen S.L.<small>B12345678</small></span><span class="fx-chip fx-chip--ok">Al día</span><b>12.400 €</b></div>
-    <div class="fx-fila"><span>Taller Norte<small>B87654321</small></span><span class="fx-chip fx-chip--pend">860 € pendiente</span><b>5.120 €</b></div>
-    <div class="fx-fila"><span>Clínica Arce<small>B11223344</small></span><span class="fx-chip fx-chip--ok">Al día</span><b>8.940 €</b></div>
-    <div class="fx-fila"><span>Ana Ruiz<small>Particular</small></span><span class="fx-chip fx-chip--neutro">Nuevo</span><b>150 €</b></div>
-  </div>
-  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
-</figure></div>
+    <div class="fx-pagehero__captura"><div class="fx-adaptable"><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/contactos</span></div><img src="assets/img/app/contactos-1280.webp" srcset="assets/img/app/contactos-1280.webp 1280w, assets/img/app/contactos-2400.webp 2400w" sizes="(min-width: 1248px) 1200px, 96vw" width="2880" height="1800" alt="Lista de contactos con clientes y proveedores (captura real con datos de ejemplo)" loading="eager" fetchpriority="high" decoding="async"></div></figure></div><p class="fx-pie-captura">Captura real de Facturales con datos de ejemplo.</p></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
@@ -80,7 +71,7 @@
     <div class="fx-grid fx-grid--3"><a class="fx-card fx-card--enlace" href="crea-envia-facturas.html">
   <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
   <h3>Facturación</h3>
-  <p>Facturas, VERI*FACTU y envío por correo</p>
+  <p>Facturas, recurrentes, VERI*FACTU y envío</p>
   <span class="fx-enlace">Ver más <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a><a class="fx-card fx-card--enlace" href="cobros.html">
   <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span><span class="fx-badge fx-badge--nuevo">Nuevo</span></div>
@@ -89,8 +80,8 @@
   <span class="fx-enlace">Ver más <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a><a class="fx-card fx-card--enlace" href="gestiona-tu-stock.html">
   <div class="fx-card__top"><span class="fx-icono"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span></div>
-  <h3>Productos y servicios</h3>
-  <p>Catálogo con precios, impuestos y márgenes</p>
+  <h3>Inventario</h3>
+  <p>Catálogo, existencias, alertas y movimientos de stock</p>
   <span class="fx-enlace">Ver más <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a></div>
   </div>
@@ -105,7 +96,7 @@
   </div>
 </section>
 </main>
-<script src="assets/js/footer-include.js"></script>
-<script src="assets/js/facturales.js" defer></script>
+<script src="assets/js/footer-include.js?v=20261018"></script>
+<script src="assets/js/facturales.js?v=20261018" defer></script>
 </body>
 </html>

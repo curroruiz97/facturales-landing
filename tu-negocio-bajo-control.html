@@ -23,17 +23,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/facturales-ds.css">
+<link rel="stylesheet" href="assets/css/main.css?v=20261018">
+<link rel="stylesheet" href="assets/css/facturales-ds.css?v=20261018">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿De dónde salen las cifras?","acceptedAnswer":{"@type":"Answer","text":"De tus facturas emitidas, tus gastos y, si usas Bancos, de tus movimientos conciliados. Cada tarjeta indica su fuente."}},{"@type":"Question","name":"¿Necesito saber contabilidad?","acceptedAnswer":{"@type":"Answer","text":"No. El panel está pensado para leerlo de un vistazo."}},{"@type":"Question","name":"¿Están disponibles las gráficas?","acceptedAnswer":{"@type":"Answer","text":"Gráficas es una función nueva que estamos activando de forma gradual."}}]}</script>
 </head>
 <body class="fx">
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
-<script src="assets/js/header-include.js"></script>
+<script src="assets/js/header-include.js?v=20261018"></script>
 <main id="contenido" tabindex="-1">
-<section class="fx-pagehero" aria-labelledby="hero-t">
-  <div class="fx-wrap fx-split">
-    <div>
+<section class="fx-pagehero fx-pagehero--captura" aria-labelledby="hero-t">
+  <div class="fx-wrap">
+    <div class="fx-pagehero__texto">
       <nav aria-label="Ruta de navegación"><ol class="fx-migas"><li><a href="index.html">Inicio</a></li><li><a href="funciones.html">Funciones</a></li><li aria-current="page">Panel y gráficas</li></ol></nav>
       <p class="fx-eyebrow"><svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Panel y gráficas</p>
       <h1 id="hero-t">Cómo va tu negocio, sin abrir una hoja de cálculo.</h1>
@@ -41,16 +41,13 @@
       <div class="fx-acciones"><a class="fx-btn fx-btn--primario" href="https://app.facturales.es/signup">Empieza gratis 14 días <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="fx-btn" href="pricing.html">Ver precios</a></div>
       
     </div>
-    <div><figure class="fx-panel" role="img" aria-label="Maqueta del panel con indicadores y gráfica de ingresos y gastos por mes (datos de ejemplo)">
-  <div class="fx-panel__tit" aria-hidden="true">Gráficas <span>Ingresos y gastos por mes</span></div>
-  <div class="fx-mock__kpis" aria-hidden="true">
-    <div class="fx-kpi"><small>Ingresos</small><b>18.420 €</b><em style="color:var(--fx-ink-3)">Fuente: facturas</em></div>
-    <div class="fx-kpi"><small>Gastos</small><b>6.912 €</b><em style="color:var(--fx-ink-3)">Fuente: gastos</em></div>
-    <div class="fx-kpi"><small>Resultado</small><b>11.508 €</b><em class="fx-pos">Trimestre</em></div>
+    <div class="fx-pagehero__captura"><div class="fx-adaptable"><figure class="fx-captura fx-solo-ancho"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/dashboard</span></div><img src="assets/img/app/panel-1280.webp" srcset="assets/img/app/panel-1280.webp 1280w, assets/img/app/panel-2400.webp 2400w" sizes="(min-width: 1248px) 1200px, 96vw" width="2880" height="1800" alt="Panel con balance, ingresos, gastos y evolución mensual (captura real con datos de ejemplo)" loading="eager" fetchpriority="high" decoding="async"></div></figure><figure class="fx-telefono fx-solo-estrecho"><div class="fx-telefono__pantalla"><img src="assets/img/app/movil/panel-400.webp" srcset="assets/img/app/movil/panel-400.webp 400w, assets/img/app/movil/panel-780.webp 780w" sizes="(max-width: 699px) 272px, 264px" width="780" height="1688" alt="Panel con balance, ingresos, gastos y evolución mensual (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div></figure></div><p class="fx-pie-captura">Captura real de Facturales con datos de ejemplo.</p></div>
   </div>
-  <div class="fx-mock__grafica" aria-hidden="true" style="height:120px"><span><i style="height:24%"></i><i style="height:12%"></i></span><span><i style="height:33%"></i><i style="height:17%"></i></span><span><i style="height:29%"></i><i style="height:15%"></i></span><span><i style="height:40%"></i><i style="height:18%"></i></span><span><i style="height:37%"></i><i style="height:20%"></i></span><span><i style="height:45%"></i><i style="height:21%"></i></span><span><i style="height:42%"></i><i style="height:18%"></i></span><span><i style="height:50%"></i><i style="height:25%"></i></span><span><i style="height:47%"></i><i style="height:22%"></i></span></div>
-  <p class="fx-mock__pie" aria-hidden="true">Datos de ejemplo</p>
-</figure></div>
+</section>
+<section class="fx-seccion fx-seccion--borde" aria-labelledby="app-t">
+  <div class="fx-wrap">
+    <div class="fx-cabecera-seccion"><h2 id="app-t">Así se ve en la app</h2></div>
+    <div class="fx-galeria" data-fx-revela><div><h3>Gráficas<small>Ingresos, gastos y beneficio a lo largo del año.</small></h3><figure class="fx-captura"><div class="fx-captura__marco"><div class="fx-captura__barra" aria-hidden="true"><i></i><i></i><i></i><span>app.facturales.es/graficas</span></div><img src="assets/img/app/graficas-1280.webp" srcset="assets/img/app/graficas-1280.webp 1280w, assets/img/app/graficas-2400.webp 2400w" sizes="(min-width: 1248px) 1200px, 96vw" width="2880" height="1800" alt="Gráficas de ingresos y gastos del año (captura real con datos de ejemplo)" loading="lazy" decoding="async"></div><figcaption>Captura real con datos de ejemplo.</figcaption></figure></div></div>
   </div>
 </section>
 <section class="fx-seccion fx-seccion--borde" aria-labelledby="funciones-t">
@@ -106,7 +103,7 @@
   </div>
 </section>
 </main>
-<script src="assets/js/footer-include.js"></script>
-<script src="assets/js/facturales.js" defer></script>
+<script src="assets/js/footer-include.js?v=20261018"></script>
+<script src="assets/js/facturales.js?v=20261018" defer></script>
 </body>
 </html>
