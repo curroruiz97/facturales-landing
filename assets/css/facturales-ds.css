@@ -954,6 +954,38 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   .fx-hero { padding-top: calc(var(--fx-header-h) + 24px); }
   .fx-hero h1 { font-size: clamp(2rem, 1.2rem + 2.6vw, 2.625rem); }
   .fx-hero__rombo .cubes-wrapper { height: 240px; }
+  /* En horizontal hay ancho de sobra: el titular en dos líneas en lugar de cuatro, y la llamada a la acción sube al pliegue. */
+  .fx-hero--rombo .fx-hero__texto h1, .fx-hero__texto h1 { max-width: 24ch; }
+  .fx-hero__texto .fx-lead { margin-top: 12px; max-width: 70ch; }
+  .fx-hero .fx-acciones { margin-top: 20px; }
+}
+
+/* Portada · manifiesto: a 72 px superaba al h1 de la portada (64 px) e invertía la jerarquía en escritorio. */
+.fx-manifiesto [data-fx-manifiesto] { font-size: clamp(32px, 5.4vw, 56px); max-width: 1080px; }
+/* ...y el bloque, centrado en una caja de 1080 px, arrancaba ~84 px a la derecha del resto de secciones en 1440 px:
+   se alinea con la rejilla de la página (el texto sigue limitado a 1080 px). */
+.fx-manifiesto__in { max-width: calc(var(--fx-max) + 2 * var(--fx-gutter)); }
+
+/* Tarjetas de «icono + título + texto» (portada · Seguridad, Funciones · Además, Precios · Incluido en todos los
+   planes). En móvil, icono y título en una fila y el texto debajo (cuatro o nueve tarjetas de ~210 px apiladas eran
+   media pantalla de scroll de más); ver el mismo patrón en las páginas de módulo [C]. */
+@media (max-width: 639px) {
+  #seguridad .fx-grid > .fx-card, .fx-ademas > .fx-card, .fx-seccion[aria-labelledby="incluido-t"] .fx-grid > .fx-card {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; align-items: center; padding: 18px 18px 20px;
+  }
+  #seguridad .fx-grid > .fx-card > .fx-icono, .fx-ademas > .fx-card > .fx-icono, .fx-seccion[aria-labelledby="incluido-t"] .fx-grid > .fx-card > .fx-icono { grid-column: 1; grid-row: 1; }
+  #seguridad .fx-grid > .fx-card > h3, .fx-ademas > .fx-card > h3, .fx-seccion[aria-labelledby="incluido-t"] .fx-grid > .fx-card > h3 { grid-column: 2; grid-row: 1; margin-top: 0; }
+  #seguridad .fx-grid > .fx-card > p, .fx-ademas > .fx-card > p, .fx-seccion[aria-labelledby="incluido-t"] .fx-grid > .fx-card > p { grid-column: 1 / -1; margin-top: 12px; }
+  #seguridad .fx-grid, .fx-ademas, .fx-seccion[aria-labelledby="incluido-t"] .fx-grid { gap: 12px; }
+}
+/* Escritorio (4 columnas): los títulos de dos líneas («Verificación en dos pasos») desalineaban el texto de sus vecinas;
+   cada tarjeta comparte las tres filas (icono, título, texto) de la rejilla. */
+@media (min-width: 1200px) {
+  @supports (grid-template-rows: subgrid) {
+    #seguridad .fx-grid--4, .fx-ademas { grid-template-rows: auto auto 1fr; row-gap: 0; }
+    #seguridad .fx-grid--4 > .fx-card, .fx-ademas > .fx-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+    #seguridad .fx-grid--4 > .fx-card > .fx-icono, .fx-ademas > .fx-card > .fx-icono { align-self: start; justify-self: start; }
+  }
 }
 /* fin [A] */
 
@@ -972,6 +1004,11 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   .fx-planes--alineados .fx-plan > * { grid-column: 1; }
   .fx-planes--alineados .fx-plan > .fx-lista { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; padding: 4px 0 4px 32px; border-top: 0; border-left: 1px solid var(--fx-line-soft); }
   .fx-planes--alineados .fx-plan .fx-btn { align-self: start; }
+}
+
+/* Precios · «Incluido en todos los planes»: nueve tarjetas; en dos columnas (tableta) la última quedaba sola en la fila. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fx-seccion[aria-labelledby="incluido-t"] .fx-grid--3 > .fx-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 
 /* Precios · comparativa. En escritorio, columnas de plan del mismo ancho. */
@@ -1053,7 +1090,7 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='.5' y='.5' width='23' height='23' rx='6' fill='%23EC8228'/%3E%3Cpath d='M18 7.5 10 15.5l-4-4' fill='none' stroke='%231a0d02' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .fx-form--contacto .fx-check input[aria-invalid="true"], .fx-form--contacto .fx-check input:focus-visible { outline: 2px solid var(--fx-acento); outline-offset: -8px; }
-.fx-form--contacto .fx-check a { position: relative; }
+.fx-form--contacto .fx-check a { position: relative; display: inline-block; padding-block: 12px; margin-block: -12px; }
 .fx-form--contacto .fx-check a::after { content: ""; position: absolute; inset: -12px -4px; }
 @media (forced-colors: active) {
   .fx-form--contacto .fx-check input { -webkit-appearance: auto; appearance: auto; width: 24px; height: 24px; margin: 0; }
@@ -1072,6 +1109,19 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   .fx-pagehero .fx-lead { margin-top: 12px; }
   .fx-404 { min-height: 0; padding-top: calc(var(--fx-header-h) + 20px); padding-bottom: 40px; }
   .fx-404__num { font-size: 4.5rem; }
+}
+/* Funciones en el móvil (≤ 559 px): las 10 tarjetas de módulo pasan a filas compactas, miniatura cuadrada a la
+   izquierda (recorte de la captura) y título, texto y «Ver más» a la derecha; el icono sobra junto a la miniatura.
+   Antes eran ~415 px por tarjeta (unos 4.000 px de scroll); ahora ~130 px. */
+@media (max-width: 559px) {
+  .fx-modulos { gap: 10px; }
+  .fx-modulos > .fx-card--captura { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 14px; align-items: start; padding: 12px; }
+  .fx-modulos > .fx-card--captura > * { grid-column: 2; }
+  .fx-modulos > .fx-card--captura > .fx-card__mini { grid-column: 1; grid-row: 1 / span 4; margin: 0; aspect-ratio: 1 / 1; align-self: stretch; max-height: 132px; }
+  .fx-modulos > .fx-card--captura > .fx-card__top { display: none; }
+  .fx-modulos > .fx-card--captura h2 { margin: 2px 0 4px; font-size: 1.0625rem; line-height: 1.3; }
+  .fx-modulos > .fx-card--captura p { margin: 0 0 6px; font-size: .9375rem; line-height: 1.45; }
+  .fx-modulos > .fx-card--captura .fx-enlace { min-height: 32px; }
 }
 /* fin [B] */
 
