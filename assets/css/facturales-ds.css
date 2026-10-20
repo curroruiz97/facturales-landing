@@ -1085,9 +1085,14 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
 /* Barra del navegador: la ruta cabe entera también en columnas estrechas (a 1024 px se cortaba con «…»). */
 .fx-pagina-modulo .fx-captura__barra span { max-width: calc(100% - 96px); }
 
-/* «Qué puedes hacer»: si la última tarjeta queda sola en su fila de dos columnas, ocupa la fila entera. */
+/* Rejillas de tarjetas en tableta: si la última tarjeta queda sola en su fila de dos columnas, ocupa la fila entera;
+   «Funciona mejor junto a» (3 enlaces) pasa a tres columnas desde 768 px para no dejar una huérfana. */
 @media (min-width: 640px) and (max-width: 1023px) {
-  .fx-pagina-modulo .fx-grid--3 > .fx-card:not(.fx-card--enlace):last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fx-pagina-modulo .fx-grid--3:has(> .fx-card--enlace) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fx-pagina-modulo .fx-grid--3:has(> .fx-card--enlace) > .fx-card:last-child { grid-column: auto; }
 }
 
 @media (max-width: 639px) {
@@ -1104,12 +1109,15 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   .fx-pagina-modulo .fx-grid--3 > .fx-card > .fx-enlace { grid-column: 1 / -1; }
   .fx-pagina-modulo .fx-grid--3 > .fx-card > p { margin-top: 12px; }
   .fx-pagina-modulo .fx-grid { gap: 12px; }
+}
 
-  /* «Cómo funciona»: número y título en la misma línea. */
+/* «Cómo funciona»: hasta 899 px, en una columna con número y título en la misma línea (entre 768 y 899 px las tres
+   columnas dejaban unos 130 px de texto por tarjeta). */
+@media (max-width: 899px) {
+  .fx-pagina-modulo .fx-pasos { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .fx-pagina-modulo .fx-paso { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; align-items: baseline; padding: 20px; }
   .fx-pagina-modulo .fx-paso h3 { margin-top: 0; }
   .fx-pagina-modulo .fx-paso p { grid-column: 1 / -1; }
-  .fx-pagina-modulo .fx-pasos { gap: 12px; }
 }
 
 @media (max-width: 559px) {
