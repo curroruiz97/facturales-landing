@@ -902,13 +902,209 @@ a.fx-badge::after { content: ""; position: absolute; inset: -7px -2px; }
    Cada bloque es independiente; lo compartido por todas las páginas va en «Global y cabecera».
    ═════════════════════════════════════════════════════════════════════════════════════════════ */
 /* ── [A] Global, cabecera, pie y portada ── */
+/* Insignias largas (p. ej. la de novedades del hero): en móvil pueden partir línea en lugar de desbordar la página
+   (a 414 px la del hero ensanchaba el documento 72 px y el navegador alejaba toda la página). */
+@media (max-width: 639px) { .fx-badge { white-space: normal; } }
+
+/* Bloqueo del scroll con el menú móvil abierto también en iOS (que ignora overflow solo en body). */
+html:has(body.fx-bloqueo) { overflow: hidden; }
+
+/* Menú móvil: enlaces alineados con los títulos de grupo y, en tabletas, en columnas en vez de una lista larguísima. */
+.fx-movilnav a.fx-movilnav__link { padding-inline: 0; }
+.fx-movilnav__grupo + .fx-movilnav__grupo { margin-top: 8px; }
+@media (min-width: 560px) {
+  .fx-movilnav__grupo ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+  .fx-movilnav__acciones { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 560px; }
+}
+@media (min-width: 900px) { .fx-movilnav__grupo ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Teléfono en horizontal: menos alto útil, filas algo más compactas (siguen ≥ 44 px). */
+@media (max-height: 520px) and (orientation: landscape) {
+  .fx-movilnav { padding-top: 8px; }
+  .fx-movilnav a.fx-movilnav__link { min-height: 44px; padding-block: 6px; font-size: 16px; }
+}
+
+/* Pie: en móvil, los grupos de enlaces a dos columnas (antes, una sola columna de ~1.500 px de alto);
+   en tableta, los cuatro grupos en una fila bajo la marca (antes el cuarto quedaba solo en otra fila). */
+.fx-footer ul a { overflow-wrap: anywhere; }
+@media (min-width: 375px) and (max-width: 767px) {
+  .fx-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .fx-footer__marca { grid-column: 1 / -1; }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .fx-footer__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 24px; }
+}
+@media (max-width: 767px) {
+  .fx-footer { padding-top: 48px; }
+  .fx-footer__legal { margin-top: 32px; }
+}
+
+/* Portada · novedades: en tableta (640–899 px) el mosaico pasa a dos columnas en lugar de cinco tarjetas apiladas. */
+@media (min-width: 640px) and (max-width: 899px) {
+  .fx-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fx-bento > :nth-child(1), .fx-bento > :nth-child(4), .fx-bento > :nth-child(5) { grid-column: 1 / -1; }
+}
+
+/* Portada · rombo: el cubo se dimensiona en vmin (main.css); en pantallas muy grandes crecía más que su caja y lo
+   tapaba la captura del escaparate. Se reduce por escalones sin tocar el marcado ni la animación. */
+@media (min-width: 1200px) and (min-height: 1200px) { .fx-hero__rombo .cubes-wrapper { scale: .8; } }
+@media (min-width: 1600px) and (min-height: 1600px) { .fx-hero__rombo .cubes-wrapper { scale: .62; } }
+
+/* Teléfono en horizontal: hero más compacto para que el titular y la llamada a la acción quepan cerca del pliegue. */
+@media (max-height: 520px) and (orientation: landscape) and (max-width: 1023px) {
+  .fx-hero { padding-top: calc(var(--fx-header-h) + 24px); }
+  .fx-hero h1 { font-size: clamp(2rem, 1.2rem + 2.6vw, 2.625rem); }
+  .fx-hero__rombo .cubes-wrapper { height: 240px; }
+}
 /* fin [A] */
 
 /* ── [B] Precios, funciones, FAQ, contacto, sobre nosotros y 404 ── */
+/* Precios · tarjetas de plan. Con tres columnas, precio, nota, botón y lista quedan a la misma altura en las tres
+   tarjetas aunque una descripción ocupe dos líneas (subgrid: cada tarjeta comparte las 6 filas de la rejilla). */
+@media (min-width: 900px) {
+  @supports (grid-template-rows: subgrid) {
+    .fx-planes--alineados .fx-plan { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
+    .fx-planes--alineados .fx-plan__desc { align-self: start; }
+  }
+}
+/* En tableta (una tarjeta por fila) la tarjeta se aprovecha a lo ancho: precio y botón a la izquierda, lista a la derecha. */
+@media (min-width: 640px) and (max-width: 899px) {
+  .fx-planes--alineados .fx-plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: repeat(4, auto) 1fr; column-gap: 32px; }
+  .fx-planes--alineados .fx-plan > * { grid-column: 1; }
+  .fx-planes--alineados .fx-plan > .fx-lista { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; padding: 4px 0 4px 32px; border-top: 0; border-left: 1px solid var(--fx-line-soft); }
+  .fx-planes--alineados .fx-plan .fx-btn { align-self: start; }
+}
+
+/* Precios · comparativa. En escritorio, columnas de plan del mismo ancho. */
+.fx-tabla--planes { table-layout: fixed; }
+.fx-tabla--planes thead th:first-child { width: 40%; }
+/* En móvil la tabla de 4 columnas no cabe (a 320 px se cortaba «Ilimitado»): cada función ocupa su propia línea y
+   debajo van los tres valores, alineados con la cabecera de planes, que se queda fija bajo el menú al desplazarse. */
+@media (max-width: 559px) {
+  .fx-tabla-wrap--planes { overflow: visible; }
+  .fx-tabla--planes, .fx-tabla--planes thead, .fx-tabla--planes tbody { display: block; }
+  .fx-tabla--planes tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--fx-line-soft); }
+  .fx-tabla--planes tbody tr:last-child { border-bottom: 0; }
+  .fx-tabla--planes th, .fx-tabla--planes td { border-bottom: 0; }
+  .fx-tabla--planes thead { position: sticky; top: var(--fx-header-h); z-index: 2; border-radius: var(--fx-r-lg) var(--fx-r-lg) 0 0; background: var(--fx-surface-solid); }
+  .fx-tabla--planes thead tr { border-bottom-color: var(--fx-line); }
+  .fx-tabla--planes thead th { padding: 14px 6px; background: transparent; text-align: center; }
+  .fx-tabla--planes thead th:first-child { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .fx-tabla--planes tbody th[scope="row"], .fx-tabla--planes .fx-tabla__grupo th { grid-column: 1 / -1; text-align: left; }
+  .fx-tabla--planes tbody th[scope="row"] { padding: 14px 16px 2px; }
+  .fx-tabla--planes .fx-tabla__grupo th { padding: 18px 16px 8px; }
+  .fx-tabla--planes td { padding: 6px 6px 14px; font-size: 14px; }
+}
+
+/* Funciones · rejilla de módulos: el décimo módulo quedaba solo en la última fila; con 3 columnas ocupa la fila
+   entera en horizontal (captura a la izquierda, texto a la derecha). */
+@media (min-width: 1024px) {
+  .fx-modulos > .fx-card--captura:last-child:nth-child(3n+1) {
+    grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-rows: auto auto auto 1fr; column-gap: 40px; align-items: start; padding: 14px 28px 14px 14px;
+  }
+  .fx-modulos > .fx-card--captura:last-child:nth-child(3n+1) > * { grid-column: 2; }
+  .fx-modulos > .fx-card--captura:last-child:nth-child(3n+1) > .fx-card__mini { grid-column: 1; grid-row: 1 / -1; margin: 0; }
+  .fx-modulos > .fx-card--captura:last-child:nth-child(3n+1) > .fx-card__top { padding-top: 14px; }
+}
+
+/* FAQ · índice de temas bajo la entradilla (saltos a cada grupo). */
+.fx-faq-temas { margin-top: 28px; }
+.fx-faq-temas ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.fx-faq-temas a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px;
+  border: 1px solid var(--fx-line); border-radius: var(--fx-r-full); background: var(--fx-surface);
+  color: var(--fx-ink-2); font-size: 15px; font-weight: 500; line-height: 1.2; text-decoration: none;
+  transition: border-color var(--fx-dur) var(--fx-ease), color var(--fx-dur) var(--fx-ease), background-color var(--fx-dur) var(--fx-ease);
+}
+.fx-faq-temas a:hover { color: #fff; border-color: rgba(236, 130, 40, .5); background: var(--fx-surface-2); }
+@media (max-width: 479px) { .fx-faq-temas a { padding-inline: 14px; font-size: 14.5px; } }
+
+/* Contacto · formulario. Los campos van en dos columnas solo si el propio formulario es ancho (en escritorio la
+   tarjeta es estrecha y «Motivo» se cortaba); select con flecha propia; casilla y envío con objetivo táctil amplio. */
+.fx-form--contacto { container-type: inline-size; }
+.fx-form--contacto .fx-form__fila { grid-template-columns: minmax(0, 1fr); }
+@container (min-width: 560px) { .fx-form--contacto .fx-form__fila { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fx-form--contacto select {
+  -webkit-appearance: none; appearance: none; padding-right: 44px; cursor: pointer; text-overflow: ellipsis;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-opacity='.76' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 18px;
+}
+.fx-form--contacto .fx-check { align-items: center; min-height: 44px; cursor: pointer; }
+.fx-form--contacto .fx-check input { width: 24px; height: 24px; margin: 0; cursor: pointer; }
+@media (max-width: 479px) { .fx-form--contacto .fx-form__enviar .fx-btn { width: 100%; } }
+
+/* Sobre nosotros · titular largo: algo más contenido en móvil y con líneas equilibradas. */
+.fx-pagehero--sobre h1 { max-width: 22ch; text-wrap: balance; }
+@media (max-width: 479px) { .fx-pagehero--sobre h1 { font-size: clamp(1.875rem, 1.2rem + 3.4vw, 2.25rem); } }
 /* fin [B] */
 
 /* ── [C] Páginas de módulos ── */
 /* fin [C] */
 
 /* ── [D] Blog y artículos ── */
+/* Cabecera del artículo: titular proporcionado en 320 px y en móvil horizontal */
+.fx-articulo-cab h1 { font-size: clamp(1.75rem, 1.15rem + 2.6vw, 2.75rem); line-height: 1.1 !important; max-width: none; overflow-wrap: break-word; }
+@media (max-width: 359px) { .fx-articulo-cab h1 { font-size: 1.625rem; } }
+@media (orientation: landscape) and (max-height: 520px) {
+  .fx-articulo-cab { padding-top: calc(var(--fx-header-h) + 24px); padding-bottom: 32px; }
+  .fx-articulo-cab h1 { font-size: 1.875rem; max-width: 32ch; }
+  .fx-articulo-cab .fx-meta { margin-top: 14px; }
+}
+.fx-articulo-cab .fx-meta li { white-space: nowrap; }
+
+/* Medida de lectura ≈ 70 caracteres por línea (cabecera alineada con el texto) */
+.fx-articulo-cab > .fx-wrap--lectura,
+.fx-claro > .fx-prosa { max-width: calc(640px + 2 * var(--fx-gutter)); }
+.fx-prosa { overflow-wrap: break-word; }
+.fx-prosa :is(p, li) { text-wrap: pretty; }
+.fx-prosa :is(h2, h3) { scroll-margin-top: calc(var(--fx-header-h) + 16px); }
+@media (max-width: 767px) {
+  .fx-prosa { line-height: 1.7; }
+  .fx-prosa h2 { margin-top: 1.9em; font-size: 1.375rem; }
+}
+.fx-prosa :is(img, svg, video, iframe) { max-width: 100%; height: auto; }
+.fx-prosa figure { margin-inline: 0; }
+.fx-prosa figcaption { margin-top: 8px; font-size: 14px; line-height: 1.5; color: var(--fx-ink-3); }
+.fx-prosa code { padding: .1em .35em; border-radius: 6px; background: var(--fx-surface-2); font-size: .9em; overflow-wrap: anywhere; }
+.fx-prosa pre { overflow-x: auto; max-width: 100%; }
+.fx-prosa .fx-tabla-wrap { overflow-x: auto; max-width: 100%; }
+.fx-prosa .fx-tabla-wrap table { min-width: 520px; }
+.fx-prosa a:hover { text-decoration-thickness: 2px; }
+
+/* Destacados y listas dentro de ellos */
+.fx-prosa :is(blockquote, .fx-destacado) > * + * { margin-top: .6em; }
+.fx-prosa :is(blockquote, .fx-destacado) :is(ul, ol) { padding-left: 1.2em; }
+@media (max-width: 479px) { .fx-prosa :is(blockquote, .fx-destacado) { padding: 16px 18px; } }
+
+/* Número de paso como antetítulo («Paso 3») */
+.fx-prosa__paso { display: block; margin-bottom: 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--fx-acento-claro); }
+
+/* Llamada final del artículo */
+.fx-prosa__cta h2 { text-wrap: balance; }
+@media (max-width: 479px) { .fx-prosa__cta { padding: 24px 20px; } }
+
+/* Tarjetas de blog: toda la tarjeta es clicable, fecha sin partir, títulos sin viudas */
+.fx-post__portada span { text-wrap: balance; }
+.fx-post__meta time { white-space: nowrap; }
+.fx-post__cuerpo :is(h2, h3) { text-wrap: pretty; }
+.fx-post__cuerpo :is(h2, h3) a { color: inherit; text-decoration: none; }
+.fx-post__cuerpo :is(h2, h3) a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.fx-post { transition: border-color var(--fx-dur) var(--fx-ease), transform var(--fx-dur) var(--fx-ease); }
+.fx-post:hover { border-color: rgba(236, 130, 40, .5); }
+.fx-post:hover :is(h2, h3) a { text-decoration: underline; text-decoration-color: rgba(236, 130, 40, .7); text-underline-offset: 4px; }
+.fx-post:hover .fx-enlace .fx-ic { transform: translateX(3px); }
+@supports selector(:has(*)) {
+  .fx-post:has(:is(h2, h3) a:focus-visible) { outline: 2px solid var(--fx-acento); outline-offset: 3px; }
+  body.fx .fx-post__cuerpo :is(h2, h3) a:focus-visible { outline: none !important; box-shadow: none; }
+}
+@media (prefers-reduced-motion: no-preference) { .fx-post:hover { transform: translateY(-2px); } }
+
+/* Índice del blog en tableta: el artículo más reciente ocupa toda la fila (sin huérfana) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fx-grid--3 > .fx-post:first-child:nth-last-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+  .fx-grid--3 > .fx-post:first-child:nth-last-child(odd) .fx-post__portada { flex: 0 0 44%; aspect-ratio: auto; min-height: 240px; border-bottom: 0; border-right: 1px solid var(--fx-line-soft); }
+  .fx-grid--3 > .fx-post:first-child:nth-last-child(odd) .fx-post__cuerpo { justify-content: center; padding: 28px; }
+}
+/* «Sigue leyendo» en escritorio: portadas menos altas */
+@media (min-width: 1024px) { .fx-grid--2 > .fx-post .fx-post__portada { aspect-ratio: 5 / 2; } }
 /* fin [D] */
