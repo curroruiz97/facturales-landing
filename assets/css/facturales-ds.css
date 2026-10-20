@@ -896,3 +896,19 @@ a.fx-badge::after { content: ""; position: absolute; inset: -7px -2px; }
   .fx-tour__lista.is-desborda:not(.is-final) { -webkit-mask-image: linear-gradient(90deg, #000 86%, transparent); mask-image: linear-gradient(90deg, #000 86%, transparent); }
   .fx-tour__tab { scroll-snap-align: start; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════
+   Ajustes responsive y de experiencia (revisión 20/10/2026), por grupo de páginas.
+   Cada bloque es independiente; lo compartido por todas las páginas va en «Global y cabecera».
+   ═════════════════════════════════════════════════════════════════════════════════════════════ */
+/* ── [A] Global, cabecera, pie y portada ── */
+/* fin [A] */
+
+/* ── [B] Precios, funciones, FAQ, contacto, sobre nosotros y 404 ── */
+/* fin [B] */
+
+/* ── [C] Páginas de módulos ── */
+/* fin [C] */
+
+/* ── [D] Blog y artículos ── */
+/* fin [D] */
