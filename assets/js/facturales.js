@@ -74,6 +74,11 @@
     movil.hidden = !abrir;
     cuerpo.classList.toggle("fx-bloqueo", abrir);
     if (header) header.classList.toggle("is-open", abrir);
+    // Con el menú abierto, el contenido de detrás queda fuera del alcance del lector de pantalla y del teclado.
+    var fondo = document.querySelectorAll("main, .fx-footer");
+    for (var f = 0; f < fondo.length; f++) {
+      if (abrir) fondo[f].setAttribute("inert", ""); else fondo[f].removeAttribute("inert");
+    }
     if (abrir) {
       var primero = movil.querySelector("a");
       if (primero) primero.focus();
@@ -112,7 +117,12 @@
   var conmutador = document.querySelector("[data-fx-periodo]");
   if (conmutador) {
     var botonesPeriodo = conmutador.querySelectorAll("button[data-periodo]");
-    var aplicar = function (periodo) {
+    // Aviso para lectores de pantalla: al cambiar de periodo, los precios cambian sin que el foco se mueva.
+    var avisoPeriodo = document.createElement("p");
+    avisoPeriodo.className = "fx-sr";
+    avisoPeriodo.setAttribute("aria-live", "polite");
+    conmutador.parentNode.insertBefore(avisoPeriodo, conmutador.nextSibling);
+    var aplicar = function (periodo, anunciar) {
       for (var b = 0; b < botonesPeriodo.length; b++) {
         botonesPeriodo[b].setAttribute("aria-pressed", botonesPeriodo[b].getAttribute("data-periodo") === periodo ? "true" : "false");
       }
@@ -121,9 +131,10 @@
       var notas = document.querySelectorAll("[data-nota-mensual][data-nota-anual]");
       for (var n = 0; n < notas.length; n++) notas[n].textContent = notas[n].getAttribute(periodo === "anual" ? "data-nota-anual" : "data-nota-mensual");
       try { localStorage.setItem("fx-periodo", periodo); } catch (e) {}
+      if (anunciar) avisoPeriodo.textContent = periodo === "anual" ? "Mostrando precios con pago anual." : "Mostrando precios con pago mensual.";
     };
     for (var c = 0; c < botonesPeriodo.length; c++) {
-      botonesPeriodo[c].addEventListener("click", function () { aplicar(this.getAttribute("data-periodo")); });
+      botonesPeriodo[c].addEventListener("click", function () { aplicar(this.getAttribute("data-periodo"), true); });
     }
     var guardado = null;
     try { guardado = localStorage.getItem("fx-periodo"); } catch (e) {}

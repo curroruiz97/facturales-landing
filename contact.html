@@ -23,12 +23,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/main.css?v=20261018">
-<link rel="stylesheet" href="assets/css/facturales-ds.css?v=20261018">
+<link rel="stylesheet" href="assets/css/main.css?v=20261020">
+<link rel="stylesheet" href="assets/css/facturales-ds.css?v=20261020">
 </head>
 <body class="fx">
 <a class="fx-skip" href="#contenido">Saltar al contenido</a>
-<script src="assets/js/header-include.js?v=20261018"></script>
+<script src="assets/js/header-include.js?v=20261020"></script>
 <main id="contenido" tabindex="-1">
 <section class="fx-pagehero" aria-labelledby="hero-t">
   <div class="fx-wrap fx-split" style="align-items:start">
@@ -44,25 +44,25 @@
     <div class="fx-card">
       <h2 style="font-size:1.375rem">Escríbenos</h2>
       <p>Al enviar, se abrirá tu programa de correo con el mensaje preparado.</p>
-      <form id="fx-contacto" class="fx-form" style="margin-top:24px" novalidate>
+      <form id="fx-contacto" class="fx-form fx-form--contacto" style="margin-top:24px" novalidate>
         <div class="fx-form__fila">
-          <div class="fx-campo"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" required></div>
-          <div class="fx-campo"><label for="c-email">Correo electrónico</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="fx-campo"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" required></div>
+          <div class="fx-campo"><label for="c-email">Correo electrónico</label><input id="c-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" enterkeyhint="next" required></div>
         </div>
         <div class="fx-form__fila">
-          <div class="fx-campo"><label for="c-empresa">Empresa <span class="fx-nota">(opcional)</span></label><input id="c-empresa" name="empresa" type="text" autocomplete="organization"></div>
+          <div class="fx-campo"><label for="c-empresa">Empresa <span class="fx-nota">(opcional)</span></label><input id="c-empresa" name="empresa" type="text" autocomplete="organization" enterkeyhint="next"></div>
           <div class="fx-campo"><label for="c-motivo">Motivo</label><select id="c-motivo" name="motivo"><option value="info">Información sobre Facturales</option><option value="soporte">Ayuda con mi cuenta</option><option value="gestoria">Soy gestoría o asesoría</option><option value="otro">Otro</option></select></div>
         </div>
-        <div class="fx-campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required></textarea></div>
-        <label class="fx-check"><input type="checkbox" name="privacidad" required><span>He leído la <a href="https://app.facturales.es/politica-de-privacidad">política de privacidad</a>.</span></label>
-        <div><button class="fx-btn fx-btn--primario" type="submit">Preparar correo <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button></div>
+        <div class="fx-campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" rows="5" required></textarea></div>
+        <label class="fx-check" for="c-privacidad"><input id="c-privacidad" type="checkbox" name="privacidad" required><span>He leído la <a href="https://app.facturales.es/politica-de-privacidad">política de privacidad</a>.</span></label>
+        <div class="fx-form__enviar"><button class="fx-btn fx-btn--primario" type="submit">Preparar correo <svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button></div>
         <p id="fx-contacto-estado" class="fx-form__estado" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
 </main>
-<script src="assets/js/footer-include.js?v=20261018"></script>
-<script src="assets/js/facturales.js?v=20261018" defer></script>
+<script src="assets/js/footer-include.js?v=20261020"></script>
+<script src="assets/js/facturales.js?v=20261020" defer></script>
 </body>
 </html>

@@ -1,38 +1,25 @@
 # Premium UI Reviewer — Agent Memory
 
-## Project: Facturales Landing (facturales.es)
+## Project: Facturales Landing (facturales.es) — static HTML, see /CLAUDE.md
+NOTE: the first notes of this file (Neotix template tokens #F94D00, Inter, `.sub-title`, bootstrap accordion) are OBSOLETE.
+Current system: `assets/css/facturales-ds.css`, `body.fx`, `fx-*` classes, Onest font, orange #EC8228 on near-black, pill buttons.
 
-### Design System Tokens
-- `--theme: #F94D00` (orange, primary CTA)
-- `--header: #0B0D17` (dark headings)
-- `--text: #534F5A` (body)
-- `--bg: #EFEDE5` (page background, warm off-white)
-- `--bg2: #0F172A` (dark sections)
-- Fonts: Inter (body, 16px/28px), Plus Jakarta Sans (headings)
-- `--box-shadow: 0px 1px 14px 0px rgba(0,0,0,0.13)`
-- Border radius on `.theme-btn`: 100px (pill)
-- `.theme-btn` hover: circle clip-path reveal, fills to `--header`
+### CSS organisation (end of facturales-ds.css)
+- [A] global/header/footer/mobile menu/home, [B] pricing/funciones/faq/contact/about/404, [C] module pages (`body.fx-pagina-modulo`), [D] blog/articles.
+- Tools used for review: Playwright via `createRequire("/home/user/facturales/package.json")`, chromium at /opt/pw-browsers/chromium; checker `.../scratchpad/landing/medir.mjs` (pricing "cortado" = `.fx-sr` false positives).
+- Screenshots must scroll the page first (lazy images). Contact sheets via PIL work well for reviewing many chunks.
 
-### Component Conventions
-- `.sub-title` MUST be inside `.section-title` wrapper to get correct pill styles (white bg, uppercase, 14px, Plus Jakarta Sans)
-- `.sub-title` always includes a small icon img (`assets/img/home-1/hero/setting.png`) — this is the site's visual language for section eyebrows
-- FAQ uses `.faq-items .accordion` pattern with orange active button; bare Bootstrap accordion does not match site style
-- Footer is template-inherited; still contains Neotix placeholder content (hello@neotix.com, Riverside Park) across 26 HTML files — global find-replace needed
+### Patterns that work (keep)
+- Compact mobile cards (icon + title in one row, text below) — used in [C] and now also in [A] for home Seguridad, funciones Además, pricing "Incluido".
+- Pricing plan cards use subgrid (`.fx-planes--alineados`) -> price/CTA/list aligned in monthly AND annual mode at 900+; tablet = price+CTA left, list right.
+- Orphan last card in 2-col grids: span full row (`:last-child:nth-child(odd)`).
+- Subgrid for 4-col icon/title/text cards at >=1200 aligns text when a title wraps.
 
-### Pricing Page Review (2026-03-05)
-- Reviewed `pricing.html` — complete rewrite with toggle, 3 cards, included section, comparison table, FAQ, CTA
-- Critical: header-top still has Neotix placeholder content (address, email) — not pricing-specific but present
-- Critical: `.sub-title` used without `.section-title` wrapper — will not render correctly
-- Critical: CTA gradient goes orange → amber → yellow (#f59e0b) — color creep, off-brand
-- Critical: Pro card blue (#3b82f6) is a strong brand deviation; Pro CTA uses blue gradient, not --theme
-- Issue: Accordion is bare Bootstrap with no styling override — will render Bootstrap default (blue focus ring, grey bg)
-- Issue: Comparison table shows "250/año" for Starter but pricing card says "10 facturas/mes" (120/year) — data inconsistency
-- Issue: `--pr-*` duplicate root vars are redundant; should use existing `--theme`, `--header`, `--text`, `--bg` tokens
-- Issue: Plan descriptions are italic (`font-style:italic`) — unusual and weak for a SaaS product
-- Issue: `.pricing-cta` is left-aligned with only col-lg-8 filled — right side is empty
-- Good: Toggle animation and annual badge are clean; included-section dark cards are well-structured
-- Good: Comparison table pattern (expandable) is functional and appropriately scoped
+### Issues found/fixed in the responsive pass (2026-10)
+- Home manifiesto h2 (72px) was bigger than h1 (64px) at >=1333px and its box was centered at 1080px (left edge 84px off the grid) -> capped to 56px, aligned.
+- Landscape phone (844x390): home h1 had max-width 15ch -> 4 lines, CTA below fold; widened to 24ch.
+- Contact privacy link in checkbox label measured 20px tall -> inline-block with 12px block padding / -12px margin.
 
-### Recurring Site Issues
-- Template placeholder content (Neotix branding) still present in header-top across all pages
-- `sub-title` must be in `.section-title` container
+### Recommendations not applied
+- Funciones mobile: 10 module cards of ~415px each (~4000px scroll); consider 2-col mini grid or horizontal screenshot crop smaller.
+- Home/pricing: FAQ heading is left-aligned in a narrow centred column while neighbouring section headings are centred.
