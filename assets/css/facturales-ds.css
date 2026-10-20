@@ -1007,6 +1007,9 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   .fx-modulos > .fx-card--captura:last-child:nth-child(3n+1) > .fx-card__top { padding-top: 14px; }
 }
 
+/* Funciones · «Además»: entre 1024 y 1199 px, cuatro columnas dejaban textos de 3–4 palabras por línea; 2 × 2. */
+@media (min-width: 1024px) and (max-width: 1199px) { .fx-ademas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 /* FAQ · índice de temas bajo la entradilla (saltos a cada grupo). */
 .fx-faq-temas { margin-top: 28px; }
 .fx-faq-temas ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
@@ -1040,16 +1043,80 @@ html:has(body.fx-bloqueo) { overflow: hidden; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-opacity='.76' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 14px center; background-size: 18px;
 }
-.fx-form--contacto .fx-check { align-items: center; min-height: 44px; cursor: pointer; }
-.fx-form--contacto .fx-check input { width: 24px; height: 24px; margin: 0; cursor: pointer; }
+.fx-form--contacto .fx-check { align-items: center; gap: 6px; min-height: 44px; cursor: pointer; }
+/* Casilla: se ve de 24 px pero su objetivo táctil es de 44 × 44 px (los márgenes negativos conservan la maquetación). */
+.fx-form--contacto .fx-check input {
+  -webkit-appearance: none; appearance: none; width: 44px; height: 44px; margin: -10px -4px -10px -10px; border-radius: 12px; cursor: pointer;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='6' fill='%23ffffff' fill-opacity='.06' stroke='%23ffffff' stroke-opacity='.45' stroke-width='1.5'/%3E%3C/svg%3E") center / 24px no-repeat;
+}
+.fx-form--contacto .fx-check input:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='.5' y='.5' width='23' height='23' rx='6' fill='%23EC8228'/%3E%3Cpath d='M18 7.5 10 15.5l-4-4' fill='none' stroke='%231a0d02' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.fx-form--contacto .fx-check input[aria-invalid="true"], .fx-form--contacto .fx-check input:focus-visible { outline: 2px solid var(--fx-acento); outline-offset: -8px; }
+.fx-form--contacto .fx-check a { position: relative; }
+.fx-form--contacto .fx-check a::after { content: ""; position: absolute; inset: -12px -4px; }
+@media (forced-colors: active) {
+  .fx-form--contacto .fx-check input { -webkit-appearance: auto; appearance: auto; width: 24px; height: 24px; margin: 0; }
+}
 @media (max-width: 479px) { .fx-form--contacto .fx-form__enviar .fx-btn { width: 100%; } }
 
 /* Sobre nosotros · titular largo: algo más contenido en móvil y con líneas equilibradas. */
 .fx-pagehero--sobre h1 { max-width: 22ch; text-wrap: balance; }
 @media (max-width: 479px) { .fx-pagehero--sobre h1 { font-size: clamp(1.875rem, 1.2rem + 3.4vw, 2.25rem); } }
+
+/* Teléfono en horizontal: cabeceras de página y 404 más compactas (en Precios el conmutador mensual/anual quedaba
+   bajo el pliegue y en la 404 los botones también). */
+@media (max-height: 520px) and (orientation: landscape) and (max-width: 1023px) {
+  .fx-pagehero { padding-top: calc(var(--fx-header-h) + 24px); padding-bottom: 32px; }
+  .fx-pagehero h1 { font-size: clamp(2rem, 1.2rem + 2.6vw, 2.625rem); }
+  .fx-pagehero .fx-lead { margin-top: 12px; }
+  .fx-404 { min-height: 0; padding-top: calc(var(--fx-header-h) + 20px); padding-bottom: 40px; }
+  .fx-404__num { font-size: 4.5rem; }
+}
 /* fin [B] */
 
 /* ── [C] Páginas de módulos ── */
+/* body.fx-pagina-modulo: las 10 páginas de módulo (facturas, presupuestos, bancos, cobros, gastos, impuestos, panel,
+   clientes, inventario y diseño de factura). Todo va acotado a esa clase para no tocar la portada ni otras páginas. */
+
+/* Hero adaptable: cada captura va en un <picture> que solo descarga la imagen en su rango de anchos; sin caja propia. */
+.fx-pagina-modulo .fx-adaptable picture { display: contents; }
+
+/* Barra del navegador: la ruta cabe entera también en columnas estrechas (a 1024 px se cortaba con «…»). */
+.fx-pagina-modulo .fx-captura__barra span { max-width: calc(100% - 96px); }
+
+/* «Qué puedes hacer»: si la última tarjeta queda sola en su fila de dos columnas, ocupa la fila entera. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fx-pagina-modulo .fx-grid--3 > .fx-card:not(.fx-card--enlace):last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+@media (max-width: 639px) {
+  /* Tarjetas de funciones y relacionadas en móvil: icono y título en una fila y el texto debajo, en vez de tarjetas
+     altísimas apiladas (en Facturación eran 11 pantallas de scroll). */
+  .fx-pagina-modulo .fx-grid--3 > .fx-card {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; column-gap: 14px; align-items: center; padding: 18px 18px 20px;
+  }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card > .fx-card__top { display: contents; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card .fx-icono { grid-column: 1; grid-row: 1; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card .fx-badge { grid-column: 3; grid-row: 1; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card > h3 { grid-column: 2; grid-row: 1; margin-top: 0; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card > p,
+  .fx-pagina-modulo .fx-grid--3 > .fx-card > .fx-enlace { grid-column: 1 / -1; }
+  .fx-pagina-modulo .fx-grid--3 > .fx-card > p { margin-top: 12px; }
+  .fx-pagina-modulo .fx-grid { gap: 12px; }
+
+  /* «Cómo funciona»: número y título en la misma línea. */
+  .fx-pagina-modulo .fx-paso { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; align-items: baseline; padding: 20px; }
+  .fx-pagina-modulo .fx-paso h3 { margin-top: 0; }
+  .fx-pagina-modulo .fx-paso p { grid-column: 1 / -1; }
+  .fx-pagina-modulo .fx-pasos { gap: 12px; }
+}
+
+@media (max-width: 559px) {
+  /* Capturas de escritorio sin versión móvil: a 343 px la pantalla entera quedaba a un 27 % y era ilegible. En móvil se
+     muestra un detalle ampliado (zona principal, sin el menú lateral de la app); --fx-foco ajusta el encuadre. */
+  .fx-pagina-modulo .fx-captura img { aspect-ratio: 1 / 1; object-fit: cover; object-position: var(--fx-foco, 16% 0); }
+}
 /* fin [C] */
 
 /* ── [D] Blog y artículos ── */
