@@ -74,6 +74,11 @@
     movil.hidden = !abrir;
     cuerpo.classList.toggle("fx-bloqueo", abrir);
     if (header) header.classList.toggle("is-open", abrir);
+    // Con el menú abierto, el contenido de detrás queda fuera del alcance del lector de pantalla y del teclado.
+    var fondo = document.querySelectorAll("main, .fx-footer");
+    for (var f = 0; f < fondo.length; f++) {
+      if (abrir) fondo[f].setAttribute("inert", ""); else fondo[f].removeAttribute("inert");
+    }
     if (abrir) {
       var primero = movil.querySelector("a");
       if (primero) primero.focus();
