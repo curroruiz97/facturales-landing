@@ -513,7 +513,9 @@ body.fx .fx-claro :focus-visible { outline-color: var(--fx-acento-claro) !import
 .fx-plan__precio span { font-size: 15px; color: var(--fx-ink-3); }
 .fx-plan__nota { min-height: 22px; margin-top: 8px; font-size: 14px; color: var(--fx-ink-3); }
 .fx-plan .fx-btn { margin-top: 22px; }
-.fx-plan .fx-lista { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--fx-line-soft); font-size: 15px; }
+/* align-content: la lista es una rejilla dentro de la fila del subgrid que mide la lista MÁS LARGA; sin esto, las
+   tarjetas con menos viñetas reparten el sobrante entre ellas y sus huecos salen más anchos que los de las demás. */
+.fx-plan .fx-lista { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--fx-line-soft); font-size: 15px; align-content: start; }
 .fx-plan .fx-lista li::before { top: .15em; }
 
 /* 12. Formularios ---------------------------------------------------------- */
